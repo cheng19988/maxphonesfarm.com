@@ -35,3 +35,18 @@ See [ASSETS.md](./ASSETS.md).
 npm run build
 npm start
 ```
+
+## Vercel deployment
+
+1. Create a **PostgreSQL** database ([Neon](https://neon.tech), Vercel Postgres, or Supabase).
+2. In Vercel → Project → Settings → Environment Variables, add:
+   - `DATABASE_URL` — PostgreSQL connection string (`?sslmode=require` for Neon)
+   - `JWT_SECRET` — random secret string
+3. Deploy. Build runs `prisma generate && next build` (no SQLite; compatible with Vercel serverless).
+4. After first deploy, seed the database once from your machine:
+
+```bash
+DATABASE_URL="your-production-url" npm run db:setup
+```
+
+Admin login: `admin@maxphonesfarm.com` / `admin123456`
