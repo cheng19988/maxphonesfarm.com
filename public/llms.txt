@@ -1,0 +1,38 @@
+# Max Phones Farm (maxphonesfarm.com)
+
+> Enterprise-grade real-device phone farm hardware from Guangzhou, China.
+
+## About
+Max Phones Farm is an enterprise-grade real-device phone farm hardware provider based in Guangzhou, China. We provide rackmount phone farm hardware, phone farm boxes, motherboard boxes, custom cabinets, power systems, cooling systems, network equipment, remote control setup, group control configuration, and large-scale deployment services for enterprise teams and agencies.
+
+## Products
+- Rackmount Phone Farm / Custom Cabinet — Server-style 2U rackmount deployment
+- Enterprise Phone Farm Box — The original 20-node real device box
+- Motherboard Box — Screenless, battery-free node arrays (configuration dependent)
+- Android Phone Farm — Samsung-based enterprise clusters
+- iPhone Phone Farm — iOS device farm hardware
+- Real Device Phone Farm — Turnkey server-style device farms
+- Empty Box / Chassis — Expansion and custom build chassis
+- Power Supply Solution — Centralized PSU / charging infrastructure
+- Cooling Solution — Active thermal management for dense racks
+- Network Equipment — Enterprise connectivity for device farms
+- USB Hub — Industrial USB backplane modules
+- Remote Control Setup — Group control and remote management configuration
+
+## Services
+Enterprise phone farm setup, remote control configuration, group control system configuration, bulk device deployment, custom hardware solutions, enterprise deployment, maintenance and support, sample solutions, overseas delivery.
+
+## Contact
+- Phone: 13059502618
+- Telegram: @huicheng1998
+- WhatsApp: +852 6215 5642
+- Email: qiuxui646@gmail.com
+- Location: Guangzhou, China
+
+## Key Pages
+- Home: https://maxphonesfarm.com/
+- Products: https://maxphonesfarm.com/products
+- Services: https://maxphonesfarm.com/services
+- FAQ: https://maxphonesfarm.com/faq
+- Contact: https://maxphonesfarm.com/contact
+- Blog: https://maxphonesfarm.com/blog
