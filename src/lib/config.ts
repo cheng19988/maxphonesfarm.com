@@ -52,6 +52,6 @@ export const HERO_PILLARS = [
   {
     label: "Remote Control Setup",
     href: "/products/remote-control-setup",
-    desc: "Unified multi-device management",
+    desc: "Unified device management from one workstation",
   },
 ] as const;

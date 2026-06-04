@@ -169,7 +169,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     "Android",
     "Entry enterprise Android cluster in industrial chassis — scale real-device automation.",
     IMAGES.androidFarm,
-    208,
+    159,
     18
   ),
   p(
@@ -198,7 +198,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     "Chassis",
     "Empty industrial chassis for custom builds, reverse-mount layouts, and fleet expansion.",
     IMAGES.emptyBox,
-    234,
+    179,
     22
   ),
   p(
@@ -207,7 +207,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     "Power",
     "Centralized power infrastructure for rackmount phone farm deployments.",
     IMAGES.power,
-    195,
+    149,
     35
   ),
   p("usb-hub", "USB Hub Backplane", "USB Hub", "Industrial USB hub modules for stable multi-device rack connectivity.", IMAGES.usbHub, 89, 50),

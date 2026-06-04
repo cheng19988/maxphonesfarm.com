@@ -50,8 +50,8 @@ export default async function HomePage() {
             ))}
           </div>
           <p className="mt-8">
-            <Link href="/services" className="text-sm text-neutral-400 hover:text-white underline underline-offset-4">
-              Remote control setup available →
+            <Link href="/products/remote-control-setup" className="text-sm text-neutral-400 hover:text-white underline underline-offset-4">
+              Remote control setup — configure now →
             </Link>
           </p>
         </div>
@@ -119,23 +119,25 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Stats — 20 nodes + efficiency (cellhasher reference) */}
       <section className="border-b border-neutral-800">
-        <div className="container-wide py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div className="container-wide py-20 grid md:grid-cols-2 gap-16 items-start">
           <div>
             <div className="text-7xl md:text-8xl font-semibold text-white tracking-tight mb-2">20</div>
             <h3 className="text-xl text-neutral-300 mb-2">Phones installed, organized, and working together</h3>
             <p className="text-neutral-500 text-sm">Ready for app testing, automation, QA, and enterprise-scale real-device operations.</p>
           </div>
           <div>
-            <div className="text-7xl md:text-8xl font-semibold text-white tracking-tight mb-2">2U</div>
-            <h3 className="text-xl text-neutral-300 mb-2">Server-style rackmount form factor</h3>
-            <p className="text-neutral-500 text-sm">Enterprise Phone Farm Hardware · Rackmount Phone Farm · Server-style Device Farm infrastructure from Guangzhou.</p>
+            <div className="text-7xl md:text-8xl font-semibold text-white tracking-tight mb-2">2–10%</div>
+            <h3 className="text-xl text-neutral-300 mb-2">Improved power and thermal efficiency</h3>
+            <p className="text-neutral-500 text-sm">
+              Centralized PSU and integrated cooling can reduce wasted power and thermal throttling compared to loose phones on individual chargers — especially with battery-free configurations where applicable.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Efficiency — reference Before/After concept */}
+      {/* Efficiency — Before/After */}
       <section className="border-b border-neutral-800 bg-neutral-950">
         <div className="container-wide py-20 grid md:grid-cols-2 gap-12">
           <div>
