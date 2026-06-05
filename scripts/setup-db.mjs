@@ -5,10 +5,15 @@ if (!process.env.DATABASE_URL) {
   process.exit(0);
 }
 
-console.log("[setup-db] Running prisma db push...");
-execSync("npx prisma db push --skip-generate", { stdio: "inherit" });
+function run(command) {
+  console.log(`[setup-db] Running: ${command}`);
+  execSync(command, { stdio: "inherit" });
+}
+
+// prisma generate already runs before this script in the build pipeline
+run("npx prisma db push");
 
 console.log("[setup-db] Seeding database...");
-execSync("npx tsx prisma/seed.ts", { stdio: "inherit" });
+run("npx tsx prisma/seed.ts");
 
 console.log("[setup-db] Done");
