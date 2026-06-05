@@ -3,14 +3,14 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client.js";
 import { PRODUCT_SEEDS } from "../src/data/products.js";
 import bcrypt from "bcryptjs";
-import { Pool } from "pg";
+import { createPgPool } from "../src/lib/pg-pool.js";
 
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {
   throw new Error("DATABASE_URL is required to seed the database");
 }
 
-const pool = new Pool({ connectionString });
+const pool = createPgPool(connectionString);
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 

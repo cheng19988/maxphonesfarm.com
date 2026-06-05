@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import { getPublishedProducts } from "@/lib/products";
 import Image from "next/image";
 import Link from "next/link";
 import { ProductCard, FAQAccordion } from "@/components/commerce";
@@ -17,10 +17,7 @@ export const metadata = buildMetadata({
 });
 
 export default async function HomePage() {
-  const products = await prisma.product.findMany({
-    where: { published: true },
-    orderBy: { priceUsd: "desc" },
-  });
+  const products = await getPublishedProducts();
 
   const featured = products.find((p) => p.slug === "custom-cabinet") ?? products[0];
   const gridProducts = products.filter((p) => p.slug !== featured?.slug).slice(0, 6);
