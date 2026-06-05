@@ -9,6 +9,10 @@ type SEOInput = {
   noIndex?: boolean;
 };
 
+function absoluteImageUrl(image: string) {
+  return image.startsWith("http") ? image : `${SITE.url}${image}`;
+}
+
 export function buildMetadata({
   title,
   description,
@@ -17,14 +21,17 @@ export function buildMetadata({
   noIndex,
 }: SEOInput): Metadata {
   const url = `${SITE.url}${path}`;
-  const ogImage = image || `${SITE.url}/images/hero_1600x900/maxphonesfarm.com-rack-cabinet-moderntechlab-datarack-2fb2e-hero_1600x900.webp`;
+  const ogImage = image
+    ? absoluteImageUrl(image)
+    : `${SITE.url}/images/hero_1600x900/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-hero_1600x900.webp`;
+  const fullTitle = `${title} | ${SITE.name}`;
 
   return {
-    title: `${title} | ${SITE.name}`,
+    title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${title} | ${SITE.name}`,
+      title: fullTitle,
       description,
       url,
       siteName: SITE.name,
@@ -34,7 +41,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${SITE.name}`,
+      title: fullTitle,
       description,
       images: [ogImage],
     },
@@ -48,11 +55,13 @@ export function organizationJsonLd() {
     "@type": "Organization",
     name: SITE.name,
     url: SITE.url,
-    logo: `${SITE.url}/images/card_800x800/maxphonesfarm.com-rack-cabinet-moderntechlab-datarack-2fb2e-card_800x800.webp`,
+    logo: `${SITE.url}/images/card_800x800/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-card_800x800.webp`,
     description: SITE.description,
+    foundingDate: "2017",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Guangzhou",
+      addressRegion: "Guangdong",
       addressCountry: "CN",
     },
     contactPoint: {
@@ -61,6 +70,7 @@ export function organizationJsonLd() {
       email: "qiuxui646@gmail.com",
       contactType: "sales",
       areaServed: "Worldwide",
+      availableLanguage: ["English", "Chinese"],
     },
   };
 }
@@ -78,7 +88,7 @@ export function productJsonLd(product: {
     "@type": "Product",
     name: product.name,
     description: product.description,
-    image: `${SITE.url}${product.image}`,
+    image: absoluteImageUrl(product.image),
     url: `${SITE.url}/products/${product.slug}`,
     brand: { "@type": "Brand", name: SITE.name },
     offers: {

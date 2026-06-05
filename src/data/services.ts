@@ -6,7 +6,7 @@ export const SERVICES = [
     title: "Phone Farm Setup",
     description:
       "End-to-end phone farm deployment — from hardware assembly and device mounting to power routing, network configuration, and first-boot testing.",
-    image: IMAGES.serviceScene,
+    image: IMAGES.workshop,
   },
   {
     slug: "remote-control-configuration",

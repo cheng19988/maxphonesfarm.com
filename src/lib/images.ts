@@ -4,7 +4,7 @@ const hero = (name: string) => `/images/hero_1600x900/${name}-hero_1600x900.webp
 const detail = (name: string) => `/images/detail_1200x900/${name}-detail_1200x900.webp`;
 
 export const IMAGES = {
-  homeHero: hero(`${P}-rack-cabinet-moderntechlab-datarack-2fb2e`),
+  homeHero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
   phoneFarmBox: {
     card: card(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
     hero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
@@ -36,14 +36,14 @@ export const IMAGES = {
     detail: detail(`${P}-product-box-2025-10-25-11-24-img-0549-f696b`),
   },
   usbHub: {
-    card: card(`${P}-rack-cabinet-moderntechserverdeviceshowcase-89e28`),
-    hero: hero(`${P}-rack-cabinet-moderntechserverdeviceshowcase-89e28`),
-    detail: detail(`${P}-rack-cabinet-moderntechserverdeviceshowcase-89e28`),
+    card: card(`${P}-product-box-2025-10-25-11-24-img-0549-f696b`),
+    hero: hero(`${P}-product-box-2025-10-25-11-24-img-0549-f696b`),
+    detail: detail(`${P}-product-box-2025-10-25-11-24-img-0549-f696b`),
   },
   power: {
-    card: card(`${P}-rack-cabinet-industrial-server-8317a`),
-    hero: hero(`${P}-rack-cabinet-industrial-server-8317a`),
-    detail: detail(`${P}-rack-cabinet-industrial-server-8317a`),
+    card: card(`${P}-product-box-2025-10-25-11-29-img-0556-25-10-2025-22-02-38-73237`),
+    hero: hero(`${P}-product-box-2025-10-25-11-29-img-0556-25-10-2025-22-02-38-73237`),
+    detail: detail(`${P}-product-box-2025-10-25-11-29-img-0556-25-10-2025-22-02-38-73237`),
   },
   cooling: {
     card: card(`${P}-product-box-2025-10-25-11-33-img-0561-db197`),
@@ -51,9 +51,9 @@ export const IMAGES = {
     detail: detail(`${P}-product-box-2025-10-25-11-33-img-0561-db197`),
   },
   network: {
-    card: card(`${P}-rack-cabinet-moderntechlab-datarack-2fb2e`),
-    hero: hero(`${P}-rack-cabinet-moderntechlab-datarack-2fb2e`),
-    detail: detail(`${P}-rack-cabinet-moderntechlab-datarack-2fb2e`),
+    card: card(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
+    hero: hero(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
+    detail: detail(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
   },
   customCabinet: {
     card: card(`${P}-rack-cabinet-modernlab-serverworkbench-a0099`),
@@ -65,7 +65,7 @@ export const IMAGES = {
     hero: hero(`${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`),
     detail: detail(`${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`),
   },
-  serviceScene: hero(`${P}-service-scenes-moderntechoffice-devicecontrol-2663b`),
+  serviceScene: "/images/facility/workshop.png",
   factory: "/images/facility/workshop.png",
   workshop: "/images/facility/workshop.png",
   office: "/images/facility/office.png",

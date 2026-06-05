@@ -1,23 +1,20 @@
 import Link from "next/link";
 import { CONTACT, NAV, SITE } from "@/lib/config";
 import { ContactBar } from "./shared";
-import { getSession } from "@/lib/auth";
 
-export async function Header() {
-  const session = await getSession();
-
+export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800">
       <div className="hidden md:block border-b border-neutral-800">
         <div className="container-wide py-2 flex justify-between items-center text-xs text-neutral-500">
-          <span>{SITE.location} · Enterprise Phone Farm Hardware Since {SITE.since}</span>
+          <span>{SITE.location} · Phone Farm Hardware Since {SITE.since}</span>
           <ContactBar compact />
         </div>
       </div>
       <div className="container-wide py-5 flex items-center justify-between gap-4">
         <Link href="/" className="shrink-0">
           <div className="font-semibold text-white tracking-tight text-lg">{SITE.name}</div>
-          <div className="text-[10px] text-neutral-500 tracking-wide hidden sm:block">Mobile Phone Computing</div>
+          <div className="text-[10px] text-neutral-500 tracking-wide hidden sm:block">Rackmount Real-Device Hardware</div>
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
           {NAV.map((item) => (
@@ -26,19 +23,13 @@ export async function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-4">
-          <Link href="/products" className="hidden sm:inline-flex btn-primary text-xs py-2.5 px-5">
-            Shop
+        <div className="flex items-center gap-3">
+          <Link href="/products" className="hidden sm:inline-flex btn-secondary text-xs py-2.5 px-5">
+            Products
           </Link>
-          {session ? (
-            <Link href={session.role === "admin" ? "/admin" : "/account/orders"} className="text-sm text-neutral-400 hover:text-white">
-              Account
-            </Link>
-          ) : (
-            <Link href="/login" className="text-sm text-neutral-400 hover:text-white">
-              Login
-            </Link>
-          )}
+          <Link href="/contact" className="btn-primary text-xs py-2.5 px-5">
+            Get Quote
+          </Link>
         </div>
       </div>
       <nav className="lg:hidden container-wide pb-3 flex gap-5 overflow-x-auto text-sm border-t border-neutral-800 pt-3">
@@ -67,7 +58,7 @@ export function Footer() {
             <li><Link href="/products/custom-cabinet" className="hover:text-white">Rackmount Phone Farm</Link></li>
             <li><Link href="/products/phone-farm-box" className="hover:text-white">Enterprise Phone Farm Box</Link></li>
             <li><Link href="/products/motherboard-box" className="hover:text-white">Motherboard Box</Link></li>
-            <li><Link href="/products/real-device-phone-farm" className="hover:text-white">Server-style Device Farm</Link></li>
+            <li><Link href="/products/real-device-phone-farm" className="hover:text-white">Server-Style Device Farm</Link></li>
             <li><Link href="/products" className="hover:text-white underline underline-offset-4">All Products</Link></li>
           </ul>
         </div>
@@ -76,6 +67,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-neutral-400">
             <li><Link href="/about" className="hover:text-white">About</Link></li>
             <li><Link href="/services" className="hover:text-white">Services</Link></li>
+            <li><Link href="/blog" className="hover:text-white">Guides</Link></li>
             <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
             <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
             <li><Link href="/privacy" className="hover:text-white">Privacy</Link></li>

@@ -37,7 +37,7 @@ export const FAQ_ITEMS = [
   {
     question: "Real device phone farm vs emulator — what's the difference?",
     answer:
-      "Emulators simulate Android/iOS in software on a PC. Real device farms use actual hardware that platforms cannot distinguish from normal user devices. For account-sensitive operations, real devices significantly reduce ban and detection rates.",
+      "Emulators simulate Android/iOS in software on a PC. Real device farms use actual hardware with genuine sensors and device identifiers. For QA and production automation that must match end-user conditions, physical devices are the reliable baseline.",
   },
   {
     question: "Android phone farm vs iPhone phone farm?",
@@ -65,9 +65,9 @@ export const FAQ_ITEMS = [
       "Yes. Our team configures group control systems for batch device management — including task scheduling, synchronized actions, and multi-group organization for agency and enterprise workflows.",
   },
   {
-    question: "Do you support overseas shipping?",
+    question: "Do you provide export documentation?",
     answer:
-      "Yes. We ship worldwide from Guangzhou via DHL, FedEx, UPS express, and sea freight for bulk orders. All units are QC-tested and securely packaged before export.",
+      "Yes. We supply commercial invoices, packing lists, and customs documentation for international shipments. Share your import requirements when requesting a quote so we can prepare the correct paperwork.",
   },
   {
     question: "What is the MOQ (Minimum Order Quantity)?",
@@ -87,7 +87,7 @@ export const FAQ_ITEMS = [
   {
     question: "How to pay?",
     answer:
-      "Online orders accept USDT on Tron TRC20 network (minimum 10 USDT). For bulk orders, we also accept bank transfer (T/T), Wise, and PayPal upon request. Contact sales for invoice-based payment.",
+      "Payment terms depend on order size. Sample and standard orders can be settled via bank transfer (T/T), Wise, or PayPal. For bulk enterprise orders we issue a pro-forma invoice with agreed payment schedule. Contact sales for details.",
   },
   {
     question: "How to contact sales?",

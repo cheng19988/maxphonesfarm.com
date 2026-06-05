@@ -18,50 +18,55 @@ function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card p-6 space-y-4">
+    <form onSubmit={handleSubmit} className="border border-neutral-800 p-6 space-y-4 bg-neutral-950">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm text-slate-400 mb-1">Name *</label>
-          <input name="name" required className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+          <label className="block text-sm text-neutral-500 mb-1">Name *</label>
+          <input name="name" required className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
         </div>
         <div>
-          <label className="block text-sm text-slate-400 mb-1">Country</label>
-          <input name="country" className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+          <label className="block text-sm text-neutral-500 mb-1">Country</label>
+          <input name="country" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
         </div>
         <div>
-          <label className="block text-sm text-slate-400 mb-1">WhatsApp / Telegram</label>
-          <input name="whatsapp" className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+          <label className="block text-sm text-neutral-500 mb-1">WhatsApp / Telegram</label>
+          <input name="whatsapp" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
         </div>
         <div>
-          <label className="block text-sm text-slate-400 mb-1">Phone</label>
-          <input name="phone" className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+          <label className="block text-sm text-neutral-500 mb-1">Phone</label>
+          <input name="phone" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
         </div>
         <div>
-          <label className="block text-sm text-slate-400 mb-1">Email *</label>
-          <input name="email" type="email" required className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+          <label className="block text-sm text-neutral-500 mb-1">Email *</label>
+          <input name="email" type="email" required className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
         </div>
         <div>
-          <label className="block text-sm text-slate-400 mb-1">Device Quantity</label>
-          <input name="deviceQuantity" className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+          <label className="block text-sm text-neutral-500 mb-1">Device Quantity</label>
+          <input name="deviceQuantity" placeholder="e.g. 20, 100, custom rack" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
         </div>
-        <div>
-          <label className="block text-sm text-slate-400 mb-1">Product Interest</label>
-          <input name="productInterest" defaultValue={searchParams.get("product") || searchParams.get("service") || ""} className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+        <div className="sm:col-span-2">
+          <label className="block text-sm text-neutral-500 mb-1">Product or Service Interest</label>
+          <input
+            name="productInterest"
+            defaultValue={searchParams.get("product") || searchParams.get("service") || ""}
+            placeholder="e.g. Rackmount Phone Farm +20, remote control setup"
+            className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white"
+          />
         </div>
-        <div>
-          <label className="block text-sm text-slate-400 mb-1">Budget</label>
-          <input name="budget" className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+        <div className="sm:col-span-2">
+          <label className="block text-sm text-neutral-500 mb-1">Budget (optional)</label>
+          <input name="budget" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
         </div>
       </div>
       <div>
-        <label className="block text-sm text-slate-400 mb-1">Message</label>
-        <textarea name="message" rows={4} className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white" />
+        <label className="block text-sm text-neutral-500 mb-1">Message</label>
+        <textarea name="message" rows={4} placeholder="Device models, timeline, shipping country, custom requirements…" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
       </div>
       <button type="submit" disabled={status === "loading"} className="btn-primary w-full">
-        {status === "loading" ? "Sending..." : "Send Inquiry"}
+        {status === "loading" ? "Sending…" : "Send Inquiry"}
       </button>
-      {status === "success" && <p className="text-green-400 text-sm">Thank you! We will respond within 24 hours.</p>}
-      {status === "error" && <p className="text-red-400 text-sm">Failed to send. Please contact us directly via WhatsApp.</p>}
+      {status === "success" && <p className="text-green-400 text-sm">Thank you. We typically reply within one business day.</p>}
+      {status === "error" && <p className="text-red-400 text-sm">Could not send the form. Please contact us on WhatsApp or Telegram directly.</p>}
     </form>
   );
 }
@@ -70,22 +75,25 @@ export default function ContactPage() {
   return (
     <div className="section">
       <div className="container-wide max-w-4xl">
-        <h1 className="section-title">Contact Us</h1>
-        <p className="section-subtitle">Get your custom quote in minutes. Factory-direct support from {SITE.location}.</p>
+        <h1 className="section-title">Contact Sales</h1>
+        <p className="section-subtitle">
+          Tell us your device count, target models, and shipping country. Our Guangzhou team will reply with specs, lead time, and a quote.
+        </p>
 
-        <div className="card p-6 mb-8">
-          <h2 className="font-bold text-white mb-4">Direct Contact</h2>
+        <div className="border border-neutral-800 p-6 mb-8 bg-neutral-950">
+          <h2 className="font-medium text-white mb-4">Direct Contact</h2>
           <ContactBar />
-          <ul className="mt-4 space-y-2 text-slate-300">
-            <li>📞 Phone: {CONTACT.phone}</li>
-            <li>💬 WhatsApp: {CONTACT.whatsapp}</li>
-            <li>✈️ Telegram: {CONTACT.telegram}</li>
-            <li>✉️ Email: {CONTACT.email}</li>
-            <li>📍 Location: {SITE.location}</li>
-          </ul>
+          <dl className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-neutral-400">
+            <div><dt className="text-neutral-600">Phone</dt><dd className="text-neutral-300">{CONTACT.phone}</dd></div>
+            <div><dt className="text-neutral-600">WhatsApp</dt><dd className="text-neutral-300">{CONTACT.whatsapp}</dd></div>
+            <div><dt className="text-neutral-600">Telegram</dt><dd className="text-neutral-300">{CONTACT.telegram}</dd></div>
+            <div><dt className="text-neutral-600">Email</dt><dd className="text-neutral-300">{CONTACT.email}</dd></div>
+            <div><dt className="text-neutral-600">Location</dt><dd className="text-neutral-300">{SITE.location}</dd></div>
+            <div><dt className="text-neutral-600">Hours</dt><dd className="text-neutral-300">Mon–Fri · UTC+8</dd></div>
+          </dl>
         </div>
 
-        <Suspense fallback={<div className="card p-6 text-slate-400">Loading form...</div>}>
+        <Suspense fallback={<div className="border border-neutral-800 p-6 text-neutral-500">Loading form…</div>}>
           <ContactForm />
         </Suspense>
       </div>

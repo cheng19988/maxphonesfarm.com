@@ -65,7 +65,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 <span className="text-3xl font-semibold text-white">${product.priceUsd.toLocaleString()}</span>
                 <StockBadge stock={product.stock} />
               </div>
-              <BuyButtons slug={product.slug} stock={product.stock} />
+              <BuyButtons slug={product.slug} />
               <div className="mt-8 p-5 border border-neutral-800 text-sm text-neutral-500">
                 <p className="font-medium text-white mb-2">Contact Sales</p>
                 <p>{CONTACT.phone} · WhatsApp · Telegram · {CONTACT.email}</p>

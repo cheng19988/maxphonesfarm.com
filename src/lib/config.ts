@@ -2,13 +2,13 @@ export const SITE = {
   name: "Max Phones Farm",
   domain: "maxphonesfarm.com",
   url: "https://maxphonesfarm.com",
-  tagline: "Enterprise-Grade Phone Farm Hardware for Real Device Deployment",
+  tagline: "Rackmount Phone Farm Hardware — Guangzhou Factory",
   intro:
-    "Max Phones Farm is a Guangzhou-based enterprise phone farm hardware solution provider for large-scale real-device deployment, rackmount phone farm boxes, custom cabinet projects, remote control setup, and professional phone farm infrastructure.",
+    "Max Phones Farm designs and builds real-device phone farm chassis, 2U rackmount cabinets, and deployment infrastructure for QA teams, mobile operators, and enterprise automation workflows.",
   location: "Guangzhou, China",
   since: 2017,
   description:
-    "Max Phones Farm — Enterprise rackmount phone farm hardware from Guangzhou. Phone farm boxes, motherboard boxes, custom cabinets, power, cooling, network equipment, remote control setup, and large-scale deployment since 2017.",
+    "Max Phones Farm — Rackmount phone farm hardware built in Guangzhou since 2017. Phone farm boxes, motherboard arrays, custom cabinets, power, cooling, and remote control setup for large-scale real-device deployment.",
 } as const;
 
 export const CONTACT = {

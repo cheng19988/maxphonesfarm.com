@@ -216,7 +216,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
   p(
     "remote-control-setup",
     "Remote Control Setup",
-    "Services",
+    "Setup",
     "Unified multi-device management configuration — group control and remote automation setup.",
     IMAGES.remoteControl,
     350,

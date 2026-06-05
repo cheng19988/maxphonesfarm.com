@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <div className="container-wide">
         <h1 className="section-title">Phone Farm Services</h1>
         <p className="section-subtitle">
-          From single-box setup to enterprise rack deployment — Max Phones Farm provides end-to-end hardware and configuration services from our Guangzhou factory.
+          Hardware assembly, remote control configuration, bulk provisioning, and export logistics — delivered from our Guangzhou factory.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((svc) => (
@@ -27,7 +27,7 @@ export default function ServicesPage() {
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-bold text-white mb-2">{svc.title}</h2>
-                <p className="text-slate-400 text-sm mb-4">{svc.description}</p>
+                <p className="text-neutral-400 text-sm mb-4">{svc.description}</p>
                 <Link href={`/contact?service=${svc.slug}`} className="text-neutral-400 text-sm hover:text-white underline underline-offset-4">
                   Request This Service →
                 </Link>

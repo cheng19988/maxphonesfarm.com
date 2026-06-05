@@ -19,11 +19,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE.name} | ${SITE.tagline}`,
+    default: SITE.tagline,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
   metadataBase: new URL(SITE.url),
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
