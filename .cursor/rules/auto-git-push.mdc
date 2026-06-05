@@ -1,0 +1,38 @@
+---
+description: Auto commit and push after completing tasks; retry on network timeout
+alwaysApply: true
+---
+
+# Auto Git Commit & Push
+
+After completing a task that changes code or assets:
+
+1. **Commit** when there are meaningful changes (do not wait for the user to ask).
+2. **Push** to `origin` immediately after a successful commit.
+3. **Do not** commit secrets (`.env`, credentials). Warn if the user explicitly asks to commit those.
+
+## Push command (Windows proxy bypass)
+
+```powershell
+git -c http.proxy= -c https.proxy= push origin main
+```
+
+Use the current branch if not `main`.
+
+## Retry on network failure
+
+If push fails with timeout, connection refused, or proxy errors:
+
+- Retry up to **5 times** with **10–15 second** pauses between attempts.
+- Clear proxy env vars before retry: `$env:HTTP_PROXY=''; $env:HTTPS_PROXY=''`
+- Do **not** ask the user to push manually unless all retries fail.
+- Report only when push ultimately succeeds or all retries are exhausted.
+
+## Commit author (if git identity unset)
+
+Use repo history: `Max Phones Farm <qiuxui646@gmail.com>` via env vars — never run `git config`.
+
+## When not to commit
+
+- Question-only or review-only tasks with no file changes.
+- User explicitly says not to commit yet.
