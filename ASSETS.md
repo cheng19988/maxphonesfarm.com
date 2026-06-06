@@ -35,7 +35,18 @@ npm run assets:sync
 
 | Asset type | Use |
 |------------|-----|
-| `maxphonesfarm.com-rack-cabinet-*` | Rackmount hero, enterprise deployment |
-| `maxphonesfarm.com-product-box-*` | Phone farm box product pages |
-| `maxphonesfarm.com-service-scenes-*` | Remote control / atmosphere only |
-| `facility/*.png` | About, homepage — real office/workshop proof |
+| `maxphonesfarm.com-product-box-*` | Phone farm box, rackmount placeholder, product cards |
+| `facility/*.png` | About, homepage, services — real office/workshop/warehouse |
+| `maxphonesfarm.com-service-scenes-*` | **Avoid for hero/flagship** — AI-style scenes; use facility photos instead |
+
+## Photos still needed (real shoot)
+
+Priority product photography to replace placeholders and improve B2B credibility:
+
+1. **Rackmount Phone Farm +20** — 2U chassis in a real 19" rack (front + side)
+2. **Motherboard Box** — screenless node array with internal wiring visible
+3. **Internal wiring / USB backplane** — close-up for product detail pages
+4. **Export packing** — foam-lined carton, label, and unit before shipment
+5. **Enterprise Phone Farm Box** — dedicated angle distinct from rackmount if possible
+
+Current mapping note: `custom-cabinet` (Rackmount +20) temporarily shares phone farm box product photos until rackmount rack photos are available.

@@ -61,9 +61,9 @@ export const IMAGES = {
     detail: detail(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
   },
   remoteControl: {
-    card: card(`${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`),
-    hero: hero(`${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`),
-    detail: detail(`${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`),
+    card: "/images/facility/workshop.png",
+    hero: "/images/facility/workshop.png",
+    detail: "/images/facility/workshop.png",
   },
   serviceScene: "/images/facility/workshop.png",
   factory: "/images/facility/workshop.png",

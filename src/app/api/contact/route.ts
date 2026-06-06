@@ -12,6 +12,11 @@ export async function POST(req: NextRequest) {
   if (error) {
     return NextResponse.json({ error }, { status: 400 });
   }
-  await saveContactSubmission(data);
-  return NextResponse.json({ ok: true });
+  try {
+    await saveContactSubmission(data);
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    console.error("[contact] POST failed:", e);
+    return NextResponse.json({ error: "Submit failed" }, { status: 500 });
+  }
 }

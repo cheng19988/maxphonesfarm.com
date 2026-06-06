@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug } from "@/lib/products";
+import { getProductQuoteGuide } from "@/data/product-quote-guides";
 import { BuyButtons, FAQAccordion } from "@/components/commerce";
 import { ContactCTA, JsonLd, StockBadge } from "@/components/shared";
 import { buildMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo";
@@ -40,6 +41,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const delivery = parseJson<string[]>(product.delivery, []);
   const maintenance = parseJson<string[]>(product.maintenance, []);
   const faq = parseJson<{ q: string; a: string }[]>(product.faq, []);
+  const quoteGuide = getProductQuoteGuide(slug);
 
   return (
     <>
@@ -118,6 +120,61 @@ export default async function ProductDetailPage({ params }: Props) {
                   ))}
                 </ul>
               </section>
+
+              {quoteGuide && (
+                <section className="border border-neutral-800 p-6 md:p-8 bg-neutral-950 space-y-8">
+                  <h2 className="text-2xl font-semibold text-white">Before You Request a Quote</h2>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="font-medium text-white mb-3 text-sm uppercase tracking-wide">Suitable for</h3>
+                      <ul className="space-y-2 text-sm text-neutral-400">
+                        {quoteGuide.suitableFor.map((item) => (
+                          <li key={item} className="flex gap-2"><span className="text-green-500 shrink-0">+</span>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-white mb-3 text-sm uppercase tracking-wide">Not suitable for</h3>
+                      <ul className="space-y-2 text-sm text-neutral-400">
+                        {quoteGuide.notSuitableFor.map((item) => (
+                          <li key={item} className="flex gap-2"><span className="text-neutral-600 shrink-0">—</span>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-white mb-3 text-sm uppercase tracking-wide">Required before quote</h3>
+                    <ul className="space-y-2 text-sm text-neutral-400">
+                      {quoteGuide.requiredBeforeQuote.map((item) => (
+                        <li key={item} className="flex gap-2"><span className="text-white shrink-0">•</span>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="text-sm text-neutral-400">
+                    <span className="text-white font-medium">Typical lead time: </span>
+                    {quoteGuide.typicalLeadTime}
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-8 pt-4 border-t border-neutral-800">
+                    <div>
+                      <h3 className="font-medium text-white mb-3 text-sm">Packing &amp; shipping</h3>
+                      <ul className="space-y-1 text-sm text-neutral-500">
+                        {quoteGuide.packingShipping.map((item) => (
+                          <li key={item}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-white mb-3 text-sm">Warranty &amp; spare parts</h3>
+                      <ul className="space-y-1 text-sm text-neutral-500">
+                        {quoteGuide.warrantySpareParts.map((item) => (
+                          <li key={item}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+              )}
+
               <section>
                 <h2 className="text-2xl font-semibold text-white mb-4">Product FAQ</h2>
                 <FAQAccordion items={faq.map((f) => ({ question: f.q, answer: f.a }))} />

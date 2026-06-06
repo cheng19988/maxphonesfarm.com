@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { notifyTelegramInquiry } from "@/lib/telegram-notify";
 
 export type ContactSubmissionInput = {
   name: string;
@@ -9,6 +10,7 @@ export type ContactSubmissionInput = {
   deviceQuantity: string;
   productInterest: string;
   message: string;
+  sourcePage: string;
 };
 
 export function parseContactForm(form: FormData): ContactSubmissionInput {
@@ -21,6 +23,7 @@ export function parseContactForm(form: FormData): ContactSubmissionInput {
     deviceQuantity: String(form.get("deviceQuantity") || "").trim(),
     productInterest: String(form.get("productInterest") || "").trim(),
     message: String(form.get("message") || "").trim(),
+    sourcePage: String(form.get("sourcePage") || "/contact").trim(),
   };
 }
 
@@ -31,17 +34,35 @@ export function validateContactSubmission(data: ContactSubmissionInput): string 
 }
 
 export async function saveContactSubmission(data: ContactSubmissionInput) {
+  const submittedAt = new Date();
+
   await prisma.contactSubmission.create({
     data: {
       name: data.name,
-      country: data.country,
-      whatsapp: data.whatsapp,
+      company: data.company || null,
+      country: data.country || null,
+      whatsapp: data.whatsapp || null,
       phone: "",
       email: data.email || data.whatsapp,
-      deviceQuantity: data.deviceQuantity,
-      productInterest: data.productInterest,
-      budget: data.company ? `Company: ${data.company}` : "",
-      message: data.message,
+      deviceQuantity: data.deviceQuantity || null,
+      productInterest: data.productInterest || null,
+      budget: null,
+      message: data.message || null,
+      sourcePage: data.sourcePage || null,
+      status: "New",
     },
+  });
+
+  await notifyTelegramInquiry({
+    name: data.name,
+    company: data.company,
+    email: data.email,
+    whatsapp: data.whatsapp,
+    productInterest: data.productInterest,
+    deviceQuantity: data.deviceQuantity,
+    country: data.country,
+    message: data.message,
+    sourcePage: data.sourcePage,
+    submittedAt,
   });
 }

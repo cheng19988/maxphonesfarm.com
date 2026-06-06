@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ContactCTA } from "@/components/shared";
 import { buildMetadata } from "@/lib/seo";
 import { IMAGES } from "@/lib/images";
@@ -19,6 +20,16 @@ export default function AboutPage() {
         <p className="text-xl text-neutral-400 mb-8 leading-relaxed">
           {SITE.intro} We are a Guangzhou hardware sourcing and assembly team focused on rackmount phone farm equipment for enterprise device labs — not software resale or cloud phone services.
         </p>
+
+        <div className="border border-neutral-800 p-6 mb-12 text-sm text-neutral-500 leading-relaxed bg-neutral-950">
+          <p className="text-white font-medium mb-3">Delivery workflow</p>
+          <p className="mb-3">
+            After quote confirmation we run device fit check, power/cooling planning, workshop assembly, burn-in test, and export packing from Guangzhou. Optional remote setup support is available after delivery.
+          </p>
+          <Link href="/services" className="text-neutral-300 hover:text-white underline underline-offset-4">
+            View full 7-step process →
+          </Link>
+        </div>
 
         <div className="border border-neutral-800 p-6 mb-12 text-sm text-neutral-500 leading-relaxed bg-neutral-950">
           <p className="text-white font-medium mb-3">What we do</p>

@@ -41,6 +41,11 @@ function ContactFallbackLinks() {
 export default async function ContactPage({ searchParams }: Props) {
   const params = await searchParams;
   const defaultInterest = params.product || params.service || "";
+  const sourcePage = params.product
+    ? `/products/${params.product}`
+    : params.service
+      ? `/services (${params.service})`
+      : "/contact";
   const sent = params.sent === "1";
   const error = params.error;
 
@@ -132,6 +137,7 @@ export default async function ContactPage({ searchParams }: Props) {
         )}
 
         <form action={submitContactInquiry} className="border border-neutral-800 p-6 space-y-4 bg-neutral-950">
+          <input type="hidden" name="sourcePage" value={sourcePage} />
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label htmlFor="contact-name" className="block text-sm text-neutral-500 mb-1">

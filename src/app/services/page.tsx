@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SERVICES } from "@/data/services";
+import { DELIVERY_PROCESS } from "@/data/delivery-process";
 import { ContactCTA } from "@/components/shared";
 import { buildMetadata } from "@/lib/seo";
 
@@ -35,6 +36,25 @@ export default function ServicesPage() {
             </article>
           ))}
         </div>
+
+        <section className="mt-20 pt-16 border-t border-neutral-800">
+          <h2 className="section-title">Assembly, QC &amp; Export Process</h2>
+          <p className="section-subtitle max-w-3xl">
+            What happens after you confirm a quote — from device fit check to export packing. No fabricated certifications or client logos; this is our standard hardware delivery workflow.
+          </p>
+          <ol className="space-y-6 max-w-3xl">
+            {DELIVERY_PROCESS.map((step) => (
+              <li key={step.step} className="flex gap-5 border border-neutral-800 p-5 bg-neutral-950">
+                <span className="text-2xl font-semibold text-neutral-600 shrink-0 w-8">{step.step}</span>
+                <div>
+                  <h3 className="font-medium text-white mb-2">{step.title}</h3>
+                  <p className="text-sm text-neutral-500 leading-relaxed">{step.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
         <div className="mt-16">
           <ContactCTA title="Need a Custom Deployment Plan?" />
         </div>

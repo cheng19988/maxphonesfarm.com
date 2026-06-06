@@ -21,7 +21,27 @@ JWT_SECRET=your-random-secret
 ADMIN_EMAIL=admin@maxphonesfarm.com      # optional
 ADMIN_PASSWORD=change-me-immediately     # optional — CHANGE after first deploy
 TRON_API_KEY=                            # optional — USDT auto-verify inactive without this
+TELEGRAM_BOT_TOKEN=                      # optional — bot token for inquiry notifications
+TELEGRAM_NOTIFY_CHAT_ID=                 # optional — chat/group ID to receive inquiry alerts
 ```
+
+### Telegram inquiry notifications
+
+When a visitor submits the `/contact` form, the inquiry is saved to the database and a Telegram message is sent if both variables are set:
+
+1. Create a bot via [@BotFather](https://t.me/BotFather) → copy `TELEGRAM_BOT_TOKEN`
+2. Add the bot to your sales group or start a chat → get `TELEGRAM_NOTIFY_CHAT_ID` (use [@userinfobot](https://t.me/userinfobot) or Telegram API `getUpdates`)
+3. Add both to Vercel environment variables and redeploy
+
+If either variable is missing, the form still saves successfully — a log line `[telegram] Inquiry notification skipped` appears in server logs.
+
+After schema changes (inquiry `status`, `company`, `sourcePage`), run:
+
+```bash
+npm run db:setup
+```
+
+Or let Vercel build run `scripts/setup-db.mjs` against Neon.
 
 ## Email configuration
 

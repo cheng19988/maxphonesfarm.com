@@ -13,14 +13,14 @@ export const SERVICES = [
     title: "Remote Device Control Setup",
     description:
       "ADB path configuration, screen mirroring, and workstation setup so QA teams manage many Android devices from one desk.",
-    image: IMAGES.remoteControl.hero,
+    image: IMAGES.workshop,
   },
   {
     slug: "group-control-system-configuration",
     title: "Multi-Device Management Setup",
     description:
       "Device grouping, batch task scheduling, and synchronized test runs for QA automation and staging environments.",
-    image: IMAGES.remoteControl.detail,
+    image: IMAGES.workshop,
   },
   {
     slug: "bulk-device-deployment",
