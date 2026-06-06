@@ -2,7 +2,7 @@ export const SITE = {
   name: "Max Phones Farm",
   domain: "maxphonesfarm.com",
   url: "https://maxphonesfarm.com",
-  tagline: "Rackmount Phone Farm Hardware — Guangzhou Factory",
+  tagline: "Rackmount Phone Farm Hardware Supplier",
   intro:
     "Max Phones Farm is a Guangzhou hardware sourcing and assembly team building rackmount phone farm chassis, device lab boxes, and motherboard arrays for app testing, ad verification, multi-account environment management, remote device control, and QA automation workflows.",
   location: "Guangzhou, China",

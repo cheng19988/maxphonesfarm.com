@@ -1,8 +1,8 @@
-import { ContactForm, ContactFallbackLinks } from "@/components/contact-form";
 import { ContactBar } from "@/components/shared";
 import { buildMetadata } from "@/lib/seo";
 import { CONTACT, SITE } from "@/lib/config";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
+import { submitContactInquiry } from "./actions";
 
 export const metadata = buildMetadata({
   title: "Contact — Request a Hardware Quote",
@@ -12,12 +12,37 @@ export const metadata = buildMetadata({
 });
 
 type Props = {
-  searchParams: Promise<{ product?: string; service?: string }>;
+  searchParams: Promise<{ product?: string; service?: string; sent?: string; error?: string }>;
 };
+
+function ContactFallbackLinks() {
+  return (
+    <p className="mt-4 text-sm text-neutral-500">
+      Prefer direct contact?{" "}
+      <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4">
+        WhatsApp
+      </a>
+      {" · "}
+      <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4">
+        Telegram
+      </a>
+      {" · "}
+      <a href={`mailto:${CONTACT.email}`} className="text-white underline underline-offset-4">
+        Email
+      </a>
+      {" · "}
+      <a href={`tel:${CONTACT.phone}`} className="text-white underline underline-offset-4">
+        Phone
+      </a>
+    </p>
+  );
+}
 
 export default async function ContactPage({ searchParams }: Props) {
   const params = await searchParams;
   const defaultInterest = params.product || params.service || "";
+  const sent = params.sent === "1";
+  const error = params.error;
 
   return (
     <div className="section">
@@ -75,7 +100,110 @@ export default async function ContactPage({ searchParams }: Props) {
         </div>
 
         <h2 className="text-lg font-medium text-white mb-4">Send an Inquiry</h2>
-        <ContactForm defaultInterest={defaultInterest} />
+
+        {sent && (
+          <p className="mb-4 text-green-400 text-sm border border-green-900/50 bg-green-950/20 p-4">
+            Thank you. We typically reply within one business day (UTC+8).
+          </p>
+        )}
+
+        {error && (
+          <p className="mb-4 text-red-400 text-sm border border-red-900/50 bg-red-950/20 p-4">
+            {error === "validation"
+              ? "Please provide your name and either email or WhatsApp."
+              : "Could not send the form. Please use "}
+            {error !== "validation" && (
+              <>
+                <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="underline">
+                  WhatsApp
+                </a>
+                ,{" "}
+                <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                  Telegram
+                </a>
+                , or{" "}
+                <a href={`mailto:${CONTACT.email}`} className="underline">
+                  {CONTACT.email}
+                </a>
+                .
+              </>
+            )}
+          </p>
+        )}
+
+        <form action={submitContactInquiry} className="border border-neutral-800 p-6 space-y-4 bg-neutral-950">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="contact-name" className="block text-sm text-neutral-500 mb-1">
+                Name *
+              </label>
+              <input id="contact-name" name="name" required className="input-field" />
+            </div>
+            <div>
+              <label htmlFor="contact-company" className="block text-sm text-neutral-500 mb-1">
+                Company
+              </label>
+              <input id="contact-company" name="company" placeholder="Company or team name" className="input-field" />
+            </div>
+            <div>
+              <label htmlFor="contact-email" className="block text-sm text-neutral-500 mb-1">
+                Email
+              </label>
+              <input id="contact-email" name="email" type="email" className="input-field" />
+            </div>
+            <div>
+              <label htmlFor="contact-whatsapp" className="block text-sm text-neutral-500 mb-1">
+                WhatsApp / Telegram
+              </label>
+              <input id="contact-whatsapp" name="whatsapp" placeholder="WhatsApp or Telegram handle" className="input-field" />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="contact-product" className="block text-sm text-neutral-500 mb-1">
+                Product or Service Interest
+              </label>
+              <input
+                id="contact-product"
+                name="productInterest"
+                defaultValue={defaultInterest}
+                placeholder="e.g. Rackmount Phone Farm +20, remote control setup"
+                className="input-field"
+              />
+            </div>
+            <div>
+              <label htmlFor="contact-quantity" className="block text-sm text-neutral-500 mb-1">
+                Target Quantity
+              </label>
+              <input
+                id="contact-quantity"
+                name="deviceQuantity"
+                placeholder="e.g. 20 units, 3 racks"
+                className="input-field"
+              />
+            </div>
+            <div>
+              <label htmlFor="contact-country" className="block text-sm text-neutral-500 mb-1">
+                Destination Country
+              </label>
+              <input id="contact-country" name="country" placeholder="e.g. United States, Germany" className="input-field" />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="contact-message" className="block text-sm text-neutral-500 mb-1">
+              Message
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows={4}
+              placeholder="Device models, use case (app testing, ad verification, automation workflows), timeline, custom requirements…"
+              className="input-field"
+            />
+          </div>
+          <button type="submit" className="btn-primary w-full">
+            Send Inquiry
+          </button>
+        </form>
+
         <ContactFallbackLinks />
       </div>
     </div>

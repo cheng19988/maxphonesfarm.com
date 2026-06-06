@@ -1,22 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import {
+  parseContactForm,
+  saveContactSubmission,
+  validateContactSubmission,
+} from "@/lib/contact-submit";
 
 export async function POST(req: NextRequest) {
   const form = await req.formData();
-  const data = {
-    name: String(form.get("name") || ""),
-    country: String(form.get("country") || ""),
-    whatsapp: String(form.get("whatsapp") || ""),
-    phone: String(form.get("phone") || ""),
-    email: String(form.get("email") || ""),
-    deviceQuantity: String(form.get("deviceQuantity") || ""),
-    productInterest: String(form.get("productInterest") || ""),
-    budget: String(form.get("budget") || ""),
-    message: String(form.get("message") || ""),
-  };
-  if (!data.name || !data.email) {
-    return NextResponse.json({ error: "Name and email required" }, { status: 400 });
+  const data = parseContactForm(form);
+  const error = validateContactSubmission(data);
+  if (error) {
+    return NextResponse.json({ error }, { status: 400 });
   }
-  await prisma.contactSubmission.create({ data });
+  await saveContactSubmission(data);
   return NextResponse.json({ ok: true });
 }

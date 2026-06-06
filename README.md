@@ -32,6 +32,11 @@ Public contact email is read from `src/lib/config.ts` → `CONTACT.email`.
 - When a domain mailbox is set up, update `CONTACT.email` in config only — all Header, Footer, Contact, FAQ, and Schema will follow automatically
 - Recommended after launch: configure a domain email for stronger B2B trust
 
+## Copy policy
+
+- Do **not** add unverified founding years (e.g. “Since 2017”) to public pages, metadata, or JSON-LD.
+- Use factual positioning instead: Guangzhou factory-direct supplier, export-ready device lab hardware.
+
 ## Setup
 
 ```bash
