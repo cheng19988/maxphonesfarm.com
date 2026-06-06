@@ -1,3 +1,5 @@
+import { CONTACT } from "@/lib/config";
+
 /** B2B FAQ — professional device lab hardware focus */
 export const FAQ_ITEMS = [
   {
@@ -16,6 +18,16 @@ export const FAQ_ITEMS = [
       "Compatibility depends on slot dimensions and USB routing. Our standard systems target Android phones and screenless motherboard nodes. iOS arrays require a separate chassis design. Send your device model list for a fit check before ordering.",
   },
   {
+    question: "Can your hardware support ad verification and campaign QA?",
+    answer:
+      "Yes. Real-device labs are commonly used for mobile ad testing, regional ad preview, landing page verification, and device compatibility checks across physical Android and iOS hardware — not emulators alone.",
+  },
+  {
+    question: "Do you support multi-account environment management?",
+    answer:
+      "Our hardware provides separate physical device slots for account environment management, team-based device assignment, and enterprise operation workflows. Your team controls the application layer and internal access policies.",
+  },
+  {
     question: "What is the MOQ and can I order a sample?",
     answer:
       "MOQ is one unit for standard models so you can evaluate hardware before bulk purchase. Bulk pricing applies from five units. Multi-rack projects are quoted separately with a dedicated project contact.",
@@ -28,12 +40,12 @@ export const FAQ_ITEMS = [
   {
     question: "How is power and cooling handled in a 20-node system?",
     answer:
-      "Each complete system uses a centralized PSU sized for your node count, replacing individual phone chargers. Active fans pull air across slots for continuous app testing or remote device management workloads. We document recommended ambient temperature and filter maintenance.",
+      "Each complete system uses a centralized PSU sized for your node count, replacing individual phone chargers. Active fans pull air across slots for continuous app testing, automation workflows, or remote device management workloads.",
   },
   {
     question: "Do you provide remote control and ADB setup?",
     answer:
-      "Yes. Our engineering team configures ADB paths, screen mirroring, batch APK installation, and device grouping on your control workstation. This is available as a standalone service or bundled with hardware orders.",
+      "Yes. Our engineering team configures ADB paths, screen mirroring, batch APK installation, and device grouping for scripted testing workflows and QA automation on your control workstation.",
   },
   {
     question: "What payment terms do you offer?",
@@ -46,23 +58,13 @@ export const FAQ_ITEMS = [
       "Hardware includes 12 months support for manufacturing defects. We supply spare fan and PSU modules on request. Remote troubleshooting is available via WhatsApp and Telegram during business hours (UTC+8), typically within 24 hours.",
   },
   {
-    question: "Real device lab vs cloud phone — when choose hardware?",
-    answer:
-      "Physical device labs give you genuine sensors, radios, and device identifiers for app testing, QA automation, and remote Android control that must match production conditions. Cloud instances suit light prototyping; hardware labs suit repeatable enterprise QA.",
-  },
-  {
-    question: "Real device lab vs emulator — what is the difference?",
-    answer:
-      "Emulators run Android in software on a PC. A real-device lab uses physical phones or motherboards with actual hardware behavior. For release testing and device management validation, physical hardware is the practical baseline.",
-  },
-  {
     question: "How do I contact your sales team?",
     answer:
-      "WhatsApp (+852 6215 5642), Telegram (@huicheng1998), phone (13059502618), or email (qiuxui646@gmail.com). Include target device count, device models, and destination country for the fastest quote.",
+      `WhatsApp (${CONTACT.whatsapp}), Telegram (${CONTACT.telegram}), phone (${CONTACT.phone}), or email (${CONTACT.email}). Include target device count, device models, and destination country for the fastest quote.`,
   },
 ];
 
 /** Curated subset for homepage */
 export const HOME_FAQ = FAQ_ITEMS.filter((_, i) =>
-  [0, 1, 2, 4, 5, 6, 7, 8].includes(i)
+  [0, 1, 3, 4, 6, 7, 8, 10].includes(i)
 );

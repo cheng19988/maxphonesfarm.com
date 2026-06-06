@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { CONTACT, SITE } from "@/lib/config";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
-import Link from "next/link";
 
 export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
   return (
@@ -47,7 +47,7 @@ export function ContactCTA({
       <ContactBar />
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary">
-          WhatsApp Sales
+          WhatsApp Quote
         </a>
         <Link href="/contact" className="btn-secondary">
           Send Inquiry

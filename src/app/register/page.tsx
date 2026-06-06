@@ -36,9 +36,9 @@ export default function RegisterPage() {
   return (
     <div className="section">
       <div className="container-wide max-w-md">
-        <h1 className="section-title text-center">Register</h1>
+        <h1 className="section-title text-center">Create Account</h1>
         <p className="text-neutral-500 text-sm text-center mb-6">
-          Account registration is not required for quotes. Use the contact form or WhatsApp instead.
+          Optional account for existing customers — new buyers should use the contact form or WhatsApp for quotes.
         </p>
         <form onSubmit={handleSubmit} className="border border-neutral-800 p-6 space-y-4 bg-neutral-950">
           {error && <p className="text-red-400 text-sm">{error}</p>}

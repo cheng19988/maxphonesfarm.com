@@ -41,17 +41,17 @@ export default async function HomePage() {
         <div className="container-wide py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <p className="section-label">{SITE.location} · Factory-Direct · Since {SITE.since}</p>
+              <p className="section-label">{SITE.location} · Factory-Direct · Export-Ready Device Lab Hardware</p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white max-w-xl tracking-tight leading-[1.08] mb-6">
                 Rackmount Phone Farm Hardware for Real-Device Labs
               </h1>
               <p className="text-neutral-400 text-lg max-w-lg mb-8 leading-relaxed">
-                Factory-direct 20-device rackmount systems, phone farm boxes, motherboard arrays, and power/cooling/network integration — plus custom deployment support for enterprise device labs, app testing, and remote Android control.
+                Factory-direct rackmount systems, phone farm boxes, motherboard arrays, and power/cooling/network integration — built for app testing, ad verification, multi-account environment management, remote device control, and QA automation workflows.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="btn-primary">Get Quote</Link>
+                <Link href="/contact" className="btn-primary">Request Quote</Link>
                 <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                  WhatsApp
+                  WhatsApp Quote
                 </a>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default async function HomePage() {
                 <Link href={`/products/${flagship.slug}`} className="btn-secondary">Full Specifications</Link>
                 <Link href={`/contact?product=${flagship.slug}`} className="btn-primary">Request Quote</Link>
                 <a href={whatsappQuoteUrl(flagship.name)} target="_blank" rel="noopener noreferrer" className="btn-outline">
-                  WhatsApp
+                  WhatsApp Quote
                 </a>
               </div>
             </div>
@@ -114,8 +114,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Product models by group */}
-      {grouped.map((group) => (
+      {/* Product models — complete systems & core hardware (accessories on /products) */}
+      {grouped.filter((g) => g.id !== "accessories").map((group) => (
         <section key={group.id} className="section border-b border-neutral-800">
           <div className="container-wide">
             <h2 className="section-title">{group.label}</h2>
@@ -137,6 +137,13 @@ export default async function HomePage() {
           </div>
         </section>
       ))}
+
+      <section className="border-b border-neutral-800 py-12">
+        <div className="container-wide text-center">
+          <p className="text-neutral-500 text-sm mb-4">Power modules, USB backplanes, cooling, network kits, and setup services</p>
+          <Link href="/products" className="btn-outline">View Accessories &amp; Deployment Support</Link>
+        </div>
+      </section>
 
       {/* Why Max Phones Farm */}
       <section className="section border-b border-neutral-800 bg-neutral-950">
@@ -160,6 +167,29 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Rack integration benefits */}
+      <section className="section border-b border-neutral-800 bg-neutral-950">
+        <div className="container-wide grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <p className="section-label">Rack Integration</p>
+            <h2 className="text-2xl font-semibold text-white mb-4">Why Rackmount Instead of Desk Clutter</h2>
+            <p className="text-neutral-500 text-sm leading-relaxed mb-4">
+              A 20-node rackmount chassis consolidates power, cooling, and USB routing into one 2U unit. Labs gain cleaner cable management, predictable thermals, and easier scaling compared to phones on individual chargers.
+            </p>
+            <p className="text-neutral-500 text-sm leading-relaxed">
+              Suitable for enterprise device infrastructure, internal QA labs, and teams running automation workflows or remote device management at scale.
+            </p>
+          </div>
+          <ul className="space-y-3 text-sm text-neutral-400 border border-neutral-800 p-6">
+            <li>Centralized PSU replaces multiple chargers</li>
+            <li>Active cooling for continuous test workloads</li>
+            <li>Per-slot USB paths for ADB and device provisioning</li>
+            <li>19&quot; rack integration for existing lab space</li>
+            <li>Export-ready packing from Guangzhou</li>
+          </ul>
+        </div>
+      </section>
+
       {/* Application scenarios */}
       <section className="section border-b border-neutral-800">
         <div className="container-wide max-w-4xl">
@@ -168,11 +198,11 @@ export default async function HomePage() {
           <ul className="grid sm:grid-cols-2 gap-4">
             {[
               "Mobile app testing lab with rack-scale Android fleet",
-              "Remote device management for QA and staging teams",
-              "QA automation hardware integrated with CI pipelines",
-              "Multi-device Android environment for internal tooling",
-              "Enterprise device infrastructure for release validation",
-              "Custom rackmount phone farm for managed lab providers",
+              "Campaign QA, regional ad preview, and ad display verification",
+              "Account environment management with dedicated device slots per team",
+              "QA automation and scripted testing workflows with batch APK deployment",
+              "Remote device management for staging and release validation",
+              "Enterprise device infrastructure for internal automation labs",
             ].map((item) => (
               <li key={item} className="border border-neutral-800 p-4 text-sm text-neutral-400">
                 {item}

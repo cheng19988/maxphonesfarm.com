@@ -1,32 +1,30 @@
 # Max Phones Farm (maxphonesfarm.com)
 
-> Enterprise-grade real-device phone farm hardware from Guangzhou, China.
+> Factory-direct rackmount phone farm hardware from Guangzhou, China.
 
 ## About
-Max Phones Farm is an enterprise-grade real-device phone farm hardware provider based in Guangzhou, China. We provide rackmount phone farm hardware, phone farm boxes, motherboard boxes, custom cabinets, power systems, cooling systems, network equipment, remote control setup, group control configuration, and large-scale deployment services for enterprise teams and agencies.
+Max Phones Farm is a Guangzhou hardware sourcing and assembly team supplying rackmount phone farm chassis, device lab boxes, motherboard arrays, and deployment accessories for enterprise device labs — app testing, ad verification, account environment management, remote device control, and QA automation workflows.
 
 ## Products
-- Rackmount Phone Farm / Custom Cabinet — Server-style 2U rackmount deployment
-- Enterprise Phone Farm Box — The original 20-node real device box
-- Motherboard Box — Screenless, battery-free node arrays (configuration dependent)
-- Android Phone Farm — Samsung-based enterprise clusters
-- iPhone Phone Farm — iOS device farm hardware
-- Real Device Phone Farm — Turnkey server-style device farms
-- Empty Box / Chassis — Expansion and custom build chassis
-- Power Supply Solution — Centralized PSU / charging infrastructure
-- Cooling Solution — Active thermal management for dense racks
-- Network Equipment — Enterprise connectivity for device farms
-- USB Hub — Industrial USB backplane modules
-- Remote Control Setup — Group control and remote management configuration
+### Complete Systems
+- Rackmount Phone Farm +20 — 2U rackmount, 20-device slots
+- Enterprise Phone Farm Box — Standalone 20-node lab box
+- Server-Style Device Farm — Multi-rack lab deployment packages
 
-## Services
-Enterprise phone farm setup, remote control configuration, group control system configuration, bulk device deployment, custom hardware solutions, enterprise deployment, maintenance and support, sample solutions, overseas delivery.
+### Core Hardware
+- Motherboard Box — Screenless Android node array
+- Android Device Lab Starter — Compact evaluation chassis
+- iPhone Device Lab Array — iOS QA lab hardware
+- Empty Expansion Chassis — Custom build shell
+
+### Accessories & Deployment Support
+- Centralized Power Module, USB Backplane, Active Cooling Module, Lab Network Switch Kit, Remote Control Setup Service
 
 ## Contact
 - Phone: 13059502618
 - Telegram: @huicheng1998
 - WhatsApp: +852 6215 5642
-- Email: qiuxui646@gmail.com
+- Email: configured in src/lib/config.ts (currently qiuxui646@gmail.com)
 - Location: Guangzhou, China
 
 ## Key Pages
@@ -35,4 +33,4 @@ Enterprise phone farm setup, remote control configuration, group control system 
 - Services: https://maxphonesfarm.com/services
 - FAQ: https://maxphonesfarm.com/faq
 - Contact: https://maxphonesfarm.com/contact
-- Blog: https://maxphonesfarm.com/blog
+- Guides: https://maxphonesfarm.com/blog

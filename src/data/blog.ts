@@ -37,7 +37,7 @@ Contact our team with device count and target models for a sizing recommendation
 
 Physical devices deliver genuine radios, sensors, and identifiers. For enterprise QA and device management validation, hardware labs remain the practical baseline.
 
-Max Phones Farm supplies the chassis, power, cooling, and USB layers — assembled in Guangzhou since 2017.`,
+Max Phones Farm supplies the chassis, power, cooling, and USB layers — assembled in Guangzhou.`,
   },
   {
     slug: "phone-farm-setup-guide-2026",

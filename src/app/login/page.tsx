@@ -32,8 +32,8 @@ export default function LoginPage() {
   return (
     <div className="section">
       <div className="container-wide max-w-md">
-        <h1 className="section-title text-center">Staff Login</h1>
-        <p className="text-neutral-500 text-sm text-center mb-6">Internal access only — not required for quotes.</p>
+        <h1 className="section-title text-center">Internal Login</h1>
+        <p className="text-neutral-500 text-sm text-center mb-6">Staff and existing customer access only — not required for quotes.</p>
         <form onSubmit={handleSubmit} className="border border-neutral-800 p-6 space-y-4 bg-neutral-950">
           {error && <p className="text-red-400 text-sm">{error}</p>}
           <div>

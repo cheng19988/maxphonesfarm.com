@@ -6,6 +6,7 @@ import { BuyButtons, FAQAccordion } from "@/components/commerce";
 import { ContactCTA, JsonLd, StockBadge } from "@/components/shared";
 import { buildMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { CONTACT } from "@/lib/config";
+import { whatsappQuoteUrl } from "@/lib/whatsapp";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -66,9 +67,18 @@ export default async function ProductDetailPage({ params }: Props) {
                 <StockBadge stock={product.stock} />
               </div>
               <BuyButtons slug={product.slug} name={product.name} />
-              <div className="mt-8 p-5 border border-neutral-800 text-sm text-neutral-500">
-                <p className="font-medium text-white mb-2">Contact Sales</p>
-                <p>{CONTACT.phone} · WhatsApp · Telegram · {CONTACT.email}</p>
+              <div className="mt-8 p-5 border border-neutral-800 text-sm text-neutral-500 space-y-2">
+                <p className="font-medium text-white">Contact Team</p>
+                <p>
+                  <a href={`tel:${CONTACT.phone}`} className="hover:text-white">{CONTACT.phone}</a>
+                  {" · "}
+                  <a href={whatsappQuoteUrl(product.name)} target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp Quote</a>
+                  {" · "}
+                  <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">Telegram</a>
+                </p>
+                <p>
+                  <a href={`mailto:${CONTACT.email}`} className="hover:text-white">{CONTACT.email}</a>
+                </p>
               </div>
             </div>
           </div>

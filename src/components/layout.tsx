@@ -8,7 +8,7 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800">
       <div className="hidden md:block border-b border-neutral-800">
         <div className="container-wide py-2 flex justify-between items-center text-xs text-neutral-500">
-          <span>{SITE.location} · Phone Farm Hardware Since {SITE.since}</span>
+          <span>{SITE.location} · Factory-Direct Hardware Supplier</span>
           <ContactBar compact />
         </div>
       </div>
@@ -31,10 +31,10 @@ export function Header() {
             rel="noopener noreferrer"
             className="hidden sm:inline-flex btn-secondary text-xs py-2.5 px-5"
           >
-            WhatsApp
+            WhatsApp Quote
           </a>
           <Link href="/contact" className="btn-primary text-xs py-2.5 px-5">
-            Get Quote
+            Request Quote
           </Link>
         </div>
       </div>

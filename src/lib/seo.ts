@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE } from "./config";
+import { SITE, CONTACT } from "./config";
 
 type SEOInput = {
   title: string;
@@ -57,7 +57,6 @@ export function organizationJsonLd() {
     url: SITE.url,
     logo: `${SITE.url}/images/card_800x800/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-card_800x800.webp`,
     description: SITE.description,
-    foundingDate: "2017",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Guangzhou",
@@ -67,7 +66,7 @@ export function organizationJsonLd() {
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+86-13059502618",
-      email: "qiuxui646@gmail.com",
+      email: CONTACT.email,
       contactType: "sales",
       areaServed: "Worldwide",
       availableLanguage: ["English", "Chinese"],

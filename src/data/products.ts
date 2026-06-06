@@ -28,17 +28,20 @@ export const PRODUCT_GROUPS: { id: ProductGroupId; label: string; description: s
   {
     id: "complete-systems",
     label: "Complete Systems",
-    description: "Turn-key rackmount and box systems for device labs — power, cooling, and USB control integrated.",
+    description:
+      "Ready-to-deploy phone farm hardware systems for rack, box, and multi-device lab setups — integrated power, cooling, and USB control.",
   },
   {
     id: "core-hardware",
     label: "Core Hardware",
-    description: "Motherboard arrays, platform-specific clusters, and expansion chassis for custom builds.",
+    description:
+      "Core device infrastructure for Android/iOS testing, account environment management, ad verification labs, and remote device control.",
   },
   {
     id: "accessories",
     label: "Accessories & Deployment Support",
-    description: "Power, cooling, connectivity, and remote control setup for existing or new deployments.",
+    description:
+      "Power, USB, cooling, network, and setup accessories for scaling or customizing a phone farm lab.",
   },
 ];
 
@@ -71,9 +74,10 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     },
     scenarios: [
       "Enterprise app testing lab with rack-scale Android fleet",
+      "Campaign QA and regional ad preview on real devices",
       "Remote device management for QA and staging environments",
       "Multi-device automation hardware for internal tooling teams",
-      "Custom rackmount phone farm for data-center or lab integration",
+      "Custom rackmount phone farm for managed lab providers",
     ],
     accessories: [
       "2U rackmount chassis with 20 slots",
@@ -140,9 +144,9 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
       "Weight": "Approx. 8–12 kg (device dependent)",
     },
     scenarios: [
-      "App testing lab starting a managed Android device pool",
+      "App testing lab with separate account environments per team",
       "QA automation hardware for CI-triggered device runs",
-      "Remote Android device control for distributed teams",
+      "Remote Android device control for distributed engineering teams",
       "Pilot deployment before rackmount scale-up",
     ],
     accessories: [
@@ -180,7 +184,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
   },
   {
     slug: "real-device-phone-farm",
-    name: "Multi-Rack Device Lab System",
+    name: "Server-Style Device Farm",
     group: "complete-systems",
     category: "Complete System",
     shortDesc: "Multi-unit device lab package — several phone farm boxes or rackmount modules with shared power and network planning.",
@@ -349,7 +353,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
   },
   {
     slug: "iphone-phone-farm",
-    name: "iOS Device Lab Array",
+    name: "iPhone Device Lab Array",
     group: "core-hardware",
     category: "Core Hardware",
     shortDesc: "Real iPhone hardware array with centralized charging and USB-C/Lightning hub routing for iOS QA labs.",
