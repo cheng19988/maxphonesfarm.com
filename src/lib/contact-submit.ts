@@ -53,16 +53,20 @@ export async function saveContactSubmission(data: ContactSubmissionInput) {
     },
   });
 
-  await notifyTelegramInquiry({
-    name: data.name,
-    company: data.company,
-    email: data.email,
-    whatsapp: data.whatsapp,
-    productInterest: data.productInterest,
-    deviceQuantity: data.deviceQuantity,
-    country: data.country,
-    message: data.message,
-    sourcePage: data.sourcePage,
-    submittedAt,
-  });
+  try {
+    await notifyTelegramInquiry({
+      name: data.name,
+      company: data.company,
+      email: data.email,
+      whatsapp: data.whatsapp,
+      productInterest: data.productInterest,
+      deviceQuantity: data.deviceQuantity,
+      country: data.country,
+      message: data.message,
+      sourcePage: data.sourcePage,
+      submittedAt,
+    });
+  } catch (error) {
+    console.error("[telegram] notify failed after DB save:", error);
+  }
 }
