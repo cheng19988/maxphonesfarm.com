@@ -1,8 +1,11 @@
 import "dotenv/config";
 import bcrypt from "bcryptjs";
+import { randomBytes } from "node:crypto";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client.js";
 import { createPgPool } from "../src/lib/pg-pool.js";
+
+const LEGACY_ADMIN_EMAIL = "admin@maxphonesfarm.com";
 
 async function main() {
   const email = process.env.ADMIN_EMAIL?.trim();
@@ -35,6 +38,18 @@ async function main() {
       create: { email, passwordHash, role: "admin", name: "Admin" },
     });
     console.log(`[admin:reset] Admin password updated for ${user.email}`);
+
+    if (email.toLowerCase() !== LEGACY_ADMIN_EMAIL) {
+      const legacy = await prisma.user.findUnique({ where: { email: LEGACY_ADMIN_EMAIL } });
+      if (legacy) {
+        const disabledHash = await bcrypt.hash(randomBytes(32).toString("hex"), 12);
+        await prisma.user.update({
+          where: { email: LEGACY_ADMIN_EMAIL },
+          data: { passwordHash: disabledHash, role: "user" },
+        });
+        console.log(`[admin:reset] Legacy default admin disabled (${LEGACY_ADMIN_EMAIL})`);
+      }
+    }
   } finally {
     await prisma.$disconnect();
     await pool.end();
