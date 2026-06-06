@@ -10,6 +10,9 @@
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "db:setup": "prisma db push && tsx prisma/seed.ts",
+    "admin:reset": "prisma generate && tsx scripts/reset-admin.ts",
+    "admin:cleanup-test-inquiries": "node scripts/cleanup-test-inquiries.mjs",
+    "check:env": "node scripts/check-env.mjs",
     "assets:sync": "node scripts/sync-assets.mjs",
     "postinstall": "prisma generate"
   },

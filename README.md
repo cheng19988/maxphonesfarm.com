@@ -18,11 +18,11 @@ Legacy `/api/orders`, USDT payment stubs, Login/Register, and `/admin` remain in
 ```env
 DATABASE_URL=postgresql://...@...neon.tech/...?sslmode=require
 JWT_SECRET=your-random-secret
-ADMIN_EMAIL=admin@maxphonesfarm.com      # optional
-ADMIN_PASSWORD=change-me-immediately     # optional — CHANGE after first deploy
+ADMIN_EMAIL=admin@maxphonesfarm.com      # required for npm run admin:reset
+ADMIN_PASSWORD=change-me-immediately     # min 12 chars — set before production use
+TELEGRAM_BOT_TOKEN=                       # optional — inquiry notifications
+TELEGRAM_NOTIFY_CHAT_ID=                # optional — sales group chat ID (alias: TELEGRAM_NOTIFY_CHAT)
 TRON_API_KEY=                            # optional — USDT auto-verify inactive without this
-TELEGRAM_BOT_TOKEN=                      # optional — bot token for inquiry notifications
-TELEGRAM_NOTIFY_CHAT_ID=                 # optional — chat/group ID to receive inquiry alerts
 ```
 
 ### Telegram inquiry notifications
@@ -76,8 +76,31 @@ Build on Vercel runs `scripts/setup-db.mjs` when `DATABASE_URL` is set.
 ## Admin
 
 - URL: `/admin` (not linked from public header/footer)
-- Default seed credentials: `admin@maxphonesfarm.com` / `admin123456`
-- **Change the admin password immediately after first deploy**
+- First deploy only: seed may create `admin@maxphonesfarm.com` with default password if no admin exists
+- **Rotate password before production use** — see below
+
+### Production admin password rotation
+
+1. Set `ADMIN_EMAIL` and `ADMIN_PASSWORD` (minimum 12 characters) in **Vercel → Production**.
+2. Ensure `DATABASE_URL` points at production Neon.
+3. Run:
+
+```bash
+npm run admin:reset
+```
+
+4. Log in at `/login` with the new credentials; open `/admin`.
+5. Confirm legacy password `admin123456` **no longer works**.
+
+Re-deploying or `npm run db:setup` will **not** overwrite an existing admin password (`prisma/seed.ts` skips admin when user already exists).
+
+### Test inquiry cleanup
+
+```bash
+npm run admin:cleanup-test-inquiries
+```
+
+Deletes only rows where `email = test@example.com` and `name` contains `Test`.
 
 ## Assets
 

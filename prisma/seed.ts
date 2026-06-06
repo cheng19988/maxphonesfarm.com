@@ -58,18 +58,30 @@ async function main() {
     });
   }
 
-  await prisma.user.upsert({
-    where: { email: "admin@maxphonesfarm.com" },
-    update: {},
-    create: {
-      email: "admin@maxphonesfarm.com",
-      name: "Admin",
-      role: "admin",
-      passwordHash: await bcrypt.hash("admin123456", 12),
-    },
-  });
+  const adminEmail = process.env.ADMIN_EMAIL?.trim() || "admin@maxphonesfarm.com";
+  const existingAdmin = await prisma.user.findUnique({ where: { email: adminEmail } });
 
-  console.log("Seeded products and admin user");
+  if (!existingAdmin) {
+    const adminPassword = process.env.ADMIN_PASSWORD?.trim() || "admin123456";
+    if (!process.env.ADMIN_PASSWORD) {
+      console.warn(
+        "[seed] No ADMIN_PASSWORD set — creating admin with default password. Run npm run admin:reset in production."
+      );
+    }
+    await prisma.user.create({
+      data: {
+        email: adminEmail,
+        name: "Admin",
+        role: "admin",
+        passwordHash: await bcrypt.hash(adminPassword, 12),
+      },
+    });
+    console.log(`[seed] Created admin user: ${adminEmail}`);
+  } else {
+    console.log(`[seed] Admin user exists (${adminEmail}) — password unchanged`);
+  }
+
+  console.log("Seeded products");
 }
 
 main()

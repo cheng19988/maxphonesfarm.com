@@ -22,10 +22,13 @@ function line(label: string, value?: string | null) {
 
 export async function notifyTelegramInquiry(data: InquiryNotification): Promise<boolean> {
   const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
-  const chatId = process.env.TELEGRAM_NOTIFY_CHAT_ID?.trim();
+  const chatId =
+    process.env.TELEGRAM_NOTIFY_CHAT_ID?.trim() || process.env.TELEGRAM_NOTIFY_CHAT?.trim();
 
   if (!token || !chatId) {
-    console.info("[telegram] Inquiry notification skipped — TELEGRAM_BOT_TOKEN or TELEGRAM_NOTIFY_CHAT_ID not configured");
+    console.info(
+      "[telegram] Inquiry notification skipped — TELEGRAM_BOT_TOKEN or TELEGRAM_NOTIFY_CHAT_ID not configured"
+    );
     return false;
   }
 
@@ -57,14 +60,22 @@ export async function notifyTelegramInquiry(data: InquiryNotification): Promise<
     });
 
     if (!res.ok) {
-      const body = await res.text();
-      console.error("[telegram] sendMessage failed:", res.status, body);
+      let detail = "unknown";
+      try {
+        const json = await res.json();
+        detail = String(json.description || json.error_code || res.status);
+      } catch {
+        detail = String(res.status);
+      }
+      console.error("[telegram] sendMessage failed:", detail);
       return false;
     }
 
+    console.info("[telegram] Inquiry notification sent");
     return true;
   } catch (error) {
-    console.error("[telegram] sendMessage error:", error);
+    const msg = error instanceof Error ? error.message : "network error";
+    console.error("[telegram] sendMessage error:", msg);
     return false;
   }
 }
