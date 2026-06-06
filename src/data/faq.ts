@@ -1,97 +1,68 @@
+/** B2B FAQ — professional device lab hardware focus */
 export const FAQ_ITEMS = [
   {
-    question: "What can I do with a Max Phones Farm deployment?",
+    question: "What hardware does Max Phones Farm supply?",
     answer:
-      "Anything legitimate that real phones can do at scale — app testing, QA automation, multi-device workflows, ad verification, and enterprise automation. We provide the rackmount hardware and remote control setup; your team defines the application layer.",
+      "We supply rackmount phone farm chassis, standalone phone farm boxes, motherboard arrays, power and cooling modules, USB backplanes, and lab network kits. We also offer remote control setup and custom multi-rack deployment planning from our Guangzhou assembly team.",
   },
   {
-    question: "Is there a setup tutorial or documentation?",
+    question: "Can you customize node count, rack size, or device layout?",
     answer:
-      "Yes. We provide deployment documentation with every order and offer Remote Control Setup services. Contact us via WhatsApp or Telegram for hands-on configuration support from our Guangzhou team.",
+      "Yes. Share your target Android or motherboard model, slot count, and rack constraints. We confirm fit, power draw, and cooling before production. Custom layouts typically ship in 7–15 business days after specification approval.",
   },
   {
-    question: "What countries do you ship to?",
+    question: "Which devices are compatible with your chassis?",
     answer:
-      "We manufacture in Guangzhou, China and ship worldwide. Express air freight and sea freight are available for enterprise bulk orders. Enter your country in the contact form or message us on WhatsApp to confirm shipping options and lead time.",
+      "Compatibility depends on slot dimensions and USB routing. Our standard systems target Android phones and screenless motherboard nodes. iOS arrays require a separate chassis design. Send your device model list for a fit check before ordering.",
   },
   {
-    question: "What is a phone farm?",
+    question: "What is the MOQ and can I order a sample?",
     answer:
-      "A phone farm is a collection of real smartphones organized, powered, and controlled together for scaled mobile operations — such as app testing, multi-account management, ad verification, and automation workflows. Max Phones Farm builds the industrial hardware that makes phone farms stable and scalable.",
+      "MOQ is one unit for standard models so you can evaluate hardware before bulk purchase. Bulk pricing applies from five units. Multi-rack projects are quoted separately with a dedicated project contact.",
   },
   {
-    question: "What is a phone farm box?",
+    question: "How long is delivery and do you ship internationally?",
     answer:
-      "A phone farm box is an industrial chassis that houses multiple real smartphones (typically 20 nodes) with centralized power supply, active cooling, and USB connectivity. It replaces individual chargers and scattered cables with a single managed unit ready for 24/7 operation.",
+      "In-stock units ship within 3–5 business days from Guangzhou. Custom builds take 7–15 business days. We ship worldwide via express courier or sea freight with commercial invoices and export packing lists.",
   },
   {
-    question: "What is a motherboard box?",
+    question: "How is power and cooling handled in a 20-node system?",
     answer:
-      "A motherboard box uses smartphone motherboards without screens or batteries to reduce cost per node. Each node runs the official or customized Android system with USB debugging enabled. It is ideal for high-density automation where display output is not required.",
+      "Each complete system uses a centralized PSU sized for your node count, replacing individual phone chargers. Active fans pull air across slots for continuous app testing or remote device management workloads. We document recommended ambient temperature and filter maintenance.",
   },
   {
-    question: "Real device phone farm vs cloud phone — what's the difference?",
+    question: "Do you provide remote control and ADB setup?",
     answer:
-      "Real device phone farms use physical smartphones with genuine hardware fingerprints, GPS, sensors, and carrier profiles. Cloud phones are virtualized instances on shared servers. Real devices offer higher trust scores for platform compliance, better sensor accuracy, and no shared-IP detection risks.",
+      "Yes. Our engineering team configures ADB paths, screen mirroring, batch APK installation, and device grouping on your control workstation. This is available as a standalone service or bundled with hardware orders.",
   },
   {
-    question: "Real device phone farm vs emulator — what's the difference?",
+    question: "What payment terms do you offer?",
     answer:
-      "Emulators simulate Android/iOS in software on a PC. Real device farms use actual hardware with genuine sensors and device identifiers. For QA and production automation that must match end-user conditions, physical devices are the reliable baseline.",
+      "Sample and standard orders can be settled via bank transfer (T/T), Wise, or PayPal. Bulk and enterprise projects receive a pro-forma invoice with an agreed payment schedule. Contact sales for a quote.",
   },
   {
-    question: "Android phone farm vs iPhone phone farm?",
+    question: "What after-sales support is included?",
     answer:
-      "Android farms use ADB, USB hubs, and open automation tools with lower per-node cost. iPhone farms require macOS control stations, Lightning/USB-C hubs, and iOS-specific management tools. Max Phones Farm supplies hardware for both platforms from our Guangzhou factory.",
+      "Hardware includes 12 months support for manufacturing defects. We supply spare fan and PSU modules on request. Remote troubleshooting is available via WhatsApp and Telegram during business hours (UTC+8), typically within 24 hours.",
   },
   {
-    question: "How many devices can one box support?",
+    question: "Real device lab vs cloud phone — when choose hardware?",
     answer:
-      "Standard Max Phones Farm phone farm boxes support 20 nodes per 2U chassis. Custom configurations can scale to 40, 60, or 100+ devices using rackmount cabinets and modular expansion units.",
+      "Physical device labs give you genuine sensors, radios, and device identifiers for app testing, QA automation, and remote Android control that must match production conditions. Cloud instances suit light prototyping; hardware labs suit repeatable enterprise QA.",
   },
   {
-    question: "Can you customize hardware?",
+    question: "Real device lab vs emulator — what is the difference?",
     answer:
-      "Yes. We offer custom chassis dimensions, node counts, power configurations, cooling layouts, and rackmount integrations. Share your device model, quantity, and workflow requirements for a tailored quote.",
+      "Emulators run Android in software on a PC. A real-device lab uses physical phones or motherboards with actual hardware behavior. For release testing and device management validation, physical hardware is the practical baseline.",
   },
   {
-    question: "Do you provide remote control software?",
+    question: "How do I contact your sales team?",
     answer:
-      "We provide remote control software support including screen mirroring, batch APK installation, ADB command shortcuts, and device grouping. Software is compatible with our hardware out of the box.",
-  },
-  {
-    question: "Do you support group control system configuration?",
-    answer:
-      "Yes. Our team configures group control systems for batch device management — including task scheduling, synchronized actions, and multi-group organization for agency and enterprise workflows.",
-  },
-  {
-    question: "Do you provide export documentation?",
-    answer:
-      "Yes. We supply commercial invoices, packing lists, and customs documentation for international shipments. Share your import requirements when requesting a quote so we can prepare the correct paperwork.",
-  },
-  {
-    question: "What is the MOQ (Minimum Order Quantity)?",
-    answer:
-      "Standard products MOQ is 1 unit for sample evaluation. Bulk pricing applies from 5 units. Enterprise rack deployments typically start at 10+ boxes with dedicated project management.",
-  },
-  {
-    question: "Can I buy a sample?",
-    answer:
-      "Yes. We encourage sample orders so you can evaluate hardware quality, cooling performance, and software compatibility before bulk purchase. Sample units ship within 3–5 business days.",
-  },
-  {
-    question: "How long is delivery time?",
-    answer:
-      "In-stock units ship within 3–5 business days. Custom configurations take 7–15 business days for production. Express international delivery adds 3–7 days; sea freight 15–30 days.",
-  },
-  {
-    question: "How to pay?",
-    answer:
-      "Payment terms depend on order size. Sample and standard orders can be settled via bank transfer (T/T), Wise, or PayPal. For bulk enterprise orders we issue a pro-forma invoice with agreed payment schedule. Contact sales for details.",
-  },
-  {
-    question: "How to contact sales?",
-    answer:
-      "Reach us via WhatsApp (+852 6215 5642), Telegram (@huicheng1998), phone (13059502618), or email (qiuxui646@gmail.com). We respond within 24 hours on business days.",
+      "WhatsApp (+852 6215 5642), Telegram (@huicheng1998), phone (13059502618), or email (qiuxui646@gmail.com). Include target device count, device models, and destination country for the fastest quote.",
   },
 ];
+
+/** Curated subset for homepage */
+export const HOME_FAQ = FAQ_ITEMS.filter((_, i) =>
+  [0, 1, 2, 4, 5, 6, 7, 8].includes(i)
+);

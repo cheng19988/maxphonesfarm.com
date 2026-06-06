@@ -56,9 +56,9 @@ export const IMAGES = {
     detail: detail(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
   },
   customCabinet: {
-    card: card(`${P}-rack-cabinet-modernlab-serverworkbench-a0099`),
-    hero: hero(`${P}-rack-cabinet-modernlab-serverworkbench-a0099`),
-    detail: detail(`${P}-rack-cabinet-modernlab-serverworkbench-a0099`),
+    card: card(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
+    hero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
+    detail: detail(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
   },
   remoteControl: {
     card: card(`${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`),

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTACT, NAV, SITE } from "@/lib/config";
+import { whatsappQuoteUrl } from "@/lib/whatsapp";
 import { ContactBar } from "./shared";
 
 export function Header() {
@@ -24,9 +25,14 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <Link href="/products" className="hidden sm:inline-flex btn-secondary text-xs py-2.5 px-5">
-            Products
-          </Link>
+          <a
+            href={whatsappQuoteUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex btn-secondary text-xs py-2.5 px-5"
+          >
+            WhatsApp
+          </a>
           <Link href="/contact" className="btn-primary text-xs py-2.5 px-5">
             Get Quote
           </Link>
@@ -51,6 +57,10 @@ export function Footer() {
           <div className="font-semibold text-white text-lg mb-3">{SITE.name}</div>
           <p className="text-neutral-500 text-sm mb-6 max-w-md leading-relaxed">{SITE.description}</p>
           <ContactBar />
+          <p className="text-neutral-600 text-xs mt-4 max-w-md">
+            Guangzhou hardware sourcing and assembly team · Custom rack/cabinet configuration · Export packing ·
+            Response usually within 24 hours on business days (UTC+8).
+          </p>
         </div>
         <div>
           <h3 className="text-xs uppercase tracking-[0.15em] text-neutral-500 mb-4">Products</h3>

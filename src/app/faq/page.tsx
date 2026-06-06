@@ -4,9 +4,9 @@ import { FAQ_ITEMS } from "@/data/faq";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Phone Farm FAQ — Hardware, Shipping, Payment & Support",
+  title: "Device Lab Hardware FAQ",
   description:
-    "Answers about phone farm boxes, motherboard boxes, real device vs cloud, customization, MOQ, samples, delivery, USDT payment, and contacting sales.",
+    "Answers about rackmount phone farm hardware, customization, delivery, power, cooling, remote control setup, and contacting our Guangzhou team.",
   path: "/faq",
 });
 
@@ -16,9 +16,9 @@ export default function FAQPage() {
       <JsonLd data={faqJsonLd(FAQ_ITEMS)} />
       <div className="section">
         <div className="container-wide max-w-3xl">
-          <h1 className="section-title">Frequently Asked Questions</h1>
+          <h1 className="section-title">FAQ</h1>
           <p className="section-subtitle">
-            Everything you need to know about Max Phones Farm phone farm hardware, ordering, shipping, and support.
+            Hardware, delivery, and support questions for enterprise device lab buyers.
           </p>
           <FAQAccordion items={FAQ_ITEMS} />
           <div className="mt-16">

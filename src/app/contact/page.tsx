@@ -22,27 +22,27 @@ function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm text-neutral-500 mb-1">Name *</label>
-          <input name="name" required className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
+          <input name="name" required className="input-field" />
         </div>
         <div>
           <label className="block text-sm text-neutral-500 mb-1">Country</label>
-          <input name="country" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
+          <input name="country" className="input-field" />
         </div>
         <div>
           <label className="block text-sm text-neutral-500 mb-1">WhatsApp / Telegram</label>
-          <input name="whatsapp" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
+          <input name="whatsapp" className="input-field" />
         </div>
         <div>
           <label className="block text-sm text-neutral-500 mb-1">Phone</label>
-          <input name="phone" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
+          <input name="phone" className="input-field" />
         </div>
         <div>
           <label className="block text-sm text-neutral-500 mb-1">Email *</label>
-          <input name="email" type="email" required className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
+          <input name="email" type="email" required className="input-field" />
         </div>
         <div>
           <label className="block text-sm text-neutral-500 mb-1">Device Quantity</label>
-          <input name="deviceQuantity" placeholder="e.g. 20, 100, custom rack" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
+          <input name="deviceQuantity" placeholder="e.g. 20, 100, custom rack" className="input-field" />
         </div>
         <div className="sm:col-span-2">
           <label className="block text-sm text-neutral-500 mb-1">Product or Service Interest</label>
@@ -50,17 +50,17 @@ function ContactForm() {
             name="productInterest"
             defaultValue={searchParams.get("product") || searchParams.get("service") || ""}
             placeholder="e.g. Rackmount Phone Farm +20, remote control setup"
-            className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white"
+            className="input-field"
           />
         </div>
         <div className="sm:col-span-2">
           <label className="block text-sm text-neutral-500 mb-1">Budget (optional)</label>
-          <input name="budget" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
+          <input name="budget" className="input-field" />
         </div>
       </div>
       <div>
         <label className="block text-sm text-neutral-500 mb-1">Message</label>
-        <textarea name="message" rows={4} placeholder="Device models, timeline, shipping country, custom requirements…" className="w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white" />
+        <textarea name="message" rows={4} placeholder="Device models, timeline, shipping country, custom requirements…" className="input-field" />
       </div>
       <button type="submit" disabled={status === "loading"} className="btn-primary w-full">
         {status === "loading" ? "Sending…" : "Send Inquiry"}

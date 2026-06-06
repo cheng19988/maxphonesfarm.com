@@ -4,11 +4,11 @@ export const SITE = {
   url: "https://maxphonesfarm.com",
   tagline: "Rackmount Phone Farm Hardware — Guangzhou Factory",
   intro:
-    "Max Phones Farm designs and builds real-device phone farm chassis, 2U rackmount cabinets, and deployment infrastructure for QA teams, mobile operators, and enterprise automation workflows.",
+    "Max Phones Farm designs and builds rackmount phone farm chassis, standalone device lab boxes, and motherboard arrays for enterprise app testing, remote device management, and QA automation hardware.",
   location: "Guangzhou, China",
   since: 2017,
   description:
-    "Max Phones Farm — Rackmount phone farm hardware built in Guangzhou since 2017. Phone farm boxes, motherboard arrays, custom cabinets, power, cooling, and remote control setup for large-scale real-device deployment.",
+    "Guangzhou factory-direct rackmount phone farm hardware — device lab boxes, motherboard arrays, power/cooling modules, and custom deployment support for enterprise QA teams.",
 } as const;
 
 export const CONTACT = {

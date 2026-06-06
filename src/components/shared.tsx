@@ -1,4 +1,6 @@
 import { CONTACT, SITE } from "@/lib/config";
+import { whatsappQuoteUrl } from "@/lib/whatsapp";
+import Link from "next/link";
 
 export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
   return (
@@ -28,21 +30,28 @@ export function ContactBar({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function ContactCTA({ title = "Enterprise Inquiry" }: { title?: string }) {
+export function ContactCTA({
+  title = "Enterprise Inquiry",
+  subtitle,
+}: {
+  title?: string;
+  subtitle?: string;
+}) {
   return (
     <section className="border border-neutral-800 p-10 md:p-16 text-center bg-neutral-950">
       <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3 tracking-tight">{title}</h2>
       <p className="text-neutral-500 mb-8 max-w-xl mx-auto text-sm leading-relaxed">
-        Factory-direct from {SITE.location}. Enterprise quotes, bulk delivery, and custom cabinet deployment — typically within 24 hours.
+        {subtitle ??
+          `Factory-direct from ${SITE.location}. Custom quotes and bulk delivery — typically within 24 hours on business days.`}
       </p>
       <ContactBar />
       <div className="mt-8 flex flex-wrap justify-center gap-3">
-        <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+        <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary">
           WhatsApp Sales
         </a>
-        <a href="/contact" className="btn-secondary">
-          Send Enterprise Inquiry
-        </a>
+        <Link href="/contact" className="btn-secondary">
+          Send Inquiry
+        </Link>
       </div>
     </section>
   );

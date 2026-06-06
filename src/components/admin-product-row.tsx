@@ -28,16 +28,16 @@ export function AdminProductRow({
   }
 
   return (
-    <tr className="border-b border-slate-800">
-      <td className="py-3 text-white">{name}</td>
-      <td className="py-3">
-        <input value={price} onChange={(e) => setPrice(e.target.value)} className="w-20 bg-slate-800 border border-slate-700 rounded px-2 py-1 text-sm text-white" />
+    <tr className="border-b border-neutral-800">
+      <td className="py-3 px-4 text-white">{name}</td>
+      <td className="py-3 px-4">
+        <input value={price} onChange={(e) => setPrice(e.target.value)} className="input-field w-24 text-sm py-1" />
       </td>
-      <td className="py-3">
-        <input value={qty} onChange={(e) => setQty(e.target.value)} className="w-16 bg-slate-800 border border-slate-700 rounded px-2 py-1 text-sm text-white" />
+      <td className="py-3 px-4">
+        <input value={qty} onChange={(e) => setQty(e.target.value)} className="input-field w-20 text-sm py-1" />
       </td>
-      <td className="py-3">
-        <button type="button" onClick={save} className="text-cyan-400 text-xs hover:text-cyan-300">
+      <td className="py-3 px-4">
+        <button type="button" onClick={save} className="text-neutral-400 text-xs hover:text-white underline underline-offset-4">
           {saved ? "Saved" : "Save"}
         </button>
       </td>

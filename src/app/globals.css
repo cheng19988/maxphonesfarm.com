@@ -88,3 +88,16 @@ body {
 .prose-content ul {
   @apply list-disc list-inside text-neutral-400 space-y-1 mb-4;
 }
+
+.input-field {
+  @apply w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white placeholder:text-neutral-600 focus:border-neutral-500 focus:outline-none;
+}
+
+.table-neutral thead tr {
+  @apply border-b border-neutral-800 text-neutral-500;
+}
+
+.table-neutral th,
+.table-neutral td {
+  @apply py-2 px-4 text-left;
+}

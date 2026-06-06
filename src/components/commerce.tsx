@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CONTACT } from "@/lib/config";
+import { whatsappQuoteUrl } from "@/lib/whatsapp";
 import { StockBadge } from "./shared";
 
 type ProductCardProps = {
@@ -37,6 +37,14 @@ export function ProductCard({ slug, name, shortDesc, priceUsd, stock, imageCard,
           <Link href={`/products/${slug}`} className="btn-secondary text-center text-xs py-2.5">View Details</Link>
           <Link href={`/contact?product=${slug}`} className="btn-primary text-center text-xs py-2.5">Get Quote</Link>
         </div>
+        <a
+          href={whatsappQuoteUrl(name)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 text-center text-xs text-neutral-500 hover:text-white underline underline-offset-4"
+        >
+          WhatsApp this model
+        </a>
       </div>
     </article>
   );
@@ -58,13 +66,13 @@ export function FAQAccordion({ items }: { items: { question: string; answer: str
   );
 }
 
-export function BuyButtons({ slug }: { slug: string; stock?: number }) {
+export function BuyButtons({ slug, name }: { slug: string; name: string; stock?: number }) {
   return (
     <div className="flex flex-wrap gap-3">
       <Link href={`/contact?product=${slug}`} className="btn-primary">
-        Request Quote
+        Request a Quote for This Model
       </Link>
-      <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+      <a href={whatsappQuoteUrl(name)} target="_blank" rel="noopener noreferrer" className="btn-secondary">
         WhatsApp Sales
       </a>
       <Link href="/contact" className="btn-outline">

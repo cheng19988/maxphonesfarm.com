@@ -1,121 +1,119 @@
 export const BLOG_POSTS = [
   {
     slug: "how-to-choose-phone-farm-box",
-    title: "How to Choose a Phone Farm Box: CPU, Cooling, and Scalability",
-    category: "Hardware & Selection",
+    title: "How to Choose Phone Farm Hardware for a Device Lab",
+    category: "Hardware Selection",
     date: "2026-03-27",
     excerpt:
-      "When building a phone farm, the box matters more than individual phones. Learn how CPU generation, cooling design, and expansion capacity affect your long-term ROI.",
-    content: `When I first got into phone farming, I piled old phones on a desk and plugged them into a computer. Within a week, cables were everywhere, phones overheated, and two devices failed.
+      "CPU generation, cooling design, and expansion path — what lab managers should evaluate before buying a 20-node chassis.",
+    content: `A device lab outgrows desk setups quickly: cable clutter, uneven cooling, and unreliable USB paths slow QA teams down. A factory-built phone farm box addresses power, airflow, and data routing in one chassis.
 
-The turning point was switching to a factory-built phone farm box with centralized power and active cooling. Here is what actually matters when choosing hardware:
+**1. Workload and chipset generation**
+Match device SoC to your app testing profile. Lighter APK suites run on mid-tier chipsets; heavy UI automation or high-resolution mirroring needs newer Snapdragon tiers with adequate thermal headroom.
 
-**1. Chipset generation determines workload capacity**
-Snapdragon 835/845 boxes handle social media automation well. Snapdragon 855+ and newer support heavier multi-app workloads and higher-resolution screen mirroring.
-
-**2. Cooling is not optional**
-Passive cooling fails above 15–20 devices. Look for 4+ fan active airflow with metal chassis heat dissipation. Our Guangzhou factory tests every unit with 72-hour burn-in.
+**2. Cooling is structural, not optional**
+Passive cooling rarely sustains 15–20 nodes under continuous load. Specify active fan arrays and metal chassis heat paths. Our Guangzhou team burn-in tests complete systems before export.
 
 **3. Scalability path**
-Start with a 20-node 2U box, then expand with rackmount cabinets. Ensure your vendor supports modular expansion — not one-off custom builds.
+Many labs start with a standalone 20-node box, then move to 2U rackmount modules. Confirm your vendor supports modular expansion with consistent USB topology.
 
 **4. Software compatibility**
-Verify ADB access, OTG support, and group control software compatibility before purchase. Max Phones Farm boxes ship with management software pre-configured.
+Verify ADB access, OTG behavior, and your device management toolchain before purchase. We document recommended host PC specs and USB controller layouts.
 
-Contact our sales team for a sizing consultation based on your device count and workflow.`,
+Contact our team with device count and target models for a sizing recommendation.`,
   },
   {
     slug: "real-device-vs-cloud-phone",
-    title: "Real Device Phone Farm vs Cloud Phone: Which Should You Choose?",
-    category: "Applications & Use Cases",
+    title: "Real-Device Lab vs Cloud Phone: A Hardware Perspective",
+    category: "Lab Architecture",
     date: "2026-02-12",
     excerpt:
-      "Cloud phones promise convenience, but real device farms win on trust scores, sensor accuracy, and platform compliance. Here is an honest comparison.",
-    content: `Cloud phone services rent virtual Android instances on shared infrastructure. Real device phone farms use physical hardware in your control or ours.
+      "When physical device labs justify the hardware investment compared to cloud-hosted Android instances.",
+    content: `Cloud phone services provide virtual Android instances on shared infrastructure. Real-device labs use physical hardware you control or host with a supplier.
 
-**When cloud phones work:** Quick prototyping, light app testing, temporary campaigns with low account value.
+**Cloud fits:** Early prototyping, short-lived experiments, teams without hardware ops capacity.
 
-**When real devices win:** Multi-account social media, ad verification, e-commerce operations, anything where platform trust scores and device fingerprints matter.
+**Physical labs fit:** App release testing, sensor-dependent QA, remote Android device control that must mirror production hardware, and environments requiring isolated lab networks.
 
-Real devices provide genuine IMEI, sensor data, GPS, and carrier profiles. Platforms increasingly detect shared cloud infrastructure patterns.
+Physical devices deliver genuine radios, sensors, and identifiers. For enterprise QA and device management validation, hardware labs remain the practical baseline.
 
-Max Phones Farm Phone Farm builds the hardware layer — factory-direct from Guangzhou with 8+ years of deployment experience since 2017.`,
+Max Phones Farm supplies the chassis, power, cooling, and USB layers — assembled in Guangzhou since 2017.`,
   },
   {
     slug: "phone-farm-setup-guide-2026",
-    title: "Phone Farm Setup Guide 2026: From Zero to Production",
-    category: "Setup & Tutorials",
+    title: "Device Lab Setup Guide: From Unboxing to First Test Run",
+    category: "Setup",
     date: "2026-01-20",
     excerpt:
-      "Step-by-step guide to deploying your first phone farm — hardware unboxing, USB hub wiring, network setup, software installation, and first automation test.",
-    content: `This guide walks through deploying a Max Phones Farm phone farm box from unboxing to first automated task.
+      "Hardware unboxing, power and network planning, USB routing, and first QA automation smoke test.",
+    content: `This guide outlines a standard Max Phones Farm box handover for internal QA teams.
 
 **Step 1: Unbox and inspect**
-Verify 20 device slots, power cable, USB cables, and cooling fans. Run visual QC on each node.
+Verify slot count, PSU label, fan operation, and USB harness seating. Document serial numbers for asset tracking.
 
 **Step 2: Power and network**
-Connect 110V/220V power. Attach network router with dedicated IP per device group if required.
+Connect mains power within rated voltage. Place the chassis on a dedicated lab VLAN with managed switch ports per policy.
 
-**Step 3: USB hub connection**
-Single USB cable from box to control PC. Install management software and verify all devices appear in dashboard.
+**Step 3: Host connection**
+Run one USB uplink to the control workstation. Confirm each slot enumerates in your device management tool.
 
 **Step 4: Device preparation**
-Enable USB debugging, install required APKs in batch, configure proxy if needed.
+Enable developer options, confirm ADB authorization, and stage test APKs through your approved deployment pipeline.
 
-**Step 5: First automation test**
-Run a simple script on all 20 devices simultaneously. Monitor temperature and connection stability for 24 hours.
+**Step 5: Smoke test**
+Run a parallel test script across all nodes. Monitor thermals and USB stability for 24 hours before production workloads.
 
-Need help? WhatsApp us at +852 6215 5642 for remote setup support.`,
+Need remote assistance? Message us on WhatsApp (+852 6215 5642) to schedule a setup session.`,
   },
   {
     slug: "motherboard-box-vs-phone-box",
-    title: "Motherboard Box vs Phone Box: Cost, SIM Support, and Use Cases",
-    category: "Hardware & Selection",
+    title: "Motherboard Box vs Full Phone Box for Headless Labs",
+    category: "Hardware Selection",
     date: "2026-04-17",
     excerpt:
-      "Understand the trade-offs between screenless motherboard boxes and full phone boxes before you buy.",
-    content: `**Motherboard Box advantages:** Lower per-node cost, smaller footprint, official Android system, ideal for headless automation.
+      "Cost, thermal profile, and maintenance trade-offs between screenless motherboard arrays and full-phone chassis.",
+    content: `**Motherboard box advantages:** Lower per-node cost, smaller thermal footprint, suited to headless app testing and ADB automation without display output.
 
-**Motherboard Box limitations:** Re-authorizing USB debugging requires temporary screen attachment if authorization is lost.
+**Motherboard box considerations:** USB debugging authorization may require temporary display attachment during maintenance.
 
-**Phone Box advantages:** Full phone frame with SIM and camera support, customized ROM options, auto-reconnect without authorized PC.
+**Full phone box advantages:** Complete device frame with radios and sensors intact, suitable for end-to-end mobile app QA that includes camera, audio, and connectivity tests.
 
-**Phone Box limitations:** Slightly higher cost, unlocked bootloader on custom ROM models.
+**Full phone box considerations:** Higher per-node cost and slightly higher heat load.
 
-Max Phones Farm offers both configurations from our Guangzhou factory. Request a sample to compare for your specific workflow.`,
+Max Phones Farm builds both configurations. Request a sample unit to benchmark against your lab SOPs.`,
   },
   {
     slug: "bulk-apk-installation-guide",
-    title: "How to Bulk Install APKs on Your Phone Farm",
-    category: "Setup & Tutorials",
+    title: "Batch APK Deployment Across a Device Lab",
+    category: "Setup",
     date: "2026-03-20",
     excerpt:
-      "Install multiple APK files across all devices in your farm with a single action using our management software.",
-    content: `Bulk APK installation saves hours when deploying apps across 20+ devices.
+      "Standardize APK rollout across many Android nodes using grouped device management.",
+    content: `Batch APK deployment saves operator time when staging builds across 20+ devices.
 
-1. Right-click any device screen in the management dashboard
-2. Select "Install APK" from the context menu
-3. Choose one or multiple APK files
-4. Confirm batch installation — progress shows per device
+1. Group devices by project or release train in your management dashboard.
+2. Select the target group and choose batch install.
+3. Upload signed APK artifacts from your CI output directory.
+4. Monitor per-device install status and collect logs for failed nodes.
 
-Tips: Group devices by project before installing. Verify APK signatures match your automation requirements. Contact support if you need custom deployment scripts.`,
+Tips: Keep lab VLANs segmented from production networks. Verify signing certificates match your release policy. Our remote control setup service includes a documented batch install workflow.`,
   },
   {
     slug: "enterprise-phone-farm-deployment",
-    title: "Enterprise Phone Farm Deployment: Rackmount Solutions",
-    category: "Applications & Use Cases",
+    title: "Enterprise Rackmount Device Lab Deployment",
+    category: "Lab Architecture",
     date: "2026-05-10",
     excerpt:
-      "How enterprise teams deploy 100+ device phone farms with rackmount cabinets, redundant power, and remote monitoring.",
-    content: `Enterprise deployments require more than stacking boxes on shelves.
+      "Planning multi-rack device labs with power budgeting, network segmentation, and export logistics.",
+    content: `Enterprise device labs require infrastructure planning beyond a single chassis.
 
-**Infrastructure planning:** Dedicated server room or rack space, 220V power circuits, network segmentation, cooling capacity for 5–10kW loads.
+**Facility:** Dedicated rack space, rated power circuits, and HVAC capacity for continuous load.
 
-**Hardware selection:** Custom 42U cabinets with modular device trays, redundant PSUs, and cable management.
+**Hardware:** Multiple 2U rackmount modules or custom cabinet layouts with documented USB and PSU redundancy.
 
-**Operations:** Remote monitoring dashboard, SLA-backed support, scheduled maintenance windows, spare parts inventory.
+**Operations:** Asset tagging, spare fan/PSU stock, maintenance windows, and remote engineering support.
 
-Max Phones Farm has deployed enterprise farms for agencies and QA teams across North America, Europe, and Southeast Asia since 2017. Contact us for an enterprise deployment proposal.`,
+Max Phones Farm supports multi-rack projects from Guangzhou with export documentation and staged QC. Contact us with target node count and destination country for a project quote.`,
   },
 ];
 

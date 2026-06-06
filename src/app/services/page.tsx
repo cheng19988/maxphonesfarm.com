@@ -5,9 +5,9 @@ import { ContactCTA } from "@/components/shared";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Phone Farm Services & Solutions",
+  title: "Deployment & Lab Setup Services",
   description:
-    "Phone farm setup, remote control configuration, group control, bulk deployment, custom hardware, enterprise solutions, maintenance, samples, and overseas delivery.",
+    "Hardware assembly, remote device control setup, bulk provisioning, and export logistics from our Guangzhou team.",
   path: "/services",
 });
 
@@ -15,9 +15,9 @@ export default function ServicesPage() {
   return (
     <div className="section">
       <div className="container-wide">
-        <h1 className="section-title">Phone Farm Services</h1>
+        <h1 className="section-title">Deployment Services</h1>
         <p className="section-subtitle">
-          Hardware assembly, remote control configuration, bulk provisioning, and export logistics — delivered from our Guangzhou factory.
+          Hardware assembly, remote Android device control setup, bulk lab provisioning, and export logistics — from our Guangzhou team.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((svc) => (

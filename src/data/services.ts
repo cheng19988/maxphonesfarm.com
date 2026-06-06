@@ -3,65 +3,65 @@ import { IMAGES } from "@/lib/images";
 export const SERVICES = [
   {
     slug: "phone-farm-setup",
-    title: "Phone Farm Setup",
+    title: "Device Lab Hardware Setup",
     description:
-      "End-to-end phone farm deployment — from hardware assembly and device mounting to power routing, network configuration, and first-boot testing.",
+      "Chassis assembly, device mounting, power routing, lab network planning, and first-boot verification for new device lab deployments.",
     image: IMAGES.workshop,
   },
   {
     slug: "remote-control-configuration",
-    title: "Remote Control Configuration",
+    title: "Remote Device Control Setup",
     description:
-      "Screen mirroring, ADB setup, and visual device management workstation configuration so you can control dozens of devices from one dashboard.",
+      "ADB path configuration, screen mirroring, and workstation setup so QA teams manage many Android devices from one desk.",
     image: IMAGES.remoteControl.hero,
   },
   {
     slug: "group-control-system-configuration",
-    title: "Group Control System Configuration",
+    title: "Multi-Device Management Setup",
     description:
-      "Batch task scheduling, synchronized multi-device actions, client/project grouping, and automation script integration for agency-scale operations.",
+      "Device grouping, batch task scheduling, and synchronized test runs for QA automation and staging environments.",
     image: IMAGES.remoteControl.detail,
   },
   {
     slug: "bulk-device-deployment",
-    title: "Bulk Device Deployment",
+    title: "Bulk Lab Provisioning",
     description:
-      "Large-scale device provisioning — APK pre-installation, account setup, proxy configuration, and fleet health monitoring for 100+ device orders.",
+      "Large-scale device staging — signed APK rollout, asset labeling, and health checks for 40–100+ node projects.",
     image: IMAGES.factory,
   },
   {
     slug: "custom-hardware-solution",
-    title: "Custom Hardware Solution",
+    title: "Custom Hardware Engineering",
     description:
-      "Bespoke chassis design, node count optimization, power/cooling engineering, and rack integration tailored to your device models and workflow.",
+      "Bespoke chassis design, node count optimization, power/cooling engineering, and rack integration for your device list.",
     image: IMAGES.customCabinet.hero,
   },
   {
     slug: "enterprise-deployment",
-    title: "Enterprise Deployment",
+    title: "Multi-Rack Lab Deployment",
     description:
-      "Full rackmount cabinet deployment with redundant power, network segmentation, remote monitoring, and dedicated account management for enterprise clients.",
+      "Multi-cabinet layout, redundant PSU planning, network segmentation guidance, and project-managed rollout for enterprise labs.",
     image: IMAGES.customCabinet.detail,
   },
   {
     slug: "maintenance-support",
-    title: "Maintenance & Support",
+    title: "Maintenance & Spare Parts",
     description:
-      "Ongoing hardware maintenance, firmware updates, replacement parts, remote diagnostics, and SLA-backed technical support for production farms.",
+      "Fan and PSU replacement, remote diagnostics, and hardware support for production device labs.",
     image: IMAGES.workshop,
   },
   {
     slug: "sample-solution",
-    title: "Sample Solution",
+    title: "Evaluation Unit Program",
     description:
-      "Evaluation kits with 1–2 units, setup guide, software trial, and dedicated onboarding call — so you can validate before committing to bulk orders.",
+      "Single-unit evaluation with setup guide and engineering call — validate hardware before bulk purchase.",
     image: IMAGES.phoneFarmBox.card,
   },
   {
     slug: "overseas-delivery",
-    title: "Overseas Delivery",
+    title: "Export & International Shipping",
     description:
-      "International logistics from Guangzhou — express courier, sea freight, customs documentation, and door-to-door delivery to North America, Europe, and Southeast Asia.",
+      "Express courier or sea freight from Guangzhou with commercial invoices, packing lists, and export documentation.",
     image: IMAGES.warehouse,
   },
 ];

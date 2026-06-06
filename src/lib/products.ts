@@ -1,10 +1,11 @@
 import { prisma } from "./prisma";
-import { PRODUCT_SEEDS, type ProductSeed } from "@/data/products";
+import { PRODUCT_GROUPS, PRODUCT_SEEDS, type ProductGroupId, type ProductSeed } from "@/data/products";
 
 export type ProductRecord = {
   id: string;
   slug: string;
   name: string;
+  group: ProductGroupId;
   category: string;
   shortDesc: string;
   description: string;
@@ -28,6 +29,7 @@ function seedToRecord(seed: ProductSeed): ProductRecord {
     id: seed.slug,
     slug: seed.slug,
     name: seed.name,
+    group: seed.group,
     category: seed.category,
     shortDesc: seed.shortDesc,
     description: seed.description,
@@ -53,7 +55,12 @@ export async function getPublishedProducts(): Promise<ProductRecord[]> {
       where: { published: true },
       orderBy: { priceUsd: "desc" },
     });
-    if (rows.length > 0) return rows;
+    if (rows.length > 0) {
+      return rows.map((row) => {
+        const seed = PRODUCT_SEEDS.find((s) => s.slug === row.slug);
+        return { ...row, group: seed?.group ?? ("accessories" as ProductGroupId) };
+      });
+    }
   } catch (error) {
     console.error("[products] Database query failed, using static catalog:", error);
   }
@@ -63,7 +70,10 @@ export async function getPublishedProducts(): Promise<ProductRecord[]> {
 export async function getProductBySlug(slug: string): Promise<ProductRecord | null> {
   try {
     const row = await prisma.product.findUnique({ where: { slug } });
-    if (row) return row;
+    if (row) {
+      const seed = PRODUCT_SEEDS.find((s) => s.slug === row.slug);
+      return { ...row, group: seed?.group ?? ("accessories" as ProductGroupId) };
+    }
   } catch (error) {
     console.error(`[products] Database lookup failed for ${slug}:`, error);
   }
@@ -88,4 +98,12 @@ export async function listProducts(options?: {
   }
 
   return products;
+}
+
+export async function getProductsGrouped() {
+  const products = await getPublishedProducts();
+  return PRODUCT_GROUPS.map((g) => ({
+    ...g,
+    products: products.filter((p) => p.group === g.id),
+  })).filter((g) => g.products.length > 0);
 }
