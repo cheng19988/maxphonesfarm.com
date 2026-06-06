@@ -1,8 +1,12 @@
 export const SITE = {
   name: "Max Phones Farm",
   domain: "maxphonesfarm.com",
-  url: "https://maxphonesfarm.com",
+  /** Canonical public URL — Vercel redirects apex to www. */
+  url: "https://www.maxphonesfarm.com",
   tagline: "Rackmount Phone Farm Hardware Supplier",
+  /** Shared top-bar copy — single source for Header on every route. */
+  headerBar: "Factory-Direct Phone Farm Hardware",
+  logoSubtitle: "Export-Ready Device Lab Hardware",
   intro:
     "Max Phones Farm is a Guangzhou hardware sourcing and assembly team building rackmount phone farm chassis, device lab boxes, and motherboard arrays for app testing, ad verification, multi-account environment management, remote device control, and QA automation workflows.",
   location: "Guangzhou, China",

@@ -41,7 +41,7 @@ export default async function HomePage() {
         <div className="container-wide py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <p className="section-label">{SITE.location} · Factory-Direct Phone Farm Hardware</p>
+              <p className="section-label">{SITE.location} · {SITE.headerBar}</p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white max-w-xl tracking-tight leading-[1.08] mb-6">
                 Rackmount Phone Farm Hardware for Real-Device Labs
               </h1>

@@ -7,6 +7,10 @@ import { organizationJsonLd } from "@/lib/seo";
 import { SITE } from "@/lib/config";
 import "./globals.css";
 
+/** Prevent stale prerendered HTML on Vercel CDN after deploys — Header must match on every route. */
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

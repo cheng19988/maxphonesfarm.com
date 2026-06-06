@@ -8,14 +8,14 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800">
       <div className="hidden md:block border-b border-neutral-800">
         <div className="container-wide py-2 flex justify-between items-center text-xs text-neutral-500">
-          <span>{SITE.location} · Factory-Direct Phone Farm Hardware</span>
+          <span>{SITE.location} · {SITE.headerBar}</span>
           <ContactBar compact />
         </div>
       </div>
       <div className="container-wide py-5 flex items-center justify-between gap-4">
         <Link href="/" className="shrink-0">
           <div className="font-semibold text-white tracking-tight text-lg">{SITE.name}</div>
-          <div className="text-[10px] text-neutral-500 tracking-wide hidden sm:block">Export-Ready Device Lab Hardware</div>
+          <div className="text-[10px] text-neutral-500 tracking-wide hidden sm:block">{SITE.logoSubtitle}</div>
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
           {NAV.map((item) => (
