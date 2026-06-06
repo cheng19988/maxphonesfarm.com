@@ -71,7 +71,7 @@ npm run dev
 npm run db:setup      # prisma db push + seed (local or against Neon)
 ```
 
-Build on Vercel runs `scripts/setup-db.mjs` when `DATABASE_URL` is set.
+Build on Vercel runs `scripts/setup-db.mjs` when `DATABASE_URL` is set. If `ADMIN_EMAIL` and `ADMIN_PASSWORD` are also set, **each Production deploy** runs `admin:reset` automatically so the database admin password matches Vercel — the legacy default `admin123456` stops working after the next deploy.
 
 ## Admin
 
