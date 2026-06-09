@@ -60,7 +60,7 @@ export default function PackagesPage() {
   return (
     <>
       <PageHero
-        fullBleed
+        variant="banner"
         label="Deployment Bundles"
         title="Solution Packages"
         subtitle="Pre-configured hardware bundles for common lab deployment paths — quote-first with transparent USD list pricing as the starting point."
@@ -70,15 +70,15 @@ export default function PackagesPage() {
         <Link href="/contact" className="btn-primary">Discuss Your Lab</Link>
       </PageHero>
 
-      <section className="section border-b border-neutral-800">
+      <section className="section section-white border-b border-neutral-200">
         <div className="container-wide">
           <div className="grid lg:grid-cols-3 gap-8">
             {PACKAGES.map((pkg) => (
               <article
                 key={pkg.name}
-                className={`card flex flex-col ${pkg.featured ? "border-neutral-600 lg:-mt-4 lg:mb-4" : ""}`}
+                className={`card flex flex-col rounded-xl ${pkg.featured ? "ring-2 ring-blue-600 shadow-lg" : ""}`}
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900">
+                <div className="relative aspect-[16/10] overflow-hidden bg-neutral-50">
                   <Image src={pkg.image} alt={pkg.name} fill className="object-cover" sizes="33vw" />
                   {pkg.featured && (
                     <span className="absolute top-4 left-4 bg-white text-black text-[10px] uppercase tracking-widest px-3 py-1 font-medium">
@@ -108,7 +108,7 @@ export default function PackagesPage() {
         </div>
       </section>
 
-      <section className="section-tight border-b border-neutral-800 bg-neutral-950">
+      <section className="section-tight section-muted border-b border-neutral-200">
         <div className="container-wide max-w-3xl text-center">
           <p className="text-neutral-400 mb-6">
             Every package can be customized — device models, slot layout, power budget, and deployment services are quoted to your lab plan.

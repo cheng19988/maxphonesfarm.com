@@ -25,7 +25,7 @@ export default function ServicesPage() {
         imageAlt="Device lab management services"
       />
 
-      <section className="section border-b border-neutral-800">
+      <section className="section section-white border-b border-neutral-200">
         <div className="container-wide">
           <div className="feature-grid">
             {SERVICES.map((svc) => (
@@ -46,7 +46,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section border-b border-neutral-800 bg-neutral-950">
+      <section className="section section-muted border-b border-neutral-200">
         <div className="container-wide max-w-4xl">
           <h2 className="section-title">Assembly, QC & Export Process</h2>
           <p className="section-subtitle">

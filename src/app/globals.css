@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #fafafa;
-  --muted: #737373;
-  --border: #1f1f1f;
-  --surface: #0a0a0a;
-  --surface-elevated: #111111;
-  --accent: #e5e5e5;
+  --background: #f6f6f4;
+  --foreground: #171717;
+  --muted: #525252;
+  --border: #e4e4e7;
+  --surface: #ffffff;
+  --surface-muted: #ececea;
+  --accent: #1d4ed8;
+  --accent-hover: #1e40af;
+  --accent-soft: #eff6ff;
+  --footer: #0f172a;
 }
 
 @theme inline {
@@ -20,7 +23,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 .container-wide {
@@ -28,99 +31,115 @@ body {
 }
 
 .section {
-  @apply py-24 md:py-32;
+  @apply py-20 md:py-28;
 }
 
 .section-tight {
-  @apply py-16 md:py-20;
+  @apply py-14 md:py-16;
+}
+
+.section-muted {
+  @apply bg-[var(--surface-muted)];
+}
+
+.section-white {
+  @apply bg-white;
 }
 
 .section-title {
-  @apply text-3xl md:text-5xl lg:text-[3.25rem] font-semibold text-white mb-4 tracking-tight leading-[1.05];
+  @apply text-3xl md:text-5xl font-semibold text-neutral-900 mb-4 tracking-tight leading-[1.08];
 }
 
 .text-display {
-  @apply text-4xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-[1.02];
+  @apply text-4xl md:text-6xl font-semibold text-neutral-900 tracking-tight leading-[1.05];
 }
 
 .text-lead {
-  @apply text-neutral-400 text-lg md:text-xl leading-relaxed;
+  @apply text-neutral-600 text-lg md:text-xl leading-relaxed;
 }
 
 .section-subtitle {
-  @apply text-neutral-400 text-base md:text-lg mb-12 max-w-2xl leading-relaxed;
+  @apply text-neutral-600 text-base md:text-lg mb-12 max-w-2xl leading-relaxed;
 }
 
 .section-label {
-  @apply text-[11px] uppercase tracking-[0.22em] text-neutral-500 mb-4;
+  @apply text-[11px] uppercase tracking-[0.2em] text-blue-700 font-medium mb-4;
 }
 
 .surface {
-  @apply bg-neutral-950 border border-neutral-800;
+  @apply bg-white border border-neutral-200 shadow-sm;
 }
 
 .surface-elevated {
-  @apply bg-neutral-900/50 border border-neutral-800;
+  @apply bg-white border border-neutral-200 shadow-md;
 }
 
 .card {
-  @apply bg-neutral-950 border border-neutral-800 overflow-hidden transition-colors duration-300;
+  @apply bg-white border border-neutral-200 overflow-hidden shadow-sm transition-all duration-300;
 }
 
 .card-hover {
-  @apply hover:border-neutral-600;
+  @apply hover:shadow-lg hover:border-neutral-300;
+}
+
+.product-shot {
+  @apply relative bg-white rounded-2xl border border-neutral-200 shadow-md overflow-hidden;
+}
+
+.product-shot-inner {
+  @apply object-contain p-6 md:p-10;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center px-7 py-3.5 bg-white text-black text-sm font-medium tracking-wide hover:bg-neutral-200 transition-colors;
+  @apply inline-flex items-center justify-center px-7 py-3.5 bg-blue-700 text-white text-sm font-medium tracking-wide hover:bg-blue-800 transition-colors shadow-sm;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center px-7 py-3.5 border border-neutral-500 text-white text-sm font-medium tracking-wide hover:border-white hover:bg-white/5 transition-colors;
+  @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-blue-700 text-blue-700 bg-white text-sm font-medium tracking-wide hover:bg-blue-50 transition-colors;
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center px-7 py-3.5 border border-neutral-700 text-neutral-300 text-sm font-medium hover:text-white hover:border-neutral-400 transition-colors;
+  @apply inline-flex items-center justify-center px-7 py-3.5 border border-neutral-300 text-neutral-700 bg-white text-sm font-medium hover:border-neutral-400 hover:bg-neutral-50 transition-colors;
 }
 
 .btn-ghost {
-  @apply inline-flex items-center justify-center px-4 py-2 text-sm text-neutral-400 hover:text-white transition-colors;
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm text-neutral-600 hover:text-blue-700 transition-colors;
 }
 
 .badge-green {
-  @apply text-[11px] px-2.5 py-1 border border-emerald-800/80 text-emerald-400 uppercase tracking-wide;
+  @apply text-[11px] px-2.5 py-1 bg-emerald-50 border border-emerald-200 text-emerald-700 uppercase tracking-wide font-medium;
 }
 
 .badge-yellow {
-  @apply text-[11px] px-2.5 py-1 border border-amber-800/80 text-amber-400 uppercase tracking-wide;
+  @apply text-[11px] px-2.5 py-1 bg-amber-50 border border-amber-200 text-amber-800 uppercase tracking-wide font-medium;
 }
 
 .badge-red {
-  @apply text-[11px] px-2.5 py-1 border border-red-800/80 text-red-400 uppercase tracking-wide;
+  @apply text-[11px] px-2.5 py-1 bg-red-50 border border-red-200 text-red-700 uppercase tracking-wide font-medium;
 }
 
 .divider {
-  @apply border-t border-neutral-800;
+  @apply border-t border-neutral-200;
 }
 
 .prose-content h2 {
-  @apply text-xl font-semibold text-white mt-10 mb-4;
+  @apply text-xl font-semibold text-neutral-900 mt-10 mb-4;
 }
 
 .prose-content p {
-  @apply text-neutral-400 leading-relaxed mb-4;
+  @apply text-neutral-600 leading-relaxed mb-4;
 }
 
 .prose-content ul {
-  @apply list-disc list-inside text-neutral-400 space-y-2 mb-4;
+  @apply list-disc list-inside text-neutral-600 space-y-2 mb-4;
 }
 
 .input-field {
-  @apply w-full bg-neutral-900 border border-neutral-800 px-4 py-3 text-white placeholder:text-neutral-600 focus:border-neutral-500 focus:outline-none transition-colors;
+  @apply w-full bg-white border border-neutral-300 px-4 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none transition-colors;
 }
 
 .table-neutral thead tr {
-  @apply border-b border-neutral-800 text-neutral-500;
+  @apply border-b border-neutral-200 text-neutral-500 bg-neutral-50;
 }
 
 .table-neutral th,
@@ -137,13 +156,25 @@ body {
 }
 
 .gallery-grid {
-  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6;
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6;
 }
 
 .gallery-item {
-  @apply relative aspect-[16/10] border border-neutral-800 overflow-hidden;
+  @apply relative aspect-[16/10] rounded-xl border border-neutral-200 overflow-hidden shadow-sm;
 }
 
 .gallery-item-label {
-  @apply absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent p-5;
+  @apply absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/50 to-transparent p-5;
+}
+
+.link-muted {
+  @apply text-neutral-600 hover:text-blue-700 transition-colors;
+}
+
+.footer-dark {
+  background: var(--footer);
+}
+
+.cta-banner {
+  @apply relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 text-white shadow-xl;
 }

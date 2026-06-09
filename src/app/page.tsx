@@ -42,29 +42,28 @@ export default async function HomePage() {
       <JsonLd data={faqJsonLd(HOME_FAQ)} />
 
       <PageHero
-        fullBleed
         label={`${SITE.location} · ${SITE.headerBar}`}
         title="Rackmount Phone Farm Hardware for Real-Device Labs"
         subtitle="Factory-direct 20-node chassis, phone farm boxes, and motherboard arrays — built for app testing, ad verification, multi-account environment management, and QA automation at scale."
-        image={IMAGES.homeHero}
+        image={IMAGES.homeHeroProduct}
         imageAlt="Max Phones Farm rackmount phone farm hardware"
+        variant="product"
       >
-        <div className="flex flex-wrap gap-3 mb-10">
+        <div className="flex flex-wrap gap-3 mb-8">
           <Link href="/contact" className="btn-primary">Request Quote</Link>
           <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="btn-secondary">
             WhatsApp Quote
           </a>
           <Link href="/products" className="btn-outline">View Catalog</Link>
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {HERO_PILLARS.map((pillar) => (
             <Link
               key={pillar.href}
               href={pillar.href}
-              className="surface-elevated px-4 py-3 text-sm hover:border-neutral-600 transition-colors max-w-xs"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-white border border-neutral-200 rounded-full text-neutral-700 hover:border-blue-300 hover:text-blue-700 shadow-sm transition-colors"
             >
-              <span className="block text-white font-medium mb-1">{pillar.label}</span>
-              <span className="block text-xs text-neutral-500">{pillar.desc}</span>
+              <span className="font-medium">{pillar.label}</span>
             </Link>
           ))}
         </div>
@@ -80,39 +79,39 @@ export default async function HomePage() {
       />
 
       {/* Flagship */}
-      <section className="section border-b border-neutral-800">
+      <section className="section section-white border-b border-neutral-200">
         <div className="container-wide">
           <SectionHeader
             label="Flagship System"
             title={flagship.name}
             subtitle="Server-style smartphone chassis for teams that need serious mobile compute density without desk clutter."
           />
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative aspect-[4/3] border border-neutral-800 overflow-hidden bg-neutral-900">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="product-shot aspect-[4/3]">
               <Image
                 src={flagship.imageDetail}
                 alt={flagship.name}
                 fill
-                className="object-cover"
+                className="product-shot-inner"
                 sizes="(max-width:1024px) 100vw, 50vw"
               />
             </div>
             <div>
               <p className="text-lead mb-8">{flagship.description}</p>
-              <table className="w-full text-sm border border-neutral-800 mb-8">
+              <table className="w-full text-sm border border-neutral-200 rounded-lg overflow-hidden mb-8">
                 <tbody>
                   {Object.entries(specs)
                     .slice(0, 5)
                     .map(([k, v]) => (
-                      <tr key={k} className="border-b border-neutral-800 last:border-0">
-                        <td className="py-3 px-4 text-neutral-500 w-2/5">{k}</td>
-                        <td className="py-3 px-4 text-white">{v}</td>
+                      <tr key={k} className="border-b border-neutral-100 last:border-0">
+                        <td className="py-3 px-4 text-neutral-500 bg-neutral-50 w-2/5">{k}</td>
+                        <td className="py-3 px-4 text-neutral-900">{v}</td>
                       </tr>
                     ))}
                 </tbody>
               </table>
               <div className="flex flex-wrap items-center gap-6 mb-8">
-                <span className="text-4xl font-semibold text-white">${flagship.priceUsd.toLocaleString()}</span>
+                <span className="text-4xl font-semibold text-blue-700">${flagship.priceUsd.toLocaleString()}</span>
                 <span className="text-sm text-neutral-500">USD list · bulk &amp; custom quoted separately</span>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -125,7 +124,7 @@ export default async function HomePage() {
       </section>
 
       {/* Product models */}
-      <section className="section border-b border-neutral-800 bg-neutral-950">
+      <section className="section section-muted border-b border-neutral-200">
         <div className="container-wide">
           <SectionHeader
             label="Hardware Catalog"
@@ -148,7 +147,7 @@ export default async function HomePage() {
       </section>
 
       {/* Value proposition */}
-      <section className="section border-b border-neutral-800">
+      <section className="section section-white border-b border-neutral-200">
         <div className="container-wide grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="section-label">Rack Integration</p>
@@ -174,8 +173,8 @@ export default async function HomePage() {
               <Link href="/packages" className="btn-primary">View Solution Packages</Link>
             </div>
           </div>
-          <div className="relative aspect-[4/3] border border-neutral-800 overflow-hidden">
-            <Image src={IMAGES.scenes.rackLab} alt="Rackmount phone farm lab deployment" fill className="object-cover" sizes="50vw" />
+          <div className="product-shot aspect-[4/3]">
+            <Image src={IMAGES.scenes.rackLab} alt="Rackmount phone farm lab deployment" fill className="object-cover rounded-2xl" sizes="50vw" />
           </div>
         </div>
       </section>
@@ -216,7 +215,7 @@ export default async function HomePage() {
       />
 
       {/* Trust */}
-      <section className="section border-b border-neutral-800 bg-neutral-950">
+      <section className="section section-muted border-b border-neutral-200">
         <div className="container-wide">
           <SectionHeader
             label="Factory Trust"
@@ -248,7 +247,7 @@ export default async function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="section border-b border-neutral-800">
+      <section className="section section-white border-b border-neutral-200">
         <div className="container-wide max-w-4xl">
           <SectionHeader
             label="Support"

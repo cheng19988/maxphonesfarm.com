@@ -34,7 +34,7 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}`}
                   className="card card-hover group flex flex-col"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-neutral-50">
                     <Image
                       src={cover}
                       alt={post.title}

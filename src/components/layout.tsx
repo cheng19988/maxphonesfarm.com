@@ -6,22 +6,18 @@ import { ContactBar } from "./shared";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-xl border-b border-neutral-800">
-      <div className="hidden lg:block border-b border-neutral-800/80">
-        <div className="container-wide py-2.5 flex justify-between items-center text-xs text-neutral-500">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200 shadow-sm">
+      <div className="hidden lg:block border-b border-neutral-100 bg-neutral-50">
+        <div className="container-wide py-2 flex justify-between items-center text-xs text-neutral-500">
           <span>{SITE.location} · {SITE.headerBar}</span>
           <ContactBar compact />
         </div>
       </div>
-      <div className="container-wide py-4 md:py-5 flex items-center justify-between gap-6">
+      <div className="container-wide py-4 flex items-center justify-between gap-6">
         <BrandLogo />
-        <nav className="hidden xl:flex items-center gap-10">
+        <nav className="hidden xl:flex items-center gap-9">
           {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm text-neutral-400 hover:text-white transition-colors"
-            >
+            <Link key={item.href} href={item.href} className="text-sm text-neutral-600 hover:text-blue-700 font-medium transition-colors">
               {item.label}
             </Link>
           ))}
@@ -40,9 +36,9 @@ export function Header() {
           </Link>
         </div>
       </div>
-      <nav className="xl:hidden container-wide pb-3 flex gap-6 overflow-x-auto text-sm border-t border-neutral-800/80 pt-3">
+      <nav className="xl:hidden container-wide pb-3 flex gap-6 overflow-x-auto text-sm border-t border-neutral-100 pt-3">
         {NAV.map((item) => (
-          <Link key={item.href} href={item.href} className="text-neutral-500 hover:text-white whitespace-nowrap">
+          <Link key={item.href} href={item.href} className="text-neutral-600 hover:text-blue-700 whitespace-nowrap font-medium">
             {item.label}
           </Link>
         ))}
@@ -53,19 +49,15 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-800 mt-auto bg-neutral-950">
-      <div className="container-wide py-20 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <footer className="footer-dark border-t border-neutral-800 mt-auto text-white">
+      <div className="container-wide py-16 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
-          <BrandLogo />
-          <p className="text-neutral-500 text-sm mt-6 mb-8 max-w-md leading-relaxed">{SITE.description}</p>
-          <ContactBar />
-          <p className="text-neutral-600 text-xs mt-6 max-w-md leading-relaxed">
-            Guangzhou hardware assembly · Custom rack configuration · Export packing ·
-            Typical response within 24 hours on business days (UTC+8).
-          </p>
+          <BrandLogo dark />
+          <p className="text-neutral-400 text-sm mt-6 mb-8 max-w-md leading-relaxed">{SITE.description}</p>
+          <ContactBar dark />
         </div>
         <div className="lg:col-span-3">
-          <h3 className="section-label mb-5">Products</h3>
+          <h3 className="text-xs uppercase tracking-[0.18em] text-neutral-400 mb-5 font-medium">Products</h3>
           <ul className="space-y-3 text-sm text-neutral-400">
             <li><Link href="/products/custom-cabinet" className="hover:text-white transition-colors">Rackmount Phone Farm</Link></li>
             <li><Link href="/products/phone-farm-box" className="hover:text-white transition-colors">Enterprise Phone Farm Box</Link></li>
@@ -76,7 +68,7 @@ export function Footer() {
           </ul>
         </div>
         <div className="lg:col-span-4">
-          <h3 className="section-label mb-5">Company</h3>
+          <h3 className="text-xs uppercase tracking-[0.18em] text-neutral-400 mb-5 font-medium">Company</h3>
           <ul className="space-y-3 text-sm text-neutral-400">
             <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
             <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
@@ -88,7 +80,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-neutral-800 py-6 text-center text-xs text-neutral-600">
+      <div className="border-t border-neutral-800 py-5 text-center text-xs text-neutral-500">
         © {new Date().getFullYear()} {SITE.name} · {SITE.location}
       </div>
     </footer>

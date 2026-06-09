@@ -21,19 +21,19 @@ function ContactFallbackLinks() {
   return (
     <p className="mt-4 text-sm text-neutral-500">
       Prefer direct contact?{" "}
-      <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4">
+      <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-4">
         WhatsApp
       </a>
       {" · "}
-      <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4">
+      <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-4">
         Telegram
       </a>
       {" · "}
-      <a href={`mailto:${CONTACT.email}`} className="text-white underline underline-offset-4">
+      <a href={`mailto:${CONTACT.email}`} className="text-blue-700 underline underline-offset-4">
         Email
       </a>
       {" · "}
-      <a href={`tel:${CONTACT.phone}`} className="text-white underline underline-offset-4">
+      <a href={`tel:${CONTACT.phone}`} className="text-blue-700 underline underline-offset-4">
         Phone
       </a>
     </p>
@@ -61,16 +61,16 @@ export default async function ContactPage({ searchParams }: Props) {
         imageAlt="Contact Max Phones Farm sales team"
       />
 
-      <div className="section-tight border-b border-neutral-800">
+      <div className="section-tight border-b border-neutral-200 bg-white">
         <div className="container-wide max-w-4xl">
-        <div className="border border-neutral-800 p-6 mb-8 bg-neutral-950">
-          <h2 className="font-medium text-white mb-4">Direct Contact</h2>
+        <div className="surface p-6 mb-8 rounded-xl">
+          <h2 className="font-semibold text-neutral-900 mb-4">Direct Contact</h2>
           <ContactBar />
           <dl className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
             <div>
               <dt className="text-neutral-600">Phone</dt>
               <dd>
-                <a href={`tel:${CONTACT.phone}`} className="text-neutral-300 hover:text-white">
+                <a href={`tel:${CONTACT.phone}`} className="text-neutral-700 hover:text-blue-700">
                   {CONTACT.phone}
                 </a>
               </dd>
@@ -78,7 +78,7 @@ export default async function ContactPage({ searchParams }: Props) {
             <div>
               <dt className="text-neutral-600">WhatsApp</dt>
               <dd>
-                <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white">
+                <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="text-neutral-700 hover:text-blue-700">
                   {CONTACT.whatsapp}
                 </a>
               </dd>
@@ -86,7 +86,7 @@ export default async function ContactPage({ searchParams }: Props) {
             <div>
               <dt className="text-neutral-600">Telegram</dt>
               <dd>
-                <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white">
+                <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-blue-700">
                   {CONTACT.telegram}
                 </a>
               </dd>
@@ -94,7 +94,7 @@ export default async function ContactPage({ searchParams }: Props) {
             <div>
               <dt className="text-neutral-600">Email</dt>
               <dd>
-                <a href={`mailto:${CONTACT.email}`} className="text-neutral-300 hover:text-white">
+                <a href={`mailto:${CONTACT.email}`} className="text-neutral-300 hover:text-blue-700">
                   {CONTACT.email}
                 </a>
               </dd>
@@ -110,7 +110,7 @@ export default async function ContactPage({ searchParams }: Props) {
           </dl>
         </div>
 
-        <h2 className="text-lg font-medium text-white mb-4">Send an Inquiry</h2>
+        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Send an Inquiry</h2>
 
         {sent && (
           <p className="mb-4 text-green-400 text-sm border border-green-900/50 bg-green-950/20 p-4">
@@ -142,7 +142,7 @@ export default async function ContactPage({ searchParams }: Props) {
           </p>
         )}
 
-        <form action={submitContactInquiry} className="border border-neutral-800 p-6 space-y-4 bg-neutral-950">
+        <form action={submitContactInquiry} className="surface p-6 md:p-8 space-y-4 rounded-xl">
           <input type="hidden" name="sourcePage" value={sourcePage} />
           <div className="grid sm:grid-cols-2 gap-4">
             <div>

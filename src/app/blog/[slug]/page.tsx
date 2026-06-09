@@ -44,15 +44,15 @@ export default async function BlogPostPage({ params }: Props) {
           }),
         ]}
       />
-      <div className="relative border-b border-neutral-800 aspect-[21/9] md:aspect-[3/1] overflow-hidden bg-neutral-900">
+      <div className="relative border-b border-neutral-200 aspect-[21/9] md:aspect-[3/1] overflow-hidden bg-neutral-50">
         <Image src={cover} alt={post.title} fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent" />
       </div>
       <article className="section-tight">
         <div className="container-wide max-w-3xl">
           <Link href="/blog" className="text-neutral-500 text-sm hover:text-white">← Back to Guides</Link>
           <span className="block text-xs text-neutral-600 mt-4 uppercase tracking-wide">{post.category} · {post.date}</span>
-          <h1 className="text-3xl md:text-5xl font-semibold text-white mt-4 mb-8 tracking-tight">{post.title}</h1>
+          <h1 className="text-3xl md:text-5xl font-semibold text-neutral-900 mt-4 mb-8 tracking-tight">{post.title}</h1>
           <div className="prose-content whitespace-pre-line">{post.content}</div>
           <div className="mt-12">
             <ContactCTA title="Discuss Your Lab Hardware" />

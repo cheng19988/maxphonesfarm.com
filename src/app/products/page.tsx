@@ -26,7 +26,7 @@ export default async function ProductsPage() {
   return (
     <>
       <PageHero
-        fullBleed
+        variant="banner"
         label="Hardware Catalog"
         title="Real-Device Lab Hardware"
         subtitle="Factory-direct phone farm hardware for enterprise device labs — complete systems, core infrastructure, and deployment accessories."
@@ -43,7 +43,7 @@ export default async function ProductsPage() {
             return (
               <section
                 key={group.id}
-                className={`${index === 0 ? "" : "pt-20 mt-20 border-t border-neutral-800"}`}
+                className={`${index === 0 ? "" : "pt-20 mt-20 border-t border-neutral-200"}`}
               >
                 <h2 className="text-3xl md:text-4xl font-semibold text-white mb-3">{group.label}</h2>
                 <p className="text-neutral-500 mb-10 max-w-3xl leading-relaxed">{group.description}</p>
@@ -69,7 +69,7 @@ export default async function ProductsPage() {
         </div>
       </div>
 
-      <section className="section-tight border-t border-neutral-800 bg-neutral-950">
+      <section className="section-tight border-t border-neutral-200 section-muted">
         <div className="container-wide">
           <ContactCTA
             title="Custom Rack or Multi-Lab Deployment?"

@@ -28,7 +28,7 @@ export default async function PricingPage() {
         imageAlt="Phone farm hardware pricing"
       />
 
-      <section className="section border-b border-neutral-800">
+      <section className="section section-white border-b border-neutral-200">
         <div className="container-wide max-w-5xl">
           <div className="surface-elevated p-8 md:p-10 mb-12">
             <p className="section-label mb-2">Flagship</p>
@@ -44,11 +44,11 @@ export default async function PricingPage() {
             <div key={group.id} className="mb-16 last:mb-0">
               <h2 className="text-2xl font-semibold text-white mb-2">{group.label}</h2>
               <p className="text-neutral-500 text-sm mb-8 max-w-3xl">{group.description}</p>
-              <div className="border border-neutral-800 divide-y divide-neutral-800">
+              <div className="border border-neutral-200 divide-y divide-neutral-200 rounded-xl overflow-hidden shadow-sm">
                 {group.products.map((p) => (
-                  <div key={p.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 md:p-6 bg-neutral-950 hover:bg-neutral-900/40 transition-colors">
+                  <div key={p.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 md:p-6 bg-white hover:bg-neutral-50 transition-colors">
                     <div>
-                      <Link href={`/products/${p.slug}`} className="text-white font-medium hover:underline underline-offset-4">
+                      <Link href={`/products/${p.slug}`} className="text-neutral-900 font-medium hover:text-blue-700 transition-colors">
                         {p.name}
                       </Link>
                       <p className="text-sm text-neutral-500 mt-1 max-w-xl">{p.shortDesc}</p>
@@ -69,7 +69,7 @@ export default async function PricingPage() {
         </div>
       </section>
 
-      <section className="section-tight border-b border-neutral-800 bg-neutral-950">
+      <section className="section-tight section-muted border-b border-neutral-200">
         <div className="container-wide max-w-3xl text-center">
           <h2 className="text-xl font-semibold text-white mb-4">What affects your final quote</h2>
           <ul className="text-sm text-neutral-500 space-y-2 text-left max-w-xl mx-auto">

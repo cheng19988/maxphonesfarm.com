@@ -31,37 +31,36 @@ export function ProductCard({
   const priceLabel = priceUsd >= 1000 ? `$${priceUsd.toLocaleString()}` : `From $${priceUsd.toLocaleString()}`;
 
   return (
-    <article className={`group card card-hover flex flex-col h-full ${featured ? "lg:col-span-2 lg:row-span-1" : ""}`}>
+    <article className={`group card card-hover flex flex-col h-full rounded-xl ${featured ? "lg:col-span-2" : ""}`}>
       <Link
         href={`/products/${slug}`}
-        className={`block relative overflow-hidden bg-neutral-900 ${compact ? "aspect-[4/3]" : featured ? "aspect-[16/10]" : "aspect-square"}`}
+        className={`block relative bg-neutral-50 ${compact ? "aspect-[4/3]" : featured ? "aspect-[16/10]" : "aspect-square"}`}
       >
         <Image
           src={imageCard}
           alt={name}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          className="object-contain p-4 md:p-6 transition-transform duration-500 group-hover:scale-[1.03]"
           sizes={featured ? "50vw" : "(max-width:768px) 100vw, 25vw"}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </Link>
-      <div className={`flex flex-col flex-1 ${compact ? "p-5" : "p-6 md:p-7"}`}>
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <p className="text-[10px] uppercase tracking-[0.18em] text-neutral-600">{category}</p>
+      <div className={`flex flex-col flex-1 ${compact ? "p-5" : "p-6"}`}>
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <p className="text-[10px] uppercase tracking-[0.16em] text-blue-700 font-medium">{category}</p>
           {!compact && <StockBadge stock={stock} />}
         </div>
         <Link href={`/products/${slug}`}>
-          <h3 className={`font-medium text-white mb-2 group-hover:text-neutral-200 transition-colors ${compact ? "text-base" : "text-lg md:text-xl"}`}>
+          <h3 className={`font-semibold text-neutral-900 mb-2 group-hover:text-blue-700 transition-colors ${compact ? "text-base" : "text-lg"}`}>
             {name}
           </h3>
         </Link>
-        <p className={`text-neutral-500 mb-5 line-clamp-2 flex-1 ${compact ? "text-xs" : "text-sm leading-relaxed"}`}>
+        <p className={`text-neutral-600 mb-4 line-clamp-2 flex-1 ${compact ? "text-xs" : "text-sm leading-relaxed"}`}>
           {shortDesc}
         </p>
-        <div className="flex items-center justify-between gap-4 pt-5 border-t border-neutral-800">
-          <span className={`font-medium text-white ${compact ? "text-sm" : "text-lg"}`}>{priceLabel}</span>
+        <div className="flex items-center justify-between gap-4 pt-4 border-t border-neutral-100">
+          <span className={`font-semibold text-neutral-900 ${compact ? "text-sm" : "text-lg"}`}>{priceLabel}</span>
           <div className="flex items-center gap-2">
-            <Link href={`/contact?product=${slug}`} className="btn-primary text-xs py-2.5 px-4">
+            <Link href={`/contact?product=${slug}`} className="btn-primary text-xs py-2 px-4">
               Quote
             </Link>
             <Link href={`/products/${slug}`} className="btn-ghost text-xs hidden sm:inline-flex">
@@ -88,33 +87,22 @@ export function ProductCardMinimal({
   const priceLabel = priceUsd >= 1000 ? `$${priceUsd.toLocaleString()}` : `From $${priceUsd.toLocaleString()}`;
 
   return (
-    <article className="group card card-hover">
-      <Link href={`/products/${slug}`} className="block relative aspect-square overflow-hidden bg-neutral-900">
+    <article className="group card card-hover rounded-xl overflow-hidden">
+      <Link href={`/products/${slug}`} className="block relative aspect-square bg-neutral-50">
         <Image
           src={imageCard}
           alt={name}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          className="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.03]"
           sizes="25vw"
         />
-        <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent">
-          <h3 className="text-sm font-medium text-white mb-1">{name}</h3>
-          <p className="text-xs text-neutral-400">{priceLabel}</p>
-        </div>
       </Link>
-      <div className="p-4 flex items-center justify-between gap-3 border-t border-neutral-800">
-        <Link href={`/contact?product=${slug}`} className="btn-primary text-xs py-2 px-4 flex-1 text-center">
+      <div className="p-5 border-t border-neutral-100">
+        <h3 className="text-sm font-semibold text-neutral-900 mb-1 group-hover:text-blue-700 transition-colors">{name}</h3>
+        <p className="text-sm font-medium text-blue-700 mb-4">{priceLabel}</p>
+        <Link href={`/contact?product=${slug}`} className="btn-primary text-xs py-2.5 px-4 w-full text-center block">
           Request Quote
         </Link>
-        <a
-          href={whatsappQuoteUrl(name)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-outline text-xs py-2 px-3"
-          aria-label={`WhatsApp quote for ${name}`}
-        >
-          WA
-        </a>
       </div>
     </article>
   );
@@ -122,14 +110,14 @@ export function ProductCardMinimal({
 
 export function FAQAccordion({ items }: { items: { question: string; answer: string }[] }) {
   return (
-    <div className="divide-y divide-neutral-800 border border-neutral-800 bg-neutral-950">
+    <div className="divide-y divide-neutral-200 border border-neutral-200 bg-white rounded-xl shadow-sm overflow-hidden">
       {items.map((item, i) => (
-        <details key={i} className="group px-6 md:px-8 py-5 md:py-6">
-          <summary className="font-medium text-white cursor-pointer list-none flex justify-between items-center gap-6 text-base md:text-lg">
+        <details key={i} className="group px-6 md:px-8 py-5">
+          <summary className="font-medium text-neutral-900 cursor-pointer list-none flex justify-between items-center gap-6 text-base md:text-lg">
             {item.question}
-            <span className="text-neutral-500 group-open:rotate-45 transition-transform text-2xl shrink-0 leading-none">+</span>
+            <span className="text-blue-600 group-open:rotate-45 transition-transform text-2xl shrink-0 leading-none">+</span>
           </summary>
-          <p className="mt-5 text-neutral-500 text-sm md:text-base leading-relaxed pb-2 max-w-3xl">{item.answer}</p>
+          <p className="mt-4 text-neutral-600 text-sm md:text-base leading-relaxed pb-2 max-w-3xl">{item.answer}</p>
         </details>
       ))}
     </div>

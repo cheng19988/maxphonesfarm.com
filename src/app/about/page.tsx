@@ -18,7 +18,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        fullBleed
+        variant="banner"
         label={SITE.location}
         title="About Max Phones Farm"
         subtitle={SITE.intro}
@@ -28,7 +28,7 @@ export default function AboutPage() {
         <Link href="/contact" className="btn-primary">Contact Sales</Link>
       </PageHero>
 
-      <section className="section border-b border-neutral-800">
+      <section className="section section-white border-b border-neutral-200">
         <div className="container-wide">
           <div className="feature-grid mb-16">
             {[
@@ -66,7 +66,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section border-b border-neutral-800 bg-neutral-950">
+      <section className="section section-muted border-b border-neutral-200">
         <div className="container-wide max-w-4xl">
           <h2 className="section-title">Delivery Workflow</h2>
           <ol className="space-y-4">
