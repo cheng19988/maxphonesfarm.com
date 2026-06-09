@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProductCardMinimal, FAQAccordion } from "@/components/commerce";
-import { PageHero, SectionHeader, StatStrip } from "@/components/page-hero";
+import { ApplicationGrid, BeforeAfter, PageHero, SectionHeader, StatStrip } from "@/components/page-hero";
 import { ContactCTA } from "@/components/shared";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/shared";
@@ -152,9 +152,9 @@ export default async function HomePage() {
         <div className="container-wide grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="section-label">Rack Integration</p>
-            <h2 className="section-title">Why Rackmount Instead of Desk Clutter</h2>
+            <h2 className="section-title">A New Way to Host Mobile Compute at Scale</h2>
             <p className="text-lead mb-6">
-              A 20-node rackmount chassis consolidates power, cooling, and USB routing into one 2U unit. Labs gain cleaner cable management, predictable thermals, and easier scaling compared to phones on individual chargers.
+              Many smartphones offer strong compute per dollar. Max Phones Farm chassis consolidate that power into rackmount hardware — regulated cooling, centralized PSU, and custom USB backplanes for battery-free, screenless operation built for continuous lab workloads.
             </p>
             <ul className="space-y-4 text-neutral-400">
               {[
@@ -170,12 +170,50 @@ export default async function HomePage() {
                 </li>
               ))}
             </ul>
+            <div className="mt-8">
+              <Link href="/packages" className="btn-primary">View Solution Packages</Link>
+            </div>
           </div>
           <div className="relative aspect-[4/3] border border-neutral-800 overflow-hidden">
-            <Image src={IMAGES.customCabinet.hero} alt="Rackmount phone farm chassis" fill className="object-cover" sizes="50vw" />
+            <Image src={IMAGES.scenes.rackLab} alt="Rackmount phone farm lab deployment" fill className="object-cover" sizes="50vw" />
           </div>
         </div>
       </section>
+
+      <BeforeAfter
+        title="From Desk Clutter to Rackmount Lab"
+        subtitle="Consolidate power, cooling, and USB routing into one chassis — cleaner operations and easier scaling for QA and automation teams."
+        before={{ src: IMAGES.scenes.before, alt: "Phones on individual chargers before rackmount deployment" }}
+        after={{ src: IMAGES.scenes.after, alt: "Organized rackmount phone farm chassis after deployment" }}
+        beforeLabel="Before"
+        afterLabel="After"
+        stat={{
+          value: "20",
+          label: "Devices in one 2U chassis",
+          detail: "Replace scattered chargers and cables with centralized power, active cooling, and per-slot USB paths for provisioning and remote control.",
+        }}
+      />
+
+      <ApplicationGrid
+        items={[
+          {
+            title: "Mobile app testing at rack scale",
+            desc: "Dedicated Android and iOS device slots for release QA, regression suites, and staged builds across regional configurations.",
+          },
+          {
+            title: "Ad verification & campaign QA",
+            desc: "Real-device preview and display verification workflows with isolated lab networks and repeatable device environments.",
+          },
+          {
+            title: "Multi-account environment management",
+            desc: "Per-team or per-project device slots for legitimate enterprise account environment separation and audit-friendly lab design.",
+          },
+          {
+            title: "QA automation & remote device control",
+            desc: "Batch APK deployment, scripted test runs, and workstation-based device management for automation and staging pipelines.",
+          },
+        ]}
+      />
 
       {/* Trust */}
       <section className="section border-b border-neutral-800 bg-neutral-950">
@@ -187,9 +225,12 @@ export default async function HomePage() {
           />
           <div className="gallery-grid">
             {[
-              { src: IMAGES.workshop, label: "Assembly Workshop", desc: "Chassis build, wiring, and burn-in testing" },
-              { src: IMAGES.warehouse, label: "Warehouse & Export", desc: "Export packing and international shipment prep" },
+              { src: IMAGES.scenes.factoryA, label: "Production & Assembly", desc: "Chassis build, wiring, and QC from our Guangzhou team" },
+              { src: IMAGES.workshop, label: "Assembly Workshop", desc: "Burn-in testing before international shipment" },
+              { src: IMAGES.scenes.factoryB, label: "Hardware Line", desc: "Real-device lab hardware — not stock imagery" },
+              { src: IMAGES.warehouse, label: "Warehouse & Export", desc: "Export packing and logistics" },
               { src: IMAGES.office, label: "Sales & Engineering", desc: "Quote support and deployment planning" },
+              { src: IMAGES.meeting, label: "Project Planning", desc: "Custom rack and multi-lab deployment scoping" },
             ].map((img) => (
               <div key={img.label} className="gallery-item">
                 <Image src={img.src} alt={img.label} fill className="object-cover" sizes="33vw" />

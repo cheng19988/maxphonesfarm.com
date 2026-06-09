@@ -64,7 +64,7 @@ export default function PackagesPage() {
         label="Deployment Bundles"
         title="Solution Packages"
         subtitle="Pre-configured hardware bundles for common lab deployment paths — quote-first with transparent USD list pricing as the starting point."
-        image={IMAGES.customCabinet.hero}
+        image={IMAGES.scenes.rackmount}
         imageAlt="Rackmount phone farm solution package"
       >
         <Link href="/contact" className="btn-primary">Discuss Your Lab</Link>

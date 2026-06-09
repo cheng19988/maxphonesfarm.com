@@ -101,3 +101,72 @@ export function SectionHeader({
     </div>
   );
 }
+
+export function BeforeAfter({
+  title,
+  subtitle,
+  before,
+  after,
+  beforeLabel = "Before",
+  afterLabel = "After",
+  stat,
+}: {
+  title: string;
+  subtitle?: string;
+  before: { src: string; alt: string };
+  after: { src: string; alt: string };
+  beforeLabel?: string;
+  afterLabel?: string;
+  stat?: { value: string; label: string; detail: string };
+}) {
+  return (
+    <section className="section border-b border-neutral-800 bg-neutral-950">
+      <div className="container-wide">
+        <SectionHeader title={title} subtitle={subtitle} />
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
+          <div>
+            <p className="section-label mb-3">{beforeLabel}</p>
+            <div className="relative aspect-[16/10] border border-neutral-800 overflow-hidden bg-neutral-900">
+              <Image src={before.src} alt={before.alt} fill className="object-cover" sizes="50vw" />
+            </div>
+          </div>
+          <div>
+            <p className="section-label mb-3">{afterLabel}</p>
+            <div className="relative aspect-[16/10] border border-neutral-800 overflow-hidden bg-neutral-900">
+              <Image src={after.src} alt={after.alt} fill className="object-cover" sizes="50vw" />
+            </div>
+          </div>
+        </div>
+        {stat && (
+          <div className="border border-neutral-800 p-8 md:p-10 text-center max-w-2xl mx-auto bg-neutral-900/30">
+            <p className="text-5xl md:text-6xl font-semibold text-white tracking-tight mb-2">{stat.value}</p>
+            <p className="text-lg font-medium text-white mb-2">{stat.label}</p>
+            <p className="text-sm text-neutral-500 leading-relaxed">{stat.detail}</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+export function ApplicationGrid({ items }: { items: { title: string; desc: string }[] }) {
+  return (
+    <section className="section border-b border-neutral-800">
+      <div className="container-wide">
+        <SectionHeader
+          label="Applications"
+          title="Built for Enterprise Device Lab Workloads"
+          subtitle="Hardware for legitimate QA, automation, and remote device management at scale — not consumer gadget resale."
+        />
+        <div className="grid md:grid-cols-2 gap-6">
+          {items.map((item) => (
+            <div key={item.title} className="surface-elevated p-8 md:p-10">
+              <h3 className="text-lg font-medium text-white mb-3">{item.title}</h3>
+              <p className="text-sm text-neutral-500 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -40,6 +40,7 @@ export const NAV = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
+  { href: "/blog", label: "Guides" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

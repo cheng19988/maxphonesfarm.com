@@ -3,12 +3,18 @@ const card = (name: string) => `/images/card_800x800/${name}-card_800x800.webp`;
 const hero = (name: string) => `/images/hero_1600x900/${name}-hero_1600x900.webp`;
 const detail = (name: string) => `/images/detail_1200x900/${name}-detail_1200x900.webp`;
 
-const rackCabinet = `${P}-rack-cabinet-moderntechlab-datarack-2fb2e`;
 const serviceLab = `${P}-service-scenes-moderntechlabworkspace-c5506`;
 const serviceControl = `${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`;
+const rackSlide = `${P}-promo-slide-18-rackmount`;
+const rackLab = `${P}-promo-slide-08-rack-lab`;
+const slideBefore = `${P}-promo-slide-04-before`;
+const slideAfter = `${P}-promo-slide-10-after`;
+const slideOverview = `${P}-promo-slide-02-overview`;
+const slideDeploy = `${P}-promo-slide-15-deployment`;
 
 export const IMAGES = {
-  homeHero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
+  homeHero: hero(rackSlide),
+  homeHeroProduct: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
   phoneFarmBox: {
     card: card(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
     hero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
@@ -31,7 +37,7 @@ export const IMAGES = {
   },
   realDevice: {
     card: card(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
-    hero: hero(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
+    hero: hero(`${P}-promo-factory-721a7543`),
     detail: detail(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
   },
   emptyBox: {
@@ -60,14 +66,24 @@ export const IMAGES = {
     detail: detail(`${P}-product-box-2025-10-25-11-45-img-0575`),
   },
   customCabinet: {
-    card: card(rackCabinet),
-    hero: hero(rackCabinet),
-    detail: detail(rackCabinet),
+    card: card(rackSlide),
+    hero: hero(rackSlide),
+    detail: detail(rackLab),
   },
   remoteControl: {
     card: card(`${P}-product-box-untitled-1-setup`),
     hero: hero(`${P}-product-box-untitled-1-setup`),
     detail: detail(`${P}-product-box-untitled-1-setup`),
+  },
+  scenes: {
+    rackmount: hero(rackSlide),
+    rackLab: hero(rackLab),
+    overview: hero(slideOverview),
+    deployment: hero(slideDeploy),
+    before: hero(slideBefore),
+    after: hero(slideAfter),
+    factoryA: hero(`${P}-promo-factory-f2747fe7`),
+    factoryB: hero(`${P}-promo-factory-93bb1ee4`),
   },
   serviceScene: hero(serviceLab),
   serviceControl: hero(serviceControl),
@@ -78,3 +94,13 @@ export const IMAGES = {
   warehouse: "/images/facility/warehouse.png",
   frontDesk: "/images/facility/front-desk.png",
 } as const;
+
+/** Blog / guide cover images keyed by slug */
+export const BLOG_COVERS: Record<string, string> = {
+  "how-to-choose-phone-farm-box": IMAGES.phoneFarmBox.hero,
+  "real-device-vs-cloud-phone": IMAGES.scenes.overview,
+  "phone-farm-setup-guide-2026": IMAGES.scenes.deployment,
+  "motherboard-box-vs-phone-box": IMAGES.motherboardBox.hero,
+  "bulk-apk-installation-guide": IMAGES.scenes.rackLab,
+  "enterprise-phone-farm-deployment": IMAGES.scenes.rackmount,
+};
