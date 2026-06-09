@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
+  --background: #050505;
   --foreground: #fafafa;
   --muted: #737373;
-  --border: #262626;
-  --accent: #fafafa;
+  --border: #1f1f1f;
+  --surface: #0a0a0a;
+  --surface-elevated: #111111;
+  --accent: #e5e5e5;
 }
 
 @theme inline {
@@ -18,19 +20,31 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 
 .container-wide {
-  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-10;
 }
 
 .section {
-  @apply py-20 md:py-28;
+  @apply py-24 md:py-32;
+}
+
+.section-tight {
+  @apply py-16 md:py-20;
 }
 
 .section-title {
-  @apply text-3xl md:text-5xl font-semibold text-white mb-4 tracking-tight;
+  @apply text-3xl md:text-5xl lg:text-[3.25rem] font-semibold text-white mb-4 tracking-tight leading-[1.05];
+}
+
+.text-display {
+  @apply text-4xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-[1.02];
+}
+
+.text-lead {
+  @apply text-neutral-400 text-lg md:text-xl leading-relaxed;
 }
 
 .section-subtitle {
@@ -38,39 +52,51 @@ body {
 }
 
 .section-label {
-  @apply text-xs uppercase tracking-[0.2em] text-neutral-500 mb-3;
+  @apply text-[11px] uppercase tracking-[0.22em] text-neutral-500 mb-4;
+}
+
+.surface {
+  @apply bg-neutral-950 border border-neutral-800;
+}
+
+.surface-elevated {
+  @apply bg-neutral-900/50 border border-neutral-800;
 }
 
 .card {
-  @apply bg-neutral-950 border border-neutral-800 overflow-hidden;
+  @apply bg-neutral-950 border border-neutral-800 overflow-hidden transition-colors duration-300;
 }
 
-.card-minimal {
-  @apply border border-neutral-800 bg-transparent p-6 md:p-8 transition-colors hover:border-neutral-600;
+.card-hover {
+  @apply hover:border-neutral-600;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center px-6 py-3 bg-white text-black text-sm font-medium tracking-wide hover:bg-neutral-200 transition-colors;
+  @apply inline-flex items-center justify-center px-7 py-3.5 bg-white text-black text-sm font-medium tracking-wide hover:bg-neutral-200 transition-colors;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center px-6 py-3 border border-neutral-600 text-white text-sm font-medium tracking-wide hover:border-white transition-colors;
+  @apply inline-flex items-center justify-center px-7 py-3.5 border border-neutral-500 text-white text-sm font-medium tracking-wide hover:border-white hover:bg-white/5 transition-colors;
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center px-6 py-3 border border-neutral-700 text-neutral-300 text-sm font-medium hover:text-white hover:border-neutral-400 transition-colors;
+  @apply inline-flex items-center justify-center px-7 py-3.5 border border-neutral-700 text-neutral-300 text-sm font-medium hover:text-white hover:border-neutral-400 transition-colors;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm text-neutral-400 hover:text-white transition-colors;
 }
 
 .badge-green {
-  @apply text-xs px-2 py-0.5 border border-emerald-800 text-emerald-400;
+  @apply text-[11px] px-2.5 py-1 border border-emerald-800/80 text-emerald-400 uppercase tracking-wide;
 }
 
 .badge-yellow {
-  @apply text-xs px-2 py-0.5 border border-amber-800 text-amber-400;
+  @apply text-[11px] px-2.5 py-1 border border-amber-800/80 text-amber-400 uppercase tracking-wide;
 }
 
 .badge-red {
-  @apply text-xs px-2 py-0.5 border border-red-800 text-red-400;
+  @apply text-[11px] px-2.5 py-1 border border-red-800/80 text-red-400 uppercase tracking-wide;
 }
 
 .divider {
@@ -78,7 +104,7 @@ body {
 }
 
 .prose-content h2 {
-  @apply text-xl font-semibold text-white mt-8 mb-3;
+  @apply text-xl font-semibold text-white mt-10 mb-4;
 }
 
 .prose-content p {
@@ -86,11 +112,11 @@ body {
 }
 
 .prose-content ul {
-  @apply list-disc list-inside text-neutral-400 space-y-1 mb-4;
+  @apply list-disc list-inside text-neutral-400 space-y-2 mb-4;
 }
 
 .input-field {
-  @apply w-full bg-neutral-900 border border-neutral-800 px-3 py-2 text-white placeholder:text-neutral-600 focus:border-neutral-500 focus:outline-none;
+  @apply w-full bg-neutral-900 border border-neutral-800 px-4 py-3 text-white placeholder:text-neutral-600 focus:border-neutral-500 focus:outline-none transition-colors;
 }
 
 .table-neutral thead tr {
@@ -99,5 +125,25 @@ body {
 
 .table-neutral th,
 .table-neutral td {
-  @apply py-2 px-4 text-left;
+  @apply py-3 px-4 text-left;
+}
+
+.product-grid {
+  @apply grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8;
+}
+
+.feature-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
+}
+
+.gallery-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6;
+}
+
+.gallery-item {
+  @apply relative aspect-[16/10] border border-neutral-800 overflow-hidden;
+}
+
+.gallery-item-label {
+  @apply absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent p-5;
 }

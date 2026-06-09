@@ -38,20 +38,23 @@ export function ContactCTA({
   subtitle?: string;
 }) {
   return (
-    <section className="border border-neutral-800 p-10 md:p-16 text-center bg-neutral-950">
-      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3 tracking-tight">{title}</h2>
-      <p className="text-neutral-500 mb-8 max-w-xl mx-auto text-sm leading-relaxed">
-        {subtitle ??
-          `Factory-direct from ${SITE.location}. Custom quotes and bulk delivery — typically within 24 hours on business days.`}
-      </p>
-      <ContactBar />
-      <div className="mt-8 flex flex-wrap justify-center gap-3">
-        <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary">
-          WhatsApp Quote
-        </a>
-        <Link href="/contact" className="btn-secondary">
-          Send Inquiry
-        </Link>
+    <section className="relative overflow-hidden border border-neutral-800 bg-neutral-950">
+      <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/80 via-neutral-950 to-neutral-950" />
+      <div className="relative p-10 md:p-16 lg:p-20 text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 tracking-tight max-w-2xl mx-auto">{title}</h2>
+        <p className="text-neutral-500 mb-10 max-w-xl mx-auto text-base leading-relaxed">
+          {subtitle ??
+            `Factory-direct from ${SITE.location}. Custom quotes and bulk delivery — typically within 24 hours on business days.`}
+        </p>
+        <ContactBar />
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary">
+            WhatsApp Quote
+          </a>
+          <Link href="/contact" className="btn-secondary">
+            Send Inquiry
+          </Link>
+        </div>
       </div>
     </section>
   );

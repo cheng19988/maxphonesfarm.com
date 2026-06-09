@@ -13,21 +13,21 @@ export const SERVICES = [
     title: "Remote Device Control Setup",
     description:
       "ADB path configuration, screen mirroring, and workstation setup so QA teams manage many Android devices from one desk.",
-    image: IMAGES.workshop,
+    image: IMAGES.serviceControl,
   },
   {
     slug: "group-control-system-configuration",
     title: "Multi-Device Management Setup",
     description:
       "Device grouping, batch task scheduling, and synchronized test runs for QA automation and staging environments.",
-    image: IMAGES.workshop,
+    image: IMAGES.serviceScene,
   },
   {
     slug: "bulk-device-deployment",
     title: "Bulk Lab Provisioning",
     description:
       "Large-scale device staging — signed APK rollout, asset labeling, and health checks for 40–100+ node projects.",
-    image: IMAGES.factory,
+    image: IMAGES.warehouse,
   },
   {
     slug: "custom-hardware-solution",
@@ -48,14 +48,14 @@ export const SERVICES = [
     title: "Maintenance & Spare Parts",
     description:
       "Fan and PSU replacement, remote diagnostics, and hardware support for production device labs.",
-    image: IMAGES.workshop,
+    image: IMAGES.cooling.hero,
   },
   {
     slug: "sample-solution",
     title: "Evaluation Unit Program",
     description:
       "Single-unit evaluation with setup guide and engineering call — validate hardware before bulk purchase.",
-    image: IMAGES.phoneFarmBox.card,
+    image: IMAGES.phoneFarmBox.hero,
   },
   {
     slug: "overseas-delivery",

@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PageHero } from "@/components/page-hero";
 import { ContactCTA } from "@/components/shared";
 import { buildMetadata } from "@/lib/seo";
 import { IMAGES } from "@/lib/images";
-import { SITE, CONTACT } from "@/lib/config";
+import { CONTACT, SITE } from "@/lib/config";
+import { DELIVERY_PROCESS } from "@/data/delivery-process";
 
 export const metadata = buildMetadata({
   title: "About — Guangzhou Hardware Supplier",
@@ -14,75 +16,81 @@ export const metadata = buildMetadata({
 
 export default function AboutPage() {
   return (
-    <div className="section">
-      <div className="container-wide max-w-4xl">
-        <h1 className="section-title">About Max Phones Farm</h1>
-        <p className="text-xl text-neutral-400 mb-8 leading-relaxed">
-          {SITE.intro} We are a Guangzhou hardware sourcing and assembly team focused on rackmount phone farm equipment for enterprise device labs — not software resale or cloud phone services.
-        </p>
+    <>
+      <PageHero
+        fullBleed
+        label={SITE.location}
+        title="About Max Phones Farm"
+        subtitle={SITE.intro}
+        image={IMAGES.workshop}
+        imageAlt="Max Phones Farm Guangzhou workshop"
+      >
+        <Link href="/contact" className="btn-primary">Contact Sales</Link>
+      </PageHero>
 
-        <div className="border border-neutral-800 p-6 mb-12 text-sm text-neutral-500 leading-relaxed bg-neutral-950">
-          <p className="text-white font-medium mb-3">Delivery workflow</p>
-          <p className="mb-3">
-            After quote confirmation we run device fit check, power/cooling planning, workshop assembly, burn-in test, and export packing from Guangzhou. Optional remote setup support is available after delivery.
-          </p>
-          <Link href="/services" className="text-neutral-300 hover:text-white underline underline-offset-4">
-            View full 7-step process →
-          </Link>
-        </div>
-
-        <div className="border border-neutral-800 p-6 mb-12 text-sm text-neutral-500 leading-relaxed bg-neutral-950">
-          <p className="text-white font-medium mb-3">What we do</p>
-          <ul className="space-y-2">
-            <li>Factory-direct assembly of phone farm boxes and rackmount chassis</li>
-            <li>Custom rack, cabinet, and node-count configuration to your device models</li>
-            <li>Power, cooling, and USB backplane integration tested before export</li>
-            <li>Export packing with commercial invoices and packing documentation</li>
-            <li>Remote control setup and multi-rack deployment support on request</li>
-          </ul>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {[
-            { title: "Physical Hardware", desc: "Chassis, PSU, fans, and USB infrastructure — built for real Android and iOS device labs." },
-            { title: "Assembly & QC", desc: "Units are built and burn-in tested at our Guangzhou workshop before international shipment." },
-            { title: "Custom Builds", desc: "Slot layouts, rack ears, and power budgets quoted against your target device list." },
-            { title: "Sales & Engineering", desc: `WhatsApp, Telegram, phone, and email — typically within 24 hours on business days (UTC+8).` },
-          ].map((item) => (
-            <div key={item.title} className="border border-neutral-800 p-6 bg-neutral-950">
-              <h2 className="font-medium text-white mb-2">{item.title}</h2>
-              <p className="text-neutral-500 text-sm">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <h2 className="text-2xl font-semibold text-white mb-2">Guangzhou Facility</h2>
-        <p className="text-neutral-500 text-sm mb-6">Office, workshop, and warehouse photos from our Guangzhou operation.</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-          {[
-            { src: IMAGES.office, label: "Office" },
-            { src: IMAGES.meeting, label: "Meeting Room" },
-            { src: IMAGES.workshop, label: "Assembly Workshop" },
-            { src: IMAGES.warehouse, label: "Warehouse & Export" },
-            { src: IMAGES.frontDesk, label: "Reception" },
-          ].map((img) => (
-            <div key={img.label} className="relative aspect-[4/3] border border-neutral-800 overflow-hidden">
-              <Image src={img.src} alt={img.label} fill className="object-cover" sizes="33vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 to-transparent flex items-end p-3">
-                <span className="text-white text-sm">{img.label}</span>
+      <section className="section border-b border-neutral-800">
+        <div className="container-wide">
+          <div className="feature-grid mb-16">
+            {[
+              { title: "Physical Hardware", desc: "Chassis, PSU, fans, and USB infrastructure — built for real Android and iOS device labs." },
+              { title: "Assembly & QC", desc: "Units are built and burn-in tested at our Guangzhou workshop before international shipment." },
+              { title: "Custom Builds", desc: "Slot layouts, rack ears, and power budgets quoted against your target device list." },
+              { title: "Sales & Engineering", desc: "WhatsApp, Telegram, phone, and email — typically within 24 hours on business days (UTC+8)." },
+            ].map((item) => (
+              <div key={item.title} className="surface-elevated p-8">
+                <h2 className="text-lg font-medium text-white mb-3">{item.title}</h2>
+                <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="border border-neutral-800 p-6 mb-12 text-sm text-neutral-400">
-          <p className="text-white font-medium mb-2">Contact</p>
-          <p>Phone: {CONTACT.phone} · WhatsApp: {CONTACT.whatsapp} · Telegram: {CONTACT.telegram}</p>
-          <p className="mt-1">Email: {CONTACT.email} · Location: {SITE.location}</p>
+          <h2 className="section-title">Guangzhou Facility</h2>
+          <p className="section-subtitle">Office, workshop, and warehouse — real photos from our operation.</p>
+          <div className="gallery-grid mb-12">
+            {[
+              { src: IMAGES.workshop, label: "Assembly Workshop", desc: "Chassis build and burn-in testing" },
+              { src: IMAGES.warehouse, label: "Warehouse & Export", desc: "Export packing and logistics" },
+              { src: IMAGES.meeting, label: "Engineering", desc: "Deployment planning and quotes" },
+              { src: IMAGES.office, label: "Office", desc: "Sales and project coordination" },
+              { src: IMAGES.frontDesk, label: "Reception", desc: "Factory visits by appointment" },
+            ].map((img) => (
+              <div key={img.label} className="gallery-item">
+                <Image src={img.src} alt={img.label} fill className="object-cover" sizes="33vw" />
+                <div className="gallery-item-label">
+                  <p className="text-white font-medium">{img.label}</p>
+                  <p className="text-xs text-neutral-400 mt-1">{img.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <ContactCTA title="Discuss Your Lab Project" />
-      </div>
-    </div>
+      <section className="section border-b border-neutral-800 bg-neutral-950">
+        <div className="container-wide max-w-4xl">
+          <h2 className="section-title">Delivery Workflow</h2>
+          <ol className="space-y-4">
+            {DELIVERY_PROCESS.map((step) => (
+              <li key={step.step} className="flex gap-5 surface p-6">
+                <span className="text-2xl font-semibold text-neutral-600 shrink-0 w-8">{step.step}</span>
+                <div>
+                  <h3 className="font-medium text-white mb-2">{step.title}</h3>
+                  <p className="text-sm text-neutral-500 leading-relaxed">{step.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-8 text-sm text-neutral-500">
+            Contact: {CONTACT.phone} · {CONTACT.email} · {SITE.location}
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-wide">
+          <ContactCTA title="Discuss Your Lab Project" />
+        </div>
+      </section>
+    </>
   );
 }

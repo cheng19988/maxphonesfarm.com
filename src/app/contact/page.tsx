@@ -1,6 +1,8 @@
 import { ContactBar } from "@/components/shared";
+import { PageHero } from "@/components/page-hero";
 import { buildMetadata } from "@/lib/seo";
 import { CONTACT, SITE } from "@/lib/config";
+import { IMAGES } from "@/lib/images";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 import { submitContactInquiry } from "./actions";
 
@@ -50,13 +52,17 @@ export default async function ContactPage({ searchParams }: Props) {
   const error = params.error;
 
   return (
-    <div className="section">
-      <div className="container-wide max-w-4xl">
-        <h1 className="section-title">Contact Sales</h1>
-        <p className="section-subtitle">
-          Share your target device count, models, and destination country. Our Guangzhou hardware team will reply with specifications, lead time, and a USD quote.
-        </p>
+    <>
+      <PageHero
+        label={SITE.location}
+        title="Contact Sales"
+        subtitle="Share your target device count, models, and destination country. Our Guangzhou hardware team will reply with specifications, lead time, and a USD quote."
+        image={IMAGES.office}
+        imageAlt="Contact Max Phones Farm sales team"
+      />
 
+      <div className="section-tight border-b border-neutral-800">
+        <div className="container-wide max-w-4xl">
         <div className="border border-neutral-800 p-6 mb-8 bg-neutral-950">
           <h2 className="font-medium text-white mb-4">Direct Contact</h2>
           <ContactBar />
@@ -211,7 +217,8 @@ export default async function ContactPage({ searchParams }: Props) {
         </form>
 
         <ContactFallbackLinks />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

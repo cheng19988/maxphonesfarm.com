@@ -54,15 +54,15 @@ export default async function ProductDetailPage({ params }: Props) {
         ]),
       ]} />
 
-      <div className="section">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20 pb-20 border-b border-neutral-800">
-            <div className="relative aspect-square border border-neutral-800 bg-neutral-950">
+      <div className="border-b border-neutral-800 bg-neutral-950">
+        <div className="container-wide section-tight">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20 pb-20 border-b border-neutral-800">
+            <div className="relative aspect-[4/3] border border-neutral-800 bg-neutral-900 overflow-hidden">
               <Image src={product.imageDetail} alt={product.name} fill className="object-cover" priority sizes="(max-width:1024px) 100vw, 50vw" />
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.15em] text-neutral-500 mb-3">{product.category}</p>
-              <h1 className="text-3xl md:text-4xl font-semibold text-white mb-4 tracking-tight">{product.name}</h1>
+              <h1 className="text-3xl md:text-5xl font-semibold text-white mb-4 tracking-tight">{product.name}</h1>
               <p className="text-neutral-400 mb-8 leading-relaxed">{product.shortDesc}</p>
               <div className="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-neutral-800">
                 <span className="text-3xl font-semibold text-white">${product.priceUsd.toLocaleString()}</span>

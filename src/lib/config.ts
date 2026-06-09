@@ -35,10 +35,11 @@ export const PAYMENT = {
 
 export const NAV = [
   { href: "/products", label: "Products" },
+  { href: "/packages", label: "Packages" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
-  { href: "/blog", label: "Guides" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

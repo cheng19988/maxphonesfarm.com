@@ -3,6 +3,10 @@ const card = (name: string) => `/images/card_800x800/${name}-card_800x800.webp`;
 const hero = (name: string) => `/images/hero_1600x900/${name}-hero_1600x900.webp`;
 const detail = (name: string) => `/images/detail_1200x900/${name}-detail_1200x900.webp`;
 
+const rackCabinet = `${P}-rack-cabinet-moderntechlab-datarack-2fb2e`;
+const serviceLab = `${P}-service-scenes-moderntechlabworkspace-c5506`;
+const serviceControl = `${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`;
+
 export const IMAGES = {
   homeHero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
   phoneFarmBox: {
@@ -36,9 +40,9 @@ export const IMAGES = {
     detail: detail(`${P}-product-box-2025-10-25-11-24-img-0549-f696b`),
   },
   usbHub: {
-    card: card(`${P}-product-box-2025-10-25-11-24-img-0549-f696b`),
-    hero: hero(`${P}-product-box-2025-10-25-11-24-img-0549-f696b`),
-    detail: detail(`${P}-product-box-2025-10-25-11-24-img-0549-f696b`),
+    card: card(`${P}-product-box-2025-10-25-12-01-img-0579`),
+    hero: hero(`${P}-product-box-2025-10-25-12-01-img-0579`),
+    detail: detail(`${P}-product-box-2025-10-25-12-01-img-0579`),
   },
   power: {
     card: card(`${P}-product-box-2025-10-25-11-29-img-0556-25-10-2025-22-02-38-73237`),
@@ -51,21 +55,22 @@ export const IMAGES = {
     detail: detail(`${P}-product-box-2025-10-25-11-33-img-0561-db197`),
   },
   network: {
-    card: card(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
-    hero: hero(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
-    detail: detail(`${P}-product-box-0f5501e1584de9a625d220f62951bc6d-d04df`),
+    card: card(`${P}-product-box-2025-10-25-11-45-img-0575`),
+    hero: hero(`${P}-product-box-2025-10-25-11-45-img-0575`),
+    detail: detail(`${P}-product-box-2025-10-25-11-45-img-0575`),
   },
   customCabinet: {
-    card: card(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
-    hero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
-    detail: detail(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
+    card: card(rackCabinet),
+    hero: hero(rackCabinet),
+    detail: detail(rackCabinet),
   },
   remoteControl: {
-    card: "/images/facility/workshop.png",
-    hero: "/images/facility/workshop.png",
-    detail: "/images/facility/workshop.png",
+    card: card(`${P}-product-box-untitled-1-setup`),
+    hero: hero(`${P}-product-box-untitled-1-setup`),
+    detail: detail(`${P}-product-box-untitled-1-setup`),
   },
-  serviceScene: "/images/facility/workshop.png",
+  serviceScene: hero(serviceLab),
+  serviceControl: hero(serviceControl),
   factory: "/images/facility/workshop.png",
   workshop: "/images/facility/workshop.png",
   office: "/images/facility/office.png",
