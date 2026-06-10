@@ -1,6 +1,9 @@
 /**
- * Build homepage banner from native high-resolution source (not the 1024px chat upload).
- * Chat uploads are heavily compressed; this exports the matched 4032px original crop.
+ * Homepage banner export — ALWAYS from the user's exact image file.
+ * Never substitute a different photo from the asset library.
+ *
+ * For a sharp banner, add the original camera file (same photo) as:
+ *   scripts/_home-banner-hires.jpg
  */
 import fs from "fs";
 import path from "path";
@@ -10,55 +13,89 @@ const P = "maxphonesfarm.com";
 const slug = "home-hero-showroom-lab";
 const base = `${P}-${slug}`;
 const outDir = path.resolve("public/images/banner_wide");
-
-/** Best match to user banner (1024×438 chat upload) via crop search on E: drive assets */
-const HI_RES_SOURCE = "E:/宣传资料主板机照片/aae2bdf797cbf140e26380431bc7bb9.jpg";
 const BANNER_ASPECT = 1024 / 438;
-const CROP_TOP = 512;
+const TARGET_WIDTH = 3840;
 
-const FALLBACK_SOURCE = path.resolve("scripts/_home-banner-source.png");
+const USER_EXACT = path.resolve("scripts/_home-banner-source.png");
+const USER_HIRES_CANDIDATES = [
+  path.resolve("scripts/_home-banner-hires.jpg"),
+  path.resolve("scripts/_home-banner-hires.png"),
+  path.resolve("scripts/_home-banner-hires.jpeg"),
+];
 
-function extractBannerCrop(src) {
-  return sharp(src).metadata().then((meta) => {
-    const cropW = meta.width;
-    const cropH = Math.round(cropW / BANNER_ASPECT);
-    const top = Math.min(CROP_TOP, Math.max(0, meta.height - cropH));
-    const height = Math.min(cropH, meta.height - top);
-    return { extract: { left: 0, top, width: cropW, height }, width: cropW, height };
-  });
+function resolveSource() {
+  for (const p of USER_HIRES_CANDIDATES) {
+    if (fs.existsSync(p)) return { path: p, hires: true };
+  }
+  if (fs.existsSync(USER_EXACT)) return { path: USER_EXACT, hires: false };
+  throw new Error("User banner not found at scripts/_home-banner-source.png");
 }
 
-async function exportBanner(src, label) {
-  const { extract, width, height } = await extractBannerCrop(src);
-  console.log(`Source (${label}):`, src);
-  console.log("Crop:", extract, "→", width, "x", height);
+async function progressiveUpscale(src, targetWidth) {
+  const meta = await sharp(src).metadata();
+  const aspect = meta.width / meta.height;
 
-  fs.mkdirSync(outDir, { recursive: true });
+  if (meta.width >= targetWidth) {
+    return sharp(src)
+      .resize(targetWidth, Math.round(targetWidth / aspect), { kernel: sharp.kernel.lanczos3, fit: "fill" })
+      .png()
+      .toBuffer();
+  }
 
-  const cropped = sharp(src).extract(extract);
+  const steps = [];
+  let w = meta.width;
+  while (w * 2 < targetWidth) {
+    w *= 2;
+    steps.push(w);
+  }
+  steps.push(targetWidth);
 
-  await cropped
-    .clone()
-    .webp({ quality: 98, effort: 6, smartSubsample: false })
-    .toFile(path.join(outDir, `${base}-banner_wide.webp`));
-
-  await cropped
-    .clone()
-    .resize(2560, Math.round(2560 / BANNER_ASPECT), { kernel: sharp.kernel.lanczos3 })
-    .webp({ quality: 98, effort: 6, smartSubsample: false })
-    .toFile(path.join(outDir, `${base}-banner_wide-2560.webp`));
-
-  console.log("Exported native banner at", width, "px wide.");
+  let buf = await sharp(src).png().toBuffer();
+  for (const stepW of steps) {
+    const stepH = Math.round(stepW / aspect);
+    buf = await sharp(buf)
+      .resize(stepW, stepH, { kernel: sharp.kernel.lanczos3, fit: "fill" })
+      .sharpen({ sigma: 0.8, m1: 0.8, m2: 0.3, x1: 2, y2: 8, y3: 16 })
+      .png()
+      .toBuffer();
+    console.log("  upscale step:", stepW, "x", stepH);
+  }
+  return buf;
 }
 
-const src = fs.existsSync(HI_RES_SOURCE) ? HI_RES_SOURCE : FALLBACK_SOURCE;
-if (!fs.existsSync(src)) {
-  console.error("No banner source found.");
-  process.exit(1);
+const { path: src, hires } = resolveSource();
+console.log("Using user's exact image:", src, hires ? "(hi-res original)" : "(1024px chat upload)");
+
+fs.mkdirSync(outDir, { recursive: true });
+
+const meta = await sharp(src).metadata();
+let buf;
+
+if (hires) {
+  const cropH = Math.round(meta.width / BANNER_ASPECT);
+  const top = Math.max(0, Math.round((meta.height - cropH) / 2));
+  const height = Math.min(cropH, meta.height - top);
+  console.log("Hi-res crop:", { left: 0, top, width: meta.width, height });
+  buf = await sharp(src).extract({ left: 0, top, width: meta.width, height }).png().toBuffer();
+  const cropped = await sharp(buf).metadata();
+  if (cropped.width > TARGET_WIDTH) {
+    buf = await sharp(buf)
+      .resize(TARGET_WIDTH, Math.round(TARGET_WIDTH / BANNER_ASPECT), { kernel: sharp.kernel.lanczos3 })
+      .png()
+      .toBuffer();
+  }
+} else {
+  buf = await progressiveUpscale(src, TARGET_WIDTH);
 }
 
-if (src === FALLBACK_SOURCE) {
-  console.warn("WARNING: Using compressed chat upload fallback. Banner will look soft on large screens.");
-}
+const outMeta = await sharp(buf).metadata();
+await sharp(buf)
+  .webp({ quality: 100, effort: 6, smartSubsample: false })
+  .toFile(path.join(outDir, `${base}-banner_wide.webp`));
 
-await exportBanner(src, fs.existsSync(HI_RES_SOURCE) ? "4032px original" : "1024px fallback");
+console.log("Exported banner:", outMeta.width, "x", outMeta.height);
+
+if (!hires) {
+  console.warn("Chat upload is ~1024px — limited sharpness on large screens.");
+  console.warn("Add scripts/_home-banner-hires.jpg (same photo, camera original) for full quality.");
+}
