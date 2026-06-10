@@ -7,6 +7,7 @@ type PageHeroProps = {
   title: string;
   subtitle?: string;
   image?: string;
+  imageRetina?: string;
   imageAlt?: string;
   children?: ReactNode;
   /** product = split layout; product-banner = text on top + wide banner below; banner = catalog split */
@@ -22,6 +23,7 @@ export function PageHero({
   title,
   subtitle,
   image,
+  imageRetina,
   imageAlt = "",
   children,
   variant = "product",
@@ -36,11 +38,12 @@ export function PageHero({
             src={image}
             alt={imageAlt}
             fill
-            className="object-cover object-center [image-rendering:auto]"
+            className="object-cover object-center"
             priority
             quality={100}
             unoptimized
             sizes="100vw"
+            {...(imageRetina ? { srcSet: `${imageRetina} 2560w, ${image} 1916w` } : {})}
           />
           <div className="hero-banner-scrim" aria-hidden />
           <div className="hero-banner-content container-wide">

@@ -91,7 +91,7 @@ body {
 }
 
 .hero-banner {
-  @apply relative w-full aspect-[1024/438] overflow-hidden bg-neutral-100;
+  @apply relative w-full aspect-[1916/821] overflow-hidden bg-neutral-100;
 }
 
 .hero-banner-overlay {

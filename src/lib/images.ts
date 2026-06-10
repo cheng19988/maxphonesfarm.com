@@ -3,6 +3,7 @@ const card = (name: string) => `/images/card_800x800/${name}-card_800x800.webp`;
 const hero = (name: string) => `/images/hero_1600x900/${name}-hero_1600x900.webp`;
 const detail = (name: string) => `/images/detail_1200x900/${name}-detail_1200x900.webp`;
 const banner = (name: string) => `/images/banner_wide/${name}-banner_wide.webp`;
+const banner2560 = (name: string) => `/images/banner_wide/${name}-banner_wide-2560.webp`;
 
 const serviceLab = `${P}-service-scenes-moderntechlabworkspace-c5506`;
 const serviceControl = `${P}-service-scenes-moderndevicemanagementcontrol-ae6b9`;
@@ -17,6 +18,7 @@ const homeShowroom = `${P}-home-hero-showroom-lab`;
 export const IMAGES = {
   homeHero: hero(rackSlide),
   homeHeroProduct: banner(homeShowroom),
+  homeHeroProductRetina: banner2560(homeShowroom),
   phoneFarmBox: {
     card: card(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
     hero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
