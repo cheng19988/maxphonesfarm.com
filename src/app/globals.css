@@ -94,6 +94,18 @@ body {
   @apply relative w-full aspect-[1024/438] overflow-hidden bg-neutral-100;
 }
 
+.hero-banner-overlay {
+  @apply min-h-[540px] sm:min-h-[480px] md:min-h-0 md:aspect-[1024/438];
+}
+
+.hero-banner-scrim {
+  @apply absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-white/10 pointer-events-none;
+}
+
+.hero-banner-content {
+  @apply relative z-10 flex flex-col justify-center h-full py-10 md:py-14 lg:py-16;
+}
+
 .product-shot-hero {
   @apply relative w-full aspect-[16/9] bg-white rounded-2xl border border-neutral-200 shadow-lg overflow-hidden;
 }

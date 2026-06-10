@@ -30,16 +30,24 @@ export function PageHero({
 }: PageHeroProps) {
   if (variant === "product-banner" && image) {
     return (
-      <section className="border-b border-neutral-200 bg-gradient-to-b from-white via-blue-50/40 to-[var(--background)]">
-        <div className="container-wide section-tight pb-8 md:pb-10">
-          {label && <p className="section-label">{label}</p>}
-          <h1 className="text-display mb-6 max-w-4xl">{title}</h1>
-          {subtitle && <p className="text-lead mb-8 max-w-3xl">{subtitle}</p>}
-          {children}
-        </div>
-        <div className="w-full">
-          <div className="hero-banner">
-            <Image src={image} alt={imageAlt} fill className="object-cover object-center" priority sizes="100vw" />
+      <section className="border-b border-neutral-200">
+        <div className="hero-banner hero-banner-overlay">
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            className="object-cover object-center"
+            priority
+            quality={95}
+            unoptimized
+            sizes="100vw"
+          />
+          <div className="hero-banner-scrim" aria-hidden />
+          <div className="hero-banner-content container-wide">
+            {label && <p className="section-label">{label}</p>}
+            <h1 className="text-display mb-5 md:mb-6 max-w-3xl">{title}</h1>
+            {subtitle && <p className="text-lead mb-6 md:mb-8 max-w-2xl">{subtitle}</p>}
+            {children}
           </div>
         </div>
       </section>
