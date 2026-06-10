@@ -11,6 +11,10 @@ type PageHeroProps = {
   children?: ReactNode;
   /** product = bright split layout with white product shot; banner = wide image strip */
   variant?: "product" | "banner" | "simple";
+  /** cover = fill frame (homepage hero); contain = show full image */
+  imageFit?: "contain" | "cover";
+  /** Wider image column + taller frame for homepage */
+  imageLarge?: boolean;
 };
 
 export function PageHero({
@@ -21,20 +25,38 @@ export function PageHero({
   imageAlt = "",
   children,
   variant = "product",
+  imageFit = "contain",
+  imageLarge = false,
 }: PageHeroProps) {
   if (variant === "product" && image) {
+    const frameClass = imageLarge ? "product-shot-hero-large" : "product-shot-hero";
+    const imgClass = imageFit === "cover" ? "product-shot-hero-img-cover" : "product-shot-hero-img";
+
     return (
       <section className="border-b border-neutral-200 bg-gradient-to-b from-white via-blue-50/40 to-[var(--background)]">
         <div className="container-wide section-tight">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div
+            className={
+              imageLarge
+                ? "grid lg:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] gap-8 lg:gap-10 xl:gap-12 items-center"
+                : "grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+            }
+          >
             <div>
               {label && <p className="section-label">{label}</p>}
               <h1 className="text-display mb-6">{title}</h1>
               {subtitle && <p className="text-lead mb-8">{subtitle}</p>}
               {children}
             </div>
-            <div className="product-shot-hero">
-              <Image src={image} alt={imageAlt} fill className="product-shot-hero-img" priority sizes="(max-width:1024px) 100vw, 55vw" />
+            <div className={frameClass}>
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                className={imgClass}
+                priority
+                sizes={imageLarge ? "(max-width:1024px) 100vw, 58vw" : "(max-width:1024px) 100vw, 55vw"}
+              />
             </div>
           </div>
         </div>
