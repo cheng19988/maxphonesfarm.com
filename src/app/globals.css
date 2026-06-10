@@ -103,7 +103,7 @@ body {
 }
 
 .product-shot-hero-large {
-  @apply relative w-full min-h-[380px] sm:min-h-[460px] lg:min-h-[580px] xl:min-h-[640px] rounded-2xl border border-neutral-200 shadow-xl overflow-hidden bg-neutral-900;
+  @apply relative w-full min-h-[380px] sm:min-h-[460px] lg:min-h-[580px] xl:min-h-[640px] rounded-2xl border border-neutral-200 shadow-xl overflow-hidden bg-neutral-100;
 }
 
 .product-shot-hero-img {

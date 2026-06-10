@@ -48,7 +48,7 @@ export default async function HomePage() {
         image={IMAGES.homeHeroProduct}
         imageAlt="Max Phones Farm rackmount phone farm hardware"
         variant="product"
-        imageFit="contain"
+        imageFit="cover"
         imageLarge
       >
         <div className="flex flex-wrap gap-3 mb-8">

@@ -11,10 +11,11 @@ const slideBefore = `${P}-promo-slide-04-before`;
 const slideAfter = `${P}-promo-slide-10-after`;
 const slideOverview = `${P}-promo-slide-02-overview`;
 const slideDeploy = `${P}-promo-slide-15-deployment`;
+const homeShowroom = `${P}-home-hero-showroom-lab`;
 
 export const IMAGES = {
   homeHero: hero(rackSlide),
-  homeHeroProduct: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
+  homeHeroProduct: hero(homeShowroom),
   phoneFarmBox: {
     card: card(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
     hero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
