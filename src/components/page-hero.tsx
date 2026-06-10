@@ -37,7 +37,7 @@ export function PageHero({
           {subtitle && <p className="text-lead mb-8 max-w-3xl">{subtitle}</p>}
           {children}
         </div>
-        <div className="container-wide pb-10 md:pb-12 lg:pb-14">
+        <div className="w-full">
           <div className="hero-banner">
             <Image src={image} alt={imageAlt} fill className="object-cover object-center" priority sizes="100vw" />
           </div>
