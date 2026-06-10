@@ -87,7 +87,27 @@ body {
 }
 
 .product-shot-inner {
-  @apply object-contain p-6 md:p-10;
+  @apply object-contain p-1 md:p-2;
+}
+
+.product-shot-hero {
+  @apply relative w-full aspect-[16/9] bg-white rounded-2xl border border-neutral-200 shadow-lg overflow-hidden;
+}
+
+.product-shot-hero-detail {
+  @apply aspect-[4/3];
+}
+
+.product-shot-hero-img {
+  @apply object-contain;
+}
+
+.product-img-frame {
+  @apply relative bg-neutral-50 overflow-hidden;
+}
+
+.product-img {
+  @apply object-contain w-full h-full;
 }
 
 .btn-primary {

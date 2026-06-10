@@ -87,12 +87,12 @@ export default async function HomePage() {
             subtitle="Server-style smartphone chassis for teams that need serious mobile compute density without desk clutter."
           />
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="product-shot aspect-[4/3]">
+            <div className="product-shot-hero product-shot-hero-detail">
               <Image
                 src={flagship.imageDetail}
                 alt={flagship.name}
                 fill
-                className="product-shot-inner"
+                className="product-shot-hero-img"
                 sizes="(max-width:1024px) 100vw, 50vw"
               />
             </div>
@@ -155,7 +155,7 @@ export default async function HomePage() {
             <p className="text-lead mb-6">
               Many smartphones offer strong compute per dollar. Max Phones Farm chassis consolidate that power into rackmount hardware — regulated cooling, centralized PSU, and custom USB backplanes for battery-free, screenless operation built for continuous lab workloads.
             </p>
-            <ul className="space-y-4 text-neutral-400">
+            <ul className="space-y-4 text-neutral-600">
               {[
                 "Centralized PSU replaces multiple chargers",
                 "Active cooling for continuous test workloads",
@@ -164,7 +164,7 @@ export default async function HomePage() {
                 "Export-ready packing from Guangzhou",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="text-white shrink-0">—</span>
+                  <span className="text-blue-700 shrink-0">—</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -173,8 +173,8 @@ export default async function HomePage() {
               <Link href="/packages" className="btn-primary">View Solution Packages</Link>
             </div>
           </div>
-          <div className="product-shot aspect-[4/3]">
-            <Image src={IMAGES.scenes.rackLab} alt="Rackmount phone farm lab deployment" fill className="object-cover rounded-2xl" sizes="50vw" />
+          <div className="product-shot-hero">
+            <Image src={IMAGES.scenes.rackLab} alt="Rackmount phone farm lab deployment" fill className="product-shot-hero-img" sizes="50vw" />
           </div>
         </div>
       </section>

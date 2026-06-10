@@ -57,8 +57,8 @@ export default async function ProductDetailPage({ params }: Props) {
       <div className="border-b border-neutral-200 bg-white">
         <div className="container-wide section-tight">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16 pb-16 border-b border-neutral-200">
-            <div className="product-shot aspect-[4/3]">
-              <Image src={product.imageDetail} alt={product.name} fill className="product-shot-inner" priority sizes="(max-width:1024px) 100vw, 50vw" />
+            <div className="product-shot-hero product-shot-hero-detail">
+              <Image src={product.imageDetail} alt={product.name} fill className="product-shot-hero-img" priority sizes="(max-width:1024px) 100vw, 50vw" />
             </div>
             <div>
               <p className="section-label mb-2">{product.category}</p>

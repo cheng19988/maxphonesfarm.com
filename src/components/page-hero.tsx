@@ -33,8 +33,8 @@ export function PageHero({
               {subtitle && <p className="text-lead mb-8">{subtitle}</p>}
               {children}
             </div>
-            <div className="product-shot aspect-square lg:aspect-[4/5] max-h-[560px] mx-auto w-full">
-              <Image src={image} alt={imageAlt} fill className="product-shot-inner" priority sizes="(max-width:1024px) 100vw, 50vw" />
+            <div className="product-shot-hero">
+              <Image src={image} alt={imageAlt} fill className="product-shot-hero-img" priority sizes="(max-width:1024px) 100vw, 55vw" />
             </div>
           </div>
         </div>
@@ -53,8 +53,8 @@ export function PageHero({
               {subtitle && <p className="section-subtitle mb-0">{subtitle}</p>}
               {children && <div className="mt-8">{children}</div>}
             </div>
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-neutral-200 shadow-md">
-              <Image src={image} alt={imageAlt} fill className="object-cover" priority sizes="50vw" />
+            <div className="product-shot-hero">
+              <Image src={image} alt={imageAlt} fill className="product-shot-hero-img" priority sizes="50vw" />
             </div>
           </div>
         </div>

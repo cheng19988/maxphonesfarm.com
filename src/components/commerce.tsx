@@ -12,10 +12,17 @@ type ProductCardProps = {
   priceUsd: number;
   stock: number;
   imageCard: string;
+  imageHero?: string;
   category: string;
   compact?: boolean;
   featured?: boolean;
 };
+
+function imageFrameClass(compact: boolean, featured: boolean) {
+  if (featured) return "aspect-[16/9]";
+  if (compact) return "aspect-square min-h-[220px]";
+  return "aspect-square min-h-[260px]";
+}
 
 export function ProductCard({
   slug,
@@ -24,6 +31,7 @@ export function ProductCard({
   priceUsd,
   stock,
   imageCard,
+  imageHero,
   category,
   compact = false,
   featured = false,
@@ -34,13 +42,13 @@ export function ProductCard({
     <article className={`group card card-hover flex flex-col h-full rounded-xl ${featured ? "lg:col-span-2" : ""}`}>
       <Link
         href={`/products/${slug}`}
-        className={`block relative bg-neutral-50 ${compact ? "aspect-[4/3]" : featured ? "aspect-[16/10]" : "aspect-square"}`}
+        className={`block product-img-frame ${imageFrameClass(compact, featured)}`}
       >
         <Image
-          src={imageCard}
+          src={featured && imageHero ? imageHero : imageCard}
           alt={name}
           fill
-          className="object-contain p-4 md:p-6 transition-transform duration-500 group-hover:scale-[1.03]"
+          className="product-img transition-transform duration-500 group-hover:scale-[1.02]"
           sizes={featured ? "50vw" : "(max-width:768px) 100vw, 25vw"}
         />
       </Link>
@@ -88,12 +96,12 @@ export function ProductCardMinimal({
 
   return (
     <article className="group card card-hover rounded-xl overflow-hidden">
-      <Link href={`/products/${slug}`} className="block relative aspect-square bg-neutral-50">
+      <Link href={`/products/${slug}`} className="block product-img-frame aspect-square min-h-[240px]">
         <Image
           src={imageCard}
           alt={name}
           fill
-          className="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.03]"
+          className="product-img transition-transform duration-500 group-hover:scale-[1.02]"
           sizes="25vw"
         />
       </Link>

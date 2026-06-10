@@ -45,8 +45,8 @@ export default async function ProductsPage() {
                 key={group.id}
                 className={`${index === 0 ? "" : "pt-20 mt-20 border-t border-neutral-200"}`}
               >
-                <h2 className="text-3xl md:text-4xl font-semibold text-white mb-3">{group.label}</h2>
-                <p className="text-neutral-500 mb-10 max-w-3xl leading-relaxed">{group.description}</p>
+                <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-3">{group.label}</h2>
+                <p className="text-neutral-600 mb-10 max-w-3xl leading-relaxed">{group.description}</p>
                 <div className={layout.grid}>
                   {group.products.map((p, i) => (
                     <ProductCard
@@ -57,6 +57,7 @@ export default async function ProductsPage() {
                       priceUsd={p.priceUsd}
                       stock={p.stock}
                       imageCard={p.imageCard}
+                      imageHero={p.imageHero}
                       category={p.category}
                       compact={layout.compact}
                       featured={index === 0 && i === 0}
