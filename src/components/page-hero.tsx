@@ -9,8 +9,8 @@ type PageHeroProps = {
   image?: string;
   imageAlt?: string;
   children?: ReactNode;
-  /** product = bright split layout with white product shot; banner = wide image strip */
-  variant?: "product" | "banner" | "simple";
+  /** product = split layout; product-banner = text on top + wide banner below; banner = catalog split */
+  variant?: "product" | "product-banner" | "banner" | "simple";
   /** cover = fill frame (homepage hero); contain = show full image */
   imageFit?: "contain" | "cover";
   /** Wider image column + taller frame for homepage */
@@ -28,6 +28,24 @@ export function PageHero({
   imageFit = "contain",
   imageLarge = false,
 }: PageHeroProps) {
+  if (variant === "product-banner" && image) {
+    return (
+      <section className="border-b border-neutral-200 bg-gradient-to-b from-white via-blue-50/40 to-[var(--background)]">
+        <div className="container-wide section-tight pb-8 md:pb-10">
+          {label && <p className="section-label">{label}</p>}
+          <h1 className="text-display mb-6 max-w-4xl">{title}</h1>
+          {subtitle && <p className="text-lead mb-8 max-w-3xl">{subtitle}</p>}
+          {children}
+        </div>
+        <div className="container-wide pb-10 md:pb-12 lg:pb-14">
+          <div className="hero-banner">
+            <Image src={image} alt={imageAlt} fill className="object-cover object-center" priority sizes="100vw" />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   if (variant === "product" && image) {
     const isProductPhoto = imageLarge && imageFit === "contain";
     const frameClass = isProductPhoto
