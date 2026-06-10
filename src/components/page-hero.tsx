@@ -36,9 +36,9 @@ export function PageHero({
             src={image}
             alt={imageAlt}
             fill
-            className="object-cover object-center"
+            className="object-cover object-center [image-rendering:auto]"
             priority
-            quality={95}
+            quality={100}
             unoptimized
             sizes="100vw"
           />
