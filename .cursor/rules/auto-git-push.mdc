@@ -1,14 +1,16 @@
 ---
-description: Auto commit and push after completing tasks; retry on network timeout
+description: Auto commit and push after completing tasks; retry on network timeout. User requires push every time — do not ask.
 alwaysApply: true
 ---
 
 # Auto Git Commit & Push
 
+**User preference (mandatory):** After every completed task with code/asset changes, **commit and push automatically**. Do not wait for the user to ask. Do not end the task without pushing unless all retries fail.
+
 After completing a task that changes code or assets:
 
 1. **Commit** when there are meaningful changes (do not wait for the user to ask).
-2. **Push** to `origin` immediately after a successful commit.
+2. **Push** to `origin` immediately after a successful commit — **always**, as part of task completion.
 3. **Do not** commit secrets (`.env`, credentials). Warn if the user explicitly asks to commit those.
 
 ## Push command (Windows proxy bypass)
