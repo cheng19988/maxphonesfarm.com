@@ -30,8 +30,8 @@ export default async function ProductsPage() {
         label="Hardware Catalog"
         title="Real-Device Lab Hardware"
         subtitle="Factory-direct phone farm hardware for enterprise device labs — complete systems, core infrastructure, and deployment accessories."
-        image={IMAGES.motherboardBox.hero}
-        imageAlt="Phone farm hardware catalog"
+        image={IMAGES.catalogHero}
+        imageAlt="Rackmount phone farm lab hardware catalog"
       >
         <Link href="/contact" className="btn-primary">Request Custom Quote</Link>
       </PageHero>

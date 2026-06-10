@@ -109,8 +109,16 @@ export function PageHero({
               {subtitle && <p className="section-subtitle mb-0">{subtitle}</p>}
               {children && <div className="mt-8">{children}</div>}
             </div>
-            <div className="product-shot-hero">
-              <Image src={image} alt={imageAlt} fill className="product-shot-hero-img" priority sizes="50vw" />
+            <div className="product-shot-hero min-h-[240px] sm:min-h-[280px] lg:min-h-[320px]">
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                className="product-shot-hero-img-cover"
+                priority
+                unoptimized
+                sizes="(max-width:1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

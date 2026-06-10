@@ -19,6 +19,8 @@ export const IMAGES = {
   homeHero: hero(rackSlide),
   homeHeroProduct: banner(homeShowroom),
   homeHeroProductRetina: banner2560(homeShowroom),
+  /** 16:9 hero for catalog / inner pages (split layout) */
+  catalogHero: hero(rackLab),
   phoneFarmBox: {
     card: card(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
     hero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
