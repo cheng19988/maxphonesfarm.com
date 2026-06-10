@@ -14,7 +14,7 @@ const slideDeploy = `${P}-promo-slide-15-deployment`;
 
 export const IMAGES = {
   homeHero: hero(rackSlide),
-  homeHeroProduct: hero(rackSlide),
+  homeHeroProduct: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
   phoneFarmBox: {
     card: card(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
     hero: hero(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),

@@ -98,12 +98,20 @@ body {
   @apply aspect-[4/3];
 }
 
+.product-shot-hero-product {
+  @apply relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[640px] xl:min-h-[720px] aspect-[4/5] lg:aspect-[3/4] bg-white rounded-2xl border border-neutral-200 shadow-xl overflow-hidden;
+}
+
 .product-shot-hero-large {
   @apply relative w-full min-h-[380px] sm:min-h-[460px] lg:min-h-[580px] xl:min-h-[640px] rounded-2xl border border-neutral-200 shadow-xl overflow-hidden bg-neutral-900;
 }
 
 .product-shot-hero-img {
   @apply object-contain;
+}
+
+.product-shot-hero-img-zoom {
+  @apply object-contain object-center scale-[1.5] sm:scale-[1.55] lg:scale-[1.65];
 }
 
 .product-shot-hero-img-cover {

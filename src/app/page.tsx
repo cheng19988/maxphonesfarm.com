@@ -45,10 +45,10 @@ export default async function HomePage() {
         label={`${SITE.location} · ${SITE.headerBar}`}
         title="Rackmount Phone Farm Hardware for Real-Device Labs"
         subtitle="Factory-direct 20-node chassis, phone farm boxes, and motherboard arrays — built for app testing, ad verification, multi-account environment management, and QA automation at scale."
-        image={IMAGES.homeHero}
+        image={IMAGES.homeHeroProduct}
         imageAlt="Max Phones Farm rackmount phone farm hardware"
         variant="product"
-        imageFit="cover"
+        imageFit="contain"
         imageLarge
       >
         <div className="flex flex-wrap gap-3 mb-8">

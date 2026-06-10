@@ -29,8 +29,13 @@ export function PageHero({
   imageLarge = false,
 }: PageHeroProps) {
   if (variant === "product" && image) {
-    const frameClass = imageLarge ? "product-shot-hero-large" : "product-shot-hero";
-    const imgClass = imageFit === "cover" ? "product-shot-hero-img-cover" : "product-shot-hero-img";
+    const isProductPhoto = imageLarge && imageFit === "contain";
+    const frameClass = isProductPhoto
+      ? "product-shot-hero-product"
+      : imageLarge
+        ? "product-shot-hero-large"
+        : "product-shot-hero";
+    const imgClass = imageFit === "cover" ? "product-shot-hero-img-cover" : isProductPhoto ? "product-shot-hero-img-zoom" : "product-shot-hero-img";
 
     return (
       <section className="border-b border-neutral-200 bg-gradient-to-b from-white via-blue-50/40 to-[var(--background)]">
