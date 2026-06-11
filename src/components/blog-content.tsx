@@ -1,4 +1,6 @@
-/** Minimal markdown: paragraphs, **bold**, and bullet lines starting with "- ". */
+import Link from "next/link";
+
+/** Minimal markdown: paragraphs, **bold**, [links](/path), and "- " bullet lists. */
 export function BlogContent({ content }: { content: string }) {
   const blocks = content.trim().split(/\n\n+/);
 
@@ -26,8 +28,11 @@ export function BlogContent({ content }: { content: string }) {
   );
 }
 
+const INLINE_TOKEN = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g;
+
 function renderInline(text: string) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  const parts = text.split(INLINE_TOKEN).filter((part) => part.length > 0);
+
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
@@ -36,6 +41,31 @@ function renderInline(text: string) {
         </strong>
       );
     }
+
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const [, label, href] = linkMatch;
+      const internal = href.startsWith("/");
+      if (internal) {
+        return (
+          <Link key={i} href={href} className="text-blue-700 underline underline-offset-2 hover:text-blue-800">
+            {label}
+          </Link>
+        );
+      }
+      return (
+        <a
+          key={i}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-700 underline underline-offset-2 hover:text-blue-800"
+        >
+          {label}
+        </a>
+      );
+    }
+
     return part;
   });
 }

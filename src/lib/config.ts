@@ -20,6 +20,7 @@ export const CONTACT = {
   telegramUrl: "https://t.me/huicheng1998",
   whatsapp: "+85262155642",
   whatsappUrl: "https://wa.me/85262155642",
+  /** Update to sales@maxphonesfarm.com after domain mailbox is provisioned — one change updates the whole site. */
   email: "qiuxui646@gmail.com",
 } as const;
 

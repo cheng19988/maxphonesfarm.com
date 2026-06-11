@@ -109,4 +109,10 @@ export const BLOG_COVERS: Record<string, string> = {
   "motherboard-box-vs-phone-box": IMAGES.motherboardBox.hero,
   "bulk-apk-installation-guide": IMAGES.scenes.rackLab,
   "enterprise-phone-farm-deployment": IMAGES.scenes.rackmount,
+  "rackmount-vs-standalone-phone-farm": IMAGES.customCabinet.hero,
+  "ios-device-lab-hardware-guide": IMAGES.iphoneFarm.hero,
+  "android-lab-starter-scaling-path": IMAGES.androidFarm.hero,
+  "power-cooling-phone-farm-labs": IMAGES.cooling.hero,
+  "international-shipping-phone-farm-hardware": IMAGES.warehouse,
+  "remote-adb-multi-device-lab": IMAGES.serviceControl,
 };
