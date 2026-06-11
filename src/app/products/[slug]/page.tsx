@@ -5,7 +5,7 @@ import { getProductBySlug } from "@/lib/products";
 import { getProductQuoteGuide } from "@/data/product-quote-guides";
 import { BuyButtons, FAQAccordion } from "@/components/commerce";
 import { ContactCTA, JsonLd, StockBadge } from "@/components/shared";
-import { buildMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { buildMetadata, productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { formatProductPrice } from "@/lib/format-price";
 import { emailComposeUrl } from "@/lib/email-link";
 import { CONTACT } from "@/lib/config";
@@ -48,7 +48,15 @@ export default async function ProductDetailPage({ params }: Props) {
   return (
     <>
       <JsonLd data={[
-        productJsonLd({ name: product.name, description: product.shortDesc, slug: product.slug, priceUsd: product.priceUsd, stock: product.stock, image: product.imageHero }),
+        productJsonLd({
+          name: product.name,
+          description: product.description,
+          slug: product.slug,
+          priceUsd: product.priceUsd,
+          stock: product.stock,
+          image: product.imageHero,
+        }),
+        ...(faq.length > 0 ? [faqJsonLd(faq.map((f) => ({ question: f.q, answer: f.a })))] : []),
         breadcrumbJsonLd([
           { name: "Home", path: "/" },
           { name: "Products", path: "/products" },

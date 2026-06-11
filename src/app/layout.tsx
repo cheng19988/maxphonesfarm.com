@@ -36,6 +36,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
+      <head>
+        <link rel="alternate" type="text/markdown" href={`${SITE.url}/agents.md`} title="Agent Instructions" />
+        <link rel="alternate" type="text/plain" href={`${SITE.url}/llms.txt`} title="LLM Site Summary" />
+        <link rel="describedby" href={`${SITE.url}/.well-known/ai-site.json`} />
+      </head>
       <body className="min-h-full flex flex-col antialiased">
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />

@@ -2,8 +2,9 @@ import Link from "next/link";
 import { getProductsGrouped } from "@/lib/products";
 import { ProductCard } from "@/components/commerce";
 import { PageHero } from "@/components/page-hero";
-import { ContactCTA } from "@/components/shared";
-import { buildMetadata } from "@/lib/seo";
+import { ContactCTA, JsonLd } from "@/components/shared";
+import { buildMetadata, itemListJsonLd } from "@/lib/seo";
+import { SITE } from "@/lib/config";
 import { IMAGES } from "@/lib/images";
 import type { ProductGroupId } from "@/data/products";
 
@@ -22,9 +23,19 @@ const GROUP_LAYOUT: Record<ProductGroupId, { grid: string; compact: boolean }> =
 
 export default async function ProductsPage() {
   const grouped = await getProductsGrouped();
+  const allProducts = grouped.flatMap((g) => g.products);
 
   return (
     <>
+      <JsonLd
+        data={itemListJsonLd(
+          allProducts.map((p) => ({
+            name: p.name,
+            url: `${SITE.url}/products/${p.slug}`,
+            image: p.imageCard,
+          }))
+        )}
+      />
       <PageHero
         variant="banner"
         label="Hardware Catalog"

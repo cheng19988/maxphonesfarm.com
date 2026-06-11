@@ -68,17 +68,31 @@ export function websiteJsonLd() {
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "Manufacturer"],
     name: SITE.name,
     url: SITE.url,
     logo: `${SITE.url}/images/card_800x800/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-card_800x800.webp`,
     description: SITE.description,
+    foundingDate: "2017",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Guangzhou",
       addressRegion: "Guangdong",
       addressCountry: "CN",
     },
+    areaServed: "Worldwide",
+    knowsAbout: [
+      "phone farm hardware",
+      "rackmount phone farm",
+      "phone farm box",
+      "mobile compute",
+      "screenless battery-free nodes",
+      "device lab infrastructure",
+      "remote device control",
+      "Android device farms",
+      "hash-rate workloads",
+      "app testing hardware",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       email: CONTACT.email,
@@ -96,6 +110,7 @@ export function productJsonLd(product: {
   priceUsd: number;
   stock: number;
   image: string;
+  sku?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -104,7 +119,9 @@ export function productJsonLd(product: {
     description: product.description,
     image: absoluteImageUrl(product.image),
     url: `${SITE.url}/products/${product.slug}`,
+    sku: product.sku ?? product.slug,
     brand: { "@type": "Brand", name: SITE.name },
+    manufacturer: { "@type": "Organization", name: SITE.name, url: SITE.url },
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
@@ -114,7 +131,59 @@ export function productJsonLd(product: {
           ? "https://schema.org/InStock"
           : "https://schema.org/OutOfStock",
       seller: { "@type": "Organization", name: SITE.name },
+      url: `${SITE.url}/products/${product.slug}`,
     },
+  };
+}
+
+export function itemListJsonLd(items: { name: string; url: string; image?: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Phone Farm Hardware Catalog",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: item.url,
+      ...(item.image ? { image: absoluteImageUrl(item.image) } : {}),
+    })),
+  };
+}
+
+export function definedTermSetJsonLd(terms: readonly { term: string; definition: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: "Phone Farm Hardware Glossary",
+    description: "Industry definitions for phone farm box, rackmount phone farm, and device lab terminology.",
+    hasDefinedTerm: terms.map((t) => ({
+      "@type": "DefinedTerm",
+      name: t.term,
+      description: t.definition,
+      inDefinedTermSet: `${SITE.url}/glossary`,
+    })),
+  };
+}
+
+export function howToJsonLd(guide: {
+  name: string;
+  description: string;
+  slug: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: guide.name,
+    description: guide.description,
+    url: `${SITE.url}/blog/${guide.slug}`,
+    step: guide.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
   };
 }
 

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getBlogPost, BLOG_POSTS } from "@/data/blog";
 import { BlogContent } from "@/components/blog-content";
 import { ContactCTA, JsonLd } from "@/components/shared";
-import { buildMetadata, breadcrumbJsonLd, articleJsonLd } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd, articleJsonLd, howToJsonLd } from "@/lib/seo";
 import { BLOG_COVERS, IMAGES } from "@/lib/images";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -27,6 +27,22 @@ export default async function BlogPostPage({ params }: Props) {
 
   const cover = BLOG_COVERS[slug] ?? IMAGES.phoneFarmBox.hero;
 
+  const setupHowTo =
+    slug === "phone-farm-setup-guide-2026"
+      ? howToJsonLd({
+          name: post.title,
+          description: post.excerpt,
+          slug: post.slug,
+          steps: [
+            { name: "Unbox and inspect", text: "Verify slot count, PSU label, fan operation, and USB harness seating." },
+            { name: "Power and network", text: "Connect mains power within rated voltage. Place the chassis on a dedicated lab VLAN." },
+            { name: "Host connection", text: "Run one USB uplink to the control workstation. Confirm each slot enumerates." },
+            { name: "Device preparation", text: "Enable developer options, confirm ADB authorization, and stage test APKs." },
+            { name: "Smoke test", text: "Run a parallel test script across all nodes. Monitor thermals and USB stability for 24 hours." },
+          ],
+        })
+      : null;
+
   return (
     <>
       <JsonLd
@@ -42,6 +58,7 @@ export default async function BlogPostPage({ params }: Props) {
             slug: post.slug,
             date: post.date,
           }),
+          ...(setupHowTo ? [setupHowTo] : []),
         ]}
       />
       <div className="relative border-b border-neutral-200 aspect-[21/9] md:aspect-[3/1] overflow-hidden bg-neutral-50">
