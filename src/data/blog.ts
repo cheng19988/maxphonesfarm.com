@@ -63,7 +63,7 @@ Enable developer options, confirm ADB authorization, and stage test APKs through
 **Step 5: Smoke test**
 Run a parallel test script across all nodes. Monitor thermals and USB stability for 24 hours before production workloads.
 
-Need remote assistance? Message us on WhatsApp (+852 6215 5642) to schedule a setup session.`,
+Need remote assistance? Message us on WhatsApp to schedule a setup session.`,
   },
   {
     slug: "motherboard-box-vs-phone-box",

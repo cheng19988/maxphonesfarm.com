@@ -15,11 +15,11 @@ export default function TermsPage() {
         <p className="text-neutral-500">Last updated: June 2026</p>
         <h2>Quotes &amp; Orders</h2>
         <p>
-          All products are physical phone farm hardware assembled or sourced by the Max Phones Farm team in Guangzhou, China. USD list prices on this website are indicative — final quotes may vary with configuration, device models, and shipping method.
+          This website is quote-first: submit an inquiry or contact us on WhatsApp or Telegram for a formal USD quote. USD list prices are indicative — final quotes may vary with configuration, device models, and shipping method. All products are physical phone farm hardware assembled or sourced by the Max Phones Farm team in Guangzhou, China.
         </p>
         <h2>Payment</h2>
         <p>
-          Payment terms are agreed per quote — typically bank transfer (T/T), Wise, or PayPal for standard orders. Bulk projects receive a pro-forma invoice with a scheduled payment plan.
+          Payment terms are agreed per quote — typically bank transfer (T/T), Wise, or PayPal for standard orders. Bulk projects receive a pro-forma invoice with a scheduled payment plan. USDT (Tron TRC20) may be offered for select orders when agreed in writing on the quote.
         </p>
         <h2>Shipping</h2>
         <p>

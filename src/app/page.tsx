@@ -231,6 +231,44 @@ export default async function HomePage() {
         ]}
       />
 
+      <section className="section section-white border-b border-neutral-200">
+        <div className="container-wide grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="product-shot-hero">
+            <Image
+              src={IMAGES.serviceControl}
+              alt="Remote device control workstation setup"
+              fill
+              className="product-shot-hero-img"
+              sizes="50vw"
+            />
+          </div>
+          <div>
+            <p className="section-label">Device Management</p>
+            <h2 className="section-title">Remote Control From One Workstation</h2>
+            <p className="text-lead mb-6">
+              Manage your device fleet from a single control PC — ADB paths, screen mirroring, batch APK deployment, and device grouping for QA automation workflows. Our engineering team configures your lab hardware and handover documentation.
+            </p>
+            <ul className="space-y-3 text-neutral-600 text-sm mb-8">
+              {[
+                "ADB and USB path verification per slot",
+                "Screen mirroring and batch APK install",
+                "Device grouping for QA and staging teams",
+                "Remote handover session from Guangzhou (UTC+8)",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="text-blue-700 shrink-0">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/products/remote-control-setup" className="btn-primary">Remote Control Setup</Link>
+              <Link href="/services" className="btn-outline">All Lab Services</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Trust */}
       <section className="section section-muted border-b border-neutral-200">
         <div className="container-wide">

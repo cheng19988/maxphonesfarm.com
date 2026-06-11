@@ -3,7 +3,7 @@ import { SITE } from "@/lib/config";
 import { BLOG_POSTS } from "@/data/blog";
 import { PRODUCT_SEEDS } from "@/data/products";
 
-const SITE_UPDATED = new Date("2026-06-05");
+const SITE_UPDATED = new Date("2026-06-10");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

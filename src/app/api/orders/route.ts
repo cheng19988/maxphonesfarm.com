@@ -24,6 +24,11 @@ export async function POST(req: NextRequest) {
   if (!product) {
     return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
+  if (product.priceUsd <= 0) {
+    const contactUrl = new URL("/contact", req.url);
+    contactUrl.searchParams.set("product", productSlug);
+    return NextResponse.redirect(contactUrl);
+  }
 
   const order = await prisma.order.create({
     data: {

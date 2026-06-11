@@ -30,24 +30,26 @@ export default async function AccountOrdersPage() {
           <LogoutButton />
         </div>
         {orders.length === 0 ? (
-          <div className="border border-neutral-800 p-8 text-center text-neutral-500 bg-neutral-950">
+          <div className="surface p-8 text-center text-neutral-500 rounded-xl">
             <p>No orders on file.</p>
             <Link href="/contact" className="btn-primary mt-4 inline-flex">Request a Quote</Link>
           </div>
         ) : (
           <div className="space-y-4">
             {orders.map((order) => (
-              <div key={order.id} className="border border-neutral-800 p-6 bg-neutral-950 text-sm">
-                <div className="flex justify-between items-start">
+              <div key={order.id} className="surface p-6 text-sm rounded-xl">
+                <div className="flex justify-between items-start gap-4">
                   <div>
-                    <p className="font-medium text-white">{order.orderNumber}</p>
+                    <p className="font-medium text-neutral-900">{order.orderNumber}</p>
                     <p className="text-neutral-500 mt-1">
                       {order.items.map((i) => i.product.name).join(", ")}
                     </p>
                   </div>
-                  <div className="text-right">
-                    <p className="text-white">${order.totalUsd}</p>
-                    <p className="text-neutral-400">{order.status}</p>
+                  <div className="text-right shrink-0">
+                    <p className="text-neutral-900 font-medium">
+                      {order.totalUsd > 0 ? `$${order.totalUsd.toLocaleString()}` : "Custom Quote"}
+                    </p>
+                    <p className="text-neutral-500">{order.status}</p>
                   </div>
                 </div>
               </div>

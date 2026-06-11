@@ -40,8 +40,8 @@ export default function RegisterPage() {
         <p className="text-neutral-500 text-sm text-center mb-6">
           Optional account for existing customers — new buyers should use the contact form or WhatsApp for quotes.
         </p>
-        <form onSubmit={handleSubmit} className="border border-neutral-800 p-6 space-y-4 bg-neutral-950">
-          {error && <p className="text-red-400 text-sm">{error}</p>}
+        <form onSubmit={handleSubmit} className="surface p-6 space-y-4 rounded-xl">
+          {error && <p className="text-red-700 text-sm border border-red-200 bg-red-50 p-3 rounded-lg">{error}</p>}
           <div>
             <label className="block text-sm text-neutral-500 mb-1">Name</label>
             <input name="name" className="input-field" />
@@ -58,7 +58,7 @@ export default function RegisterPage() {
             {loading ? "Creating…" : "Create Account"}
           </button>
           <p className="text-center text-sm text-neutral-500">
-            <Link href="/contact" className="text-white underline underline-offset-4">Get a quote instead</Link>
+            <Link href="/contact" className="text-blue-700 underline underline-offset-4">Get a quote instead</Link>
           </p>
         </form>
       </div>

@@ -23,6 +23,11 @@ export const FAQ_ITEMS = [
       "Yes. Real-device labs are commonly used for mobile ad testing, regional ad preview, landing page verification, and device compatibility checks across physical Android and iOS hardware — not emulators alone.",
   },
   {
+    question: "Real-device lab vs cloud phones — which should we choose?",
+    answer:
+      "Cloud phones run on shared virtual infrastructure. Our hardware gives you physical Android and iOS devices with authentic sensors, radios, and OS behavior. Choose real-device labs when you need genuine device fingerprints, regional carrier behavior, or long-running QA automation you control in your rack or lab.",
+  },
+  {
     question: "Do you support multi-account environment management?",
     answer:
       "Our hardware provides separate physical device slots for account environment management, team-based device assignment, and enterprise operation workflows. Your team controls the application layer and internal access policies.",
@@ -66,5 +71,5 @@ export const FAQ_ITEMS = [
 
 /** Curated subset for homepage */
 export const HOME_FAQ = FAQ_ITEMS.filter((_, i) =>
-  [0, 1, 3, 4, 6, 7, 8, 10].includes(i)
+  [0, 1, 3, 4, 7, 8, 9, 11].includes(i)
 );
