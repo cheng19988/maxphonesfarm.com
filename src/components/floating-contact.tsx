@@ -4,26 +4,23 @@ const CHANNELS = [
   {
     id: "telegram",
     label: "Telegram",
-    value: CONTACT.telegram,
     href: CONTACT.telegramUrl,
     external: true,
-    iconClass: "bg-[#229ED9]/10 text-[#229ED9]",
+    buttonClass: "bg-[#229ED9] hover:bg-[#1b8ec7] shadow-[#229ED9]/25",
   },
   {
     id: "whatsapp",
     label: "WhatsApp",
-    value: CONTACT.whatsapp,
     href: CONTACT.whatsappUrl,
     external: true,
-    iconClass: "bg-[#25D366]/10 text-[#25D366]",
+    buttonClass: "bg-[#25D366] hover:bg-[#20bd5a] shadow-[#25D366]/25",
   },
   {
     id: "email",
     label: "Email",
-    value: CONTACT.email,
     href: `mailto:${CONTACT.email}`,
     external: false,
-    iconClass: "bg-blue-50 text-blue-700",
+    buttonClass: "bg-blue-700 hover:bg-blue-800 shadow-blue-700/25",
   },
 ] as const;
 
@@ -55,36 +52,22 @@ function ChannelIcon({ id }: { id: (typeof CHANNELS)[number]["id"] }) {
 export function FloatingContact() {
   return (
     <aside
-      className="fixed bottom-5 right-5 z-50 w-72 max-w-[calc(100vw-2.5rem)] rounded-xl border border-neutral-200 bg-white p-3.5 shadow-xl shadow-neutral-900/10"
+      className="fixed bottom-5 right-5 z-50 flex flex-col gap-2.5"
       aria-label="Contact sales"
     >
-      <p className="mb-2.5 px-1 text-xs font-medium uppercase tracking-[0.14em] text-neutral-400">
-        Contact Sales
-      </p>
-      <ul className="space-y-1.5">
-        {CHANNELS.map((channel) => (
-          <li key={channel.id}>
-            <a
-              href={channel.href}
-              target={channel.external ? "_blank" : undefined}
-              rel={channel.external ? "noopener noreferrer" : undefined}
-              className="flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-neutral-50"
-            >
-              <span
-                className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${channel.iconClass}`}
-              >
-                <ChannelIcon id={channel.id} />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-xs font-medium text-neutral-500">{channel.label}</span>
-                <span className="block text-sm font-medium text-neutral-900 break-all leading-snug">
-                  {channel.value}
-                </span>
-              </span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      {CHANNELS.map((channel) => (
+        <a
+          key={channel.id}
+          href={channel.href}
+          target={channel.external ? "_blank" : undefined}
+          rel={channel.external ? "noopener noreferrer" : undefined}
+          aria-label={channel.label}
+          title={channel.label}
+          className={`inline-flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl ${channel.buttonClass}`}
+        >
+          <ChannelIcon id={channel.id} />
+        </a>
+      ))}
     </aside>
   );
 }
