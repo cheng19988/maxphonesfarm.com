@@ -27,9 +27,9 @@ export const IMAGES = {
     detail: detail(`${P}-product-box-2025-10-25-11-27-img-0551-a9b35`),
   },
   motherboardBox: {
-    card: card(`${P}-product-box-2025-10-25-11-21-img-0547-4b35a`),
-    hero: hero(`${P}-product-box-2025-10-25-11-21-img-0547-4b35a`),
-    detail: detail(`${P}-product-box-2025-10-25-11-21-img-0547-4b35a`),
+    card: card(`${P}-product-box-2025-10-25-11-40-img-0571`),
+    hero: hero(`${P}-product-box-2025-10-25-11-40-img-0571`),
+    detail: detail(`${P}-product-box-2025-10-25-11-40-img-0571`),
   },
   androidFarm: {
     card: card(`${P}-product-box-2025-10-25-11-28-img-0553-47327`),

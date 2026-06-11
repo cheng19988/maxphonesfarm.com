@@ -58,7 +58,13 @@ export async function getPublishedProducts(): Promise<ProductRecord[]> {
     if (rows.length > 0) {
       return rows.map((row) => {
         const seed = PRODUCT_SEEDS.find((s) => s.slug === row.slug);
-        return { ...row, group: seed?.group ?? ("accessories" as ProductGroupId) };
+        return {
+          ...row,
+          group: seed?.group ?? ("accessories" as ProductGroupId),
+          imageCard: seed?.imageCard ?? row.imageCard,
+          imageHero: seed?.imageHero ?? row.imageHero,
+          imageDetail: seed?.imageDetail ?? row.imageDetail,
+        };
       });
     }
   } catch (error) {
@@ -72,7 +78,13 @@ export async function getProductBySlug(slug: string): Promise<ProductRecord | nu
     const row = await prisma.product.findUnique({ where: { slug } });
     if (row) {
       const seed = PRODUCT_SEEDS.find((s) => s.slug === row.slug);
-      return { ...row, group: seed?.group ?? ("accessories" as ProductGroupId) };
+      return {
+        ...row,
+        group: seed?.group ?? ("accessories" as ProductGroupId),
+        imageCard: seed?.imageCard ?? row.imageCard,
+        imageHero: seed?.imageHero ?? row.imageHero,
+        imageDetail: seed?.imageDetail ?? row.imageDetail,
+      };
     }
   } catch (error) {
     console.error(`[products] Database lookup failed for ${slug}:`, error);

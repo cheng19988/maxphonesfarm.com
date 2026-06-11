@@ -18,7 +18,7 @@ const PACKAGES = [
     name: "Starter Lab Package",
     price: "From $2,499",
     slug: "phone-farm-box",
-    image: IMAGES.phoneFarmBox.hero,
+    image: IMAGES.phoneFarmBox.card,
     includes: [
       "Enterprise Phone Farm Box (20 slots)",
       "Centralized power module",
@@ -31,7 +31,7 @@ const PACKAGES = [
     name: "Rackmount Enterprise Package",
     price: "From $4,899",
     slug: "custom-cabinet",
-    image: IMAGES.customCabinet.hero,
+    image: IMAGES.phoneFarmBox.card,
     includes: [
       "2U Rackmount Phone Farm chassis",
       "Rack ears and cable management",
@@ -45,7 +45,7 @@ const PACKAGES = [
     name: "Multi-Rack Scale Package",
     price: "Custom Quote",
     slug: "real-device-phone-farm",
-    image: IMAGES.realDevice.hero,
+    image: IMAGES.realDevice.card,
     includes: [
       "Multiple chassis or cabinet builds",
       "Network & USB backplane planning",
@@ -64,7 +64,7 @@ export default function PackagesPage() {
         label="Deployment Bundles"
         title="Solution Packages"
         subtitle="Pre-configured hardware bundles for common lab deployment paths — quote-first with transparent USD list pricing as the starting point."
-        image={IMAGES.scenes.rackmount}
+        image={IMAGES.catalogHero}
         imageAlt="Rackmount phone farm solution package"
       >
         <Link href="/contact" className="btn-primary">Discuss Your Lab</Link>
@@ -87,13 +87,13 @@ export default function PackagesPage() {
                   )}
                 </div>
                 <div className="p-7 flex flex-col flex-1">
-                  <h2 className="text-xl font-semibold text-white mb-2">{pkg.name}</h2>
-                  <p className="text-2xl font-semibold text-white mb-4">{pkg.price}</p>
-                  <p className="text-sm text-neutral-500 mb-6">{pkg.ideal}</p>
+                  <h2 className="text-xl font-semibold text-neutral-900 mb-2">{pkg.name}</h2>
+                  <p className="text-2xl font-semibold text-blue-700 mb-4">{pkg.price}</p>
+                  <p className="text-sm text-neutral-600 mb-6">{pkg.ideal}</p>
                   <ul className="space-y-2 mb-8 flex-1">
                     {pkg.includes.map((item) => (
-                      <li key={item} className="text-sm text-neutral-400 flex gap-2">
-                        <span className="text-white shrink-0">—</span>
+                      <li key={item} className="text-sm text-neutral-600 flex gap-2">
+                        <span className="text-blue-700 shrink-0">—</span>
                         {item}
                       </li>
                     ))}

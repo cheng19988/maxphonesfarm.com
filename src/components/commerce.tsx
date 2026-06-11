@@ -19,9 +19,9 @@ type ProductCardProps = {
 };
 
 function imageFrameClass(compact: boolean, featured: boolean) {
-  if (featured) return "aspect-[16/9]";
-  if (compact) return "aspect-square min-h-[220px]";
-  return "aspect-square min-h-[260px]";
+  if (featured) return "aspect-[4/3] min-h-[260px] md:min-h-[300px]";
+  if (compact) return "aspect-square min-h-[200px]";
+  return "aspect-square min-h-[240px]";
 }
 
 export function ProductCard({
@@ -45,10 +45,10 @@ export function ProductCard({
         className={`block product-img-frame ${imageFrameClass(compact, featured)}`}
       >
         <Image
-          src={featured && imageHero ? imageHero : imageCard}
+          src={imageCard}
           alt={name}
           fill
-          className="product-img transition-transform duration-500 group-hover:scale-[1.02]"
+          className="product-img-cover transition-transform duration-500 group-hover:scale-[1.02]"
           sizes={featured ? "50vw" : "(max-width:768px) 100vw, 25vw"}
         />
       </Link>
@@ -96,12 +96,12 @@ export function ProductCardMinimal({
 
   return (
     <article className="group card card-hover rounded-xl overflow-hidden">
-      <Link href={`/products/${slug}`} className="block product-img-frame aspect-square min-h-[240px]">
+      <Link href={`/products/${slug}`} className="block product-img-frame aspect-square min-h-[220px]">
         <Image
           src={imageCard}
           alt={name}
           fill
-          className="product-img transition-transform duration-500 group-hover:scale-[1.02]"
+          className="product-img-cover transition-transform duration-500 group-hover:scale-[1.02]"
           sizes="25vw"
         />
       </Link>

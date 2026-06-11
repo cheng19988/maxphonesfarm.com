@@ -142,6 +142,10 @@ body {
   @apply object-contain w-full h-full;
 }
 
+.product-img-cover {
+  @apply object-cover object-center w-full h-full;
+}
+
 .btn-primary {
   @apply inline-flex items-center justify-center px-7 py-3.5 bg-blue-700 text-white text-sm font-medium tracking-wide hover:bg-blue-800 transition-colors shadow-sm;
 }
