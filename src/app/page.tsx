@@ -88,10 +88,10 @@ export default async function HomePage() {
 
       <StatStrip
         items={[
-          { value: "20", label: "Devices per chassis", detail: "Rack-scale real Android & iOS device slots in a single 2U unit." },
-          { value: "2U", label: "Rack integration", detail: "Server-style mounting for enterprise labs and automation infrastructure." },
-          { value: "24h", label: "Sales response", detail: "WhatsApp, Telegram, and email — typically within one business day." },
-          { value: "GZ", label: "Factory-direct", detail: "Assembly, QC, and export packing from our Guangzhou workshop." },
+          { value: "20", label: "Phones per chassis", detail: "Phones installed, organized, and working together — ready for app testing, automation, and mobile compute workloads." },
+          { value: "2–10%", label: "Power efficiency", detail: "Screenless, battery-free node layouts can improve power efficiency and thermal stability vs phones running with displays and batteries under continuous load." },
+          { value: "2U", label: "Rack integration", detail: "Server-style mounting for standard 19\" racks — mobile compute without desk clutter." },
+          { value: "24h", label: "Sales response", detail: "WhatsApp, Telegram, and email — typically within one business day (UTC+8)." },
         ]}
       />
 
@@ -163,6 +163,25 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* What is a phone farm box — reference module 6 */}
+      <section className="section section-white border-b border-neutral-200">
+        <div className="container-wide max-w-4xl mx-auto text-center">
+          <p className="section-label">Hardware Explained</p>
+          <h2 className="section-title mb-6">What Is a Phone Farm Box?</h2>
+          <p className="text-lead mb-6">
+            A phone farm box is a 20-slot smartphone container — phones installed, organized, and working together in one regulated chassis. Each device shares centralized power, active cooling, and a USB path to your control PC so operators manage the fleet from one workstation instead of scattered chargers and cables.
+          </p>
+          <p className="text-neutral-600 leading-relaxed mb-8">
+            Battery-free and screenless node layouts are available on compatible builds: removing displays and accessory load where applicable improves power efficiency (often 2–10% better thermal and energy profile vs full phones under continuous load), extends hardware life, and keeps nodes stable for app testing, automation, hash-rate and mobile compute workloads, and remote Android control. Deploy as a desk box or integrate as a 2U rackmount module — the architecture is the same mobile compute density, scaled to your lab.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link href="/products/phone-farm-box" className="btn-primary">Enterprise Phone Farm Box</Link>
+            <Link href="/products/custom-cabinet" className="btn-outline">Rackmount +20</Link>
+            <Link href="/blog/what-is-a-phone-farm-box" className="btn-outline">Read the Guide</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Value proposition */}
       <section className="section section-white border-b border-neutral-200">
         <div className="container-wide grid lg:grid-cols-2 gap-16 items-center">
@@ -170,7 +189,10 @@ export default async function HomePage() {
             <p className="section-label">Rack Integration</p>
             <h2 className="section-title">A New Way to Host Mobile Compute at Scale</h2>
             <p className="text-lead mb-6">
-              Many smartphones offer strong compute per dollar. Max Phones Farm chassis consolidate that power into rackmount hardware — regulated cooling, centralized PSU, and custom USB backplanes for battery-free, screenless operation built for continuous lab workloads.
+              Many smartphones boast impressive computing power for their cost. Max Phones Farm makes it possible to scale phone CPU and bring value to new or used devices in a regulated chassis — custom motherboard routing, centralized power, and active cooling for battery-free, screenless operation built for continuous mobile compute workloads.
+            </p>
+            <p className="text-neutral-600 mb-6 leading-relaxed">
+              A phone farm box is a 20-slot smartphone container: devices share one power input, one USB path to your control PC, and an integrated fan array. Whether deployed as a desk box or 2U rackmount module, the goal is the same — run many phones from one place instead of scattered chargers and cables.
             </p>
             <ul className="space-y-4 text-neutral-600">
               {[
@@ -205,12 +227,14 @@ export default async function HomePage() {
         afterLabel="After"
         stat={{
           value: "20",
-          label: "Devices in one 2U chassis",
-          detail: "Replace scattered chargers and cables with centralized power, active cooling, and per-slot USB paths for provisioning and remote control.",
+          label: "Phones in one chassis",
+          detail: "Replace scattered chargers and cables with centralized power, active cooling, and per-slot USB paths — organized mobile compute ready for near-unlimited lab uses.",
         }}
       />
 
       <ApplicationGrid
+        title="Expansive Uses for Device Labs"
+        subtitle="Phone farm applications are near-endless — whether your workflow benefits from multiple devices, unified mobile compute, or Android customization at scale."
         items={[
           {
             title: "Mobile app testing at rack scale",

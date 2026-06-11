@@ -1,5 +1,58 @@
 export const BLOG_POSTS = [
   {
+    slug: "what-is-a-phone-farm-box",
+    title: "What Is a Phone Farm Box? A Hardware Guide for Device Labs",
+    category: "Hardware Selection",
+    date: "2026-06-08",
+    excerpt:
+      "20-slot smartphone containers, centralized power and cooling, and why battery-free screenless nodes matter for continuous lab workloads.",
+    content: `A **phone farm box** is a regulated chassis that holds many smartphones in one enclosure — typically twenty slots — with shared power, active cooling, and a single USB path to your control PC. Instead of twenty chargers and cable nests on a desk, operators manage the fleet from one workstation.
+
+## Core components
+- **Chassis**: Metal enclosure with slot rails, ventilation, and cable management
+- **Centralized power**: One industrial PSU replaces individual phone chargers — see our [Centralized Power Module](/products/power-supply-solution)
+- **Cooling**: Front or internal fan arrays for 24/7 app testing and automation load
+- **USB backplane**: Per-slot data paths for ADB, mirroring, and batch APK deploy — [USB Backplane Module](/products/usb-hub) for upgrades
+
+## Desk box vs rackmount
+The [Enterprise Phone Farm Box](/products/phone-farm-box) is the original-style standalone container for bench or shelf labs. The [Rackmount Phone Farm +20](/products/custom-cabinet) delivers the same 20-node density in a 2U module for standard 19" server racks.
+
+## Screenless and battery-free nodes
+On compatible builds, removing displays and battery load improves thermal stability and power efficiency — often a 2–10% better energy profile vs full phones under continuous load. The [Motherboard Box](/products/motherboard-box) is optimized for this headless layout; full-phone boxes remain best when tests require cameras, radios, and sensors.
+
+## What you can run on a phone farm
+Mobile app testing, QA automation, ad verification, multi-account lab environments, remote Android control, mobile compute pipelines, and hash-rate or compute workloads on Android nodes — anything physical phones can do at scale, with hardware you control.
+
+Need a sizing recommendation? [Contact us](/contact) with device count, models, and destination country, or book [Remote Control Setup](/products/remote-control-setup) for a guided handover.`,
+  },
+  {
+    slug: "phone-farm-use-cases-device-labs",
+    title: "Phone Farm Use Cases: Near-Endless Applications for Device Labs",
+    category: "Lab Architecture",
+    date: "2026-06-09",
+    excerpt:
+      "From app testing and ad verification to mobile compute and automation — how teams use 20-node phone farm hardware.",
+    content: `Phone farm applications are near-endless. Whether your workflow benefits from multiple devices, unified mobile compute, or Android customization at scale, a factory-built chassis turns scattered phones into managed lab infrastructure.
+
+## Mobile app testing at rack scale
+Dedicated Android and iOS slots for release QA, regression suites, and staged builds across regional configurations. Pair a [Rackmount Phone Farm +20](/products/custom-cabinet) with your CI pipeline for parallel device runs.
+
+## Ad verification and campaign QA
+Real-device preview and display verification with isolated lab networks. Physical hardware catches rendering and carrier-specific behavior that emulators miss — see our [FAQ on ad verification](/faq).
+
+## Multi-account environment management
+Separate physical slots per team or project for enterprise account environment separation and audit-friendly lab design. Your policies control the application layer; our hardware provides the slot isolation.
+
+## QA automation and remote device control
+Batch APK deployment, scripted test runs, and workstation-based device management. Start with the [Device Lab Setup Guide](/blog/phone-farm-setup-guide-2026) or our [Remote Control Setup Service](/products/remote-control-setup).
+
+## Mobile compute and hash-rate workloads
+Smartphone SoCs offer strong compute per dollar. Screenless, battery-free node layouts in a [Motherboard Box](/products/motherboard-box) or rackmount chassis support continuous compute workloads where your use case and device configuration allow.
+
+## Scaling beyond one box
+When you outgrow twenty nodes, plan a [Server-Style Device Farm](/products/real-device-phone-farm) with multi-rack power budgeting and [Lab Network Switch Kit](/products/network-equipment) segmentation. [Contact sales](/contact) with target node count for a project quote.`,
+  },
+  {
     slug: "how-to-choose-phone-farm-box",
     title: "How to Choose Phone Farm Hardware for a Device Lab",
     category: "Hardware Selection",

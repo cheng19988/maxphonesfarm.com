@@ -51,9 +51,9 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     name: "Rackmount Phone Farm +20",
     group: "complete-systems",
     category: "Complete System",
-    shortDesc: "2U rackmount chassis with 20 real-device slots, centralized PSU, active cooling, and USB data backplane.",
+    shortDesc: "2U rackmount server-style phone farm with 20 slots — screenless, battery-free nodes optional; centralized cooling and USB control.",
     description:
-      "The Rackmount Phone Farm +20 is built for device labs that need rack integration instead of desk clutter. Twenty physical Android devices or motherboard nodes mount inside a 2U metal chassis with a shared power supply, front-mounted cooling, and a managed USB path to your control workstation. Screenless and battery-free node layouts are available on request to reduce heat and simplify continuous operation. Each unit is assembled and burn-in tested in Guangzhou before export.",
+      "Featuring a server-style smartphone chassis for teams that need serious mobile compute power without desk clutter. The Rackmount Phone Farm +20 holds twenty Android phones or motherboard nodes inside a 2U metal enclosure with shared power, front-mounted cooling, and per-slot USB paths to your control workstation. Nodes can be built screenless and battery-free — engineered for efficiency, longevity, and rack integration. Removing displays and accessory load where applicable helps nodes deliver maximum performance with minimal energy consumption. Built to slot into standard 19\" server racks at 2U height, this rackmount phone farm delivers strong compute density per watt while staying cool and organized. Integrated cooling fans and centralized device management support stable 24/7 operation for app testing, automation, hash-rate workloads, and remote Android control. Each unit is assembled and burn-in tested in Guangzhou before export.",
     features: [
       "2U form factor for standard 19\" server racks",
       "20 device slots with individual USB data paths",
@@ -123,9 +123,9 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     name: "Enterprise Phone Farm Box",
     group: "complete-systems",
     category: "Complete System",
-    shortDesc: "Standalone 20-node phone farm box with integrated power, cooling, and USB management — desk or shelf deployment.",
+    shortDesc: "The original-style 20-slot phone farm box — standalone mobile compute container with cooling, power, and USB management.",
     description:
-      "The Enterprise Phone Farm Box is a self-contained 20-slot chassis for teams that do not need full rack integration yet. Real Android devices sit in a cooled metal enclosure with one power input and a single USB hub path to your control PC. It suits app testing labs, device management pilots, and QA teams scaling from a handful of phones to a managed fleet. Factory-assembled in Guangzhou with QC documentation included.",
+      "The Enterprise Phone Farm Box is the original-style phone farm container: a 20-slot smartphone chassis regulated by cooling, with custom motherboard routing and centralized power components. Battery-free and screenless node layouts are available for extended device life, higher performance stability, and optimized multi-device management. Real Android devices mount in a cooled metal enclosure with one power input and a single USB hub path to your control PC — so you run commands from one workstation instead of operating each phone manually. Ideal for app testing labs, device management pilots, QA automation, hash-rate and compute workloads, and teams scaling from a handful of phones to a managed fleet. Factory-assembled in Guangzhou with QC documentation included.",
     features: [
       "20 real-device slots in one enclosure",
       "Integrated cooling and shared power architecture",
@@ -189,7 +189,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Complete System",
     shortDesc: "Multi-unit device lab package — several phone farm boxes or rackmount modules with shared power and network planning.",
     description:
-      "The Server-Style Device Farm is a project-scale package for teams deploying 40–100+ Android devices across multiple chassis. We plan rack layout, power budgeting, USB topology, and network segmentation with your lab team, then assemble and test units in Guangzhou. Ideal for enterprise device infrastructure, large QA environments, and custom phone farm rollouts that exceed a single 20-node box.",
+      "The Server-Style Device Farm is a project-scale package for teams deploying 40–100+ Android devices across multiple chassis. We plan rack layout, power budgeting, USB topology, and network segmentation with your lab team, then assemble and test units in Guangzhou. Mix Rackmount Phone Farm +20 modules with standalone Enterprise Phone Farm Boxes as your floor plan requires. Ideal for enterprise device infrastructure, large QA environments, mobile compute at rack scale, and custom phone farm rollouts that exceed a single 20-node box.",
     features: [
       "Multi-chassis layout design and power budgeting",
       "Coordinated USB and network topology",
@@ -249,9 +249,9 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     name: "Motherboard Box — Screenless Array",
     group: "core-hardware",
     category: "Core Hardware",
-    shortDesc: "High-density screenless Android motherboard chassis — up to 20 nodes without displays or batteries.",
+    shortDesc: "Screenless, battery-free Android motherboard array — up to 20 headless nodes with lower heat and power draw.",
     description:
-      "The Motherboard Box packs up to 20 Android motherboard nodes into one cooled enclosure. Removing screens and batteries lowers per-node cost and thermal load, which suits headless app testing, ADB automation, and remote Android control where display output is not required. Each node retains USB debugging access. Layout and board model must be confirmed before build — share your target motherboard SKU for a fit check.",
+      "The Motherboard Box is built for screenless, battery-free mobile compute at scale. Up to twenty Android motherboard nodes mount in one cooled enclosure — phones engineered without displays or batteries for efficiency, longevity, and dense lab operation. Removing screens and batteries lowers per-node cost and thermal load while improving power efficiency compared with running full phones under continuous load. Each node keeps USB debugging access for ADB automation, remote Android control, app testing, and server-style workloads where display output is not required. Layout and board model must be confirmed before build — share your target motherboard SKU for a fit check.",
     features: [
       "Screenless, battery-free node option",
       "Up to 20 motherboard slots per chassis",
@@ -313,7 +313,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Core Hardware",
     shortDesc: "Compact Android device cluster chassis for small labs — scalable entry point before full 20-node systems.",
     description:
-      "The Android Device Lab Starter is a compact chassis for teams validating workflows on a smaller Android fleet before committing to a full 20-node deployment. It supports a reduced slot count with the same power and USB management principles as our larger boxes. Suitable for startup QA labs, contractor pilots, and engineering teams proving device automation hardware requirements.",
+      "The Android Device Lab Starter is a compact classic-style chassis for teams validating workflows on a smaller Android fleet before committing to a full 20-node deployment — the same entry path many labs use before upgrading to an Enterprise Phone Farm Box or rackmount module. It supports a reduced slot count with the same power and USB management principles as our larger boxes. Suitable for startup QA labs, contractor pilots, and engineering teams proving device automation hardware requirements.",
     features: [
       "Compact footprint for bench labs",
       "Shared power and USB management",
@@ -356,7 +356,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Core Hardware",
     shortDesc: "Real iPhone hardware array with centralized charging and USB-C/Lightning hub routing for iOS QA labs.",
     description:
-      "The iOS Device Lab Array organizes real iPhones in a cooled chassis with shared charging and hub connectivity to a macOS control station. Built for TestFlight validation, iOS app QA, and enterprise device management workflows that require physical Apple hardware — not simulators.",
+      "The iOS Device Lab Array organizes real iPhones in a cooled chassis with shared charging and hub connectivity to a macOS control station. Built for TestFlight validation, iOS app QA, enterprise device management workflows, and cross-platform labs that run Android rackmount modules alongside dedicated Apple hardware — not simulators.",
     features: [
       "Real iPhone hardware slots",
       "Centralized charging management",
@@ -397,9 +397,9 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     name: "Empty Expansion Chassis",
     group: "core-hardware",
     category: "Core Hardware",
-    shortDesc: "Empty metal chassis for custom slot layouts, fleet expansion, or integrator-built device lab projects.",
+    shortDesc: "Bare expansion chassis for custom slot layouts, reverse-mount builds, and integrator phone farm projects.",
     description:
-      "The Empty Expansion Chassis ships as a bare industrial enclosure with mounting rails and cutouts ready for your integrator or our team to configure. Use it to expand an existing lab, prototype a custom slot layout, or build reverse-mount configurations for unique device models.",
+      "The Empty Expansion Chassis is a bare industrial phone farm shell for custom slot layouts, fleet expansion, and reverse-mount configurations — the flexible counterpart to our fixed 20-slot boxes. Ship as an empty metal enclosure with mounting rails and ventilation cutouts ready for your integrator or our Guangzhou team to configure with PSU, fans, and USB backplane modules. Use it to prototype unique device models, expand an existing lab, or build project-specific mobile compute racks.",
     features: [
       "Bare chassis — custom slot configuration",
       "Compatible with Max Phones Farm power modules",
@@ -434,9 +434,9 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     name: "Centralized Power Module",
     group: "accessories",
     category: "Accessory",
-    shortDesc: "Industrial PSU module for phone farm boxes — replaces multiple individual chargers in lab deployments.",
+    shortDesc: "Centralized charging and power module — replaces multiple individual phone chargers in phone farm labs.",
     description:
-      "The Centralized Power Module provides regulated multi-output power for phone farm chassis. It is sized per your slot count and device draw — not a generic server PSU. Include your deployment diagram when requesting a quote so we match voltage, connector, and load requirements.",
+      "The Centralized Power Module functions as the charging and power hub for phone farm chassis — the lab equivalent of a multi-device charging station. It provides regulated multi-output power sized for your slot count and device draw, replacing a clutter of individual phone chargers with one industrial PSU. Include your deployment diagram when requesting a quote so we match voltage, connector, and load requirements for 20-node boxes and rackmount systems.",
     features: [
       "Multi-output regulated power",
       "Sized for phone farm chassis loads",
@@ -473,7 +473,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Accessory",
     shortDesc: "Industrial USB hub backplane for stable per-slot data paths in dense device lab chassis.",
     description:
-      "The USB Backplane Module adds or replaces the internal USB routing layer in a phone farm chassis. Each slot gets a dedicated path to the host controller — critical for reliable ADB sessions and remote Android control in multi-device labs.",
+      "The USB Backplane Module adds or replaces the internal USB routing layer in a phone farm chassis. Each slot gets a dedicated path to the host controller — critical for reliable ADB sessions, remote Android control, and batch APK deployment in dense 20-node labs. Use as a replacement part, thermal-event recovery upgrade, or integrator build component alongside our Empty Expansion Chassis.",
     features: [
       "Per-slot USB routing",
       "Industrial-grade hub IC",
@@ -509,7 +509,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Accessory",
     shortDesc: "Replacement fan module for dense 24/7 device lab chassis — maintains airflow under continuous QA load.",
     description:
-      "The Active Cooling Module is a drop-in fan assembly for Max Phones Farm chassis running continuous app testing or remote device management workloads. Use as a spare or upgrade when ambient lab temperatures rise.",
+      "The Active Cooling Module is a drop-in fan assembly for Max Phones Farm chassis running continuous app testing, hash-rate workloads, or remote device management. Maintains front-to-rear airflow under 24/7 load — use as a spare, seasonal upgrade when ambient lab temperatures rise, or stock part for enterprise multi-rack deployments.",
     features: [
       "Drop-in fan assembly",
       "Replacement part for existing chassis",
@@ -545,7 +545,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Accessory",
     shortDesc: "Managed switch kit recommended for multi-device labs — VLAN guidance for device traffic separation.",
     description:
-      "The Lab Network Switch Kit is a reference networking package for device labs running many Android nodes. We recommend managed switches with VLAN capability so test traffic, management, and office networks stay separated. Exact switch model depends on port count and region — quoted per deployment.",
+      "The Lab Network Switch Kit is a reference networking package for device labs running many Android nodes across one or more phone farm boxes. We recommend managed switches with VLAN capability so test traffic, ADB management, and office networks stay separated — essential for ad verification labs and multi-team QA environments. Exact switch model depends on port count and region — quoted per deployment.",
     features: [
       "Managed switch recommendation per lab size",
       "VLAN layout guidance document",
@@ -579,9 +579,9 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     name: "Remote Control Setup Service",
     group: "accessories",
     category: "Deployment Support",
-    shortDesc: "Engineering service — ADB setup, screen mirroring, batch APK install, and device grouping for your lab hardware.",
+    shortDesc: "Installation and remote control setup — manage all devices from one computer with ADB, mirroring, and batch APK deploy.",
     description:
-      "Remote Control Setup is a deployment service performed by our Guangzhou engineering team. We configure your control workstation, ADB paths, screen mirroring, batch APK deployment, and device grouping so your lab operators can manage many Android devices from one desk. Available for hardware purchased from us or third-party chassis (compatibility review required).",
+      "Remote Control Setup is our installation and handover service — the hardware lab equivalent of centralized device control software. Our Guangzhou engineering team configures your workstation so you manage every phone from one computer: ADB paths, screen mirroring, batch APK deployment, and device grouping for QA and automation teams. Instead of manually operating each device, operators run commands and installs from a single control desk. Available for Max Phones Farm hardware or third-party chassis after compatibility review.",
     features: [
       "ADB and device path verification",
       "Screen mirroring workstation setup",

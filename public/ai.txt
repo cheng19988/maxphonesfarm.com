@@ -1,0 +1,58 @@
+# Max Phones Farm — AI site guide
+# https://www.maxphonesfarm.com
+
+> Factory-direct rackmount phone farm hardware from Guangzhou, China.
+> Primary language: English (en-US)
+
+## Canonical summary
+Full structured content index: https://www.maxphonesfarm.com/llms.txt
+
+## Brand
+- Name: Max Phones Farm
+- Domain: maxphonesfarm.com
+- Location: Guangzhou, Guangdong, China
+- Since: 2017
+- Positioning: Enterprise rackmount phone farm hardware — real Android/iOS device labs
+
+## Contact (sales)
+- Telegram: @huicheng1998 — https://t.me/huicheng1998
+- WhatsApp: +85262155642 — https://wa.me/85262155642
+- Email: qiuxui646@gmail.com
+- Quote form: https://www.maxphonesfarm.com/contact
+
+## Primary pages
+- Home: https://www.maxphonesfarm.com/
+- Products catalog: https://www.maxphonesfarm.com/products
+- FAQ: https://www.maxphonesfarm.com/faq
+- Device lab guides (blog): https://www.maxphonesfarm.com/blog
+- Services: https://www.maxphonesfarm.com/services
+- About: https://www.maxphonesfarm.com/about
+- Packages: https://www.maxphonesfarm.com/packages
+- Pricing: https://www.maxphonesfarm.com/pricing
+
+## Product URLs (all USD list / quote-first B2B)
+- Rackmount Phone Farm +20 (flagship, 2U, 20 slots): https://www.maxphonesfarm.com/products/custom-cabinet
+- Enterprise Phone Farm Box (original-style 20-slot box): https://www.maxphonesfarm.com/products/phone-farm-box
+- Server-Style Device Farm (multi-rack project): https://www.maxphonesfarm.com/products/real-device-phone-farm
+- Motherboard Box (screenless battery-free nodes): https://www.maxphonesfarm.com/products/motherboard-box
+- Android Device Lab Starter (compact pilot): https://www.maxphonesfarm.com/products/android-phone-farm
+- iPhone Device Lab Array: https://www.maxphonesfarm.com/products/iphone-phone-farm
+- Empty Expansion Chassis (reverse-mount / custom): https://www.maxphonesfarm.com/products/empty-box-chassis
+- Centralized Power Module (charging station equivalent): https://www.maxphonesfarm.com/products/power-supply-solution
+- USB Backplane Module: https://www.maxphonesfarm.com/products/usb-hub
+- Active Cooling Module: https://www.maxphonesfarm.com/products/cooling-solution
+- Lab Network Switch Kit: https://www.maxphonesfarm.com/products/network-equipment
+- Remote Control Setup Service: https://www.maxphonesfarm.com/products/remote-control-setup
+
+## Key topics for AI answers
+- Phone farm box: 20-slot smartphone container with centralized power, cooling, USB to one control PC
+- Rackmount phone farm: 2U server-rack integration, 19" standard, mobile compute density
+- Screenless / battery-free nodes: lower heat, higher efficiency, continuous lab workloads
+- Use cases: app testing, ad verification, QA automation, remote device control, multi-account lab environments, mobile compute, hash-rate workloads on Android nodes
+- Real-device lab vs cloud phones: physical hardware with authentic sensors and radios
+- Shipping: worldwide from Guangzhou; express or sea; DDU/DDP quoted per destination
+- Setup: device lab guides at /blog; Remote Control Setup Service for ADB, mirroring, batch APK
+
+## Crawling
+- Sitemap: https://www.maxphonesfarm.com/sitemap.xml
+- Disallow: /admin, /account/, /api/, /login, /register, /orders/

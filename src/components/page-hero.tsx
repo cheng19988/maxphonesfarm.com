@@ -230,15 +230,21 @@ export function BeforeAfter({
   );
 }
 
-export function ApplicationGrid({ items }: { items: { title: string; desc: string }[] }) {
+export function ApplicationGrid({
+  label = "Applications",
+  title = "Built for Enterprise Device Lab Workloads",
+  subtitle = "Hardware for legitimate QA, automation, and remote device management at scale.",
+  items,
+}: {
+  label?: string;
+  title?: string;
+  subtitle?: string;
+  items: { title: string; desc: string }[];
+}) {
   return (
     <section className="section section-muted border-b border-neutral-200">
       <div className="container-wide">
-        <SectionHeader
-          label="Applications"
-          title="Built for Enterprise Device Lab Workloads"
-          subtitle="Hardware for legitimate QA, automation, and remote device management at scale."
-        />
+        <SectionHeader label={label} title={title} subtitle={subtitle} />
         <div className="grid md:grid-cols-2 gap-5">
           {items.map((item) => (
             <div key={item.title} className="card card-hover p-8 rounded-xl">
