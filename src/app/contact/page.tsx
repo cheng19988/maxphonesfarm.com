@@ -9,7 +9,7 @@ import { submitContactInquiry } from "./actions";
 export const metadata = buildMetadata({
   title: "Contact — Request a Hardware Quote",
   description:
-    "Contact our Guangzhou team for rackmount phone farm hardware quotes. WhatsApp, Telegram, phone, and email — reply usually within 24 hours on business days.",
+    "Contact our Guangzhou team for rackmount phone farm hardware quotes. WhatsApp, Telegram, and email — reply usually within 24 hours on business days.",
   path: "/contact",
 });
 
@@ -31,10 +31,6 @@ function ContactFallbackLinks() {
       {" · "}
       <a href={`mailto:${CONTACT.email}`} className="text-blue-700 underline underline-offset-4">
         Email
-      </a>
-      {" · "}
-      <a href={`tel:${CONTACT.phone}`} className="text-blue-700 underline underline-offset-4">
-        Phone
       </a>
     </p>
   );
@@ -67,14 +63,6 @@ export default async function ContactPage({ searchParams }: Props) {
           <h2 className="font-semibold text-neutral-900 mb-4">Direct Contact</h2>
           <ContactBar />
           <dl className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
-            <div>
-              <dt className="text-neutral-600">Phone</dt>
-              <dd>
-                <a href={`tel:${CONTACT.phone}`} className="text-neutral-700 hover:text-blue-700">
-                  {CONTACT.phone}
-                </a>
-              </dd>
-            </div>
             <div>
               <dt className="text-neutral-600">WhatsApp</dt>
               <dd>

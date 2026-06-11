@@ -35,7 +35,7 @@ export default function AboutPage() {
               { title: "Physical Hardware", desc: "Chassis, PSU, fans, and USB infrastructure — built for real Android and iOS device labs." },
               { title: "Assembly & QC", desc: "Units are built and burn-in tested at our Guangzhou workshop before international shipment." },
               { title: "Custom Builds", desc: "Slot layouts, rack ears, and power budgets quoted against your target device list." },
-              { title: "Sales & Engineering", desc: "WhatsApp, Telegram, phone, and email — typically within 24 hours on business days (UTC+8)." },
+              { title: "Sales & Engineering", desc: "WhatsApp, Telegram, and email — typically within 24 hours on business days (UTC+8)." },
             ].map((item) => (
               <div key={item.title} className="surface-elevated p-8">
                 <h2 className="text-lg font-medium text-white mb-3">{item.title}</h2>
@@ -81,7 +81,7 @@ export default function AboutPage() {
             ))}
           </ol>
           <p className="mt-8 text-sm text-neutral-500">
-            Contact: {CONTACT.phone} · {CONTACT.email} · {SITE.location}
+            Contact: {CONTACT.telegram} · {CONTACT.whatsapp} · {CONTACT.email} · {SITE.location}
           </p>
         </div>
       </section>

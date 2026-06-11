@@ -2,15 +2,13 @@ import Link from "next/link";
 import { NAV, SITE } from "@/lib/config";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 import { BrandLogo } from "./brand-logo";
-import { ContactBar } from "./shared";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200 shadow-sm">
       <div className="hidden lg:block border-b border-neutral-100 bg-neutral-50">
-        <div className="container-wide py-2 flex justify-between items-center text-xs text-neutral-500">
+        <div className="container-wide py-2 text-xs text-neutral-500">
           <span>{SITE.location} · {SITE.headerBar}</span>
-          <ContactBar compact />
         </div>
       </div>
       <div className="container-wide py-4 flex items-center justify-between gap-6">
@@ -54,7 +52,6 @@ export function Footer() {
         <div className="lg:col-span-5">
           <BrandLogo dark />
           <p className="text-neutral-400 text-sm mt-6 mb-8 max-w-md leading-relaxed">{SITE.description}</p>
-          <ContactBar dark />
         </div>
         <div className="lg:col-span-3">
           <h3 className="text-xs uppercase tracking-[0.18em] text-neutral-400 mb-5 font-medium">Products</h3>

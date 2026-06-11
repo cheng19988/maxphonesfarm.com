@@ -72,11 +72,9 @@ export default async function ProductDetailPage({ params }: Props) {
               <div className="mt-8 p-5 surface rounded-xl text-sm text-neutral-600 space-y-2">
                 <p className="font-semibold text-neutral-900">Contact Team</p>
                 <p>
-                  <a href={`tel:${CONTACT.phone}`} className="hover:text-blue-700">{CONTACT.phone}</a>
+                  <a href={whatsappQuoteUrl(product.name)} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">WhatsApp {CONTACT.whatsapp}</a>
                   {" · "}
-                  <a href={whatsappQuoteUrl(product.name)} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">WhatsApp Quote</a>
-                  {" · "}
-                  <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">Telegram</a>
+                  <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">Telegram {CONTACT.telegram}</a>
                 </p>
                 <p>
                   <a href={`mailto:${CONTACT.email}`} className="hover:text-blue-700">{CONTACT.email}</a>

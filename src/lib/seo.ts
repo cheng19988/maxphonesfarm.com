@@ -65,7 +65,6 @@ export function organizationJsonLd() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+86-13059502618",
       email: CONTACT.email,
       contactType: "sales",
       areaServed: "Worldwide",

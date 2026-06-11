@@ -60,7 +60,7 @@ export const FAQ_ITEMS = [
   {
     question: "How do I contact your sales team?",
     answer:
-      `WhatsApp (${CONTACT.whatsapp}), Telegram (${CONTACT.telegram}), phone (${CONTACT.phone}), or email (${CONTACT.email}). Include target device count, device models, and destination country for the fastest quote.`,
+      `WhatsApp (${CONTACT.whatsapp}), Telegram (${CONTACT.telegram}), or email (${CONTACT.email}). Include target device count, device models, and destination country for the fastest quote.`,
   },
 ];
 

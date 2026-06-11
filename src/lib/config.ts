@@ -14,12 +14,11 @@ export const SITE = {
     "Factory-direct rackmount phone farm hardware — device lab boxes, motherboard arrays, power/cooling modules, and custom deployment support for enterprise QA and automation labs.",
 } as const;
 
-/** Public sales email — update here when a domain mailbox (e.g. sales@maxphonesfarm.com) is provisioned. */
+/** Public sales channels — floating widget + contact page. */
 export const CONTACT = {
-  phone: "13059502618",
   telegram: "@huicheng1998",
   telegramUrl: "https://t.me/huicheng1998",
-  whatsapp: "+852 6215 5642",
+  whatsapp: "+85262155642",
   whatsappUrl: "https://wa.me/85262155642",
   email: "qiuxui646@gmail.com",
 } as const;

@@ -18,10 +18,15 @@ export function ContactBar({ compact = false, dark = false }: { compact?: boolea
 
   return (
     <div className={`flex flex-wrap items-center gap-4 ${compact ? "text-xs" : "text-sm"}`}>
-      <a href={`tel:${CONTACT.phone}`} className={linkClass}>{CONTACT.phone}</a>
-      <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>WhatsApp</a>
-      <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>Telegram</a>
-      <a href={`mailto:${CONTACT.email}`} className={linkClass}>{CONTACT.email}</a>
+      <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        Telegram {CONTACT.telegram}
+      </a>
+      <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        WhatsApp {CONTACT.whatsapp}
+      </a>
+      <a href={`mailto:${CONTACT.email}`} className={linkClass}>
+        {CONTACT.email}
+      </a>
     </div>
   );
 }
@@ -41,7 +46,6 @@ export function ContactCTA({
           {subtitle ??
             `Factory-direct from ${SITE.location}. Custom quotes and bulk delivery — typically within 24 hours on business days.`}
         </p>
-        <ContactBar dark />
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <a
             href={whatsappQuoteUrl()}
@@ -60,31 +64,6 @@ export function ContactCTA({
         </div>
       </div>
     </section>
-  );
-}
-
-export function MobileContactBar() {
-  return (
-    <div className="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 border-t border-neutral-200 backdrop-blur-sm shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
-      <div className="grid grid-cols-4 divide-x divide-neutral-200">
-        {[
-          { href: `tel:${CONTACT.phone}`, label: "Call" },
-          { href: CONTACT.whatsappUrl, label: "WhatsApp" },
-          { href: CONTACT.telegramUrl, label: "Telegram" },
-          { href: `mailto:${CONTACT.email}`, label: "Email" },
-        ].map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            target={item.label === "Call" ? undefined : "_blank"}
-            rel={item.label === "Call" ? undefined : "noopener noreferrer"}
-            className="flex flex-col items-center py-3 text-[10px] text-neutral-600 hover:text-blue-700 font-medium"
-          >
-            {item.label}
-          </a>
-        ))}
-      </div>
-    </div>
   );
 }
 

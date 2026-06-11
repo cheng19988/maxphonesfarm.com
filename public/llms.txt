@@ -21,10 +21,9 @@ Max Phones Farm is a Guangzhou hardware sourcing and assembly team supplying rac
 - Centralized Power Module, USB Backplane, Active Cooling Module, Lab Network Switch Kit, Remote Control Setup Service
 
 ## Contact
-- Phone: 13059502618
 - Telegram: @huicheng1998
-- WhatsApp: +852 6215 5642
-- Email: configured in src/lib/config.ts (currently qiuxui646@gmail.com)
+- WhatsApp: +85262155642
+- Email: qiuxui646@gmail.com
 - Location: Guangzhou, China
 
 ## Key Pages
