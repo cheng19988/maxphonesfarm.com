@@ -34,8 +34,8 @@ export default function ServicesPage() {
                   <Image src={svc.image} alt={svc.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="33vw" />
                 </div>
                 <div className="p-7">
-                  <h2 className="text-xl font-semibold text-white mb-3">{svc.title}</h2>
-                  <p className="text-neutral-400 text-sm mb-5 leading-relaxed">{svc.description}</p>
+                  <h2 className="text-xl font-semibold text-neutral-900 mb-3">{svc.title}</h2>
+                  <p className="text-neutral-600 text-sm mb-5 leading-relaxed">{svc.description}</p>
                   <Link href={`/contact?service=${svc.slug}`} className="btn-outline text-xs py-2.5 px-4">
                     Request This Service
                   </Link>
@@ -57,7 +57,7 @@ export default function ServicesPage() {
               <li key={step.step} className="flex gap-5 surface p-6">
                 <span className="text-2xl font-semibold text-neutral-600 shrink-0 w-8">{step.step}</span>
                 <div>
-                  <h3 className="font-medium text-white mb-2">{step.title}</h3>
+                  <h3 className="font-medium text-neutral-900 mb-2">{step.title}</h3>
                   <p className="text-sm text-neutral-500 leading-relaxed">{step.detail}</p>
                 </div>
               </li>

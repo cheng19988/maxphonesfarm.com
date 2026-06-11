@@ -38,7 +38,7 @@ export default function AboutPage() {
               { title: "Sales & Engineering", desc: "WhatsApp, Telegram, and email — typically within 24 hours on business days (UTC+8)." },
             ].map((item) => (
               <div key={item.title} className="surface-elevated p-8">
-                <h2 className="text-lg font-medium text-white mb-3">{item.title}</h2>
+                <h2 className="text-lg font-medium text-neutral-900 mb-3">{item.title}</h2>
                 <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -74,7 +74,7 @@ export default function AboutPage() {
               <li key={step.step} className="flex gap-5 surface p-6">
                 <span className="text-2xl font-semibold text-neutral-600 shrink-0 w-8">{step.step}</span>
                 <div>
-                  <h3 className="font-medium text-white mb-2">{step.title}</h3>
+                  <h3 className="font-medium text-neutral-900 mb-2">{step.title}</h3>
                   <p className="text-sm text-neutral-500 leading-relaxed">{step.detail}</p>
                 </div>
               </li>

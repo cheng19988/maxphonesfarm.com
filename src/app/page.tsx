@@ -10,6 +10,7 @@ import { getFlagshipProduct } from "@/data/products";
 import { getProductsGrouped } from "@/lib/products";
 import { IMAGES } from "@/lib/images";
 import { HERO_PILLARS, SITE } from "@/lib/config";
+import { formatProductPrice } from "@/lib/format-price";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 
 export const metadata = buildMetadata({
@@ -62,13 +63,28 @@ export default async function HomePage() {
             <Link
               key={pillar.href}
               href={pillar.href}
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-white border border-neutral-200 rounded-full text-neutral-700 hover:border-blue-300 hover:text-blue-700 shadow-sm transition-colors"
+              className="inline-flex flex-col gap-0.5 px-4 py-2.5 text-sm bg-white border border-neutral-200 rounded-xl text-neutral-700 hover:border-blue-300 hover:text-blue-700 shadow-sm transition-colors max-w-xs"
             >
-              <span className="font-medium">{pillar.label}</span>
+              <span className="font-medium leading-snug">{pillar.label}</span>
+              <span className="text-xs text-neutral-500 leading-snug">{pillar.desc}</span>
             </Link>
           ))}
         </div>
       </PageHero>
+
+      <section className="border-b border-blue-100 bg-blue-50">
+        <div className="container-wide py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="text-sm text-blue-900">
+            <span className="inline-block mr-2 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-blue-700 text-white rounded">
+              In Stock
+            </span>
+            Rackmount +20 and Enterprise Phone Farm Box available for export — factory-direct from Guangzhou.
+          </p>
+          <Link href="/products" className="text-sm font-medium text-blue-700 hover:underline shrink-0">
+            View all models →
+          </Link>
+        </div>
+      </section>
 
       <StatStrip
         items={[
@@ -112,7 +128,7 @@ export default async function HomePage() {
                 </tbody>
               </table>
               <div className="flex flex-wrap items-center gap-6 mb-8">
-                <span className="text-4xl font-semibold text-blue-700">${flagship.priceUsd.toLocaleString()}</span>
+                <span className="text-4xl font-semibold text-blue-700">{formatProductPrice(flagship.priceUsd)}</span>
                 <span className="text-sm text-neutral-500">USD list · bulk &amp; custom quoted separately</span>
               </div>
               <div className="flex flex-wrap gap-3">

@@ -9,6 +9,7 @@ export type ContactSubmissionInput = {
   email: string;
   deviceQuantity: string;
   productInterest: string;
+  budget: string;
   message: string;
   sourcePage: string;
 };
@@ -22,6 +23,7 @@ export function parseContactForm(form: FormData): ContactSubmissionInput {
     email: String(form.get("email") || "").trim(),
     deviceQuantity: String(form.get("deviceQuantity") || "").trim(),
     productInterest: String(form.get("productInterest") || "").trim(),
+    budget: String(form.get("budget") || "").trim(),
     message: String(form.get("message") || "").trim(),
     sourcePage: String(form.get("sourcePage") || "/contact").trim(),
   };
@@ -46,7 +48,7 @@ export async function saveContactSubmission(data: ContactSubmissionInput) {
       email: data.email || data.whatsapp,
       deviceQuantity: data.deviceQuantity || null,
       productInterest: data.productInterest || null,
-      budget: null,
+      budget: data.budget || null,
       message: data.message || null,
       sourcePage: data.sourcePage || null,
       status: "New",
@@ -61,6 +63,7 @@ export async function saveContactSubmission(data: ContactSubmissionInput) {
       whatsapp: data.whatsapp,
       productInterest: data.productInterest,
       deviceQuantity: data.deviceQuantity,
+      budget: data.budget,
       country: data.country,
       message: data.message,
       sourcePage: data.sourcePage,

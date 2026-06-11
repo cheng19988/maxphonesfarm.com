@@ -92,7 +92,7 @@ export function productJsonLd(product: {
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
-      price: product.priceUsd,
+      ...(product.priceUsd > 0 ? { price: product.priceUsd } : {}),
       availability:
         product.stock > 0
           ? "https://schema.org/InStock"

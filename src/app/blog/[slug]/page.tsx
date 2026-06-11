@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getBlogPost, BLOG_POSTS } from "@/data/blog";
-import { ContactCTA } from "@/components/shared";
+import { BlogContent } from "@/components/blog-content";
+import { ContactCTA, JsonLd } from "@/components/shared";
 import { buildMetadata, breadcrumbJsonLd, articleJsonLd } from "@/lib/seo";
-import { JsonLd } from "@/components/shared";
 import { BLOG_COVERS, IMAGES } from "@/lib/images";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -50,10 +50,10 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
       <article className="section-tight">
         <div className="container-wide max-w-3xl">
-          <Link href="/blog" className="text-neutral-500 text-sm hover:text-white">← Back to Guides</Link>
+          <Link href="/blog" className="text-neutral-500 text-sm hover:text-blue-700">← Back to Guides</Link>
           <span className="block text-xs text-neutral-600 mt-4 uppercase tracking-wide">{post.category} · {post.date}</span>
           <h1 className="text-3xl md:text-5xl font-semibold text-neutral-900 mt-4 mb-8 tracking-tight">{post.title}</h1>
-          <div className="prose-content whitespace-pre-line">{post.content}</div>
+          <BlogContent content={post.content} />
           <div className="mt-12">
             <ContactCTA title="Discuss Your Lab Hardware" />
           </div>

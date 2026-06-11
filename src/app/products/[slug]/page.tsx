@@ -6,6 +6,8 @@ import { getProductQuoteGuide } from "@/data/product-quote-guides";
 import { BuyButtons, FAQAccordion } from "@/components/commerce";
 import { ContactCTA, JsonLd, StockBadge } from "@/components/shared";
 import { buildMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { formatProductPrice } from "@/lib/format-price";
+import { emailComposeUrl } from "@/lib/email-link";
 import { CONTACT } from "@/lib/config";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 
@@ -65,7 +67,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <h1 className="text-3xl md:text-5xl font-semibold text-neutral-900 mb-4 tracking-tight">{product.name}</h1>
               <p className="text-neutral-600 mb-8 leading-relaxed">{product.shortDesc}</p>
               <div className="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-neutral-200">
-                <span className="text-3xl font-semibold text-blue-700">${product.priceUsd.toLocaleString()}</span>
+                <span className="text-3xl font-semibold text-blue-700">{formatProductPrice(product.priceUsd)}</span>
                 <StockBadge stock={product.stock} />
               </div>
               <BuyButtons slug={product.slug} name={product.name} />
@@ -77,7 +79,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">Telegram {CONTACT.telegram}</a>
                 </p>
                 <p>
-                  <a href={`mailto:${CONTACT.email}`} className="hover:text-blue-700">{CONTACT.email}</a>
+                  <a href={emailComposeUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">{CONTACT.email}</a>
                 </p>
               </div>
             </div>

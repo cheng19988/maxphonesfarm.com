@@ -3,6 +3,7 @@ import { PageHero } from "@/components/page-hero";
 import { buildMetadata } from "@/lib/seo";
 import { CONTACT, SITE } from "@/lib/config";
 import { IMAGES } from "@/lib/images";
+import { emailComposeUrl } from "@/lib/email-link";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 import { submitContactInquiry } from "./actions";
 
@@ -29,7 +30,7 @@ function ContactFallbackLinks() {
         Telegram
       </a>
       {" · "}
-      <a href={`mailto:${CONTACT.email}`} className="text-blue-700 underline underline-offset-4">
+      <a href={emailComposeUrl()} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-4">
         Email
       </a>
     </p>
@@ -74,7 +75,7 @@ export default async function ContactPage({ searchParams }: Props) {
             <div>
               <dt className="text-neutral-600">Telegram</dt>
               <dd>
-                <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-blue-700">
+                <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-neutral-700 hover:text-blue-700">
                   {CONTACT.telegram}
                 </a>
               </dd>
@@ -82,18 +83,18 @@ export default async function ContactPage({ searchParams }: Props) {
             <div>
               <dt className="text-neutral-600">Email</dt>
               <dd>
-                <a href={`mailto:${CONTACT.email}`} className="text-neutral-300 hover:text-blue-700">
+                <a href={emailComposeUrl()} target="_blank" rel="noopener noreferrer" className="text-neutral-700 hover:text-blue-700">
                   {CONTACT.email}
                 </a>
               </dd>
             </div>
             <div>
               <dt className="text-neutral-600">Location</dt>
-              <dd className="text-neutral-300">{SITE.location}</dd>
+              <dd className="text-neutral-700">{SITE.location}</dd>
             </div>
             <div>
               <dt className="text-neutral-600">Response time</dt>
-              <dd className="text-neutral-300">Usually within 24 hours · Mon–Fri UTC+8</dd>
+              <dd className="text-neutral-700">Usually within 24 hours · Mon–Fri UTC+8</dd>
             </div>
           </dl>
         </div>
@@ -101,13 +102,13 @@ export default async function ContactPage({ searchParams }: Props) {
         <h2 className="text-lg font-semibold text-neutral-900 mb-4">Send an Inquiry</h2>
 
         {sent && (
-          <p className="mb-4 text-green-400 text-sm border border-green-900/50 bg-green-950/20 p-4">
+          <p className="mb-4 text-green-800 text-sm border border-green-200 bg-green-50 p-4 rounded-lg">
             Thank you. We typically reply within one business day (UTC+8).
           </p>
         )}
 
         {error && (
-          <p className="mb-4 text-red-400 text-sm border border-red-900/50 bg-red-950/20 p-4">
+          <p className="mb-4 text-red-800 text-sm border border-red-200 bg-red-50 p-4 rounded-lg">
             {error === "validation"
               ? "Please provide your name and either email or WhatsApp."
               : "Could not send the form. Please use "}
@@ -121,7 +122,7 @@ export default async function ContactPage({ searchParams }: Props) {
                   Telegram
                 </a>
                 , or{" "}
-                <a href={`mailto:${CONTACT.email}`} className="underline">
+                <a href={emailComposeUrl()} target="_blank" rel="noopener noreferrer" className="underline">
                   {CONTACT.email}
                 </a>
                 .
@@ -177,6 +178,17 @@ export default async function ContactPage({ searchParams }: Props) {
                 id="contact-quantity"
                 name="deviceQuantity"
                 placeholder="e.g. 20 units, 3 racks"
+                className="input-field"
+              />
+            </div>
+            <div>
+              <label htmlFor="contact-budget" className="block text-sm text-neutral-500 mb-1">
+                Estimated Budget (USD)
+              </label>
+              <input
+                id="contact-budget"
+                name="budget"
+                placeholder="e.g. $5,000 – $15,000"
                 className="input-field"
               />
             </div>

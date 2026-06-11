@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
+import { formatProductPrice } from "@/lib/format-price";
 import { StockBadge } from "./shared";
 
 type ProductCardProps = {
@@ -36,7 +37,7 @@ export function ProductCard({
   compact = false,
   featured = false,
 }: ProductCardProps) {
-  const priceLabel = priceUsd >= 1000 ? `$${priceUsd.toLocaleString()}` : `From $${priceUsd.toLocaleString()}`;
+  const priceLabel = formatProductPrice(priceUsd);
 
   return (
     <article className={`group card card-hover flex flex-col h-full rounded-xl ${featured ? "lg:col-span-2" : ""}`}>
@@ -92,7 +93,7 @@ export function ProductCardMinimal({
   priceUsd: number;
   imageCard: string;
 }) {
-  const priceLabel = priceUsd >= 1000 ? `$${priceUsd.toLocaleString()}` : `From $${priceUsd.toLocaleString()}`;
+  const priceLabel = formatProductPrice(priceUsd);
 
   return (
     <article className="group card card-hover rounded-xl overflow-hidden">

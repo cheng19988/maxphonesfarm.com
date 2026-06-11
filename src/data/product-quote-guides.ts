@@ -172,6 +172,113 @@ export const PRODUCT_QUOTE_GUIDES: Record<string, ProductQuoteGuide> = {
       "Hardware defects discovered during setup are escalated to chassis warranty process",
     ],
   },
+  "real-device-phone-farm": {
+    suitableFor: [
+      "Enterprise labs deploying 40–100+ Android devices across multiple racks",
+      "Multi-site QA programs standardizing on identical hardware builds",
+      "Managed service providers rolling out custom phone farm infrastructure",
+    ],
+    notSuitableFor: [
+      "Single 20-node pilots — use Rackmount +20 or Enterprise Phone Farm Box",
+      "Buyers expecting a fixed list price without project scoping",
+      "Cloud-phone or emulator-only workflows",
+    ],
+    requiredBeforeQuote: [
+      "Target total node count and device models",
+      "Rack space available or planned build-out",
+      "Destination country and preferred freight method",
+      "Timeline and whether staged delivery is required",
+    ],
+    typicalLeadTime: "2–4 weeks after specification sign-off; staged milestones for large projects.",
+    packingShipping: [
+      "Palletized export packing for bulk shipments",
+      "Milestone QC reports per production batch",
+      "Commercial invoice and packing list from Guangzhou",
+    ],
+    warrantySpareParts: [
+      "12 months on chassis manufacturing defects per unit",
+      "Spare PSU and fan modules quoted per project",
+      "Project-level remote support during rollout available on request",
+    ],
+  },
+  "iphone-phone-farm": {
+    suitableFor: [
+      "iOS QA labs needing physical device slots with centralized power and USB",
+      "Teams validating App Store builds on real iPhone hardware",
+      "Hybrid Android/iOS labs adding an iOS array alongside existing chassis",
+    ],
+    notSuitableFor: [
+      "Headless motherboard-only Android farms",
+      "Buyers without confirmed iPhone models for fit check",
+      "Large-scale Android-only deployments",
+    ],
+    requiredBeforeQuote: [
+      "Target iPhone models and slot count",
+      "Whether Lightning or USB-C routing is required",
+      "Lab shelf or rack adapter preference",
+      "Destination country",
+    ],
+    typicalLeadTime: "7–15 business days after device model fit confirmation.",
+    packingShipping: [
+      "Devices client-supplied unless procurement quoted separately",
+      "Export carton with foam padding from Guangzhou",
+    ],
+    warrantySpareParts: [
+      "12 months on chassis, PSU, and fans for manufacturing defects",
+      "USB harness spare parts available on request",
+    ],
+  },
+  "empty-box-chassis": {
+    suitableFor: [
+      "Custom builds with client-supplied phones or boards",
+      "Expansion shells for existing lab infrastructure",
+      "Integrators needing bare chassis without pre-installed nodes",
+    ],
+    notSuitableFor: [
+      "Turn-key 20-node deployment — use complete systems instead",
+      "Buyers expecting devices included in the box",
+    ],
+    requiredBeforeQuote: [
+      "Target device dimensions or technical drawing",
+      "Slot count and mounting preference",
+      "Whether PSU and fans should be included",
+    ],
+    typicalLeadTime: "5–10 business days for standard shell; custom frame 10–15 days.",
+    packingShipping: ["Single-carton export pack", "Mounting hardware included per quote"],
+    warrantySpareParts: ["12 months on chassis structure and included PSU/fans"],
+  },
+  "power-supply-solution": {
+    suitableFor: ["Scaling existing phone farm chassis", "Replacing multiple desk chargers in a lab", "Custom power budgeting for multi-rack projects"],
+    notSuitableFor: ["Generic 1U server PSUs unrelated to phone farm loads", "Standalone purchase without chassis compatibility review"],
+    requiredBeforeQuote: ["Chassis model and slot count", "Estimated per-device draw", "Input voltage and connector requirements"],
+    typicalLeadTime: "3–7 business days when compatible with in-stock chassis layouts.",
+    packingShipping: ["Compact export carton", "Wiring diagram included"],
+    warrantySpareParts: ["12 months on PSU module for manufacturing defects"],
+  },
+  "usb-hub": {
+    suitableFor: ["Adding or replacing USB backplane in existing chassis", "Labs expanding slot count with dedicated data paths", "Repair after connector wear on high-cycle labs"],
+    notSuitableFor: ["Generic desktop USB hubs for unrelated IT use", "Third-party chassis without compatibility review"],
+    requiredBeforeQuote: ["Chassis model", "Host PC OS and USB controller notes", "Required slot count"],
+    typicalLeadTime: "5–10 business days after compatibility confirmation.",
+    packingShipping: ["Internal harness pre-assembled where applicable", "Anti-static packaging"],
+    warrantySpareParts: ["12 months on backplane and harness; spare cables available"],
+  },
+  "cooling-solution": {
+    suitableFor: ["High-density labs running continuous workloads", "Hot climates or poorly ventilated server rooms", "Fan module replacement on existing chassis"],
+    notSuitableFor: ["Office desk setups without airflow planning", "Chassis from unknown third-party vendors without review"],
+    requiredBeforeQuote: ["Chassis model and ambient temperature range", "Continuous vs intermittent load profile"],
+    typicalLeadTime: "3–7 business days for standard fan modules.",
+    packingShipping: ["Lightweight export carton", "Filter maintenance notes included"],
+    warrantySpareParts: ["12 months on fan modules; filters available as consumables"],
+  },
+  "network-equipment": {
+    suitableFor: ["Labs segmenting device traffic by VLAN", "Multi-rack deployments needing wired backbone planning", "QA environments isolating test networks"],
+    notSuitableFor: ["Consumer Wi-Fi-only home setups", "Full network operations outsourcing"],
+    requiredBeforeQuote: ["Device count and port requirements", "Existing switch model if integrating", "VLAN or isolation requirements"],
+    typicalLeadTime: "Quoted per project — typically ships with hardware bundle.",
+    packingShipping: ["Accessory carton alongside main hardware shipment", "Layout diagram included"],
+    warrantySpareParts: ["Manufacturer warranty on switch hardware as quoted"],
+  },
 };
 
 export function getProductQuoteGuide(slug: string): ProductQuoteGuide | null {

@@ -113,7 +113,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     ],
     priceUsd: 1899,
     stock: 6,
-    imageCard: IMAGES.remoteControl.card,
+    imageCard: IMAGES.phoneFarmBox.card,
     imageHero: IMAGES.customCabinet.hero,
     imageDetail: IMAGES.customCabinet.detail,
     flagship: true,
@@ -189,7 +189,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Complete System",
     shortDesc: "Multi-unit device lab package — several phone farm boxes or rackmount modules with shared power and network planning.",
     description:
-      "The Multi-Rack Device Lab System is a project-scale package for teams deploying 40–100+ Android devices across multiple chassis. We plan rack layout, power budgeting, USB topology, and network segmentation with your lab team, then assemble and test units in Guangzhou. Ideal for enterprise device infrastructure, large QA environments, and custom phone farm rollouts that exceed a single 20-node box.",
+      "The Server-Style Device Farm is a project-scale package for teams deploying 40–100+ Android devices across multiple chassis. We plan rack layout, power budgeting, USB topology, and network segmentation with your lab team, then assemble and test units in Guangzhou. Ideal for enterprise device infrastructure, large QA environments, and custom phone farm rollouts that exceed a single 20-node box.",
     features: [
       "Multi-chassis layout design and power budgeting",
       "Coordinated USB and network topology",
@@ -238,7 +238,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
         a: "Remote guidance is standard. On-site integration can be quoted for select regions.",
       },
     ],
-    priceUsd: 1824,
+    priceUsd: 0,
     stock: 10,
     imageCard: IMAGES.realDevice.card,
     imageHero: IMAGES.realDevice.hero,
@@ -305,7 +305,6 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     imageCard: IMAGES.motherboardBox.card,
     imageHero: IMAGES.motherboardBox.hero,
     imageDetail: IMAGES.motherboardBox.detail,
-    flagship: true,
   },
   {
     slug: "android-phone-farm",
@@ -349,7 +348,6 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     imageCard: IMAGES.androidFarm.card,
     imageHero: IMAGES.androidFarm.hero,
     imageDetail: IMAGES.androidFarm.detail,
-    flagship: true,
   },
   {
     slug: "iphone-phone-farm",
@@ -613,7 +611,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     ],
     priceUsd: 350,
     stock: 99,
-    imageCard: IMAGES.remoteControl.card,
+    imageCard: IMAGES.usbHub.card,
     imageHero: IMAGES.remoteControl.hero,
     imageDetail: IMAGES.remoteControl.detail,
   },

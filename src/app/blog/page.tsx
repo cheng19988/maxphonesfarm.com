@@ -45,9 +45,9 @@ export default function BlogPage() {
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <span className="text-xs text-neutral-500 uppercase tracking-wide">{post.category} · {post.date}</span>
-                    <h2 className="text-lg font-medium text-white mt-3 group-hover:text-neutral-200 transition-colors">{post.title}</h2>
+                    <h2 className="text-lg font-medium text-neutral-900 mt-3 group-hover:text-blue-700 transition-colors">{post.title}</h2>
                     <p className="text-sm text-neutral-500 mt-3 line-clamp-3 flex-1 leading-relaxed">{post.excerpt}</p>
-                    <span className="text-xs text-neutral-400 mt-4 group-hover:text-white transition-colors">Read guide →</span>
+                    <span className="text-xs text-neutral-400 mt-4 group-hover:text-blue-700 transition-colors">Read guide →</span>
                   </div>
                 </Link>
               );

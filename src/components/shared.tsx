@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTACT, SITE } from "@/lib/config";
+import { emailComposeUrl } from "@/lib/email-link";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 
 export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
@@ -24,7 +25,7 @@ export function ContactBar({ compact = false, dark = false }: { compact?: boolea
       <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
         WhatsApp {CONTACT.whatsapp}
       </a>
-      <a href={`mailto:${CONTACT.email}`} className={linkClass}>
+      <a href={emailComposeUrl()} target="_blank" rel="noopener noreferrer" className={linkClass}>
         {CONTACT.email}
       </a>
     </div>

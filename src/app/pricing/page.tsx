@@ -4,6 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { ContactCTA } from "@/components/shared";
 import { buildMetadata } from "@/lib/seo";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
+import { formatProductPrice } from "@/lib/format-price";
 import { getFlagshipProduct } from "@/data/products";
 
 export const metadata = buildMetadata({
@@ -30,17 +31,17 @@ export default async function PricingPage() {
         <div className="container-wide max-w-5xl">
           <div className="surface-elevated p-8 md:p-10 mb-12">
             <p className="section-label mb-2">Flagship</p>
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">{flagship.name}</h2>
-            <p className="text-neutral-400 mb-6 max-w-2xl">{flagship.shortDesc}</p>
+            <h2 className="text-2xl md:text-3xl font-semibold text-neutral-900 mb-3">{flagship.name}</h2>
+            <p className="text-neutral-600 mb-6 max-w-2xl">{flagship.shortDesc}</p>
             <div className="flex flex-wrap items-end gap-6">
-              <span className="text-5xl font-semibold text-white">${flagship.priceUsd.toLocaleString()}</span>
+              <span className="text-5xl font-semibold text-blue-700">{formatProductPrice(flagship.priceUsd)}</span>
               <Link href={`/contact?product=${flagship.slug}`} className="btn-primary">Request Quote</Link>
             </div>
           </div>
 
           {grouped.map((group) => (
             <div key={group.id} className="mb-16 last:mb-0">
-              <h2 className="text-2xl font-semibold text-white mb-2">{group.label}</h2>
+              <h2 className="text-2xl font-semibold text-neutral-900 mb-2">{group.label}</h2>
               <p className="text-neutral-500 text-sm mb-8 max-w-3xl">{group.description}</p>
               <div className="border border-neutral-200 divide-y divide-neutral-200 rounded-xl overflow-hidden shadow-sm">
                 {group.products.map((p) => (
@@ -52,8 +53,8 @@ export default async function PricingPage() {
                       <p className="text-sm text-neutral-500 mt-1 max-w-xl">{p.shortDesc}</p>
                     </div>
                     <div className="flex items-center gap-4 shrink-0">
-                      <span className="text-lg font-medium text-white">
-                        {p.priceUsd >= 1000 ? `$${p.priceUsd.toLocaleString()}` : `From $${p.priceUsd.toLocaleString()}`}
+                      <span className="text-lg font-medium text-blue-700">
+                        {formatProductPrice(p.priceUsd)}
                       </span>
                       <Link href={`/contact?product=${p.slug}`} className="btn-outline text-xs py-2.5 px-4">
                         Quote
@@ -69,7 +70,7 @@ export default async function PricingPage() {
 
       <section className="section-tight section-muted border-b border-neutral-200">
         <div className="container-wide max-w-3xl text-center">
-          <h2 className="text-xl font-semibold text-white mb-4">What affects your final quote</h2>
+          <h2 className="text-xl font-semibold text-neutral-900 mb-4">What affects your final quote</h2>
           <ul className="text-sm text-neutral-500 space-y-2 text-left max-w-xl mx-auto">
             <li>Target Android / iOS device models and slot count</li>
             <li>Custom rack ears, cabinet depth, and power budget</li>

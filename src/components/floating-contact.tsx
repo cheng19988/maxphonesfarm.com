@@ -1,3 +1,4 @@
+import { emailComposeUrl } from "@/lib/email-link";
 import { CONTACT } from "@/lib/config";
 
 const CHANNELS = [
@@ -18,8 +19,8 @@ const CHANNELS = [
   {
     id: "email",
     label: "Email",
-    href: `mailto:${CONTACT.email}`,
-    external: false,
+    href: emailComposeUrl(),
+    external: true,
     buttonClass: "bg-blue-700 hover:bg-blue-800 shadow-blue-700/25",
   },
 ] as const;
@@ -59,8 +60,8 @@ export function FloatingContact() {
         <a
           key={channel.id}
           href={channel.href}
-          target={channel.external ? "_blank" : undefined}
-          rel={channel.external ? "noopener noreferrer" : undefined}
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label={channel.label}
           title={channel.label}
           className={`inline-flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl ${channel.buttonClass}`}

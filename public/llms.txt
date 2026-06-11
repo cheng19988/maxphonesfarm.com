@@ -27,9 +27,9 @@ Max Phones Farm is a Guangzhou hardware sourcing and assembly team supplying rac
 - Location: Guangzhou, China
 
 ## Key Pages
-- Home: https://maxphonesfarm.com/
-- Products: https://maxphonesfarm.com/products
-- Services: https://maxphonesfarm.com/services
-- FAQ: https://maxphonesfarm.com/faq
-- Contact: https://maxphonesfarm.com/contact
-- Guides: https://maxphonesfarm.com/blog
+- Home: https://www.maxphonesfarm.com/
+- Products: https://www.maxphonesfarm.com/products
+- Services: https://www.maxphonesfarm.com/services
+- FAQ: https://www.maxphonesfarm.com/faq
+- Contact: https://www.maxphonesfarm.com/contact
+- Guides: https://www.maxphonesfarm.com/blog
