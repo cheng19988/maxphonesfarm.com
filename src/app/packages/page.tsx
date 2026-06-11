@@ -31,7 +31,7 @@ const PACKAGES = [
     name: "Rackmount Enterprise Package",
     price: "From $4,899",
     slug: "custom-cabinet",
-    image: IMAGES.phoneFarmBox.card,
+    image: IMAGES.customCabinet.card,
     includes: [
       "2U Rackmount Phone Farm chassis",
       "Rack ears and cable management",
@@ -60,12 +60,10 @@ export default function PackagesPage() {
   return (
     <>
       <PageHero
-        variant="banner"
+        variant="simple"
         label="Deployment Bundles"
         title="Solution Packages"
         subtitle="Pre-configured hardware bundles for common lab deployment paths — quote-first with transparent USD list pricing as the starting point."
-        image={IMAGES.catalogHero}
-        imageAlt="Rackmount phone farm solution package"
       >
         <Link href="/contact" className="btn-primary">Discuss Your Lab</Link>
       </PageHero>

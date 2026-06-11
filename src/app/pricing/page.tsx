@@ -3,7 +3,6 @@ import { getProductsGrouped } from "@/lib/products";
 import { PageHero } from "@/components/page-hero";
 import { ContactCTA } from "@/components/shared";
 import { buildMetadata } from "@/lib/seo";
-import { IMAGES } from "@/lib/images";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 import { getFlagshipProduct } from "@/data/products";
 
@@ -21,11 +20,10 @@ export default async function PricingPage() {
   return (
     <>
       <PageHero
+        variant="simple"
         label="Transparent Pricing"
         title="USD List Prices"
         subtitle="Factory-direct list pricing for core hardware. Bulk orders, custom rack builds, and international freight are quoted after you share device models and destination."
-        image={IMAGES.phoneFarmBox.hero}
-        imageAlt="Phone farm hardware pricing"
       />
 
       <section className="section section-white border-b border-neutral-200">

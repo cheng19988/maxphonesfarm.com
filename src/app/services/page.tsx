@@ -21,7 +21,7 @@ export default function ServicesPage() {
         label="Deployment Support"
         title="Lab Setup Services"
         subtitle="Hardware assembly, remote Android device control setup, bulk lab provisioning, and export logistics — from our Guangzhou team."
-        image={IMAGES.serviceControl}
+        image={IMAGES.serviceScene}
         imageAlt="Device lab management services"
       />
 
