@@ -113,7 +113,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     ],
     priceUsd: 1899,
     stock: 6,
-    imageCard: IMAGES.customCabinet.card,
+    imageCard: IMAGES.remoteControl.card,
     imageHero: IMAGES.customCabinet.hero,
     imageDetail: IMAGES.customCabinet.detail,
     flagship: true,

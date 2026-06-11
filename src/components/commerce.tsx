@@ -48,7 +48,7 @@ export function ProductCard({
           src={featured && imageHero ? imageHero : imageCard}
           alt={name}
           fill
-          className="product-img-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          className={`${featured ? "product-img-cover" : "product-img"} transition-transform duration-500 group-hover:scale-[1.02]`}
           sizes={featured ? "50vw" : "(max-width:768px) 100vw, 25vw"}
         />
       </Link>
@@ -101,7 +101,7 @@ export function ProductCardMinimal({
           src={imageCard}
           alt={name}
           fill
-          className="product-img-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          className="product-img transition-transform duration-500 group-hover:scale-[1.02]"
           sizes="25vw"
         />
       </Link>

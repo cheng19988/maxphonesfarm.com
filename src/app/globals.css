@@ -135,7 +135,7 @@ body {
 }
 
 .product-img-frame {
-  @apply relative bg-neutral-50 overflow-hidden;
+  @apply relative bg-white overflow-hidden;
 }
 
 .product-img {
