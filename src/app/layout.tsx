@@ -37,8 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
       <head>
-        <link rel="alternate" type="text/markdown" href={`${SITE_URL}/agents.md`} title="Agent Instructions" />
+        <link rel="alternate" type="text/markdown" href={`${SITE_URL}/agents.md`} title="Site Documentation" />
         <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms.txt`} title="LLM Site Summary" />
+        <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms-full.txt`} title="LLM Extended Index" />
+        <link rel="alternate" href={`${SITE_URL}/for-ai`} title="Supplier Facts for AI Systems" />
         <link rel="describedby" href={`${SITE_URL}/.well-known/ai-site.json`} />
       </head>
       <body className="min-h-full flex flex-col antialiased">

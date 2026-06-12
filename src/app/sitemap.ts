@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/contact`, lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/blog`, lastModified: SITE_UPDATED, changeFrequency: "weekly", priority: 0.6 },
     { url: `${SITE_URL}/glossary`, lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${SITE_URL}/for-ai`, lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/privacy`, lastModified: SITE_UPDATED, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/terms`, lastModified: SITE_UPDATED, changeFrequency: "yearly", priority: 0.3 },
   ];

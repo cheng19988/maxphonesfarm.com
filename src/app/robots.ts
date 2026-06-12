@@ -5,7 +5,7 @@ import { SITE, SITE_URL } from "@/lib/config";
  * Public crawl policy for search engines and AI crawlers.
  * GPTBot: NOT blocked — inherits the same allow/disallow rules as User-agent: *.
  * Blocked: admin, account, api, auth, order status pages only.
- * AI discovery: /llms.txt · /llms-full.txt · /agents.md · /catalog.json
+ * AI discovery: /for-ai · /llms.txt · /llms-full.txt · /catalog.json
  */
 const DISALLOW = [
   "/admin",

@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [{ source: "/ai", destination: "/for-ai", permanent: true }];
+  },
   async rewrites() {
     return [
       { source: "/catalog.json", destination: "/api/catalog" },
