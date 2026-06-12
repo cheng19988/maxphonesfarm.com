@@ -13,9 +13,15 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Payment not found" }, { status: 404 });
   }
 
-  const payment = await prisma.payment.findUnique({ where: { id: paymentId } });
+  const payment = await prisma.payment.findUnique({
+    where: { id: paymentId },
+    include: { order: { select: { orderNumber: true, totalUsd: true } } },
+  });
+
   return NextResponse.json({
     status: result.status,
+    autoVerification: result.autoVerification,
+    manualConfirmation: "manualConfirmation" in result ? result.manualConfirmation : false,
     payment: payment
       ? {
           paymentStatus: payment.paymentStatus,
@@ -25,6 +31,10 @@ export async function GET(req: NextRequest) {
           txHash: payment.txHash,
           expiresAt: payment.expiresAt,
           paidAt: payment.paidAt,
+          paymentAddress: payment.paymentAddress,
+          paymentNetwork: payment.paymentNetwork,
+          orderNumber: payment.order.orderNumber,
+          totalUsd: payment.order.totalUsd,
         }
       : null,
   });
