@@ -10,7 +10,7 @@ import { getFlagshipProduct } from "@/data/products";
 import { getProductsGrouped } from "@/lib/products";
 import { IMAGES } from "@/lib/images";
 import { HERO_PILLARS, SITE } from "@/lib/config";
-import { formatProductPrice } from "@/lib/format-price";
+import { ReferencePrice } from "@/components/reference-price";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 
 export const metadata = buildMetadata({
@@ -127,9 +127,8 @@ export default async function HomePage() {
                     ))}
                 </tbody>
               </table>
-              <div className="flex flex-wrap items-center gap-6 mb-8">
-                <span className="text-4xl font-semibold text-blue-700">{formatProductPrice(flagship.priceUsd)}</span>
-                <span className="text-sm text-neutral-500">USD list · bulk &amp; custom quoted separately</span>
+              <div className="flex flex-wrap items-start gap-6 mb-8">
+                <ReferencePrice priceUsd={flagship.priceUsd} size="lg" />
               </div>
               <div className="flex flex-wrap gap-3">
                 <Link href={`/products/${flagship.slug}`} className="btn-secondary">Full Specifications</Link>

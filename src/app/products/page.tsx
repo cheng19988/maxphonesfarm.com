@@ -11,7 +11,7 @@ import type { ProductGroupId } from "@/data/products";
 export const metadata = buildMetadata({
   title: "Phone Farm Hardware Catalog — Boxes, Rackmount & Device Lab",
   description:
-    "Buy phone farm box and rackmount phone farm hardware factory-direct — 20-slot chassis, motherboard arrays, Android device farm kits, and lab accessories. Guangzhou export, MOQ 1.",
+    "Request a quote for phone farm box and 2U rackmount hardware factory-direct — 20-slot chassis, motherboard arrays, Android device farm kits, and lab accessories. Guangzhou export, MOQ 1, RFQ-first B2B.",
   path: "/products",
 });
 

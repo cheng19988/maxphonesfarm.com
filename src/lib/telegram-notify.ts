@@ -5,6 +5,8 @@ export type InquiryNotification = {
   whatsapp?: string;
   productInterest?: string;
   deviceQuantity?: string;
+  platform?: string;
+  connectionMode?: string;
   budget?: string;
   country?: string;
   message?: string;
@@ -42,6 +44,8 @@ export async function notifyTelegramInquiry(data: InquiryNotification): Promise<
     line("WhatsApp / Telegram", data.whatsapp),
     line("Product interest", data.productInterest),
     line("Target quantity", data.deviceQuantity),
+    line("Platform", data.platform),
+    line("Connection mode", data.connectionMode),
     line("Budget (USD)", data.budget),
     line("Destination country", data.country),
     line("Message", data.message),

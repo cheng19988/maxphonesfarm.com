@@ -5,9 +5,9 @@ import { getProductBySlug } from "@/lib/products";
 import { getProductQuoteGuide } from "@/data/product-quote-guides";
 import { BuyButtons, FAQAccordion } from "@/components/commerce";
 import { ContactCTA, JsonLd, StockBadge } from "@/components/shared";
+import { ReferencePrice } from "@/components/reference-price";
 import { buildMetadata, productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { getProductSeo } from "@/data/product-seo";
-import { formatProductPrice } from "@/lib/format-price";
 import { emailComposeUrl } from "@/lib/email-link";
 import { CONTACT } from "@/lib/config";
 import { getProductProcurement } from "@/data/product-procurement";
@@ -83,8 +83,8 @@ export default async function ProductDetailPage({ params }: Props) {
                 <p className="text-sm text-neutral-500 mb-4 leading-relaxed">{seo.keywordLine}</p>
               ) : null}
               <p className="text-neutral-600 mb-8 leading-relaxed">{product.shortDesc}</p>
-              <div className="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-neutral-200">
-                <span className="text-3xl font-semibold text-blue-700">{formatProductPrice(product.priceUsd)}</span>
+              <div className="flex flex-wrap items-start gap-6 mb-8 pb-8 border-b border-neutral-200">
+                <ReferencePrice priceUsd={product.priceUsd} size="lg" />
                 <StockBadge stock={product.stock} />
               </div>
               <BuyButtons slug={product.slug} name={product.name} />

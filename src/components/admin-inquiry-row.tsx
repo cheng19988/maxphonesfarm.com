@@ -20,6 +20,8 @@ type Props = {
   country: string | null;
   deviceQuantity: string | null;
   productInterest: string | null;
+  platform: string | null;
+  connectionMode: string | null;
   message: string | null;
   sourcePage: string | null;
   status: string;
@@ -79,6 +81,13 @@ export function AdminInquiryRow(props: Props) {
       </p>
       {props.productInterest && (
         <p className="text-neutral-500 mt-1">Interest: {props.productInterest}</p>
+      )}
+      {(props.platform || props.connectionMode) && (
+        <p className="text-neutral-500 mt-1">
+          {props.platform ? `Platform: ${props.platform}` : ""}
+          {props.platform && props.connectionMode ? " · " : ""}
+          {props.connectionMode ? `Mode: ${props.connectionMode}` : ""}
+        </p>
       )}
       {props.message && (
         <p className="text-neutral-500 mt-2 whitespace-pre-wrap">{props.message}</p>

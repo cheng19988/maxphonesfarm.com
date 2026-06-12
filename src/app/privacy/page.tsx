@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         <p className="text-neutral-500">Last updated: June 2026</p>
         <h2>Information We Collect</h2>
         <p>
-          When you submit a contact form or communicate with our sales team, we collect your name, email, phone number, country, and inquiry details (device count, product interest, message). We do not collect credit card data on this website.
+          When you submit a contact form or communicate with our sales team, we collect your name, email, WhatsApp or Telegram, shipping country, product interest, quantity, platform, deployment mode, optional budget and message, and inquiry metadata. We do not collect credit card data on this website.
         </p>
         <h2>How We Use Information</h2>
         <p>

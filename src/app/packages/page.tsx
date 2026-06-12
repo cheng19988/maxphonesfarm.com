@@ -5,6 +5,7 @@ import { ContactCTA } from "@/components/shared";
 import { buildMetadata } from "@/lib/seo";
 import { IMAGES } from "@/lib/images";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
+import { REFERENCE_PRICE_NOTE } from "@/lib/format-price";
 
 export const metadata = buildMetadata({
   title: "Phone Farm Packages — Starter, Rackmount & Multi-Rack Bundles",
@@ -99,7 +100,8 @@ export default function PackagesPage() {
                 </div>
                 <div className="p-7 flex flex-col flex-1">
                   <h2 className="text-xl font-semibold text-neutral-900 mb-2">{pkg.name}</h2>
-                  <p className="text-2xl font-semibold text-blue-700 mb-4">{pkg.price}</p>
+                  <p className="text-2xl font-semibold text-blue-700">{pkg.price}</p>
+                  <p className="text-xs text-neutral-500 mt-1 mb-4">{REFERENCE_PRICE_NOTE}</p>
                   <p className="text-sm text-neutral-600 mb-6">{pkg.ideal}</p>
                   <ul className="space-y-2 mb-8 flex-1">
                     {pkg.includes.map((item) => (

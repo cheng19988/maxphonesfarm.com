@@ -7,7 +7,7 @@ import { OrderProcessNote, OrderProcessSteps } from "@/components/order-process"
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 import { PRICING_PAGE_FAQ } from "@/data/pricing-faq";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
-import { formatProductPrice } from "@/lib/format-price";
+import { ReferencePrice, QuoteFirstNotice } from "@/components/reference-price";
 import { getFlagshipProduct } from "@/data/products";
 
 export const metadata = buildMetadata({
@@ -42,7 +42,7 @@ export default async function PricingPage() {
             <h2 className="text-2xl md:text-3xl font-semibold text-neutral-900 mb-3">{flagship.name}</h2>
             <p className="text-neutral-600 mb-6 max-w-2xl">{flagship.shortDesc}</p>
             <div className="flex flex-wrap items-end gap-6">
-              <span className="text-5xl font-semibold text-blue-700">{formatProductPrice(flagship.priceUsd)}</span>
+              <ReferencePrice priceUsd={flagship.priceUsd} size="lg" />
               <Link href={`/contact?product=${flagship.slug}`} className="btn-primary">Request Quote</Link>
             </div>
           </div>
@@ -60,12 +60,10 @@ export default async function PricingPage() {
                       </Link>
                       <p className="text-sm text-neutral-500 mt-1 max-w-xl">{p.shortDesc}</p>
                     </div>
-                    <div className="flex items-center gap-4 shrink-0">
-                      <span className="text-lg font-medium text-blue-700">
-                        {formatProductPrice(p.priceUsd)}
-                      </span>
-                      <Link href={`/contact?product=${p.slug}`} className="btn-outline text-xs py-2.5 px-4">
-                        Quote
+                    <div className="flex items-end gap-4 shrink-0">
+                      <ReferencePrice priceUsd={p.priceUsd} size="sm" />
+                      <Link href={`/contact?product=${p.slug}`} className="btn-outline text-xs py-2.5 px-4 mb-1">
+                        RFQ
                       </Link>
                     </div>
                   </div>

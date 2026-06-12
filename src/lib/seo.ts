@@ -132,7 +132,17 @@ export function productJsonLd(product: {
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
-      ...(product.priceUsd > 0 ? { price: product.priceUsd } : {}),
+      ...(product.priceUsd > 0
+        ? {
+            price: product.priceUsd,
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: product.priceUsd,
+              priceCurrency: "USD",
+              description: "Reference list price. Final quote confirmed before payment.",
+            },
+          }
+        : {}),
       availability:
         product.stock > 0
           ? "https://schema.org/InStock"

@@ -97,9 +97,12 @@ model ContactSubmission {
   email           String
   deviceQuantity  String?
   productInterest String?
+  platform        String?
+  connectionMode  String?
   budget          String?
   message         String?
   sourcePage      String?
+  privacyConsentAt DateTime?
   status          String   @default("New")
   createdAt       DateTime @default(now())
 }

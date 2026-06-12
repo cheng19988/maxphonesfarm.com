@@ -140,6 +140,8 @@ export default async function AdminPage() {
                   country={c.country}
                   deviceQuantity={c.deviceQuantity}
                   productInterest={c.productInterest}
+                  platform={c.platform}
+                  connectionMode={c.connectionMode}
                   message={c.message}
                   sourcePage={c.sourcePage}
                   status={c.status}

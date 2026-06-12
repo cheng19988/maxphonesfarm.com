@@ -38,7 +38,7 @@ export default async function ContactPage({ searchParams }: Props) {
       <PageHero
         label={`${SITE.location} · Factory-direct since 2017`}
         title="Request a Hardware Quote"
-        subtitle="Quote for phone farm box, rackmount, or custom chassis — include device count, Android/iOS models, and destination country. Guangzhou team replies with specs, lead time, USD pricing, and export shipping options within one business day (UTC+8)."
+        subtitle="RFQ for phone farm box, 2U rackmount chassis, or custom cabinet — include device count, platform, rack layout, and destination country. Guangzhou team replies with written BOM, pro-forma, specs, and reference USD pricing within one business day (UTC+8)."
         image={IMAGES.office}
         imageAlt="Max Phones Farm Guangzhou office"
       />
@@ -47,8 +47,8 @@ export default async function ContactPage({ searchParams }: Props) {
         <div className="container-wide max-w-5xl">
           <ul className="grid sm:grid-cols-3 gap-6 text-sm text-neutral-600">
             <li>
-              <span className="block font-medium text-neutral-900 mb-1">Payment</span>
-              T/T bank transfer, Wise, or PayPal on pro-forma. USDT (Tron TRC20) when agreed on quote.
+              <span className="block font-medium text-neutral-900 mb-1">Quote-first payment</span>
+              Written BOM and pro-forma on every order. Reference list prices only — final quote confirmed before T/T, Wise, PayPal, or USDT payment.
             </li>
             <li>
               <span className="block font-medium text-neutral-900 mb-1">Export shipping</span>

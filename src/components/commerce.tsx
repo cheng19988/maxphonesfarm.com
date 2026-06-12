@@ -1,9 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
-import { formatProductPrice } from "@/lib/format-price";
+import { ReferencePrice } from "@/components/reference-price";
 import { StockBadge } from "./shared";
 
 type ProductCardProps = {
@@ -37,8 +35,6 @@ export function ProductCard({
   compact = false,
   featured = false,
 }: ProductCardProps) {
-  const priceLabel = formatProductPrice(priceUsd);
-
   return (
     <article className={`group card card-hover flex flex-col h-full rounded-xl ${featured ? "lg:col-span-2" : ""}`}>
       <Link
@@ -66,11 +62,11 @@ export function ProductCard({
         <p className={`text-neutral-600 mb-4 line-clamp-2 flex-1 ${compact ? "text-xs" : "text-sm leading-relaxed"}`}>
           {shortDesc}
         </p>
-        <div className="flex items-center justify-between gap-4 pt-4 border-t border-neutral-100">
-          <span className={`font-semibold text-neutral-900 ${compact ? "text-sm" : "text-lg"}`}>{priceLabel}</span>
-          <div className="flex items-center gap-2">
+        <div className="flex items-end justify-between gap-4 pt-4 border-t border-neutral-100">
+          <ReferencePrice priceUsd={priceUsd} size={compact ? "sm" : "md"} />
+          <div className="flex items-center gap-2 shrink-0">
             <Link href={`/contact?product=${slug}`} className="btn-primary text-xs py-2 px-4">
-              Quote
+              RFQ
             </Link>
             <Link href={`/products/${slug}`} className="btn-ghost text-xs hidden sm:inline-flex">
               Details →
@@ -93,8 +89,6 @@ export function ProductCardMinimal({
   priceUsd: number;
   imageCard: string;
 }) {
-  const priceLabel = formatProductPrice(priceUsd);
-
   return (
     <article className="group card card-hover rounded-xl overflow-hidden">
       <Link href={`/products/${slug}`} className="block product-img-frame aspect-square min-h-[220px]">
@@ -107,8 +101,8 @@ export function ProductCardMinimal({
         />
       </Link>
       <div className="p-5 border-t border-neutral-100">
-        <h3 className="text-sm font-semibold text-neutral-900 mb-1 group-hover:text-blue-700 transition-colors">{name}</h3>
-        <p className="text-sm font-medium text-blue-700 mb-4">{priceLabel}</p>
+        <h3 className="text-sm font-semibold text-neutral-900 mb-2 group-hover:text-blue-700 transition-colors">{name}</h3>
+        <ReferencePrice priceUsd={priceUsd} size="sm" className="mb-4" />
         <Link href={`/contact?product=${slug}`} className="btn-primary text-xs py-2.5 px-4 w-full text-center block">
           Request Quote
         </Link>
@@ -138,14 +132,15 @@ export function BuyButtons({ slug, name }: { slug: string; name: string; stock?:
     <div className="space-y-4">
       <div className="flex flex-wrap gap-3">
         <Link href={`/contact?product=${slug}`} className="btn-primary">
-          Request a Quote
+          Request a Quote (RFQ)
         </Link>
         <a href={whatsappQuoteUrl(name)} target="_blank" rel="noopener noreferrer" className="btn-secondary">
           WhatsApp Quote
         </a>
       </div>
       <p className="text-xs text-neutral-500 leading-relaxed max-w-md">
-        Quote-first B2B — list price shown for reference. We confirm freight, payment terms, and lead time on your written quote before you pay.
+        Quote-first B2B — reference list price only. Written BOM, pro-forma invoice, freight, and payment terms
+        are confirmed before you pay. No public checkout.
       </p>
     </div>
   );
