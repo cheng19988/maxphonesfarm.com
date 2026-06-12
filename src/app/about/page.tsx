@@ -8,9 +8,9 @@ import { CONTACT, SITE } from "@/lib/config";
 import { DELIVERY_PROCESS } from "@/data/delivery-process";
 
 export const metadata = buildMetadata({
-  title: "About — Guangzhou Hardware Supplier",
+  title: "About — Guangzhou Phone Farm Factory Since 2017",
   description:
-    "Max Phones Farm team — Guangzhou-based phone farm hardware assembly, custom rack builds, and export logistics for device labs worldwide.",
+    "Max Phones Farm — Guangzhou phone farm box and rackmount hardware factory. Assembly, burn-in QC, custom chassis, and worldwide export for enterprise device labs.",
   path: "/about",
 });
 

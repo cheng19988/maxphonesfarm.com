@@ -88,6 +88,54 @@ export const GLOSSARY_TERMS = [
     term: "2U rack integration",
     definition:
       "Mounting phone farm hardware in a 2 rack-unit (2U) slot within a standard 19-inch server cabinet. Enables mobile compute density alongside traditional servers in enterprise labs.",
-    related: ["/products/custom-cabinet"],
+    related: ["/products/custom-cabinet", "/blog/2u-phone-farm-rack-buyer-guide"],
+  },
+  {
+    term: "2U phone farm rack",
+    definition:
+      "Synonym for a rackmount phone farm chassis at 2U height (88 mm) in a 482 mm wide cabinet — typically twenty Android nodes with centralized PSU, fans, and one USB uplink per chassis.",
+    related: ["/products/custom-cabinet", "/blog/2u-phone-farm-rack-buyer-guide"],
+  },
+  {
+    term: "Android phone farm",
+    definition:
+      "Physical hardware that hosts multiple Android phones or motherboard nodes in one chassis — phone farm box, rackmount array, or starter cluster — with shared power, cooling, and USB routing to one control PC for app QA and automation.",
+    related: ["/products/android-phone-farm", "/blog/android-phone-farm-hardware-explained"],
+  },
+  {
+    term: "Mobile device farm",
+    definition:
+      "Infrastructure that runs many smartphones or headless mobile boards at scale — the hardware layer behind device labs, batch testing, and remote ADB. Contrasts with cloud-hosted virtual phones.",
+    related: ["/blog/mobile-device-farm-hardware-guide", "/blog/real-device-vs-cloud-phone"],
+  },
+  {
+    term: "Device farm hardware",
+    definition:
+      "Chassis, PSU, fan modules, USB backplanes, and rack modules that make a device farm operable — distinct from test software running on the control PC.",
+    related: ["/products", "/blog/phone-farm-equipment-buyers-guide"],
+  },
+  {
+    term: "Phone farm equipment",
+    definition:
+      "Complete systems and accessories for phone farm deployments: boxes, rackmount chassis, centralized power (charging station), USB backplanes, cooling modules, and network kits — not loose consumer USB hubs.",
+    related: ["/blog/phone-farm-equipment-buyers-guide", "/products/power-supply-solution"],
+  },
+  {
+    term: "Batch device testing",
+    definition:
+      "Running installs, smoke tests, or automation scripts across many physical devices in parallel from one workstation — enabled by stable USB topology and grouped ADB control in factory chassis.",
+    related: ["/blog/bulk-apk-installation-guide", "/products/remote-control-setup"],
+  },
+  {
+    term: "Phone farm wholesale",
+    definition:
+      "Volume purchase of phone farm chassis from a factory-direct supplier — typically priced from five units with palletized export and staged delivery for multi-rack projects. MOQ for evaluation remains one unit on standard SKUs.",
+    related: ["/blog/phone-farm-wholesale-bulk-order-guide", "/pricing"],
+  },
+  {
+    term: "App compatibility testing hardware",
+    definition:
+      "Real-device phone farm chassis used to validate mobile apps across a fixed matrix of Android or iOS hardware — catching SoC, display, and carrier-specific behavior emulators miss.",
+    related: ["/blog/phone-farm-for-app-testing-labs", "/faq"],
   },
 ] as const;

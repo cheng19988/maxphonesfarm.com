@@ -1,17 +1,19 @@
 import Link from "next/link";
 import { getProductsGrouped } from "@/lib/products";
 import { PageHero } from "@/components/page-hero";
-import { ContactCTA } from "@/components/shared";
+import { ContactCTA, JsonLd } from "@/components/shared";
+import { FAQAccordion } from "@/components/commerce";
 import { OrderProcessNote, OrderProcessSteps } from "@/components/order-process";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, faqJsonLd } from "@/lib/seo";
+import { PRICING_PAGE_FAQ } from "@/data/pricing-faq";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 import { formatProductPrice } from "@/lib/format-price";
 import { getFlagshipProduct } from "@/data/products";
 
 export const metadata = buildMetadata({
-  title: "Hardware Pricing — USD List Prices",
+  title: "Phone Farm Hardware Pricing — USD List & Wholesale Quotes",
   description:
-    "Transparent USD list pricing for rackmount phone farm hardware. Bulk, custom rack, and international shipping quoted separately.",
+    "Phone farm box and rackmount hardware USD list prices from Guangzhou. Bulk wholesale, custom rack, export freight, and USDT payment quoted on pro-forma. MOQ 1 unit.",
   path: "/pricing",
 });
 
@@ -21,11 +23,12 @@ export default async function PricingPage() {
 
   return (
     <>
+      <JsonLd data={faqJsonLd([...PRICING_PAGE_FAQ])} />
       <PageHero
         variant="simple"
         label="Transparent Pricing"
-        title="USD List Prices"
-        subtitle="Factory-direct list pricing for core hardware. Bulk orders, custom rack builds, and international freight are quoted after you share device models and destination."
+        title="Phone Farm Hardware Pricing"
+        subtitle="Factory-direct USD list prices for phone farm boxes, 2U rackmount chassis, and device lab accessories. Bulk wholesale, export freight, and USDT payment confirmed on your written quote — not at checkout."
       />
 
       <section className="section section-white border-b border-neutral-200">
@@ -103,6 +106,13 @@ export default async function PricingPage() {
               WhatsApp
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="section section-muted border-b border-neutral-200">
+        <div className="container-wide max-w-3xl">
+          <h2 className="text-xl font-semibold text-neutral-900 mb-6 text-center">Pricing FAQ</h2>
+          <FAQAccordion items={[...PRICING_PAGE_FAQ]} />
         </div>
       </section>
 

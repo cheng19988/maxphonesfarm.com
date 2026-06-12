@@ -5,9 +5,9 @@ import { ContactCTA, JsonLd } from "@/components/shared";
 import { buildMetadata, definedTermSetJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Phone Farm Hardware Glossary",
+  title: "Phone Farm Glossary — 23 Hardware & Device Lab Terms",
   description:
-    "Definitions for phone farm box, rackmount phone farm, screenless nodes, battery-free operation, mobile compute, sustained compute workloads, and device lab terminology.",
+    "Definitions for phone farm box, rackmount phone farm, Android phone farm, mobile device farm, 2U phone farm rack, phone farm equipment, batch device testing, and wholesale terminology.",
   path: "/glossary",
 });
 
@@ -18,7 +18,7 @@ export default function GlossaryPage() {
       <PageHero
         label="Reference"
         title="Phone Farm & Device Lab Glossary"
-        subtitle="Industry-standard definitions for rackmount phone farm hardware, mobile compute, and enterprise device lab deployments — factory-direct from Guangzhou."
+        subtitle="Industry definitions for phone farm hardware — rackmount and box chassis, Android device farms, mobile compute, wholesale procurement, and enterprise device lab vocabulary."
       />
       <section className="section-tight">
         <div className="container-wide max-w-4xl">

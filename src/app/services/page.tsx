@@ -8,9 +8,9 @@ import { buildMetadata } from "@/lib/seo";
 import { IMAGES } from "@/lib/images";
 
 export const metadata = buildMetadata({
-  title: "Deployment & Lab Setup Services",
+  title: "Phone Farm Deployment Services — Remote Setup & Export",
   description:
-    "Hardware assembly, remote device control setup, bulk provisioning, and export logistics from our Guangzhou team.",
+    "Phone farm remote setup, ADB handover, bulk lab provisioning, and export logistics from Guangzhou. Phone farm box with remote setup for up to 20 nodes per session.",
   path: "/services",
 });
 

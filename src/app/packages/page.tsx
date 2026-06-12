@@ -7,9 +7,9 @@ import { IMAGES } from "@/lib/images";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 
 export const metadata = buildMetadata({
-  title: "Solution Packages — Lab Deployment Bundles",
+  title: "Phone Farm Packages — Starter, Rackmount & Multi-Rack Bundles",
   description:
-    "Pre-configured phone farm hardware packages for enterprise device labs — rackmount systems, power, cooling, and deployment support.",
+    "Pre-configured phone farm hardware packages — 20-slot box starter, 2U rackmount enterprise, and multi-rack wholesale bundles. Factory-direct Guangzhou export, MOQ 1, quote-first B2B.",
   path: "/packages",
 });
 
@@ -62,11 +62,24 @@ export default function PackagesPage() {
       <PageHero
         variant="simple"
         label="Deployment Bundles"
-        title="Solution Packages"
-        subtitle="Pre-configured hardware bundles for common lab deployment paths — quote-first with transparent USD list pricing as the starting point."
+        title="Phone Farm Hardware Packages"
+        subtitle="Bundle phone farm box, rackmount, or multi-rack chassis with power, cooling, and export logistics — USD list pricing as the starting point, custom device fit quoted per lab plan."
       >
         <Link href="/contact" className="btn-primary">Discuss Your Lab</Link>
       </PageHero>
+
+      <section className="section-tight section-muted border-b border-neutral-200">
+        <div className="container-wide max-w-4xl">
+          <p className="text-neutral-600 leading-relaxed text-center">
+            Max Phones Farm packages combine factory-direct{" "}
+            <strong className="font-medium text-neutral-800">phone farm box</strong>,{" "}
+            <strong className="font-medium text-neutral-800">2U rackmount phone farm</strong>, and{" "}
+            <strong className="font-medium text-neutral-800">mobile device farm</strong> hardware with
+            centralized power, active cooling, and optional remote setup. MOQ is one unit on standard bundles;
+            wholesale and multi-rack scale packages are quoted with palletized export from Guangzhou.
+          </p>
+        </div>
+      </section>
 
       <section className="section section-white border-b border-neutral-200">
         <div className="container-wide">

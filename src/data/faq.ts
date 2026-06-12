@@ -1,6 +1,7 @@
 import { CONTACT } from "@/lib/config";
 import { REFERENCE_HOME_FAQ } from "./reference-faq";
 import { BUYER_SPEC_FAQ } from "./buyer-spec-faq";
+import { PRICING_PAGE_FAQ } from "./pricing-faq";
 
 /** B2B purchase & AI-search FAQ — user question phrasing. */
 export const B2B_PURCHASE_FAQ = [
@@ -136,6 +137,7 @@ export const ALL_FAQ_ITEMS = [
     answer:
       `WhatsApp (${CONTACT.whatsapp}), Telegram (${CONTACT.telegram}), or email (${CONTACT.email}). Include target device count, device models, and destination country for the fastest quote.`,
   },
+  ...PRICING_PAGE_FAQ,
 ];
 
 /** General + enterprise FAQ (excludes buyer spec block shown separately on /faq). */
