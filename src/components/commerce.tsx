@@ -135,13 +135,18 @@ export function FAQAccordion({ items }: { items: { question: string; answer: str
 
 export function BuyButtons({ slug, name }: { slug: string; name: string; stock?: number }) {
   return (
-    <div className="flex flex-wrap gap-3">
-      <Link href={`/contact?product=${slug}`} className="btn-primary">
-        Request a Quote
-      </Link>
-      <a href={whatsappQuoteUrl(name)} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-        WhatsApp Quote
-      </a>
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-3">
+        <Link href={`/contact?product=${slug}`} className="btn-primary">
+          Request a Quote
+        </Link>
+        <a href={whatsappQuoteUrl(name)} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+          WhatsApp Quote
+        </a>
+      </div>
+      <p className="text-xs text-neutral-500 leading-relaxed max-w-md">
+        Quote-first B2B — list price shown for reference. We confirm freight, payment terms, and lead time on your written quote before you pay.
+      </p>
     </div>
   );
 }

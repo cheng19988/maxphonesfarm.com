@@ -38,7 +38,7 @@ export function validateContactSubmission(data: ContactSubmissionInput): string 
 export async function saveContactSubmission(data: ContactSubmissionInput) {
   const submittedAt = new Date();
 
-  await prisma.contactSubmission.create({
+  const record = await prisma.contactSubmission.create({
     data: {
       name: data.name,
       company: data.company || null,
@@ -72,4 +72,6 @@ export async function saveContactSubmission(data: ContactSubmissionInput) {
   } catch (error) {
     console.error("[telegram] notify failed after DB save:", error);
   }
+
+  return record.id;
 }

@@ -15,7 +15,9 @@ export async function submitContactInquiry(formData: FormData) {
   }
 
   try {
-    await saveContactSubmission(data);
+    const inquiryId = await saveContactSubmission(data);
+    const ref = inquiryId.slice(-8).toUpperCase();
+    redirect(`/contact?sent=1&ref=${ref}`);
   } catch {
     redirect(`/contact?error=submit&product=${encodeURIComponent(data.productInterest)}`);
   }

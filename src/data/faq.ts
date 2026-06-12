@@ -55,6 +55,11 @@ export const FAQ_ITEMS = [
       "Yes. Our engineering team configures ADB paths, screen mirroring, batch APK installation, and device grouping for scripted testing workflows and QA automation on your control workstation.",
   },
   {
+    question: "How do I place an order?",
+    answer:
+      "Submit a quote request on our contact page or message us on WhatsApp/Telegram with device count, models, and destination country. We reply with a written USD quote or pro-forma invoice. After you approve specifications and payment terms, we assemble, burn-in test, and ship from Guangzhou. There is no public shopping cart — all orders are quote-first B2B.",
+  },
+  {
     question: "What payment terms do you offer?",
     answer:
       "Sample and standard orders can be settled via bank transfer (T/T), Wise, or PayPal. Bulk and enterprise projects receive a pro-forma invoice with an agreed payment schedule. Contact sales for a quote.",

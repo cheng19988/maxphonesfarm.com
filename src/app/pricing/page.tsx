@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getProductsGrouped } from "@/lib/products";
 import { PageHero } from "@/components/page-hero";
 import { ContactCTA } from "@/components/shared";
+import { OrderProcessNote, OrderProcessSteps } from "@/components/order-process";
 import { buildMetadata } from "@/lib/seo";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 import { formatProductPrice } from "@/lib/format-price";
@@ -29,6 +30,10 @@ export default async function PricingPage() {
 
       <section className="section section-white border-b border-neutral-200">
         <div className="container-wide max-w-5xl">
+          <div className="mb-10">
+            <OrderProcessNote />
+          </div>
+
           <div className="surface-elevated p-8 md:p-10 mb-12">
             <p className="section-label mb-2">Flagship</p>
             <h2 className="text-2xl md:text-3xl font-semibold text-neutral-900 mb-3">{flagship.name}</h2>
@@ -65,6 +70,20 @@ export default async function PricingPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section section-muted border-b border-neutral-200">
+        <div className="container-wide max-w-5xl">
+          <h2 className="section-title mb-3">How to order</h2>
+          <p className="section-subtitle mb-10">
+            We do not use a public shopping cart. Every order starts with a quote so we can confirm device fit, freight, and payment terms.
+          </p>
+          <OrderProcessSteps />
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link href="/contact" className="btn-primary">Start quote request</Link>
+            <Link href="/faq" className="btn-outline">Ordering FAQ</Link>
+          </div>
         </div>
       </section>
 

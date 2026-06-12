@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "maxphonesfarm.com" }],
+      "destination": "https://www.maxphonesfarm.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/((?!_next/static|_next/image|favicon.svg|images/).*)",

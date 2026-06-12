@@ -1,11 +1,9 @@
-import { ContactBar } from "@/components/shared";
 import { PageHero } from "@/components/page-hero";
+import { ContactInquiryForm } from "@/components/contact-inquiry-form";
 import { buildMetadata } from "@/lib/seo";
-import { CONTACT, SITE } from "@/lib/config";
+import { SITE } from "@/lib/config";
 import { IMAGES } from "@/lib/images";
-import { emailComposeUrl } from "@/lib/email-link";
-import { whatsappQuoteUrl } from "@/lib/whatsapp";
-import { submitContactInquiry } from "./actions";
+import { getPublishedProducts } from "@/lib/products";
 
 export const metadata = buildMetadata({
   title: "Contact — Request a Hardware Quote",
@@ -15,27 +13,8 @@ export const metadata = buildMetadata({
 });
 
 type Props = {
-  searchParams: Promise<{ product?: string; service?: string; sent?: string; error?: string }>;
+  searchParams: Promise<{ product?: string; service?: string; sent?: string; ref?: string; error?: string }>;
 };
-
-function ContactFallbackLinks() {
-  return (
-    <p className="mt-4 text-sm text-neutral-500">
-      Prefer direct contact?{" "}
-      <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-4">
-        WhatsApp
-      </a>
-      {" · "}
-      <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-4">
-        Telegram
-      </a>
-      {" · "}
-      <a href={emailComposeUrl()} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-4">
-        Email
-      </a>
-    </p>
-  );
-}
 
 export default async function ContactPage({ searchParams }: Props) {
   const params = await searchParams;
@@ -46,179 +25,34 @@ export default async function ContactPage({ searchParams }: Props) {
       ? `/services (${params.service})`
       : "/contact";
   const sent = params.sent === "1";
+  const inquiryRef = params.ref;
   const error = params.error;
+
+  const products = await getPublishedProducts();
+  const productOptions = products.map((p) => ({ slug: p.slug, name: p.name }));
 
   return (
     <>
       <PageHero
-        label={SITE.location}
-        title="Contact Sales"
-        subtitle="Share your target device count, models, and destination country. Our Guangzhou hardware team will reply with specifications, lead time, and a USD quote."
+        label={`${SITE.location} · Factory-direct since 2017`}
+        title="Request a Hardware Quote"
+        subtitle="Tell us your device count, models, and destination country. Our Guangzhou assembly team replies with specifications, lead time, and USD pricing — typically within one business day."
         image={IMAGES.office}
-        imageAlt="Contact Max Phones Farm sales team"
+        imageAlt="Max Phones Farm Guangzhou office"
       />
 
-      <div className="section-tight border-b border-neutral-200 bg-white">
-        <div className="container-wide max-w-4xl">
-        <div className="surface p-6 mb-8 rounded-xl">
-          <h2 className="font-semibold text-neutral-900 mb-4">Direct Contact</h2>
-          <ContactBar />
-          <dl className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
-            <div>
-              <dt className="text-neutral-600">WhatsApp</dt>
-              <dd>
-                <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="text-neutral-700 hover:text-blue-700">
-                  {CONTACT.whatsapp}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-neutral-600">Telegram</dt>
-              <dd>
-                <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-neutral-700 hover:text-blue-700">
-                  {CONTACT.telegram}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-neutral-600">Email</dt>
-              <dd>
-                <a href={emailComposeUrl()} target="_blank" rel="noopener noreferrer" className="text-neutral-700 hover:text-blue-700">
-                  {CONTACT.email}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-neutral-600">Location</dt>
-              <dd className="text-neutral-700">{SITE.location}</dd>
-            </div>
-            <div>
-              <dt className="text-neutral-600">Response time</dt>
-              <dd className="text-neutral-700">Usually within 24 hours · Mon–Fri UTC+8</dd>
-            </div>
-          </dl>
+      <section className="section-tight border-b border-neutral-200 bg-white">
+        <div className="container-wide max-w-6xl">
+          <ContactInquiryForm
+            products={productOptions}
+            defaultInterest={defaultInterest}
+            sourcePage={sourcePage}
+            sent={sent}
+            inquiryRef={inquiryRef}
+            error={error}
+          />
         </div>
-
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Send an Inquiry</h2>
-
-        {sent && (
-          <p className="mb-4 text-green-800 text-sm border border-green-200 bg-green-50 p-4 rounded-lg">
-            Thank you. We typically reply within one business day (UTC+8).
-          </p>
-        )}
-
-        {error && (
-          <p className="mb-4 text-red-800 text-sm border border-red-200 bg-red-50 p-4 rounded-lg">
-            {error === "validation"
-              ? "Please provide your name and either email or WhatsApp."
-              : "Could not send the form. Please use "}
-            {error !== "validation" && (
-              <>
-                <a href={whatsappQuoteUrl()} target="_blank" rel="noopener noreferrer" className="underline">
-                  WhatsApp
-                </a>
-                ,{" "}
-                <a href={CONTACT.telegramUrl} target="_blank" rel="noopener noreferrer" className="underline">
-                  Telegram
-                </a>
-                , or{" "}
-                <a href={emailComposeUrl()} target="_blank" rel="noopener noreferrer" className="underline">
-                  {CONTACT.email}
-                </a>
-                .
-              </>
-            )}
-          </p>
-        )}
-
-        <form action={submitContactInquiry} className="surface p-6 md:p-8 space-y-4 rounded-xl">
-          <input type="hidden" name="sourcePage" value={sourcePage} />
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="contact-name" className="block text-sm text-neutral-500 mb-1">
-                Name *
-              </label>
-              <input id="contact-name" name="name" required className="input-field" />
-            </div>
-            <div>
-              <label htmlFor="contact-company" className="block text-sm text-neutral-500 mb-1">
-                Company
-              </label>
-              <input id="contact-company" name="company" placeholder="Company or team name" className="input-field" />
-            </div>
-            <div>
-              <label htmlFor="contact-email" className="block text-sm text-neutral-500 mb-1">
-                Email
-              </label>
-              <input id="contact-email" name="email" type="email" className="input-field" />
-            </div>
-            <div>
-              <label htmlFor="contact-whatsapp" className="block text-sm text-neutral-500 mb-1">
-                WhatsApp / Telegram
-              </label>
-              <input id="contact-whatsapp" name="whatsapp" placeholder="WhatsApp or Telegram handle" className="input-field" />
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="contact-product" className="block text-sm text-neutral-500 mb-1">
-                Product or Service Interest
-              </label>
-              <input
-                id="contact-product"
-                name="productInterest"
-                defaultValue={defaultInterest}
-                placeholder="e.g. Rackmount Phone Farm +20, remote control setup"
-                className="input-field"
-              />
-            </div>
-            <div>
-              <label htmlFor="contact-quantity" className="block text-sm text-neutral-500 mb-1">
-                Target Quantity
-              </label>
-              <input
-                id="contact-quantity"
-                name="deviceQuantity"
-                placeholder="e.g. 20 units, 3 racks"
-                className="input-field"
-              />
-            </div>
-            <div>
-              <label htmlFor="contact-budget" className="block text-sm text-neutral-500 mb-1">
-                Estimated Budget (USD)
-              </label>
-              <input
-                id="contact-budget"
-                name="budget"
-                placeholder="e.g. $5,000 – $15,000"
-                className="input-field"
-              />
-            </div>
-            <div>
-              <label htmlFor="contact-country" className="block text-sm text-neutral-500 mb-1">
-                Destination Country
-              </label>
-              <input id="contact-country" name="country" placeholder="e.g. United States, Germany" className="input-field" />
-            </div>
-          </div>
-          <div>
-            <label htmlFor="contact-message" className="block text-sm text-neutral-500 mb-1">
-              Message
-            </label>
-            <textarea
-              id="contact-message"
-              name="message"
-              rows={4}
-              placeholder="Device models, use case (app testing, ad verification, automation workflows), timeline, custom requirements…"
-              className="input-field"
-            />
-          </div>
-          <button type="submit" className="btn-primary w-full">
-            Send Inquiry
-          </button>
-        </form>
-
-        <ContactFallbackLinks />
-        </div>
-      </div>
+      </section>
     </>
   );
 }
