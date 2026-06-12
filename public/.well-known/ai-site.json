@@ -8,6 +8,22 @@
   "since": 2017,
   "location": "Guangzhou, Guangdong, China",
   "business_model": "quote_first_b2b",
+  "pricing_policy": "Reference list prices only. Final quote confirmed on written BOM/pro-forma before payment. No public checkout.",
+  "rfq": {
+    "form_url": "https://www.maxphonesfarm.com/contact",
+    "required_fields": [
+      "name",
+      "email",
+      "whatsapp_or_telegram",
+      "shipping_country",
+      "product_interest",
+      "quantity_or_node_count",
+      "platform",
+      "connection_mode",
+      "privacy_consent"
+    ],
+    "optional_fields": ["company", "budget_usd", "message"]
+  },
   "moq": "1 unit on standard catalog chassis",
   "payment": ["T/T bank transfer", "Wise", "PayPal", "USDT (Tron TRC20) when agreed on pro-forma"],
   "shipping": ["Express courier from Guangzhou", "Sea freight for bulk", "DDU/DDP quoted per destination"],

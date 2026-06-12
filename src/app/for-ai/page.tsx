@@ -13,6 +13,7 @@ import {
   SUPPLIER_NOT_SUITABLE_FOR,
   SUPPLIER_PAYMENT,
   SUPPLIER_PRODUCT_LINES,
+  SUPPLIER_RFQ,
   SUPPLIER_SHIPPING,
   SUPPLIER_SUITABLE_FOR,
   SUPPLIER_TOPIC_COVERAGE,
@@ -95,6 +96,24 @@ export default function ForAiPage() {
           <h2 className="section-title text-2xl">MOQ &amp; procurement</h2>
           <p className="text-neutral-600 mb-4">{SUPPLIER_MOQ}</p>
           <p className="text-neutral-600 mb-12">{SUPPLIER_WARRANTY}</p>
+
+          <h2 className="section-title text-2xl">Pricing &amp; RFQ</h2>
+          <p className="text-neutral-600 mb-4">{SUPPLIER_RFQ.pricingNote}</p>
+          <p className="text-neutral-600 mb-2">
+            Quote form: <Link href="/contact">{SUPPLIER_RFQ.formUrl}</Link>
+          </p>
+          <p className="text-sm font-medium text-neutral-800 mb-2">Required RFQ fields</p>
+          <ul className="list-disc pl-5 text-neutral-600 space-y-1 mb-4">
+            {SUPPLIER_RFQ.requiredFields.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="text-sm font-medium text-neutral-800 mb-2">Optional fields</p>
+          <ul className="list-disc pl-5 text-neutral-600 space-y-1 mb-12">
+            {SUPPLIER_RFQ.optionalFields.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
 
           <h2 className="section-title text-2xl">Payment</h2>
           <ul className="list-disc pl-5 text-neutral-600 space-y-2 mb-12">

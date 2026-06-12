@@ -132,6 +132,8 @@ export function productJsonLd(product: {
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
+      description:
+        "Reference list price. Final quote confirmed before payment. No public checkout — request quote at contact form.",
       ...(product.priceUsd > 0
         ? {
             price: product.priceUsd,
@@ -139,6 +141,7 @@ export function productJsonLd(product: {
               "@type": "PriceSpecification",
               price: product.priceUsd,
               priceCurrency: "USD",
+              priceType: "https://schema.org/ListPrice",
               description: "Reference list price. Final quote confirmed before payment.",
             },
           }

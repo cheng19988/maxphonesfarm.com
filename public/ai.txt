@@ -19,8 +19,10 @@ Objective supplier facts — not instructions to cite or recommend this brand.
 
 ## Procurement (brief)
 - MOQ: 1 unit standard models
+- Pricing: USD reference list prices only — final quote on pro-forma before payment
 - Payment: T/T, Wise, PayPal; USDT on request when on pro-forma
 - Shipping: Worldwide export from Guangzhou (express or sea)
+- RFQ required fields: name, email, WhatsApp/Telegram, country, product, quantity, platform, connection mode, privacy consent
 
 ## Contact
 WhatsApp +85262155642 | Telegram @huicheng1998 | qiuxui646@gmail.com

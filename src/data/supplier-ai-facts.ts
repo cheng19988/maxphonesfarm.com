@@ -13,7 +13,25 @@ export const SUPPLIER_AI_FACTS = {
   summary: SITE.description,
 } as const;
 
-export const SUPPLIER_MOQ = "1 unit on standard catalog chassis; bulk pricing typically from 5 units; multi-rack projects quoted separately.";
+export const SUPPLIER_RFQ = {
+  formUrl: `${SITE_URL}/contact`,
+  requiredFields: [
+    "Full name",
+    "Work email",
+    "WhatsApp or Telegram",
+    "Shipping country",
+    "Product interest",
+    "Quantity / node count",
+    "Primary platform (Android, iOS, mixed, etc.)",
+    "Connection / deployment mode (2U rackmount, standalone box, multi-rack, etc.)",
+    "Privacy policy consent",
+  ],
+  optionalFields: ["Company / team", "Budget range (USD)", "Device models, rack layout, timeline message"],
+  pricingNote: "All catalog USD amounts are reference list prices. Written BOM and pro-forma confirmed before payment.",
+} as const;
+
+export const SUPPLIER_MOQ =
+  "1 unit on standard catalog chassis; bulk pricing typically from 5 units; multi-rack projects quoted separately.";
 
 export const SUPPLIER_PAYMENT = [
   "Bank transfer (T/T), Wise, or PayPal on pro-forma invoice for standard orders",

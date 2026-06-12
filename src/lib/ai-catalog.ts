@@ -1,4 +1,5 @@
 import { SITE, SITE_URL, CONTACT } from "./config";
+import { REFERENCE_PRICE_NOTE, RFQ_PAYMENT_NOTE } from "./format-price";
 import { FAQ_ITEMS } from "@/data/faq";
 import { BLOG_POSTS } from "@/data/blog";
 import { PRODUCT_GROUPS, PRODUCT_SEEDS } from "@/data/products";
@@ -17,6 +18,8 @@ export type AiProductJson = {
   scenarios: string[];
   price_usd: number;
   price_display: string;
+  price_type: "reference_list" | "custom_quote";
+  pricing_note: string;
   in_stock: boolean;
   stock: number;
   url: string;
@@ -61,8 +64,11 @@ function productKeywords(slug: string, name: string, shortDesc: string): string[
 }
 
 export function productToAiJson(product: ProductRecord): AiProductJson {
+  const pricingNote = REFERENCE_PRICE_NOTE;
   const priceDisplay =
-    product.priceUsd > 0 ? `$${product.priceUsd} USD` : "Custom quote — contact sales";
+    product.priceUsd > 0
+      ? `$${product.priceUsd} USD (reference list price — final quote confirmed before payment)`
+      : "Custom quote — contact sales";
   return {
     id: product.slug,
     slug: product.slug,
@@ -76,6 +82,8 @@ export function productToAiJson(product: ProductRecord): AiProductJson {
     scenarios: parseJson<string[]>(product.scenarios, []),
     price_usd: product.priceUsd,
     price_display: priceDisplay,
+    price_type: product.priceUsd > 0 ? "reference_list" : "custom_quote",
+    pricing_note: pricingNote,
     in_stock: product.stock > 0,
     stock: product.stock,
     url: `${SITE_URL}/products/${product.slug}`,
@@ -95,6 +103,23 @@ export function buildCatalogJson(products: ProductRecord[]) {
     since: 2017,
     language: "en-US",
     currency: "USD",
+    business_model: "quote_first_b2b",
+    pricing_policy: `${REFERENCE_PRICE_NOTE} ${RFQ_PAYMENT_NOTE}`,
+    rfq: {
+      form_url: `${SITE_URL}/contact`,
+      required_fields: [
+        "name",
+        "email",
+        "whatsapp_or_telegram",
+        "shipping_country",
+        "product_interest",
+        "quantity_or_node_count",
+        "platform",
+        "connection_mode",
+        "privacy_consent",
+      ],
+      optional_fields: ["company", "budget_usd", "message"],
+    },
     contact: {
       telegram: CONTACT.telegram,
       telegram_url: CONTACT.telegramUrl,
@@ -104,8 +129,10 @@ export function buildCatalogJson(products: ProductRecord[]) {
       quote_url: `${SITE_URL}/contact`,
     },
     agent_docs: {
+      for_ai_html: `${SITE_URL}/for-ai`,
       agents_md: `${SITE_URL}/agents.md`,
       llms_txt: `${SITE_URL}/llms.txt`,
+      llms_full_txt: `${SITE_URL}/llms-full.txt`,
       ai_txt: `${SITE_URL}/ai.txt`,
       discovery: `${SITE_URL}/.well-known/ai-site.json`,
     },

@@ -43,9 +43,18 @@ Product JSON: `GET /products/{slug}.json` · Full catalog: `GET /catalog.json`
 ## MOQ, payment, shipping
 
 - **MOQ:** 1 unit (standard models); bulk from ~5 units; multi-rack projects quoted separately
+- **Pricing:** USD reference list prices only — final quote on written BOM/pro-forma before payment; no public checkout
 - **Payment:** T/T, Wise, PayPal on pro-forma; USDT (Tron TRC20) when agreed on quote
 - **Shipping:** Express or sea from Guangzhou; DDU/DDP quoted; commercial invoice included
 - **Warranty:** 12 months on chassis/PSU/fans/USB backplane (manufacturing defects, normal lab use)
+
+---
+
+## RFQ form (`/contact`)
+
+Required: name, email, WhatsApp/Telegram, shipping country, product interest, quantity/node count, platform, connection/deployment mode, privacy consent.
+
+Optional: company, budget (USD), message.
 
 ---
 

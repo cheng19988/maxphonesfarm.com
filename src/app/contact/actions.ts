@@ -21,6 +21,4 @@ export async function submitContactInquiry(formData: FormData) {
   } catch {
     redirect(`/contact?error=submit&product=${encodeURIComponent(data.productInterest)}`);
   }
-
-  redirect("/contact?sent=1");
 }

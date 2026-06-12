@@ -60,6 +60,24 @@ Machine-readable catalog: https://www.maxphonesfarm.com/catalog.json
 
 ---
 
+## Pricing (reference only)
+
+- All USD amounts on this site and in catalog.json are **reference list prices**
+- Final quote confirmed on written BOM / pro-forma before payment
+- No public shopping cart or instant checkout
+
+---
+
+## RFQ form (required fields)
+
+Quote form: https://www.maxphonesfarm.com/contact
+
+Required: name, email, WhatsApp/Telegram, shipping country, product interest, quantity/node count, platform, connection/deployment mode, privacy consent.
+
+Optional: company, budget (USD), message (device models, rack layout, timeline).
+
+---
+
 ## Shipping & export
 
 - Assembly and burn-in QC in Guangzhou before export
@@ -71,7 +89,7 @@ Machine-readable catalog: https://www.maxphonesfarm.com/catalog.json
 
 ## Delivery process (quote-first)
 
-1. **Inquiry** — quote form, WhatsApp, or Telegram with device count, models, destination country
+1. **Inquiry** — RFQ form, WhatsApp, or Telegram with name, email, messenger, shipping country, product interest, quantity/node count, platform, and deployment mode (2U rackmount vs standalone box)
 2. **Specification & quote** — fit check, power/cooling, written USD quote or pro-forma
 3. **Payment** — per agreed pro-forma terms
 4. **Assembly, QC & shipment** — burn-in test, export packing, optional remote setup after delivery
@@ -126,6 +144,7 @@ Machine-readable catalog: https://www.maxphonesfarm.com/catalog.json
 
 | Resource | URL |
 |----------|-----|
+| Catalog JSON | https://www.maxphonesfarm.com/catalog.json |
 | Extended index | https://www.maxphonesfarm.com/llms-full.txt |
 | FAQ JSON | https://www.maxphonesfarm.com/faq.json |
 | Product JSON | https://www.maxphonesfarm.com/products/{slug}.json |
