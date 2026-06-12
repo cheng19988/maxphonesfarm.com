@@ -1,8 +1,10 @@
 import { CONTACT } from "@/lib/config";
 import { REFERENCE_HOME_FAQ } from "./reference-faq";
+import { BUYER_SPEC_FAQ } from "./buyer-spec-faq";
 
-/** B2B FAQ — professional device lab hardware focus */
-export const FAQ_ITEMS = [
+/** All FAQ entries for schema and /faq.json — buyer specs first. */
+export const ALL_FAQ_ITEMS = [
+  ...BUYER_SPEC_FAQ,
   ...REFERENCE_HOME_FAQ,
   {
     question: "What hardware does Max Phones Farm supply?",
@@ -76,8 +78,11 @@ export const FAQ_ITEMS = [
   },
 ];
 
+/** General + enterprise FAQ (excludes buyer spec block shown separately on /faq). */
+export const FAQ_ITEMS = ALL_FAQ_ITEMS;
+
 /** Curated subset for homepage — reference topics first, then enterprise essentials */
-export const HOME_FAQ = FAQ_ITEMS.filter((item) =>
+export const HOME_FAQ = ALL_FAQ_ITEMS.filter((item) =>
   [
     "What can I do with a phone farm",
     "Is there a setup tutorial",
@@ -87,5 +92,9 @@ export const HOME_FAQ = FAQ_ITEMS.filter((item) =>
     "Real-device lab vs cloud",
     "How long is delivery",
     "Do you provide remote control",
+    "What are the chassis dimensions",
+    "Which phone models are supported",
+    "How many phone farm boxes can one computer",
+    "Can you send photos or video before shipment",
   ].some((prefix) => item.question.startsWith(prefix))
 );

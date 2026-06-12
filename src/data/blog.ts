@@ -1,5 +1,62 @@
 export const BLOG_POSTS = [
   {
+    slug: "phone-farm-buyer-specs-guide",
+    title: "Phone Farm Buyer Specs: Dimensions, Power, Models, Warranty & Shipping",
+    category: "Hardware Selection",
+    date: "2026-06-11",
+    excerpt:
+      "Answers to the questions buyers ask before ordering — chassis size, weight, voltage, phone compatibility, one-PC multi-box control, lead time, packing, warranty, pre-shipment photos, and remote install.",
+    content: `Procurement teams usually ask the same technical questions before approving a phone farm purchase. This guide collects direct answers for [Enterprise Phone Farm Box](/products/phone-farm-box) and [Rackmount Phone Farm +20](/products/custom-cabinet) hardware.
+
+## Chassis dimensions
+- **Standalone box:** approx. 43 × 28 × 9 cm (W × D × H)
+- **Rackmount +20:** 19" rack width (482 mm), **2U** height (88 mm), depth approx. 45–50 cm
+- **Motherboard Box:** approx. 43.5 × 27.5 × 9 cm
+
+Custom slot spacing is quoted per device list.
+
+## Weight
+- Standalone box chassis: **8–12 kg** before phones installed
+- Rackmount empty chassis: **10–14 kg**
+- Final carton weight is quoted for express freight from Guangzhou.
+
+## Power consumption and voltage
+- **Mains:** 110–240V AC, 50/60 Hz
+- **Typical draw:** approx. 180–450W at full 20-node continuous load — screenless motherboard nodes run lower; full phones with radios active run higher
+- PSU is sized per your device models on the written quote. See [Power and Cooling Planning](/blog/power-cooling-phone-farm-labs).
+
+## Supported phone models
+We match slot rails to **your** SKU — there is no universal fixed list. Commonly quoted fits include Samsung Galaxy A series, Redmi Note / POCO class phones, and compact Android boards. iPhone labs use the [iPhone Device Lab Array](/products/iphone-phone-farm). Send model names for a fit check before build.
+
+## How many boxes per control PC?
+- **One chassis = one USB uplink = up to 20 nodes**
+- Typical engineering workstations: **1–4 boxes (20–80 phones)** with independent USB 3.0 controllers
+- Larger fleets: multiple PCs or a [Server-Style Device Farm](/products/real-device-phone-farm) project plan
+- [Remote Control Setup](/products/remote-control-setup) documents your USB topology
+
+## Delivery lead time
+- In-stock standard models: **3–5 business days** from Guangzhou after payment
+- Custom layout: **7–15 business days** after spec sign-off
+- See [Export Shipping Guide](/blog/international-shipping-phone-farm-hardware)
+
+## Packaging
+Burn-in tested → foam-lined export carton → commercial invoice and packing list. Rack ears included. Bulk pallet options available.
+
+## Warranty
+**12 months** on chassis, PSU, fans, and USB backplane for manufacturing defects. Client-supplied phones/boards excluded. Spare modules quoted at order stage.
+
+## If something breaks
+Contact WhatsApp/Telegram with order reference and photos. Defects within warranty get repair guidance, spare parts, or module replacement. Remote troubleshooting typically within one business day (UTC+8).
+
+## Pre-shipment photos
+**Yes** — photos or short video after burn-in and before sealing the export carton, on request.
+
+## Remote installation
+**Yes** — [Remote Control Setup Service](/products/remote-control-setup): video handover, ADB, mirroring, batch APK, device grouping (up to 20 nodes per session).
+
+Full FAQ list: [/faq](/faq) · [Request a quote](/contact)`,
+  },
+  {
     slug: "phone-farm-hardware-supplier-guide",
     title: "Phone Farm Hardware Supplier Guide: Factory-Direct from Guangzhou",
     category: "Hardware Selection",
