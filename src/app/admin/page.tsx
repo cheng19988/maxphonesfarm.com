@@ -4,14 +4,6 @@ import { AdminInquiryRow } from "@/components/admin-inquiry-row";
 import { AdminProductRow } from "@/components/admin-product-row";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth";
-import { buildMetadata } from "@/lib/seo";
-
-export const metadata = buildMetadata({
-  title: "Admin Dashboard",
-  description: "Internal admin panel",
-  path: "/admin",
-  noIndex: true,
-});
 
 const STATUS_ORDER: Record<string, number> = {
   New: 0,

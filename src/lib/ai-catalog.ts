@@ -1,4 +1,4 @@
-import { SITE, CONTACT } from "./config";
+import { SITE, SITE_URL, CONTACT } from "./config";
 import { FAQ_ITEMS } from "@/data/faq";
 import { BLOG_POSTS } from "@/data/blog";
 import { PRODUCT_GROUPS, PRODUCT_SEEDS } from "@/data/products";
@@ -78,9 +78,9 @@ export function productToAiJson(product: ProductRecord): AiProductJson {
     price_display: priceDisplay,
     in_stock: product.stock > 0,
     stock: product.stock,
-    url: `${SITE.url}/products/${product.slug}`,
-    json_url: `${SITE.url}/products/${product.slug}.json`,
-    image: product.imageHero.startsWith("http") ? product.imageHero : `${SITE.url}${product.imageHero}`,
+    url: `${SITE_URL}/products/${product.slug}`,
+    json_url: `${SITE_URL}/products/${product.slug}.json`,
+    image: product.imageHero.startsWith("http") ? product.imageHero : `${SITE_URL}${product.imageHero}`,
     supplier: SITE.name,
     keywords: productKeywords(product.slug, product.name, product.shortDesc),
   };
@@ -89,7 +89,7 @@ export function productToAiJson(product: ProductRecord): AiProductJson {
 export function buildCatalogJson(products: ProductRecord[]) {
   return {
     store: SITE.name,
-    url: SITE.url,
+    url: SITE_URL,
     description: SITE.description,
     location: SITE.location,
     since: 2017,
@@ -101,13 +101,13 @@ export function buildCatalogJson(products: ProductRecord[]) {
       whatsapp: CONTACT.whatsapp,
       whatsapp_url: CONTACT.whatsappUrl,
       email: CONTACT.email,
-      quote_url: `${SITE.url}/contact`,
+      quote_url: `${SITE_URL}/contact`,
     },
     agent_docs: {
-      agents_md: `${SITE.url}/agents.md`,
-      llms_txt: `${SITE.url}/llms.txt`,
-      ai_txt: `${SITE.url}/ai.txt`,
-      discovery: `${SITE.url}/.well-known/ai-site.json`,
+      agents_md: `${SITE_URL}/agents.md`,
+      llms_txt: `${SITE_URL}/llms.txt`,
+      ai_txt: `${SITE_URL}/ai.txt`,
+      discovery: `${SITE_URL}/.well-known/ai-site.json`,
     },
     product_groups: PRODUCT_GROUPS.map((g) => ({
       id: g.id,
@@ -119,7 +119,7 @@ export function buildCatalogJson(products: ProductRecord[]) {
     guides: BLOG_POSTS.map((p) => ({
       title: p.title,
       slug: p.slug,
-      url: `${SITE.url}/blog/${p.slug}`,
+      url: `${SITE_URL}/blog/${p.slug}`,
       category: p.category,
       excerpt: p.excerpt,
     })),
@@ -131,7 +131,7 @@ export function buildCatalogJson(products: ProductRecord[]) {
 export function buildFaqJson() {
   return {
     store: SITE.name,
-    url: `${SITE.url}/faq`,
+    url: `${SITE_URL}/faq`,
     faq: FAQ_ITEMS.map((item) => ({
       question: item.question,
       answer: item.answer,

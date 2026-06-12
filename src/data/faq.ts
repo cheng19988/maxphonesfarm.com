@@ -22,9 +22,9 @@ export const ALL_FAQ_ITEMS = [
       "Compatibility depends on slot dimensions and USB routing. Our standard systems target Android phones and screenless motherboard nodes. iOS arrays require a separate chassis design. Send your device model list for a fit check before ordering.",
   },
   {
-    question: "Can your hardware support ad verification and campaign QA?",
+    question: "Can your hardware support mobile display and in-app creative QA?",
     answer:
-      "Yes. Real-device labs are commonly used for mobile ad testing, regional ad preview, landing page verification, and device compatibility checks across physical Android and iOS hardware — not emulators alone.",
+      "Yes. Real-device labs are commonly used for mobile creative rendering checks, regional in-app preview, landing page verification, and device compatibility testing across physical Android and iOS hardware — not emulators alone.",
   },
   {
     question: "Real-device lab vs cloud phones — which should we choose?",
@@ -32,9 +32,9 @@ export const ALL_FAQ_ITEMS = [
       "Cloud phones run on shared virtual infrastructure. Our hardware gives you physical Android and iOS devices with authentic sensors, radios, and OS behavior. Choose real-device labs when you need genuine device fingerprints, regional carrier behavior, or long-running QA automation you control in your rack or lab.",
   },
   {
-    question: "Do you support multi-account environment management?",
+    question: "Do you support project-isolated device slots for enterprise labs?",
     answer:
-      "Our hardware provides separate physical device slots for account environment management, team-based device assignment, and enterprise operation workflows. Your team controls the application layer and internal access policies.",
+      "Our hardware provides separate physical device slots per team or project for enterprise lab governance and QA environment separation. Your team controls the application layer and internal access policies.",
   },
   {
     question: "What is the MOQ and can I order a sample?",

@@ -4,7 +4,7 @@ import { ProductCard } from "@/components/commerce";
 import { PageHero } from "@/components/page-hero";
 import { ContactCTA, JsonLd } from "@/components/shared";
 import { buildMetadata, itemListJsonLd } from "@/lib/seo";
-import { SITE } from "@/lib/config";
+import { SITE_URL } from "@/lib/config";
 import { IMAGES } from "@/lib/images";
 import type { ProductGroupId } from "@/data/products";
 
@@ -31,7 +31,7 @@ export default async function ProductsPage() {
         data={itemListJsonLd(
           allProducts.map((p) => ({
             name: p.name,
-            url: `${SITE.url}/products/${p.slug}`,
+            url: `${SITE_URL}/products/${p.slug}`,
             image: p.imageCard,
           }))
         )}

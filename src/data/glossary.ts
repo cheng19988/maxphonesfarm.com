@@ -31,9 +31,9 @@ export const GLOSSARY_TERMS = [
     related: ["/", "/blog/phone-farm-use-cases-device-labs"],
   },
   {
-    term: "Hash-rate workloads",
+    term: "Sustained compute workloads",
     definition:
-      "Continuous compute tasks executed across many Android nodes in a phone farm. Screenless, battery-free layouts with centralized cooling support sustained operation where device configuration and client use case allow.",
+      "Continuous SoC processing tasks executed across many Android nodes in a phone farm. Screenless, battery-free layouts with centralized cooling support long-running lab operation where device configuration allows.",
     related: ["/products/custom-cabinet", "/products/motherboard-box"],
   },
   {

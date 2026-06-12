@@ -3,14 +3,6 @@ import { redirect } from "next/navigation";
 import { LogoutButton } from "@/components/logout-button";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
-import { buildMetadata } from "@/lib/seo";
-
-export const metadata = buildMetadata({
-  title: "My Orders",
-  description: "Internal order history.",
-  path: "/account/orders",
-  noIndex: true,
-});
 
 export default async function AccountOrdersPage() {
   const session = await getSession();

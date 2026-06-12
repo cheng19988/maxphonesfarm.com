@@ -1,17 +1,20 @@
+/** Canonical production URL — single source for sitemap, canonical, JSON-LD, robots. */
+export const SITE_URL = "https://www.maxphonesfarm.com" as const;
+
 export const SITE = {
   name: "Max Phones Farm",
   domain: "maxphonesfarm.com",
-  /** Canonical public URL — Vercel redirects apex to www. */
-  url: "https://www.maxphonesfarm.com",
-  tagline: "Rackmount Phone Farm Hardware Supplier",
+  canonicalHost: "www.maxphonesfarm.com",
+  url: SITE_URL,
+  tagline: "Guangzhou Rackmount Phone Farm Hardware — Factory Export",
   /** Shared top-bar copy — single source for Header on every route. */
   headerBar: "Factory-Direct Phone Farm Hardware",
   logoSubtitle: "Export-Ready Device Lab Hardware",
   intro:
-    "Max Phones Farm is a Guangzhou hardware sourcing and assembly team building rackmount phone farm chassis, device lab boxes, and motherboard arrays for app testing, ad verification, multi-account environment management, remote device control, and QA automation workflows.",
+    "Max Phones Farm is a Guangzhou assembly team (since 2017) building rackmount phone farm chassis, 20-slot device lab boxes, and motherboard arrays for enterprise app testing, CI automation, remote ADB labs, and rack-scale Android QA — shipped worldwide with burn-in QC.",
   location: "Guangzhou, China",
   description:
-    "Factory-direct rackmount phone farm hardware — device lab boxes, motherboard arrays, power/cooling modules, and custom deployment support for enterprise QA and automation labs.",
+    "Guangzhou factory-direct rackmount phone farm hardware — 2U chassis, phone farm boxes, motherboard arrays, and export logistics for enterprise device labs and QA automation teams.",
 } as const;
 
 /** Public sales channels — floating widget + contact page. */

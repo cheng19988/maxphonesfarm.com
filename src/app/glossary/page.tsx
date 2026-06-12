@@ -7,7 +7,7 @@ import { buildMetadata, definedTermSetJsonLd } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Phone Farm Hardware Glossary",
   description:
-    "Definitions for phone farm box, rackmount phone farm, screenless nodes, battery-free operation, mobile compute, hash-rate workloads, and device lab terminology.",
+    "Definitions for phone farm box, rackmount phone farm, screenless nodes, battery-free operation, mobile compute, sustained compute workloads, and device lab terminology.",
   path: "/glossary",
 });
 

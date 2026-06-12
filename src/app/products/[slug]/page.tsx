@@ -9,6 +9,8 @@ import { buildMetadata, productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib
 import { formatProductPrice } from "@/lib/format-price";
 import { emailComposeUrl } from "@/lib/email-link";
 import { CONTACT } from "@/lib/config";
+import { getProductProcurement } from "@/data/product-procurement";
+import { ProductProcurementTable } from "@/components/product-procurement";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -44,6 +46,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const maintenance = parseJson<string[]>(product.maintenance, []);
   const faq = parseJson<{ q: string; a: string }[]>(product.faq, []);
   const quoteGuide = getProductQuoteGuide(slug);
+  const procurement = getProductProcurement(slug);
 
   return (
     <>
@@ -95,6 +98,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-14">
+              <ProductProcurementTable data={procurement} />
               <section>
                 <h2 className="text-2xl font-semibold text-neutral-900 mb-4">Product Introduction</h2>
                 <p className="text-neutral-600 leading-relaxed">{product.description}</p>

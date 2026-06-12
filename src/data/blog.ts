@@ -162,7 +162,7 @@ The [Enterprise Phone Farm Box](/products/phone-farm-box) is the original-style 
 On compatible builds, removing displays and battery load improves thermal stability and power efficiency — often a 2–10% better energy profile vs full phones under continuous load. The [Motherboard Box](/products/motherboard-box) is optimized for this headless layout; full-phone boxes remain best when tests require cameras, radios, and sensors.
 
 ## What you can run on a phone farm
-Mobile app testing, QA automation, ad verification, multi-account lab environments, remote Android control, mobile compute pipelines, and hash-rate or compute workloads on Android nodes — anything physical phones can do at scale, with hardware you control.
+Mobile app testing, QA automation, mobile display QA, project-isolated lab slots, remote Android control, mobile compute pipelines, and sustained SoC compute on Android nodes — anything physical phones can do at scale, with hardware you control.
 
 Need a sizing recommendation? [Contact us](/contact) with device count, models, and destination country, or book [Remote Control Setup](/products/remote-control-setup) for a guided handover.`,
   },
@@ -172,22 +172,22 @@ Need a sizing recommendation? [Contact us](/contact) with device count, models, 
     category: "Lab Architecture",
     date: "2026-06-09",
     excerpt:
-      "From app testing and ad verification to mobile compute and automation — how teams use 20-node phone farm hardware.",
+      "From app testing and mobile display QA to mobile compute and automation — how teams use 20-node phone farm hardware.",
     content: `Phone farm applications are near-endless. Whether your workflow benefits from multiple devices, unified mobile compute, or Android customization at scale, a factory-built chassis turns scattered phones into managed lab infrastructure.
 
 ## Mobile app testing at rack scale
 Dedicated Android and iOS slots for release QA, regression suites, and staged builds across regional configurations. Pair a [Rackmount Phone Farm +20](/products/custom-cabinet) with your CI pipeline for parallel device runs.
 
-## Ad verification and campaign QA
-Real-device preview and display verification with isolated lab networks. Physical hardware catches rendering and carrier-specific behavior that emulators miss — see our [FAQ on ad verification](/faq).
+## Mobile display and in-app creative QA
+Real-device preview and display verification with isolated lab networks. Physical hardware catches rendering and carrier-specific behavior that emulators miss.
 
-## Multi-account environment management
-Separate physical slots per team or project for enterprise account environment separation and audit-friendly lab design. Your policies control the application layer; our hardware provides the slot isolation.
+## Project-isolated device slots
+Separate physical slots per team or project for enterprise lab governance and audit-friendly QA design. Your policies control the application layer; our hardware provides the slot isolation.
 
 ## QA automation and remote device control
 Batch APK deployment, scripted test runs, and workstation-based device management. Start with the [Device Lab Setup Guide](/blog/phone-farm-setup-guide-2026) or our [Remote Control Setup Service](/products/remote-control-setup).
 
-## Mobile compute and hash-rate workloads
+## Mobile compute and sustained SoC workloads
 Smartphone SoCs offer strong compute per dollar. Screenless, battery-free node layouts in a [Motherboard Box](/products/motherboard-box) or rackmount chassis support continuous compute workloads where your use case and device configuration allow.
 
 ## Scaling beyond one box

@@ -14,9 +14,9 @@ import { formatProductPrice } from "@/lib/format-price";
 import { whatsappQuoteUrl } from "@/lib/whatsapp";
 
 export const metadata = buildMetadata({
-  title: "Rackmount Phone Farm Hardware Supplier",
+  title: "Guangzhou Rackmount Phone Farm Hardware",
   description:
-    "Guangzhou factory-direct rackmount phone farm hardware, 20-device lab systems, motherboard boxes, and deployment support for app testing and remote device management.",
+    "Factory-export rackmount phone farm chassis and 20-slot device lab boxes from Guangzhou — burn-in QC, worldwide shipping, quote-first B2B for enterprise QA teams.",
   path: "/",
 });
 
@@ -45,7 +45,7 @@ export default async function HomePage() {
       <PageHero
         label={`${SITE.location} · ${SITE.headerBar}`}
         title="Rackmount Phone Farm Hardware for Real-Device Labs"
-        subtitle="Factory-direct 20-node chassis, phone farm boxes, and motherboard arrays — built for app testing, ad verification, multi-account environment management, and QA automation at scale."
+        subtitle="Guangzhou factory-direct 20-node chassis, rackmount phone farm boxes, and motherboard arrays — built for app release QA, CI automation, remote ADB labs, and enterprise device testing at scale."
         image={IMAGES.homeHeroProduct}
         imageRetina={IMAGES.homeHeroProductRetina}
         imageAlt="Max Phones Farm rackmount phone farm hardware showroom"
@@ -172,7 +172,7 @@ export default async function HomePage() {
             A phone farm box is a 20-slot smartphone container — phones installed, organized, and working together in one regulated chassis. Each device shares centralized power, active cooling, and a USB path to your control PC so operators manage the fleet from one workstation instead of scattered chargers and cables.
           </p>
           <p className="text-neutral-600 leading-relaxed mb-8">
-            Battery-free and screenless node layouts are available on compatible builds: removing displays and accessory load where applicable improves power efficiency (often 2–10% better thermal and energy profile vs full phones under continuous load), extends hardware life, and keeps nodes stable for app testing, automation, hash-rate and mobile compute workloads, and remote Android control. Deploy as a desk box or integrate as a 2U rackmount module — the architecture is the same mobile compute density, scaled to your lab.
+            Battery-free and screenless node layouts are available on compatible builds: removing displays and accessory load where applicable improves power efficiency (often 2–10% better thermal and energy profile vs full phones under continuous load), extends hardware life, and keeps nodes stable for app testing, automation, sustained mobile compute workloads, and remote Android control. Deploy as a desk box or integrate as a 2U rackmount module — the architecture is the same mobile compute density, scaled to your lab.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/products/phone-farm-box" className="btn-primary">Enterprise Phone Farm Box</Link>
@@ -241,12 +241,12 @@ export default async function HomePage() {
             desc: "Dedicated Android and iOS device slots for release QA, regression suites, and staged builds across regional configurations.",
           },
           {
-            title: "Ad verification & campaign QA",
-            desc: "Real-device preview and display verification workflows with isolated lab networks and repeatable device environments.",
+            title: "Mobile display & in-app creative QA",
+            desc: "Real-device preview and rendering checks with isolated lab VLANs and repeatable Android/iOS hardware environments.",
           },
           {
-            title: "Multi-account environment management",
-            desc: "Per-team or per-project device slots for legitimate enterprise account environment separation and audit-friendly lab design.",
+            title: "Project-isolated device slots",
+            desc: "Physical slot separation per team or release train for enterprise lab governance and audit-friendly QA design.",
           },
           {
             title: "QA automation & remote device control",

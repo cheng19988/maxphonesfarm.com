@@ -119,7 +119,7 @@ export const PRODUCT_QUOTE_GUIDES: Record<string, ProductQuoteGuide> = {
       "Production labs already running 15+ devices — go directly to 20-node systems",
       "iOS testing workloads",
       "Buyers expecting rackmount form factor",
-      "Large-scale ad verification fleets — insufficient slot density",
+      "Large-scale mobile display QA fleets — insufficient slot density",
     ],
     requiredBeforeQuote: [
       "Approximate device count (4–8 typical)",

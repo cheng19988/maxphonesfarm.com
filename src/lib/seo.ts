@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE, CONTACT } from "./config";
+import { SITE, SITE_URL, CONTACT } from "./config";
 
 type SEOInput = {
   title: string;
@@ -10,7 +10,7 @@ type SEOInput = {
 };
 
 function absoluteImageUrl(image: string) {
-  return image.startsWith("http") ? image : `${SITE.url}${image}`;
+  return image.startsWith("http") ? image : `${SITE_URL}${image}`;
 }
 
 export function buildMetadata({
@@ -20,10 +20,10 @@ export function buildMetadata({
   image,
   noIndex,
 }: SEOInput): Metadata {
-  const url = `${SITE.url}${path}`;
+  const url = `${SITE_URL}${path}`;
   const ogImage = image
     ? absoluteImageUrl(image)
-    : `${SITE.url}/images/hero_1600x900/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-hero_1600x900.webp`;
+    : `${SITE_URL}/images/hero_1600x900/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-hero_1600x900.webp`;
   const fullTitle = `${title} | ${SITE.name}`;
 
   return {
@@ -45,7 +45,9 @@ export function buildMetadata({
       description,
       images: [ogImage],
     },
-    robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
+    robots: noIndex
+      ? { index: false, follow: false }
+      : { index: true, follow: true, googleBot: { index: true, follow: true } },
   };
 }
 
@@ -54,13 +56,13 @@ export function websiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: SITE.name,
-    url: SITE.url,
+    url: SITE_URL,
     description: SITE.description,
     inLanguage: "en-US",
     publisher: {
       "@type": "Organization",
       name: SITE.name,
-      url: SITE.url,
+      url: SITE_URL,
     },
   };
 }
@@ -70,8 +72,8 @@ export function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": ["Organization", "Manufacturer"],
     name: SITE.name,
-    url: SITE.url,
-    logo: `${SITE.url}/images/card_800x800/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-card_800x800.webp`,
+    url: SITE_URL,
+    logo: `${SITE_URL}/images/card_800x800/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-card_800x800.webp`,
     description: SITE.description,
     foundingDate: "2017",
     address: {
@@ -90,7 +92,7 @@ export function organizationJsonLd() {
       "device lab infrastructure",
       "remote device control",
       "Android device farms",
-      "hash-rate workloads",
+      "sustained mobile compute workloads",
       "app testing hardware",
     ],
     contactPoint: {
@@ -118,10 +120,10 @@ export function productJsonLd(product: {
     name: product.name,
     description: product.description,
     image: absoluteImageUrl(product.image),
-    url: `${SITE.url}/products/${product.slug}`,
+    url: `${SITE_URL}/products/${product.slug}`,
     sku: product.sku ?? product.slug,
     brand: { "@type": "Brand", name: SITE.name },
-    manufacturer: { "@type": "Organization", name: SITE.name, url: SITE.url },
+    manufacturer: { "@type": "Organization", name: SITE.name, url: SITE_URL },
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
@@ -131,7 +133,7 @@ export function productJsonLd(product: {
           ? "https://schema.org/InStock"
           : "https://schema.org/OutOfStock",
       seller: { "@type": "Organization", name: SITE.name },
-      url: `${SITE.url}/products/${product.slug}`,
+      url: `${SITE_URL}/products/${product.slug}`,
     },
   };
 }
@@ -161,7 +163,7 @@ export function definedTermSetJsonLd(terms: readonly { term: string; definition:
       "@type": "DefinedTerm",
       name: t.term,
       description: t.definition,
-      inDefinedTermSet: `${SITE.url}/glossary`,
+      inDefinedTermSet: `${SITE_URL}/glossary`,
     })),
   };
 }
@@ -177,7 +179,7 @@ export function howToJsonLd(guide: {
     "@type": "HowTo",
     name: guide.name,
     description: guide.description,
-    url: `${SITE.url}/blog/${guide.slug}`,
+    url: `${SITE_URL}/blog/${guide.slug}`,
     step: guide.steps.map((s, i) => ({
       "@type": "HowToStep",
       position: i + 1,
@@ -207,7 +209,7 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: `${SITE.url}${item.path}`,
+      item: `${SITE_URL}${item.path}`,
     })),
   };
 }
@@ -230,9 +232,9 @@ export function articleJsonLd(article: {
       name: SITE.name,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE.url}/images/card_800x800/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-card_800x800.webp`,
+        url: `${SITE_URL}/images/card_800x800/maxphonesfarm.com-product-box-2025-10-25-11-27-img-0551-a9b35-card_800x800.webp`,
       },
     },
-    mainEntityOfPage: `${SITE.url}/blog/${article.slug}`,
+    mainEntityOfPage: `${SITE_URL}/blog/${article.slug}`,
   };
 }

@@ -35,7 +35,7 @@ export const PRODUCT_GROUPS: { id: ProductGroupId; label: string; description: s
     id: "core-hardware",
     label: "Core Hardware",
     description:
-      "Core device infrastructure for Android/iOS testing, account environment management, ad verification labs, and remote device control.",
+      "Core device infrastructure for Android/iOS testing, project-isolated lab slots, mobile display QA, and remote device control.",
   },
   {
     id: "accessories",
@@ -53,7 +53,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Complete System",
     shortDesc: "2U rackmount server-style phone farm with 20 slots — screenless, battery-free nodes optional; centralized cooling and USB control.",
     description:
-      "Featuring a server-style smartphone chassis for teams that need serious mobile compute power without desk clutter. The Rackmount Phone Farm +20 holds twenty Android phones or motherboard nodes inside a 2U metal enclosure with shared power, front-mounted cooling, and per-slot USB paths to your control workstation. Nodes can be built screenless and battery-free — engineered for efficiency, longevity, and rack integration. Removing displays and accessory load where applicable helps nodes deliver maximum performance with minimal energy consumption. Built to slot into standard 19\" server racks at 2U height, this rackmount phone farm delivers strong compute density per watt while staying cool and organized. Integrated cooling fans and centralized device management support stable 24/7 operation for app testing, automation, hash-rate workloads, and remote Android control. Each unit is assembled and burn-in tested in Guangzhou before export.",
+      "Featuring a server-style smartphone chassis for teams that need serious mobile compute power without desk clutter. The Rackmount Phone Farm +20 holds twenty Android phones or motherboard nodes inside a 2U metal enclosure with shared power, front-mounted cooling, and per-slot USB paths to your control workstation. Nodes can be built screenless and battery-free — engineered for efficiency, longevity, and rack integration. Removing displays and accessory load where applicable helps nodes deliver maximum performance with minimal energy consumption. Built to slot into standard 19\" server racks at 2U height, this rackmount phone farm delivers strong compute density per watt while staying cool and organized. Integrated cooling fans and centralized device management support stable 24/7 operation for app testing, automation, sustained mobile compute workloads, and remote Android control. Each unit is assembled and burn-in tested in Guangzhou before export.",
     features: [
       "2U form factor for standard 19\" server racks",
       "20 device slots with individual USB data paths",
@@ -138,7 +138,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Complete System",
     shortDesc: "The original-style 20-slot phone farm box — standalone mobile compute container with cooling, power, and USB management.",
     description:
-      "The Enterprise Phone Farm Box is the original-style phone farm container: a 20-slot smartphone chassis regulated by cooling, with custom motherboard routing and centralized power components. Battery-free and screenless node layouts are available for extended device life, higher performance stability, and optimized multi-device management. Real Android devices mount in a cooled metal enclosure with one power input and a single USB hub path to your control PC — so you run commands from one workstation instead of operating each phone manually. Ideal for app testing labs, device management pilots, QA automation, hash-rate and compute workloads, and teams scaling from a handful of phones to a managed fleet. Factory-assembled in Guangzhou with QC documentation included.",
+      "The Enterprise Phone Farm Box is the original-style phone farm container: a 20-slot smartphone chassis regulated by cooling, with custom motherboard routing and centralized power components. Battery-free and screenless node layouts are available for extended device life, higher performance stability, and optimized multi-device management. Real Android devices mount in a cooled metal enclosure with one power input and a single USB hub path to your control PC — so you run commands from one workstation instead of operating each phone manually. Ideal for app testing labs, device management pilots, QA automation, sustained compute workloads, and teams scaling from a handful of phones to a managed fleet. Factory-assembled in Guangzhou with QC documentation included.",
     features: [
       "20 real-device slots in one enclosure",
       "Integrated cooling and shared power architecture",
@@ -159,7 +159,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
       "Lead Time": "In stock: 3–5 business days; custom layout: 7–15 days",
     },
     scenarios: [
-      "App testing lab with separate account environments per team",
+      "App testing lab with separate device slots per team",
       "QA automation hardware for CI-triggered device runs",
       "Remote Android device control for distributed engineering teams",
       "Pilot deployment before rackmount scale-up",
@@ -532,7 +532,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Accessory",
     shortDesc: "Replacement fan module for dense 24/7 device lab chassis — maintains airflow under continuous QA load.",
     description:
-      "The Active Cooling Module is a drop-in fan assembly for Max Phones Farm chassis running continuous app testing, hash-rate workloads, or remote device management. Maintains front-to-rear airflow under 24/7 load — use as a spare, seasonal upgrade when ambient lab temperatures rise, or stock part for enterprise multi-rack deployments.",
+      "The Active Cooling Module is a drop-in fan assembly for Max Phones Farm chassis running continuous app testing, sustained compute load, or remote device management. Maintains front-to-rear airflow under 24/7 load — use as a spare, seasonal upgrade when ambient lab temperatures rise, or stock part for enterprise multi-rack deployments.",
     features: [
       "Drop-in fan assembly",
       "Replacement part for existing chassis",
@@ -568,7 +568,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     category: "Accessory",
     shortDesc: "Managed switch kit recommended for multi-device labs — VLAN guidance for device traffic separation.",
     description:
-      "The Lab Network Switch Kit is a reference networking package for device labs running many Android nodes across one or more phone farm boxes. We recommend managed switches with VLAN capability so test traffic, ADB management, and office networks stay separated — essential for ad verification labs and multi-team QA environments. Exact switch model depends on port count and region — quoted per deployment.",
+      "The Lab Network Switch Kit is a reference networking package for device labs running many Android nodes across one or more phone farm boxes. We recommend managed switches with VLAN capability so test traffic, ADB management, and office networks stay separated — essential for multi-team QA labs. Exact switch model depends on port count and region — quoted per deployment.",
     features: [
       "Managed switch recommendation per lab size",
       "VLAN layout guidance document",

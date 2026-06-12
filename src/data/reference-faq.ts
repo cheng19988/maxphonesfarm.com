@@ -5,7 +5,7 @@ export const REFERENCE_HOME_FAQ = [
   {
     question: "What can I do with a phone farm box or rackmount system?",
     answer:
-      "Anything physical phones can do at scale: mobile app testing, server-style workloads on Android nodes, AI and ML pipeline tasks on device farms, hash-rate and compute workloads, automation scripts, ad verification, and multi-device management from one workstation. Screenless and battery-free node layouts improve power efficiency for continuous operation. Explore our Remote Control Setup service and device lab guides for workflow examples.",
+      "Anything physical phones can do at scale: mobile app testing, server-style workloads on Android nodes, AI and ML pipeline tasks on device farms, sustained SoC compute workloads, automation scripts, mobile display QA, and multi-device management from one workstation. Screenless and battery-free node layouts improve power efficiency for continuous operation. Explore our Remote Control Setup service and device lab guides for workflow examples.",
   },
   {
     question: "Is there a setup tutorial available?",
