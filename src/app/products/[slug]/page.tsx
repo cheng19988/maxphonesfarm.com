@@ -6,6 +6,7 @@ import { getProductQuoteGuide } from "@/data/product-quote-guides";
 import { BuyButtons, FAQAccordion } from "@/components/commerce";
 import { ContactCTA, JsonLd, StockBadge } from "@/components/shared";
 import { buildMetadata, productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { getProductSeo } from "@/data/product-seo";
 import { formatProductPrice } from "@/lib/format-price";
 import { emailComposeUrl } from "@/lib/email-link";
 import { CONTACT } from "@/lib/config";
@@ -21,9 +22,10 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) return {};
+  const seo = getProductSeo(slug);
   return buildMetadata({
-    title: product.name,
-    description: product.shortDesc,
+    title: seo?.metaTitle ?? product.name,
+    description: seo?.metaDescription ?? product.shortDesc,
     path: `/products/${slug}`,
     image: product.imageHero,
   });
@@ -47,6 +49,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const faq = parseJson<{ q: string; a: string }[]>(product.faq, []);
   const quoteGuide = getProductQuoteGuide(slug);
   const procurement = getProductProcurement(slug);
+  const seo = getProductSeo(slug);
 
   return (
     <>
@@ -75,7 +78,10 @@ export default async function ProductDetailPage({ params }: Props) {
             </div>
             <div>
               <p className="section-label mb-2">{product.category}</p>
-              <h1 className="text-3xl md:text-5xl font-semibold text-neutral-900 mb-4 tracking-tight">{product.name}</h1>
+              <h1 className="text-3xl md:text-5xl font-semibold text-neutral-900 mb-2 tracking-tight">{product.name}</h1>
+              {seo?.keywordLine ? (
+                <p className="text-sm text-neutral-500 mb-4 leading-relaxed">{seo.keywordLine}</p>
+              ) : null}
               <p className="text-neutral-600 mb-8 leading-relaxed">{product.shortDesc}</p>
               <div className="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-neutral-200">
                 <span className="text-3xl font-semibold text-blue-700">{formatProductPrice(product.priceUsd)}</span>

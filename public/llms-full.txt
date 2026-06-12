@@ -162,6 +162,15 @@ A: Yes — share SKUs, slot count, rack constraints. Custom: 7–15 days after s
 **Q: What is Android phone farm hardware?**
 A: Physical chassis powering/cooling/USB-routing multiple Android devices from one PC. Complete systems from Guangzhou.
 
+**Q: What is mobile device farm hardware?**
+A: Physical chassis hosting many phones or boards with shared power, cooling, USB — guide at /blog/mobile-device-farm-hardware-guide.
+
+**Q: Can phone farm hardware be used for short-video app testing labs?**
+A: Yes for legitimate app QA on physical Android devices — B2B hardware only, not policy-violation tutorials. Guide: /blog/phone-farm-short-video-app-testing-labs.
+
+**Q: What is phone farm equipment vs software?**
+A: Equipment = chassis, PSU, fans, USB. Software = ADB/CI on your PC. We supply equipment + optional Remote Control Setup.
+
 ### General
 
 **Q: What can I do with a phone farm box or rackmount system?**
@@ -219,10 +228,13 @@ JSON mirror: https://www.maxphonesfarm.com/faq.json
 
 ---
 
-## Device Lab Guides (all 23 articles)
+## Device Lab Guides (all 26 articles)
 
 | Date | Title | Slug |
 |------|-------|------|
+| 2026-06-13 | Phone Farm Hardware for Short-Video App Testing Labs | phone-farm-short-video-app-testing-labs |
+| 2026-06-13 | Mobile Device Farm Hardware Guide | mobile-device-farm-hardware-guide |
+| 2026-06-13 | Phone Farm Equipment Buyer's Guide | phone-farm-equipment-buyers-guide |
 | 2026-06-12 | Android Phone Farm Hardware Explained | android-phone-farm-hardware-explained |
 | 2026-06-12 | Phone Farm for App Testing Labs | phone-farm-for-app-testing-labs |
 | 2026-06-12 | 2U Phone Farm Rack Buyer Guide | 2u-phone-farm-rack-buyer-guide |

@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/config";
 import { BLOG_POSTS } from "@/data/blog";
 import { PRODUCT_SEEDS } from "@/data/products";
 
-const SITE_UPDATED = new Date("2026-06-12");
+const SITE_UPDATED = new Date("2026-06-13");
 
 /** Public indexable pages only — production domain, no admin/api/auth routes. */
 export default function sitemap(): MetadataRoute.Sitemap {

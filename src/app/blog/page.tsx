@@ -6,9 +6,9 @@ import { buildMetadata } from "@/lib/seo";
 import { BLOG_COVERS, IMAGES } from "@/lib/images";
 
 export const metadata = buildMetadata({
-  title: "Device Lab Guides",
+  title: "Phone Farm Guides — Buyer & Setup Knowledge Base",
   description:
-    "Practical guides on phone farm hardware selection, rackmount lab setup, and real-device testing infrastructure.",
+    "Phone farm hardware guides — Android device farm buyers, 2U rackmount selection, app testing labs, export shipping, wholesale orders, and remote setup from Guangzhou.",
   path: "/blog",
 });
 

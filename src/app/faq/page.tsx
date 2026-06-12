@@ -7,9 +7,9 @@ import { buildMetadata, faqJsonLd } from "@/lib/seo";
 import { IMAGES } from "@/lib/images";
 
 export const metadata = buildMetadata({
-  title: "Device Lab Hardware FAQ",
+  title: "Phone Farm FAQ — Specs, Shipping, Payment & Procurement",
   description:
-    "Phone farm dimensions, weight, power, supported models, delivery, packaging, warranty, pre-shipment photos, and remote setup — plus general device lab hardware FAQ.",
+    "Phone farm box FAQ — dimensions, weight, power, MOQ, USDT payment, wholesale, 2U rackmount, export shipping, warranty, and remote setup. Factory-direct Guangzhou supplier.",
   path: "/faq",
 });
 

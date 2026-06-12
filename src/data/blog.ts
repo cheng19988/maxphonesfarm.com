@@ -295,6 +295,124 @@ Max Phones Farm (since 2017) assembles rackmount and standalone phone farm chass
 **Start here:** [Request a hardware quote](/contact)`,
   },
   {
+    slug: "phone-farm-short-video-app-testing-labs",
+    title: "Phone Farm Hardware for Short-Video App Testing Labs",
+    category: "Lab Architecture",
+    date: "2026-06-13",
+    excerpt:
+      "How QA teams use phone farm chassis for short-video and social content app compatibility testing on real Android devices — hardware for enterprise labs, not policy tutorials.",
+    content: `Teams building or testing **short-video apps**, social feeds, or creator tools often search for **phone farm hardware** to run compatibility matrices on real Android devices. This guide explains the **B2B hardware** layer Max Phones Farm supplies — not software tricks or platform policy workarounds.
+
+## What labs actually need
+
+Short-video and social apps stress GPU rendering, camera APIs, background upload queues, and notification channels differently across SoCs. A **device lab** with physical phones catches issues emulators miss:
+
+- **Release regression** on Samsung, Redmi, POCO class devices before store submission
+- **Performance sampling** under continuous load in a cooled chassis
+- **Network isolation** with lab VLANs for staging builds
+- **Batch APK installs** across 20 nodes from one control PC
+
+## Recommended hardware
+
+| Lab size | Chassis |
+|----------|---------|
+| Pilot | [Android Device Lab Starter](/products/android-phone-farm) |
+| Standard QA (20 nodes) | [Enterprise Phone Farm Box](/products/phone-farm-box) |
+| Rack / NOC | [Rackmount Phone Farm +20](/products/custom-cabinet) |
+
+## Compliance framing
+
+Max Phones Farm sells **enterprise device lab hardware** from Guangzhou. We do **not** provide guidance for fake engagement, account farming, or terms-of-service violations. Deployments should follow your company's QA governance and app-store policies.
+
+## Setup support
+
+[Remote Control Setup](/products/remote-control-setup) documents ADB topology and mirroring for up to 20 nodes per session.
+
+[Request a quote](/contact) with device models and lab size.
+
+Related: [App Testing Labs Guide](/blog/phone-farm-for-app-testing-labs) · [Mobile Display QA](/blog/mobile-display-qa-real-device-phone-farms)`,
+  },
+  {
+    slug: "mobile-device-farm-hardware-guide",
+    title: "Mobile Device Farm Hardware: Boxes, Racks & Procurement",
+    category: "Hardware Selection",
+    date: "2026-06-13",
+    excerpt:
+      "Definition of mobile device farm hardware, how it differs from cloud phones, and what to quote when buying chassis from a Guangzhou factory.",
+    content: `**Mobile device farm hardware** is the physical infrastructure that hosts many smartphones or headless Android boards — power, cooling, USB backplanes, and rack or box enclosures — so one control PC can manage dozens of real devices.
+
+## Device farm hardware vs cloud phones
+
+| | Mobile device farm hardware | Cloud phones |
+|---|---------------------------|--------------|
+| Location | Your lab or rack | Vendor cloud |
+| Device behavior | Physical radios, sensors, SoCs | Virtualized / shared |
+| Control | Your network and policies | Vendor SLA |
+| Best for | Long-running QA you own | Burst remote access |
+
+Max Phones Farm supplies the **hardware column** — see [Real-Device vs Cloud Phone](/blog/real-device-vs-cloud-phone).
+
+## Core SKUs
+
+- **Standalone:** [Enterprise Phone Farm Box](/products/phone-farm-box) — 20 nodes, desk/shelf
+- **Rackmount:** [Rackmount Phone Farm +20](/products/custom-cabinet) — 2U, 20 nodes
+- **Headless:** [Motherboard Box](/products/motherboard-box) — screenless arrays
+- **Scale-out:** [Server-Style Device Farm](/products/real-device-phone-farm) — 40–100+ nodes
+
+## Procurement checklist
+
+1. Device models and slot count
+2. Rack vs standalone
+3. Destination country and freight (express vs sea)
+4. Need for [remote setup](/products/remote-control-setup)
+5. MOQ — **1 unit** on standard models; bulk from 5 units
+
+[Contact us](/contact) for a factory-direct quote.
+
+Related: [Android Phone Farm Hardware](/blog/android-phone-farm-hardware-explained) · [Wholesale Guide](/blog/phone-farm-wholesale-bulk-order-guide)`,
+  },
+  {
+    slug: "phone-farm-equipment-buyers-guide",
+    title: "Phone Farm Equipment Buyer's Guide: Chassis, Power & Accessories",
+    category: "Hardware Selection",
+    date: "2026-06-13",
+    excerpt:
+      "What counts as phone farm equipment — complete systems vs accessories — and how to spec PSU, USB, cooling, and network modules for a device lab.",
+    content: `Buyers searching **phone farm equipment** need a clear bill of materials. This guide maps Max Phones Farm catalog categories so procurement teams quote the right chassis and accessories.
+
+## Complete systems (start here)
+
+These include chassis, PSU, fans, and USB uplink:
+
+- [Rackmount Phone Farm +20](/products/custom-cabinet) — 2U rackmount phone farm
+- [Enterprise Phone Farm Box](/products/phone-farm-box) — original 20-slot box
+- [Android Device Lab Starter](/products/android-phone-farm) — pilot cluster
+- [Motherboard Box](/products/motherboard-box) — screenless 20-node array
+
+## Accessories & upgrades
+
+| Module | Purpose |
+|--------|---------|
+| [Centralized Power Module](/products/power-supply-solution) | Phone farm charging station / PSU upgrade |
+| [USB Backplane Module](/products/usb-hub) | Data path repair or density upgrade |
+| [Active Cooling Module](/products/cooling-solution) | Spare fans for 24/7 load |
+| [Lab Network Switch Kit](/products/network-equipment) | VLAN isolation for multi-node labs |
+
+## Services
+
+[Remote Control Setup](/products/remote-control-setup) — ADB handover, not a substitute for chassis hardware.
+
+## What we do not sell as "equipment only"
+
+Loose consumer USB hubs without thermal and PSU engineering are not phone farm equipment — they fail under 20-device sustained load. Factory chassis are burn-in tested in Guangzhou.
+
+## Quote process
+
+Share device list, quantity, and country at [/contact](/contact). MOQ **1 unit** on standard SKUs.
+
+Related: [Buyer Specs Guide](/blog/phone-farm-buyer-specs-guide) · [Supplier Guide](/blog/phone-farm-hardware-supplier-guide)`,
+  },
+  {
     slug: "phone-farm-hardware-supplier-guide",
     title: "Phone Farm Hardware Supplier Guide: Factory-Direct from Guangzhou",
     category: "Hardware Selection",

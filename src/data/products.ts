@@ -79,7 +79,7 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
     },
     scenarios: [
       "Enterprise app testing lab with rack-scale Android fleet",
-      "Campaign QA and regional ad preview on real devices",
+      "Mobile display QA and in-app creative preview on real devices",
       "Remote device management for QA and staging environments",
       "Multi-device automation hardware for internal tooling teams",
       "Custom rackmount phone farm for managed lab providers",
@@ -122,6 +122,10 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
       {
         q: "How many rackmount units can one PC control?",
         a: "Each chassis has one USB uplink for up to 20 nodes. Most workstations support 1–4 chassis with proper USB 3.0 root controllers; we document topology during Remote Control Setup.",
+      },
+      {
+        q: "What is a 2U phone farm rack?",
+        a: "A 2U phone farm rack is this chassis format — 20 Android nodes in two rack units (88 mm height) of a standard 19-inch cabinet. See our 2U buyer guide at /blog/2u-phone-farm-rack-buyer-guide.",
       },
     ],
     priceUsd: 1899,
@@ -197,6 +201,10 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
       {
         q: "How many boxes can one computer control?",
         a: "One box = 20 phones via one USB cable. A typical control PC runs 1–4 boxes (20–80 phones) depending on USB controller layout — we help size this during setup.",
+      },
+      {
+        q: "Is this a factory-direct phone farm box I can buy online?",
+        a: "Yes — we are a Guangzhou factory-direct supplier. Submit a quote at /contact with your device models and country; we reply with USD pricing and export shipping options. MOQ is one unit.",
       },
     ],
     priceUsd: 1399,
@@ -321,6 +329,10 @@ export const PRODUCT_SEEDS: ProductSeed[] = [
       {
         q: "Can full phones be used instead?",
         a: "This chassis is optimized for motherboard nodes. For full phones, use the Enterprise Phone Farm Box or Rackmount +20.",
+      },
+      {
+        q: "What is a motherboard phone farm box?",
+        a: "A chassis that mounts screenless Android motherboard boards instead of full phones — same phone farm concept with lower power and heat for headless app testing and automation workloads.",
       },
     ],
     priceUsd: 1824,

@@ -44,6 +44,21 @@ export const B2B_PURCHASE_FAQ = [
     answer:
       "Android phone farm hardware is physical chassis — phone farm boxes, rackmount arrays, or motherboard boxes — that power, cool, and USB-route multiple Android devices from one control PC. Max Phones Farm supplies complete systems from Guangzhou with burn-in QC, export packing, and optional remote setup. Overview: /blog/android-phone-farm-hardware-explained.",
   },
+  {
+    question: "What is phone farm equipment vs phone farm software?",
+    answer:
+      "Phone farm equipment is physical hardware — chassis, PSU, fans, USB backplanes, and rack modules. Software (ADB, mirroring, CI agents) runs on your control PC. Max Phones Farm supplies the equipment layer and optional Remote Control Setup; your team owns test apps and automation policies.",
+  },
+  {
+    question: "Can phone farm hardware be used for short-video app testing labs?",
+    answer:
+      "Yes, for legitimate mobile app QA — compatibility testing, release regression, and performance checks on physical Android devices used by short-video and social content apps. We supply B2B hardware for enterprise device labs, not tutorials for policy-violating automation. See /blog/phone-farm-short-video-app-testing-labs.",
+  },
+  {
+    question: "What is mobile device farm hardware?",
+    answer:
+      "Mobile device farm hardware is rackmount or box chassis that hosts many smartphones or motherboard nodes with shared power, cooling, and USB routing — the physical layer behind device labs, batch testing, and remote ADB workflows. Guide: /blog/mobile-device-farm-hardware-guide.",
+  },
 ] as const;
 
 /** All FAQ entries for schema and /faq.json — buyer specs first. */

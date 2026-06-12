@@ -140,7 +140,9 @@ Full FAQ: https://www.maxphonesfarm.com/faq · https://www.maxphonesfarm.com/faq
 | What Is a Phone Farm Box? | /blog/what-is-a-phone-farm-box |
 | Rackmount vs Standalone Box | /blog/rackmount-vs-standalone-phone-farm |
 | Export Shipping from Guangzhou | /blog/international-shipping-phone-farm-hardware |
-| Device Lab Setup Guide (HowTo) | /blog/phone-farm-setup-guide-2026 |
+| Phone Farm Equipment Buyer's Guide | /blog/phone-farm-equipment-buyers-guide |
+| Mobile Device Farm Hardware Guide | /blog/mobile-device-farm-hardware-guide |
+| Short-Video App Testing Labs | /blog/phone-farm-short-video-app-testing-labs |
 
 Full guide list: https://www.maxphonesfarm.com/blog · extended summaries in llms-full.txt
 

@@ -9,9 +9,9 @@ import { IMAGES } from "@/lib/images";
 import type { ProductGroupId } from "@/data/products";
 
 export const metadata = buildMetadata({
-  title: "Real-Device Lab Hardware Catalog",
+  title: "Phone Farm Hardware Catalog — Boxes, Rackmount & Device Lab",
   description:
-    "Complete rackmount systems, core hardware, and lab accessories for phone farm deployments. Factory-direct from Guangzhou — request a quote.",
+    "Buy phone farm box and rackmount phone farm hardware factory-direct — 20-slot chassis, motherboard arrays, Android device farm kits, and lab accessories. Guangzhou export, MOQ 1.",
   path: "/products",
 });
 
