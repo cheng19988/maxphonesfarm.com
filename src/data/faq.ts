@@ -2,9 +2,54 @@ import { CONTACT } from "@/lib/config";
 import { REFERENCE_HOME_FAQ } from "./reference-faq";
 import { BUYER_SPEC_FAQ } from "./buyer-spec-faq";
 
+/** B2B purchase & AI-search FAQ — user question phrasing. */
+export const B2B_PURCHASE_FAQ = [
+  {
+    question: "Where can I buy a phone farm box directly from a factory?",
+    answer:
+      "Max Phones Farm is a Guangzhou factory-direct phone farm box supplier. Browse the hardware catalog at /products, then submit a quote request at /contact with device count, Android or motherboard models, and destination country. We reply with specifications, lead time, and USD pricing — typically within one business day. MOQ is one unit for standard models so you can evaluate before bulk purchase.",
+  },
+  {
+    question: "Can I pay with USDT for phone farm hardware?",
+    answer:
+      "Standard payment is bank transfer (T/T), Wise, or PayPal per your written quote. USDT (Tron TRC20) may be offered for select orders when agreed in writing on the pro-forma invoice. Request available payment options when you receive your quote — see /terms for full payment policy.",
+  },
+  {
+    question: "What is the difference between a phone farm box and a rackmount phone farm?",
+    answer:
+      "A phone farm box is a standalone 20-slot chassis for desk or shelf deployment. A rackmount phone farm is the same 20-node density in a 2U 19-inch server rack form factor for data-center, colocation, or NOC integration. Both use centralized PSU, active cooling, and one USB uplink per chassis. Compare layouts in our rackmount vs standalone guide at /blog/rackmount-vs-standalone-phone-farm.",
+  },
+  {
+    question: "Is phone farm hardware used for app testing labs?",
+    answer:
+      "Yes. Enterprise device labs use phone farm boxes and rackmount chassis for mobile app QA, regression testing, CI automation, batch APK deployment, and remote ADB workflows on physical Android and iOS hardware — not emulators alone. See /blog/phone-farm-for-app-testing-labs for typical lab workflows.",
+  },
+  {
+    question: "Do you offer phone farm wholesale or bulk orders?",
+    answer:
+      "Bulk pricing applies from five units on standard models. Multi-rack projects receive staged delivery schedules and palletized export packing. MOQ remains one unit for evaluation orders. Contact us with quantity, models, and destination for wholesale pricing on the pro-forma invoice.",
+  },
+  {
+    question: "What is a 2U phone farm rack and who needs one?",
+    answer:
+      "A 2U phone farm rack is a 19-inch rackmount chassis that holds 20 Android nodes in two rack units (88 mm) of vertical space. It suits teams with existing server racks, colocation, or NOC floors who want phone farm density without standalone boxes on desks. Our Rackmount Phone Farm +20 fits standard 482 mm cabinets — see /blog/2u-phone-farm-rack-buyer-guide.",
+  },
+  {
+    question: "Can you build a custom phone farm box for our device models?",
+    answer:
+      "Yes. Share target Android or motherboard SKUs, slot count, and rack constraints. We confirm fit, power draw, and cooling before production. Custom slot spacing typically ships in 7–15 business days after specification sign-off. Empty shells for integrator builds are available at /products/empty-box-chassis.",
+  },
+  {
+    question: "What is Android phone farm hardware?",
+    answer:
+      "Android phone farm hardware is physical chassis — phone farm boxes, rackmount arrays, or motherboard boxes — that power, cool, and USB-route multiple Android devices from one control PC. Max Phones Farm supplies complete systems from Guangzhou with burn-in QC, export packing, and optional remote setup. Overview: /blog/android-phone-farm-hardware-explained.",
+  },
+] as const;
+
 /** All FAQ entries for schema and /faq.json — buyer specs first. */
 export const ALL_FAQ_ITEMS = [
   ...BUYER_SPEC_FAQ,
+  ...B2B_PURCHASE_FAQ,
   ...REFERENCE_HOME_FAQ,
   {
     question: "What hardware does Max Phones Farm supply?",
@@ -64,7 +109,7 @@ export const ALL_FAQ_ITEMS = [
   {
     question: "What payment terms do you offer?",
     answer:
-      "Sample and standard orders can be settled via bank transfer (T/T), Wise, or PayPal. Bulk and enterprise projects receive a pro-forma invoice with an agreed payment schedule. Contact sales for a quote.",
+      "Sample and standard orders can be settled via bank transfer (T/T), Wise, or PayPal. Bulk and enterprise projects receive a pro-forma invoice with an agreed payment schedule. USDT (Tron TRC20) may be offered when agreed in writing on the quote. Contact sales for a formal pro-forma.",
   },
   {
     question: "What after-sales support is included?",
@@ -88,6 +133,9 @@ export const HOME_FAQ = ALL_FAQ_ITEMS.filter((item) =>
     "Is there a setup tutorial",
     "Which countries do you ship",
     "I have more questions",
+    "Where can I buy a phone farm box",
+    "What is the difference between a phone farm box",
+    "Is phone farm hardware used for app testing",
     "What hardware does Max Phones Farm",
     "Real-device lab vs cloud",
     "How long is delivery",
@@ -96,5 +144,6 @@ export const HOME_FAQ = ALL_FAQ_ITEMS.filter((item) =>
     "Which phone models are supported",
     "How many phone farm boxes can one computer",
     "Can you send photos or video before shipment",
+    "Can I pay with USDT",
   ].some((prefix) => item.question.startsWith(prefix))
 );

@@ -16,7 +16,7 @@ import { whatsappQuoteUrl } from "@/lib/whatsapp";
 export const metadata = buildMetadata({
   title: "Guangzhou Rackmount Phone Farm Hardware",
   description:
-    "Factory-export rackmount phone farm chassis and 20-slot device lab boxes from Guangzhou — burn-in QC, worldwide shipping, quote-first B2B for enterprise QA teams.",
+    "Factory-export rackmount phone farm chassis and 20-slot phone farm boxes from Guangzhou — burn-in QC, worldwide export shipping, remote setup, quote-first B2B for enterprise device labs.",
   path: "/",
 });
 
@@ -45,7 +45,7 @@ export default async function HomePage() {
       <PageHero
         label={`${SITE.location} · ${SITE.headerBar}`}
         title="Rackmount Phone Farm Hardware for Real-Device Labs"
-        subtitle="Guangzhou factory-direct 20-node chassis, rackmount phone farm boxes, and motherboard arrays — built for app release QA, CI automation, remote ADB labs, and enterprise device testing at scale."
+        subtitle="Guangzhou factory-direct phone farm boxes, 2U rackmount phone farm chassis, and motherboard arrays — export worldwide, remote setup available, quote-first B2B (T/T, Wise, PayPal; USDT on request). Built for app release QA, CI automation, remote ADB labs, and enterprise device testing at scale."
         image={IMAGES.homeHeroProduct}
         imageRetina={IMAGES.homeHeroProductRetina}
         imageAlt="Max Phones Farm rackmount phone farm hardware showroom"

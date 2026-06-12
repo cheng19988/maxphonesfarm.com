@@ -85,15 +85,20 @@ export function organizationJsonLd() {
     areaServed: "Worldwide",
     knowsAbout: [
       "phone farm hardware",
-      "rackmount phone farm",
       "phone farm box",
+      "rackmount phone farm",
+      "2U phone farm rack",
+      "Android phone farm hardware",
+      "mobile device farm",
+      "device farm hardware",
+      "phone farm wholesale",
+      "custom phone farm box",
       "mobile compute",
       "screenless battery-free nodes",
       "device lab infrastructure",
       "remote device control",
-      "Android device farms",
-      "sustained mobile compute workloads",
       "app testing hardware",
+      "batch device testing",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -214,6 +219,54 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
+export function contactPageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Request a Hardware Quote",
+    url: `${SITE_URL}/contact`,
+    description:
+      "Contact Max Phones Farm for rackmount phone farm hardware quotes — WhatsApp, Telegram, email, and inquiry form.",
+    mainEntity: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE_URL,
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: CONTACT.email,
+        telephone: CONTACT.whatsapp,
+        areaServed: "Worldwide",
+        availableLanguage: ["English", "Chinese"],
+      },
+    },
+  };
+}
+
+export function collectionPageJsonLd(opts: {
+  name: string;
+  description: string;
+  path: string;
+  items: { name: string; url: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: opts.name,
+    description: opts.description,
+    url: `${SITE_URL}${opts.path}`,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: opts.items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        url: item.url,
+      })),
+    },
+  };
+}
+
 export function articleJsonLd(article: {
   title: string;
   description: string;
@@ -222,7 +275,7 @@ export function articleJsonLd(article: {
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: article.title,
     description: article.description,
     datePublished: article.date,

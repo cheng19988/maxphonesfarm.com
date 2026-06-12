@@ -18,7 +18,7 @@ const DEFAULT_HARDWARE: ProductProcurement = {
   voltage: "110–240V AC, 50/60 Hz (centralized PSU included on complete systems)",
   warranty: "12 months on chassis, PSU, fans, and USB backplane — manufacturing defects under normal lab use",
   shippingMethod: "Express courier (DHL/FedEx/UPS) or sea freight; DDU/DDP quoted per destination",
-  paymentProcess: "Written quote → pro-forma invoice → T/T bank transfer, Wise, or PayPal → assembly & QC → shipment",
+  paymentProcess: "Written quote → pro-forma invoice → T/T, Wise, or PayPal (USDT on request when agreed) → assembly & QC → shipment",
 };
 
 export const PRODUCT_PROCUREMENT: Record<string, ProductProcurement> = {
@@ -30,7 +30,7 @@ export const PRODUCT_PROCUREMENT: Record<string, ProductProcurement> = {
     voltage: "110–240V AC, 50/60 Hz — centralized PSU sized per device list",
     warranty: "12 months on chassis, PSU, fan module, USB backplane, and mounting ears",
     shippingMethod: "Express air 3–7 days transit or sea freight 15–30 days from Guangzhou",
-    paymentProcess: "Quote with fit check → pro-forma → payment → 72h burn-in → export packing → ship",
+    paymentProcess: "Quote with fit check → pro-forma → T/T / Wise / PayPal (USDT on request) → 72h burn-in → export packing → ship",
   },
   "phone-farm-box": {
     moq: "1 unit",

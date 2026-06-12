@@ -11,7 +11,7 @@ export const SITE = {
   headerBar: "Factory-Direct Phone Farm Hardware",
   logoSubtitle: "Export-Ready Device Lab Hardware",
   intro:
-    "Max Phones Farm is a Guangzhou assembly team (since 2017) building rackmount phone farm chassis, 20-slot device lab boxes, and motherboard arrays for enterprise app testing, CI automation, remote ADB labs, and rack-scale Android QA — shipped worldwide with burn-in QC.",
+    "Max Phones Farm is a Guangzhou assembly team (since 2017) building rackmount phone farm chassis, 20-slot phone farm boxes, and motherboard arrays for enterprise app testing, CI automation, and remote ADB labs — export worldwide with burn-in QC, remote setup, and quote-first B2B sales.",
   location: "Guangzhou, China",
   description:
     "Guangzhou factory-direct rackmount phone farm hardware — 2U chassis, phone farm boxes, motherboard arrays, and export logistics for enterprise device labs and QA automation teams.",

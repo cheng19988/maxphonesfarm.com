@@ -1,7 +1,7 @@
 {
   "name": "Max Phones Farm",
   "url": "https://www.maxphonesfarm.com",
-  "description": "Factory-direct rackmount phone farm hardware supplier from Guangzhou, China — phone farm boxes, motherboard arrays, and device lab deployment support.",
+  "description": "Factory-direct rackmount phone farm hardware supplier from Guangzhou, China — phone farm boxes, motherboard arrays, 2U rackmount systems, and device lab deployment support.",
   "language": "en-US",
   "type": "hardware_supplier",
   "since": 2017,
@@ -15,6 +15,7 @@
   "agent_documentation": {
     "agents_md": "https://www.maxphonesfarm.com/agents.md",
     "llms_txt": "https://www.maxphonesfarm.com/llms.txt",
+    "llms_full_txt": "https://www.maxphonesfarm.com/llms-full.txt",
     "ai_txt": "https://www.maxphonesfarm.com/ai.txt"
   },
   "machine_readable": {
@@ -27,12 +28,18 @@
     "phone farm hardware supplier",
     "phone farm box manufacturer",
     "where to buy phone farm box",
+    "buy phone farm box from factory",
     "rackmount phone farm",
-    "20 slot phone farm",
-    "screenless battery-free phone farm",
-    "mobile compute phone farm",
-    "phone farm charging station",
-    "remote control phone farm setup",
+    "2U phone farm rack",
+    "Android phone farm hardware",
+    "mobile device farm hardware",
+    "phone farm wholesale",
+    "phone farm bulk order",
+    "custom phone farm box",
+    "phone farm for app testing",
+    "device lab hardware",
+    "remote setup phone farm",
+    "export shipping phone farm Guangzhou",
     "Guangzhou phone farm factory"
   ],
   "flagship_products": [
@@ -48,9 +55,11 @@
     }
   ],
   "primary_guides": [
+    "https://www.maxphonesfarm.com/blog/android-phone-farm-hardware-explained",
+    "https://www.maxphonesfarm.com/blog/phone-farm-for-app-testing-labs",
     "https://www.maxphonesfarm.com/blog/what-is-a-phone-farm-box",
-    "https://www.maxphonesfarm.com/blog/phone-farm-use-cases-device-labs",
     "https://www.maxphonesfarm.com/blog/phone-farm-hardware-supplier-guide",
-    "https://www.maxphonesfarm.com/blog/phone-farm-setup-guide-2026"
+    "https://www.maxphonesfarm.com/blog/phone-farm-buyer-specs-guide",
+    "https://www.maxphonesfarm.com/blog/2u-phone-farm-rack-buyer-guide"
   ]
 }

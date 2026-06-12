@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/page-hero";
 import { ContactInquiryForm } from "@/components/contact-inquiry-form";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, contactPageJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/shared";
 import { SITE } from "@/lib/config";
 import { IMAGES } from "@/lib/images";
 import { getPublishedProducts } from "@/lib/products";
@@ -33,6 +34,7 @@ export default async function ContactPage({ searchParams }: Props) {
 
   return (
     <>
+      <JsonLd data={contactPageJsonLd()} />
       <PageHero
         label={`${SITE.location} · Factory-direct since 2017`}
         title="Request a Hardware Quote"
