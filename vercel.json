@@ -9,7 +9,7 @@
   ],
   "headers": [
     {
-      "source": "/((?!_next/static|_next/image|favicon.svg|images/).*)",
+      "source": "/((?!_next/static|_next/image|favicon.ico|favicon.svg|favicon-32.png|apple-touch-icon.png|images/).*)",
       "headers": [
         {
           "key": "Cache-Control",

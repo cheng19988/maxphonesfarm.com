@@ -15,6 +15,7 @@
     "check:env": "node scripts/check-env.mjs",
     "assets:sync": "node scripts/sync-assets.mjs",
     "assets:process-extra": "node scripts/process-extra-assets.mjs",
+    "icons:generate": "tsx scripts/generate-brand-icons.tsx",
     "postinstall": "prisma generate"
   },
   "dependencies": {
