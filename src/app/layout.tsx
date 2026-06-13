@@ -29,7 +29,11 @@ export const metadata: Metadata = {
   description: SITE.description,
   metadataBase: new URL(SITE_URL),
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.svg",
   },
 };
 
